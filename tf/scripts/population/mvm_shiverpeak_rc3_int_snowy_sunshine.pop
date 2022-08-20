@@ -1,0 +1,1597 @@
+#base robot_standard.pop
+#base robot_giant.pop
+
+//
+// Starting Currency: 400
+//
+// +----------+----------+----------+
+// | Wave     | Currency | A+       |
+// +----------+----------+----------+
+// | Wave 1   | 600      | 700      |
+// | Wave 2   | 600      | 700      |
+// | Wave 3   | 700      | 800      |
+// | Wave 4   | 700      | 800      |
+// | Wave 5   | 700      | 800      |
+// | Wave 6   | 800      | 900      |
+// | Wave 7   | 900      | 1000     |
+// | Wave 8   | 1000     | 1100     |
+// +----------+----------+----------+
+// | Total    | 6000     | 6800     |
+// +----------+----------+----------+
+//
+
+
+WaveSchedule
+{
+    StartingCurrency 400
+    CanBotsAttackWhileInSpawnRoom no
+    RespawnWaveTime 3
+
+    Templates 
+    {
+        T_TFBot_Force_Giant_Pyro_DragonFury
+		{
+			Name 				"Giant Dragon's Fury Pyro"
+			ClassIcon			pyro_dragon_fury_swordstone
+			Class 				Pyro
+			Skill 				Expert
+			Health 				3500
+			WeaponRestrictions 	PrimaryOnly
+			MaxVisionRange 		600
+			Attributes 			MiniBoss
+			Item 				"The Dragon's Fury"
+			Item 				"Pyromancer's Mask"
+			Item            	"dec2014 2014_pyromancer_hood"
+			Item            	"dec2014 Pyromancer's Raiments"
+			Tag					bot_giant
+			ItemAttributes
+			{
+				ItemName 			"The Dragon's Fury"
+				"airblast disabled"	1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"					0.5
+				"damage force reduction"			0.5
+				"airblast vulnerability multiplier"	0.5
+				"override footstep sound set"		6
+			}
+		}
+    }
+
+    Mission 
+    {
+        Where spawnbot_flank
+        Objective DestroySentries
+        BeginAtWave 1
+        RunForThisManyWaves 8
+        DesiredCount 1
+    
+        InitialCooldown 35
+        CooldownTime 40
+    
+        TFBot
+        { 
+            Template T_TFBot_SentryBuster
+            Name "Festive Sentry Buster"
+			Item "A Rather Festive Tree"
+			CharacterAttributes
+			{
+				"head scale" 2.2
+				"torso scale" 0.7
+			}
+        
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper 
+        BeginAtWave 2
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 25
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper
+            Item "The Toy Soldier"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot
+        Objective Spy 
+        BeginAtWave 1
+        RunForThisManyWaves 1
+        DesiredCount 1
+    
+        InitialCooldown 20
+        CooldownTime 30
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy
+            Item "The Ebenezer"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot
+        Objective Spy 
+        BeginAtWave 3
+        RunForThisManyWaves 1
+        DesiredCount 3
+    
+        InitialCooldown 60
+        CooldownTime 60
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy
+            Item "The Ebenezer"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot
+        Objective Spy 
+        BeginAtWave 4
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 25
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy
+            Item "The Ebenezer"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper 
+        BeginAtWave 5
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 45
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper
+            Item "The Toy Soldier"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot
+        Objective Spy 
+        BeginAtWave 5
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 65
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy
+            Item "The Ebenezer"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper 
+        BeginAtWave 6
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 45
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper
+            Item "The Toy Soldier"
+        }
+    }
+
+    Mission 
+    {
+        Where spawnbot
+        Objective Spy
+        BeginAtWave 7
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 45
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy
+            Item "The Ebenezer"
+        }
+    }
+
+    // Mission 
+    // {
+    //     Where spawnbot
+    //     Objective Spy
+    //     BeginAtWave 8
+    //     RunForThisManyWaves 1
+    //     DesiredCount 3
+    
+    //     InitialCooldown 45
+    //     CooldownTime 45
+    
+    //     TFBot
+    //     { 
+    //         Template T_TFBot_Spy
+    //         Item "The Ebenezer"
+    //     }
+    // }
+
+    Mission 
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper 
+        BeginAtWave 8
+        RunForThisManyWaves 1
+        DesiredCount 3
+    
+        InitialCooldown 45
+        CooldownTime 35
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper
+            Item "The Toy Soldier"
+        }
+    }
+
+
+    //Wave 1: ($600)
+    //12 Soldier
+    //12 Heavy
+    //Support:
+    //Scout Melee
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name        1a
+            Where       spawnbot
+            TotalCount  20
+            MaxActive   6
+            SpawnCount  4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 15
+        
+            TotalCurrency 200
+        
+            TFBot
+            { 
+                Class       Soldier
+                Skill       Normal
+                Item        "Festive Rocket Launcher 2011"
+			    Item        "Antlers"
+            }
+        }
+        WaveSpawn
+        {
+            Name                1b
+            Where               spawnbot_flank
+            Where               spawnbot_mission_sniper
+            
+            TotalCount          69
+            MaxActive           6
+            SpawnCount          4
+            WaitBeforeStarting  1
+            WaitBetweenSpawns   10
+            Support             1
+            TotalCurrency       200
+            TFBot
+            { 
+                Template    T_TFBot_Scout_Melee
+                ClassIcon   scout_bat_nys
+                Item        "Festive Bat 2011"
+                Skill       Hard
+                Item        "The Big Elfin Deal"
+
+            }
+        }
+        WaveSpawn
+        {
+            Name 1c
+            WaitForAllSpawned   1a
+            Where spawnbot_flank
+            Where   spawnbot_mission_sniper
+            TotalCount 12
+            MaxActive 6
+            SpawnCount 4
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 200
+        
+            TFBot
+            { 
+                Class       Heavy
+                Skill       Easy
+                Item        "Festive Minigun 2011"
+				Item        "EOTL_Flat_cap"
+            }
+        }
+    }
+
+    //Wave 2: ($600)
+    //24 Demoman
+    //08 Gauntlet Heavy
+    //32 Scout
+    //04 Rapid Fire Bowman + 02 Quick-Fix Medic + 02 Soldier
+    //Support
+    //02 Sniper
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name        2a
+            Where       spawnbot
+            TotalCount  20
+            MaxActive   6
+            SpawnCount  2
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 100
+        
+            TFBot 
+            { 
+                Template    T_TFBot_Pyro
+                Skill       Easy
+                Name        "Golden Deer Pyro"
+                Item        "Pyro the Flamedeer"
+                Item        "Upgradeable TF_WEAPON_FLAMETHROWER"
+                ItemAttributes
+                {
+                    ItemName                    "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    "item style override"       1
+                    "is australium item"        1
+                    "is_festivized"             1
+                    "turn to gold"              1
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 2b
+            Where spawnbot_flank
+            TotalCount  8
+            MaxActive   4
+            SpawnCount  2
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 15
+        
+            TotalCurrency 200
+            TFBot
+            { 
+                Template    T_TFBot_Heavyweapons_Fist
+                Item        "The B.M.O.C."
+            }
+        }
+        WaveSpawn
+        {
+            Name                2c
+            WaitForAllDead      2b
+            Where               spawnbot_flank
+            Where               spawnbot_mission_sniper
+            TotalCount          40
+            MaxActive           8
+            SpawnCount          2
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   2
+            Support             1
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template    T_TFBot_Heavyweapons_Heavyweight_Champ_Fast
+                Item        "Festive Gloves of Running Urgently"
+                Item        "The B.M.O.C."
+                ItemAttributes
+                {   
+                    ItemName    "Festive Gloves of Running Urgently"
+                    "mod_maxhealth_drain_rate"      0
+                }
+                CharacterAttributes
+                {
+                    "self mark for death"    1
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 2d
+            WaitForAllDead  2b
+            Where spawnbot
+            TotalCount  16
+            MaxActive   12
+            SpawnCount  4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Sniper_Huntsman_Spammer
+                    Item        "The Toy Soldier"
+                    ClassIcon   sniper_bow_multi
+                    Skill       Normal
+                }
+                TFBot
+                { 
+                    Class       Soldier
+                    Skill       Normal
+                    Item        "Antlers"
+                }
+                TFBot
+                { 
+                    Class       Soldier
+                    Skill       Normal
+                    Item        "Antlers"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+    }
+
+    //Wave 3: ($700)
+    //02 Giant Demoman 
+    //01 Tank (Health 25000)
+    //32 Gru Heavy
+    //15 Minor League Scout
+    //22 Soldier
+    //Support
+    //02 Spy
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name        3a
+            Where       spawnbot
+            TotalCount  3
+            MaxActive   2
+            SpawnCount  1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template    T_TFBot_Giant_Demo_RapidFire
+                Name        "Giant Demoman"
+                Item        "Festive Grenade Launcher"
+                Item        "Antlers"
+            }
+        }
+        WaveSpawn
+        {
+            Name        3b
+            Where       spawnbot
+            TotalCount  36
+            MaxActive   10
+            SpawnCount  2
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 1
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template    T_TFBot_Heavyweapons_Heavyweight_Champ
+                Item        "EOTL_Flat_cap"
+            }
+        }
+        WaveSpawn
+        {
+            Name        3c
+            Where       spawnbot_flank
+            TotalCount  20
+            MaxActive   10
+            SpawnCount  5
+            WaitBeforeStarting 35
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Template    T_TFBot_Scout_Sandman
+                Skill       Expert
+                Item        "The Big Elfin Deal"
+            }
+        }
+        WaveSpawn
+        {
+            Name                3d
+            WaitForAllSpawned   3b
+            Where       spawnbot
+            TotalCount  22
+            MaxActive   8
+            SpawnCount  2
+            WaitBeforeStarting  15
+            WaitBetweenSpawns   5
+            Support             1
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Class       Soldier
+                Skill       Normal
+                Item        "Antlers"
+            }
+        }
+        WaveSpawn // Tank # HP
+        {
+            WaitForAllSpawned  3a
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 400
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  20000
+                Speed   75
+                Skin    0
+        
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+    }
+
+    // Wave 4: $700
+    // 03 Giant Scout Fast
+    // 02 Giant Dragon Fury + 04 Gauntlet Heavy
+    // 40 Demoknight
+    // 22 Demoman
+    // Support:
+    // Scout Melee
+    // Sniper 
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name        4a
+            Where       spawnbot
+            TotalCount  40
+            MaxActive   10
+            SpawnCount  5
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template    T_TFBot_Scout_Sandman
+                Item        "The Big Elfin Deal"
+            }
+        }
+        WaveSpawn
+        {
+            Name        4b
+            Where       spawnbot_mission_sniper
+            TotalCount  20
+            MaxActive   6
+            SpawnCount  2
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Class       Soldier
+                Skill       Normal
+                Item        "Festive Rocket Launcher 2011"
+			    Item        "Antlers"
+            }
+        }
+        WaveSpawn
+        {
+            Name        4c
+            Where       spawnbot
+            TotalCount  4
+            MaxActive   4
+            SpawnCount  1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 250
+        
+            TFBot
+            { 
+                Template    T_TFBot_Giant_Scout_Fast
+                Item        "Festive Holy Mackerel"
+                Item        "The Merc's Muffler"
+            }
+        }
+        WaveSpawn
+        {
+            Name        4d
+            WaitForAllDead  4c
+            Where       spawnbot
+            TotalCount  12
+            MaxActive   12
+            SpawnCount  6
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Force_Giant_Pyro_DragonFury
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            WaitForAllSpawned  4b
+            Where       spawnbot
+            Where       spawnbot_flank
+            TotalCount  28
+            MaxActive   6
+            SpawnCount  3
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 10
+            Support     1
+            TotalCurrency 50
+            TFBot
+            { 
+                Class       Heavy
+                Skill       Easy
+                Item        "Festive Minigun 2011"
+				Item        "EOTL_Flat_cap"
+            }
+        }
+    }
+
+    // Wave 5: $600
+    // 02 Giant Burst Fire Soldier + 04 Quick-Fix Medic
+    // 02 Giant Spammer Soldier + 04 Quick-Fix Medic
+    // 48 Scout
+    // 30 Bison Soldier
+    // 25 Heavy
+    // Support
+    // 08 Gru Heavy
+    // 02 Spy
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name 5a
+            Where spawnbot_flank
+            Where   spawnbot_mission_sniper
+            TotalCount 40
+            MaxActive 10
+            SpawnCount 5
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 100
+            RandomChoice
+            {
+                TFBot
+                { 
+                    Class   Scout
+                    Skill   Easy
+                    Item    "Festive Scattergun 2011"
+                    Item    "The Merc's Muffler"
+                    Item    "The Big Elfin Deal"
+                }
+                TFBot
+                { 
+                    Class   Scout
+                    Skill   Easy
+                    Item    "Festive Scattergun 2011"
+                    Item    "The Merc's Muffler"
+                    Item    "The Big Elfin Deal"
+                }
+                TFBot
+                { 
+                    Class   Scout
+                    Skill   Easy
+                    Item    "Festive Scattergun 2011"
+                    Item    "The Big Elfin Deal"
+                    Item    "The Merc's Muffler"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Scout_Melee
+                    Item        "Festive Bat 2011"
+                    Item        "The Big Elfin Deal"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5b
+            Where spawnbot
+            TotalCount 9
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 300
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Giant_Soldier_Crit
+                    Item        "Antlers"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5e
+            WaitForAllSpawned   5a
+            Where       spawnbot_flank
+            Where       spawnbot_mission_sniper
+            TotalCount  60
+            MaxActive   10
+            SpawnCount  2
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 2
+        
+            TotalCurrency 100
+            Support         1
+            TFBot
+            { 
+                Template    T_TFBot_Heavyweapons_Heavyweight_Champ_Fast
+                Item        "Festive Gloves of Running Urgently"
+                Item        "The B.M.O.C."
+                ItemAttributes
+                {   
+                    ItemName    "Festive Gloves of Running Urgently"
+                    "mod_maxhealth_drain_rate"      0
+                }
+                CharacterAttributes
+                {
+                    "self mark for death"       1
+                    "honorbound"		        0
+                    "health drain"              0
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5f
+            WaitForAllSpawned  5b
+            Where spawnbot_flank
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 40
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Giant_Soldier_Spammer
+                    Item        "The Toy Soldier"
+                    Item        "Festive Rocket Launcher 2011"
+                    ItemAttributes
+                    {
+                        ItemName "Festive Rocket Launcher 2011"
+                        "faster reload rate" -0.8
+                        "fire rate bonus" 0.5
+                    }
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+    }
+
+    //Wave 6: $700
+    //02 Giant Demo Burst
+    //02 Giant Colonel Barrage + 05 Quick-Fix Medic
+    //20 Soldier Conch
+    //10 Pyro
+    //Support
+    //10 Bowman
+    //02 Spy
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name 6a
+            Where spawnbot
+            TotalCount 30
+            MaxActive 12
+            SpawnCount 3
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Pyro
+                    Skill       Easy
+                    Name        "Deer Pyro"
+                    Item        "The Toy Tailor"
+                    Item        "Festive Backburner 2014"
+                    Item        "Pyro the Flamedeer"
+                    ItemAttributes
+                    {
+                        ItemName            "Festive Backburner 2014"
+                        "airblast disabled" 1
+                    }
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Soldier_Extended_Concheror
+                    Skill       Normal
+                    Item        "Antlers"
+                    Item        "Festive Rocket Launcher 2011"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Soldier_Extended_Concheror
+                    Skill       Normal
+                    Item        "Antlers"
+                    Item        "Festive Rocket Launcher 2011"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 6b
+            Where spawnbot
+            TotalCount 2
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 300
+            TFBot
+            {
+                Template    T_TFBot_Giant_Demo_Burst
+                Item        "Antlers"
+                Item        "Festive Grenade Launcher"
+                ItemAttributes
+                {
+                    ItemName "Festive Grenade Launcher"
+                    "clip size upgrade atomic" 7.0
+                    "faster reload rate" 0.65
+                    "fire rate bonus" 0.1
+                    "Projectile speed increased" 1.1
+                    "projectile spread angle penalty" 5
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 6d
+            WaitForAllSpawned 6a
+            Where spawnbot
+            TotalCount 8
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 25
+            WaitBetweenSpawns 25
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Soldier_SlowBarrage
+                    Item        "Antlers"
+                    Item        "Festive Rocket Launcher 2011"
+                    ItemAttributes
+                    {
+                        ItemName "Festive Rocket Launcher 2011"
+                        "clip size upgrade atomic" 26.0
+                        "faster reload rate" 0.22
+                        "fire rate bonus" 0.2
+                        "projectile spread angle penalty" 5
+                    }
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 6d
+            WaitForAllDead   6b
+            Where spawnbot
+            TotalCount 30
+            MaxActive 10
+            SpawnCount 5
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+            Support         1
+            TotalCurrency 100
+            TFBot
+            {
+                Template    T_TFBot_Sniper_Huntsman
+                Item        "The Toy Soldier"
+                Item        "Festive Huntsman"
+                ItemAttributes
+                {
+                    ItemName "Festive Huntsman"
+                    "damage bonus" 0.5
+                }
+            }
+        }
+    }
+
+
+    //Wave 7: $800
+    //02 Giant Heavy + 04 Quick-Fix Medic
+    //01 Giant Soldier Spammer Reload Crit + 09 Quick-Fix Medic
+    //01 Tank
+    //40 Demoknight
+    //26 Scout League
+    //Support:
+    //06 Pyro
+    //04 Soldier
+    //02 Spy
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name 7a
+            Where spawnbot
+            TotalCount 10
+            MaxActive 10
+            SpawnCount 5
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 30
+        
+            TotalCurrency 250
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Heavyweapons
+                    Name        "Giant Santa Heavy"
+                    Item        "Festive Minigun 2011"
+                    Item        "The B.M.O.C."
+                    Item        "The Gift Bringer"
+                    Item        "The All-Father"
+                    ItemAttributes
+                    {
+                        ItemName "Festive Minigun 2011"
+                        "damage bonus" 1.5
+                    }
+                    CharacterAttributes
+                    {
+                        "add jingle to footsteps" 1
+                    }
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name        7b
+            Where       spawnbot_mission_sniper
+            TotalCount  30
+            MaxActive   10
+            SpawnCount  5
+            WaitBeforeStarting 15
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 50
+            TFBot
+            {
+                Template        T_TFBot_Demoman_Knight
+                Item			"Stylish DeGroot"
+                Item			"The King of Scotland Cape"
+                Item			"The Sole Saviors"
+                Item			"The Merc's Muffler"
+                Item			"The Toowoomba Tunic"
+                Item	        "Festive Eyelander"
+            }
+        }
+        // WaveSpawn
+        // {
+        //     Name 7c
+        //     Where spawnbot
+        //     TotalCount 26
+        //     MaxActive 6
+        //     SpawnCount 2
+        //     WaitBeforeStarting 15
+        //     WaitBetweenSpawns 2
+        
+        //     TotalCurrency 50
+        //     TFBot
+        //     {
+        //         Template    T_TFBot_Scout_Sandman
+        //         Attributes  AlwaysCrit
+        //         Tag         default
+        //         Item        "The Big Elfin Deal"
+        //     }
+        // }
+        WaveSpawn
+        {
+            Name 7d
+            WaitForAllSpawned  7b
+            Where spawnbot_flank
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 15
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 200
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  25000
+                Speed   75
+                Skin    0
+        
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 7e
+            WaitForAllSpawned   7b
+            Where spawnbot
+            TotalCount 30
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 10
+            Support 1
+            TotalCurrency 50
+            TFBot
+            { 
+                Name				"SMG Sniper"
+                Health				125
+                Class				Sniper
+                ClassIcon			sniper_smg_tind
+                Skill				Easy
+                WeaponRestrictions	SecondaryOnly
+                Item                "The Toy Soldier"
+                Item                "Festive SMG"
+            }
+        }
+        WaveSpawn
+        {
+            Name 7f
+            WaitForAllDead   7a
+            Where spawnbot
+            TotalCount 30
+            MaxActive 5
+            SpawnCount 3
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+            Support 1
+            TotalCurrency 50
+            TFBot
+            { 
+                Class       Soldier
+                Skill       Normal
+                Item        "Antlers"
+                Item        "Festive Rocket Launcher 2011"
+            }
+        }
+        WaveSpawn
+        {
+            Name 7g
+            WaitForAllSpawned 7d  
+            Where spawnbot
+            TotalCount 10
+            MaxActive 10
+            SpawnCount 10
+            WaitBeforeStarting 25
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 300
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Soldier_Spammer_Reload
+                    Item        "Antlers"
+                    Item        "Festive Rocket Launcher 2011"
+                    ItemAttributes
+                    {
+                        ItemName "Festive Rocket Launcher 2011"
+                        "clip size upgrade atomic" 5.0
+                        "faster reload rate" 0.6
+                        "fire rate bonus" 0.1
+                        "move speed bonus" 0.5
+                        "Projectile speed increased" 0.65
+                    }
+                    Attributes  AlwaysCrit
+                    Item        "Antlers"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickFix
+                    Item        "Tough Stuff Muffs"
+                }
+            }
+        }
+    }
+
+    //Wave 8: $1000
+    //02 Giant Heavy + 04 Quick-Uber Medic
+    //08 Giant Airblast Pyro Crits + 01 Quick-Uber Medic
+    //02 Giant Deflector Heavy + 04 Quick-Uber Medic
+    //02 Tank
+    //Support:
+    //10 Scout Melee
+    //03 Sniper
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name 8a
+            Where spawnbot
+            TotalCount 8
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Giant_Demo_Burst
+                    Item        "Antlers"
+					Attributes	AlwaysCrit
+                    Item        "Festive Grenade Launcher"
+                    ItemAttributes
+                    {
+                        ItemName "Festive Grenade Launcher"
+                        "clip size upgrade atomic" 7.0
+                        "faster reload rate" 0.65
+                        "fire rate bonus" 0.1
+                        "Projectile speed increased" 1.1
+                        "projectile spread angle penalty" 5
+                    }
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 8b
+            Where spawnbot_flank
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 1
+            WaitBeforeStarting 20
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 200
+            TFBot
+                { 
+                    Template    T_TFBot_Giant_Pyro
+                    Name        "Golden Deer Airblast Pyro"
+                    ClassIcon   pyro_reflect_daan
+                    Item        "Pyro the Flamedeer"
+                    Item        "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    ItemAttributes
+                    {
+                        ItemName                    "Upgradeable TF_WEAPON_FLAMETHROWER"
+                        "item style override"       1
+                        "is australium item"        1
+                        "is_festivized"             1
+                        "turn to gold"              1
+                    }
+                }
+        }
+        WaveSpawn
+        {
+            Name 8c
+            WaitForAllSpawned  8a
+            Where spawnbot
+            TotalCount 8
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 60
+            WaitBetweenSpawns 35
+        
+            TotalCurrency 200
+            Squad
+            {
+                // TFBot
+                // { 
+                //     Template    T_TFBot_Giant_Heavyweapons_Deflector
+                //     Item        "Festive Minigun 2011"
+                //     Item        "The U-clank-a"
+                //     Item        "The Gift Bringer"
+                //     Item        "The All-Father"
+                //     ItemAttributes
+                //     {
+                //         ItemName "Festive Minigun 2011"
+                //         "attack projectiles" 1
+				//         "damage bonus" 1.5
+                //     }
+                //     CharacterAttributes
+                //     {
+                //         "add jingle to footsteps" 1
+                //     }
+                // }
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Heavyweapons
+                    Name        "Giant Santa Heavy"
+                    Item        "Festive Minigun 2011"
+                    Item        "The B.M.O.C."
+                    Item        "The Gift Bringer"
+                    Item        "The All-Father"
+                    ItemAttributes
+                    {
+                        ItemName "Festive Minigun 2011"
+                        "damage bonus" 1.5
+                    }
+                    CharacterAttributes
+                    {
+                        "add jingle to footsteps" 1
+                    }
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+        WaveSpawn 
+        {
+            Name 8d
+            WaitForAllSpawned  8a
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 20
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  20000
+                Speed   75
+                Skin    0
+        
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn 
+        {
+            Name 8d
+            WaitForAllSpawned  8a
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 75
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  25000
+                Speed   75
+                Skin    1
+        
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 8s
+            Where spawnbot_mission_sniper
+            Where   spawnbot
+            TotalCount 150
+            MaxActive 10
+            SpawnCount 10
+            WaitBeforeStarting  15
+            WaitBetweenSpawns   15
+            Support             1
+            TotalCurrency       200
+            TFBot
+            {
+                Class           Scout
+                Skill           Easy
+                Name            "Elf Scout"
+                Item            "The Big Elfin Deal"
+                CharacterAttributes
+                {
+                    "add jingle to footsteps" 1
+                }
+            }
+        }
+    }
+}

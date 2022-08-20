@@ -1,0 +1,1146 @@
+#base robot_standard.pop
+#base robot_giant.pop
+
+//
+// Starting Currency: 1500
+//
+// +----------+----------+----------+
+// | Wave     | Currency | A+       |
+// +----------+----------+----------+
+// | Wave 1   | 900      | 1000     |
+// | Wave 2   | 900      | 1000     |
+// | Wave 3   | 1000     | 1100     |
+// | Wave 4   | 1500     | 1600     |
+// | Wave 5   | 2000     | 2100     |
+// +----------+----------+----------+
+// | Total    | 6300     | 6800     |
+// +----------+----------+----------+
+//
+
+WaveSchedule
+{
+    StartingCurrency 1500
+    CanBotsAttackWhileInSpawnRoom no
+    RespawnWaveTime 5
+    Advanced 1
+
+
+    Mission
+	{
+		Objective DestroySentries
+		InitialCooldown 35
+		Where spawnbot_tertiary
+		BeginAtWave 1
+		RunForThisManyWaves 5
+		CooldownTime 35
+		DesiredCount 1
+		TFBot
+		{
+			Template    T_TFBot_SentryBuster
+		}
+	}
+    Mission // For Wave 1
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper 
+        BeginAtWave 1
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 20
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper 
+        }
+    }
+    Mission // Engineer - Wave 1-5
+	{
+		Objective Engineer  
+
+		InitialCooldown 60
+		Where spawnbot
+		BeginAtWave 1
+		RunForThisManyWaves 2
+		CooldownTime 60
+		DesiredCount 1
+
+		TFBot
+		{
+			Template        T_TFBot_Engineer_Sentry_Teleporter
+            TeleportWhere   spawnbot_tertiary
+            TeleportWhere   spawnbot_invasion
+            Attributes      IgnoreFlag
+		}
+	}
+    Mission // Engineer - Wave 1-5
+	{
+		Objective Engineer  
+
+		InitialCooldown 60
+		Where spawnbot
+		BeginAtWave 4
+		RunForThisManyWaves 1
+		CooldownTime 60
+		DesiredCount 1
+
+		TFBot
+		{
+			Template        T_TFBot_Engineer_Sentry_Teleporter
+            TeleportWhere   spawnbot_tertiary
+            TeleportWhere   spawnbot_invasion
+            Attributes      IgnoreFlag
+		}
+	}
+    
+    Mission // For Wave 3
+    {
+        Where spawnbot_mission_spy
+        Objective Spy 
+        BeginAtWave 3
+        RunForThisManyWaves 1
+        DesiredCount 3
+    
+        InitialCooldown 10
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy 
+        }
+    }
+
+    Mission // For Wave 5
+    {
+        Where spawnbot_mission_spy
+        Objective Spy
+        BeginAtWave 4
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 40
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Spy
+        }
+    }
+
+    Mission // For Wave 5
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper
+        BeginAtWave 4
+        RunForThisManyWaves 1
+        DesiredCount 2
+    
+        InitialCooldown 45
+        CooldownTime 60
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper
+        }
+    }
+
+    Mission // For Wave 5
+    {
+        Where spawnbot_mission_sniper
+        Objective Sniper
+        BeginAtWave 5
+        RunForThisManyWaves 1
+        DesiredCount 4
+    
+        InitialCooldown 45
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper
+        }
+    }
+
+    Templates
+    {
+        T_TFBot_Force_Giant_Sniper_SMG
+        {
+            Name                    "Giant SMG Sniper"
+            Health                  3000
+            Class                   Sniper
+            Skill                   Hard
+            ClassIcon               sniper_smg_tind
+            Tag                     bot_giant
+            Attributes              MiniBoss
+            WeaponRestrictions	    SecondaryOnly
+            Item		            "The Fruit Shoot"
+			Item		            "Merc's Pride Scarf"
+            CharacterAttributes
+			{
+				"move speed bonus" 0.5
+				"damage force reduction" 0.5
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 4
+			}
+        }
+        T_TFBot_Force_Pyro_DragonFury
+		{
+			Class				Pyro
+			Skill				Easy
+			ClassIcon			pyro_dragon_fury_swordstone
+            MaxVisionRange 		600
+			Name				"Dragon's Fury Pyro"
+			Item 				"The Dragon's Fury"
+			Item 				"Pyromancer's Mask"
+			Item            	"dec2014 2014_pyromancer_hood"
+			Item            	"dec2014 Pyromancer's Raiments"
+			ItemAttributes
+			{
+				ItemName 			"The Dragon's Fury"
+				"airblast disabled"	1
+			}
+		}
+        T_TFBot_Force_Giant_Pyro_DragonFury
+		{
+			Name 				"Giant Dragon's Fury Pyro"
+			ClassIcon			pyro_dragon_fury_swordstone
+			Class 				Pyro
+			Skill 				Expert
+			Health 				3500
+			WeaponRestrictions 	PrimaryOnly
+			MaxVisionRange 		600
+			Attributes 			MiniBoss
+			Item 				"The Dragon's Fury"
+			Item 				"Pyromancer's Mask"
+			Item            	"dec2014 2014_pyromancer_hood"
+			Item            	"dec2014 Pyromancer's Raiments"
+			Tag					bot_giant
+			ItemAttributes
+			{
+				ItemName 			"The Dragon's Fury"
+				"airblast disabled"	1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"					0.5
+				"damage force reduction"			0.5
+				"airblast vulnerability multiplier"	0.5
+				"override footstep sound set"		6
+			}
+		}
+
+    }
+
+    ///////////////////////////////////////////////////
+    //Wave 1
+    //Total Currency: $900
+    //Main Wave:
+    //Wave 01a: 48 total, 9 maxactive, Bowman, $200
+    //Wave 01b: 15 total, 6 maxactive, Soldier, $100
+    //Wave 01c: [GIANT] 03 total, 1 maxactive, League Scout, $200
+    //Wave 01d: [GIANT] 4(8) total, 4(8) active, Soldier (Rapid Fire + Quick-Uber Medic, WaitForAllDead wave01a), $200
+    //Wave 01e: 50 total, (5)10 maxactive, Scout, $200
+    ///////////////////////////////////////////////////
+    //Missions: 
+    //02 Snipers
+    //01 Engineer Teleporter
+    ///////////////////////////////////////////////////
+
+    Wave
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+
+        
+        WaveSpawn
+        {
+            Name        wave01a
+            Where       spawnbot_main
+            TotalCount  48
+            MaxActive   9
+            SpawnCount  3
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   0.5
+        
+            TotalCurrency   200
+        
+            TFBot
+            { 
+                Name        "Bowman"
+                Class       Sniper
+                Skill       Easy
+                ClassIcon   sniper_bow
+                Item        "The Huntsman"
+                WeaponRestrictions  PrimaryOnly
+                ItemAttributes
+                {
+                    ItemName        "The Huntsman"
+                    "damage bonus"  0.5
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name        wave01b
+            Where       spawnbot
+            TotalCount  15
+            MaxActive   5
+            SpawnCount  5
+            WaitBeforeStarting  15
+            WaitBetweenSpawns   0
+        
+            TotalCurrency   100
+        
+            TFBot
+            { 
+                Class       Soldier
+                Skill       Normal
+                Item        "The Man in Slacks"
+            }
+        }
+        WaveSpawn   
+        {
+            Name wave01c
+            Where spawnbot
+            TotalCount 3
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 20
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 200
+            TFBot
+            { 
+                Template    T_TFBot_Giant_Scout_Baseball
+                Item        "Batter's Helmet"
+			    Item        "MNC Mascot Outfit"
+            }
+        }
+        WaveSpawn
+        {
+            Name wave01e
+            WaitForAllSpawned  wave01a
+            Where spawnbot_invasion
+            TotalCount 40
+            MaxActive 10
+            SpawnCount 10
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 15
+            TotalCurrency 200
+            TFBot
+            {
+                Template    T_TFBot_Scout_Melee
+                ClassIcon   scout_bat_nys
+            }
+        }
+        WaveSpawn   
+        {
+            Name wave01d
+            WaitForAllDead   wave01a
+            Where spawnbot_tertiary
+            TotalCount 8
+            MaxActive 4
+            SpawnCount 4
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 200
+            Squad
+            {
+                FormationSize   500
+                TFBot
+                { 
+                    Template    T_TFBot_Giant_Soldier_Spammer
+                    Item        "Full Metal Drill Hat"
+                    Item        "The Man in Slacks"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                    Tag         bot_squad_member
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                     Tag         bot_squad_member
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                     Tag         bot_squad_member
+                }
+            }
+        }
+    }
+
+    Wave 
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        
+        WaveSpawn
+        {
+            Name        2a
+            Where       spawnbot
+            TotalCount  10
+            MaxActive   10
+            SpawnCount  1
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   0.1
+        
+            TotalCurrency 50
+            
+            TFBot
+            { 
+                Template    T_TFBot_Pyro
+                Skill       Easy
+                Item        "Blizzard Breather"
+                Item        "Sub Zero Suit"
+            }
+        }
+        WaveSpawn
+        {
+            Name 2b
+            WaitForAllDead  2a
+            Where spawnbot
+            TotalCount 16
+            MaxActive 6
+            SpawnCount 2
+            WaitBeforeStarting 2
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 100
+            
+            TFBot
+            { 
+                Template    T_TFBot_Pyro
+                Skill       Easy
+                Item        "Blizzard Breather"
+                Item        "Sub Zero Suit"
+            }
+        }
+        WaveSpawn
+        {
+            Name 2c
+            Where spawnbot
+            TotalCount 12
+            MaxActive 8
+            SpawnCount  4
+            WaitBeforeStarting 15
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 200
+            
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Giant_Demoman
+                    Item 		"Climbing Commander"
+                    Item		"EOTL_demopants"
+                    Item		"The Sub Zero Suit"
+                }
+                TFBot
+                { 
+                    Class       Soldier
+                    Skill       Normal
+                    Item		"Chieftain's Challenge"
+                    Item        "The Man in Slacks"
+                }
+                TFBot
+                { 
+                    Class       Soldier
+                    Skill       Normal
+                    Item		"Chieftain's Challenge"
+                    Item        "The Man in Slacks"
+                }
+                TFBot
+                { 
+                    Class       Soldier
+                    Skill       Normal
+                    Item		"Chieftain's Challenge"
+                    Item        "The Man in Slacks"
+                }
+
+            }
+        }
+        WaveSpawn
+        {
+            Name 2d
+            Where spawnbot
+            TotalCount 15
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 100
+            
+            TFBot
+            {
+                Template    T_TFBot_Heavyweapons_Fist
+                Item        "Warrior's Spirit"
+                Name        "Warrior's Heavy"
+                ClassIcon   heavy_warrior
+            }
+        }
+        
+        WaveSpawn
+        {
+            Name 2e
+            WaitForAllDead  2c
+            Where spawnbot_tertiary
+            TotalCount 4
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 8
+            TotalCurrency 100
+            TFBot
+            {
+                Template    T_TFBot_Force_Giant_Sniper_SMG
+            }
+        }
+        WaveSpawn
+        {
+            Name 2f
+            WaitForAllDead  2d
+            Where spawnbot_tertiary
+            TotalCount 48
+            MaxActive 12
+            SpawnCount 6
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 200
+            
+            TFBot
+            {
+                Template    T_TFBot_Demoman_Knight
+                Item		"Stylish DeGroot"
+                Item	    "The Sole Saviors"
+                Item		"The Merc's Muffler"
+                Item		"The Toowoomba Tunic"
+                Item		"The Shogun's Shoulder Guard"
+                Item		"The Grand Duchess Tiara"
+            }
+        }
+        WaveSpawn
+        {
+            Name 2g
+            WaitForAllDead  2e
+            Where spawnbot
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 30
+        
+            TotalCurrency 100
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Demoman
+                    Item 		"Climbing Commander"
+                    Item		"EOTL_demopants"
+                    Item		"The Sub Zero Suit"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name                2h
+            WaitForAllDead      2f
+            Where               spawnbot
+            TotalCount          30
+            MaxActive           12
+            SpawnCount          6
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   10
+            TotalCurrency       50
+            
+            TFBot
+            {
+                Class           Soldier
+                Skill           Normal
+            }
+        }
+    }
+
+    Wave 
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name        3a
+            TotalCount  1
+            MaxActive   1
+            SpawnCount  1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  25000
+                Speed   75
+
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 3a
+            Where spawnbot_main
+            TotalCount 30
+            MaxActive 8
+            SpawnCount  2
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 5
+            TotalCurrency 100
+            TFBot
+            { 
+                Class   Heavy
+                Skill   Easy
+                Item	"EOTL_Ursa Major"
+				Item	"The Mann of the House"
+            }
+        }
+        WaveSpawn
+        {
+            Name 3a
+            Where spawnbot_main
+            TotalCount 3
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting 30
+            WaitBetweenSpawns 30
+            TotalCurrency 100
+            TFBot
+            { 
+                Template    T_TFBot_Force_Giant_Pyro_DragonFury
+            }
+        }
+        WaveSpawn
+        {
+            Name 3b1
+            WaitForAllDead   3a
+            Where spawnbot_invasion
+            TotalCount 21
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+            TotalCurrency 100
+            TFBot
+            { 
+                Class       Soldier
+                Item        "The Man in Slacks"
+                Skill       Normal
+            }
+        }
+        WaveSpawn
+        {
+            Name 3b
+            WaitForAllSpawned  3b1
+            Where spawnbot
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 6
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 0
+            TotalCurrency 100
+            TFBot
+            { 
+                Class       Soldier
+                Item        "The Man in Slacks"
+                Skill       Normal
+            }
+        }
+        WaveSpawn
+        {
+            Name 3b
+            WaitForAllDead   3a
+            Where spawnbot
+            TotalCount 12
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 25
+            TotalCurrency 100
+            Squad
+            {
+                TFBot
+                { 
+                    Template    T_TFBot_Giant_Soldier_Spammer_Reload
+                    Item        "The Man in Slacks"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                }
+                TFBot
+                { 
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name        3c
+            WaitForAllDead   3b
+            TotalCount  1
+            MaxActive   1
+            SpawnCount  1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 200
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  30000
+                Speed   75
+                Skin    0
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 3c
+            WaitForAllDead   3b
+            Where spawnbot
+            TotalCount 60
+            MaxActive 12
+            SpawnCount 6
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 15
+            TotalCurrency   100
+            Support         1
+            TFBot
+            { 
+                Class       Scout
+                Skill       Easy
+            }
+        }
+        WaveSpawn
+        {
+            Name 3c
+            WaitForAllDead   3b
+            Where spawnbot
+            TotalCount  2
+            MaxActive   2
+            SpawnCount  1
+            WaitBeforeStarting 25
+            WaitBetweenSpawns 50
+            TotalCurrency 100
+            TFBot
+            { 
+                Template    T_TFBot_Giant_Soldier_SlowBarrage
+                Item 	    "Tyrant's Helm"
+                Item        "The Man in Slacks"
+                ItemAttributes
+                {
+                    ItemName 							"Tyrant's Helm"
+                    "set item tint rgb" 				1315860
+                }
+            }
+        }
+    }
+
+    Wave //$1500
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name        4a
+            Where       spawnbot_main
+            TotalCount  2
+            MaxActive   2
+            SpawnCount  1
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   20
+            TotalCurrency 400
+            TFBot
+                {
+                    Template    T_TFBot_Giant_Heavyweapons
+                    Item	    "Napper's Respite"
+					Item		"EOTL_Ursa Major"
+					Item		"The Mann of the House"
+                }
+        }
+        WaveSpawn
+        {
+            Name        4a
+            Where       spawnbot
+            TotalCount  24
+            MaxActive   12
+            SpawnCount  12
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   20
+            TotalCurrency 100
+            TFBot
+            {
+                Class           Soldier
+                Skill           Normal
+            }
+        }
+        WaveSpawn
+        {
+            Name 4b
+            WaitForAllDead   4a
+            Where spawnbot_invasion
+            TotalCount  30
+            MaxActive   8
+            SpawnCount  3
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   5
+            TotalCurrency 200
+            TFBot
+            {
+                Template    T_TFBot_Force_Pyro_DragonFury
+            }
+        }
+        WaveSpawn
+        {
+            Name 4c
+            WaitForAllDead   4a
+            Where spawnbot
+            TotalCount 2
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting  10
+            WaitBetweenSpawns   30
+            TotalCurrency 200
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Soldier_Spammer
+                    Attributes  AlwaysCrit
+                    Item        "The Doe-Boy"
+                    Item        "The Man in Slacks"
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name                4d
+            WaitForAllDead      4c
+            Where               spawnbot
+            Where               spawnbot_tertiary
+            TotalCount          30
+            MaxActive           12
+            SpawnCount          6
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   10
+            TotalCurrency       200
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Soldier_Extended_Concheror
+                    Skill       Hard
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Heavyweapons_Shotgun
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Heavyweapons_Shotgun
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 4d
+            WaitForAllDead   4c
+            Where spawnbot
+            TotalCount 6
+            MaxActive 4
+            SpawnCount 2
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   25
+            TotalCurrency 400
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Demo_Burst
+                    Attributes  AlwaysCrit
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Medic_QuickUber
+                    Item		"The Chronoscarf"
+                }
+            }
+        }
+    }
+
+    Wave 
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        WaveSpawn
+        {
+            Name 5a
+            Where spawnbot_main
+            TotalCount 40
+            MaxActive 10
+            SpawnCount 5
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   6
+            TotalCurrency 300
+            TFBot
+            {
+                Class       Scout
+                Skill       Normal
+                Attributes  AlwaysCrit
+            }
+        }
+        WaveSpawn
+        {
+            Name 5a
+            Where spawnbot
+            TotalCount 20
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting  10
+            WaitBetweenSpawns   8
+            TotalCurrency 300
+            TFBot
+            {
+                Template    T_TFBot_Heavyweapons_Fist
+                Item        "Warrior's Spirit"
+                Name        "Warrior's Heavy"
+                ClassIcon   heavy_warrior
+                Attributes  AlwaysCrit
+            }
+        }
+        WaveSpawn
+        {
+            Name 5b
+            WaitForAllDead  5a
+            Where spawnbot
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 2
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   30
+            TotalCurrency 400
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Heavyweapons_Deflector
+                    Attributes  AlwaysCrit
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Medic
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5b
+            WaitForAllDead  5a
+            Where spawnbot
+            TotalCount  8
+            MaxActive   8
+            SpawnCount  2
+            WaitBeforeStarting  5
+            WaitBetweenSpawns   20
+            TotalCurrency 100
+            TFBot
+            {
+                Template    T_TFBot_Giant_Scout_Fast
+            }
+        }
+        WaveSpawn
+        {
+            Name 5b
+            WaitForAllDead  5a
+            Where spawnbot
+            TotalCount  1
+            MaxActive   1
+            SpawnCount  1
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   0
+            TotalCurrency 300
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  40000
+                Speed   75
+
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5c
+            WaitForAllDead  5b
+            Where spawnbot
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting  25
+            WaitBetweenSpawns   0
+            TotalCurrency 100
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "boss_path_1"
+                Health  40000
+                Speed   75
+                Skin    1
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5c
+            WaitForAllDead  5b
+            Where spawnbot
+            TotalCount 4
+            MaxActive 4
+            SpawnCount 2
+            WaitBeforeStarting  0
+            WaitBetweenSpawns   60
+            TotalCurrency 50
+            Squad
+            {
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Heavyweapons_Deflector
+                    Attributes  AlwaysCrit
+                }
+                TFBot
+                {
+                    Template    T_TFBot_Giant_Medic
+                }
+            }
+        }
+        WaveSpawn
+        {
+            Name 5c
+            WaitForAllDead  5b
+            Where spawnbot
+            TotalCount 4
+            MaxActive 4
+            SpawnCount  1
+            WaitBeforeStarting  10
+            WaitBetweenSpawns   10
+            TotalCurrency 200
+            TFBot
+			{
+				Template T_TFBot_Giant_Soldier_Spammer
+				Attributes AlwaysCrit
+			}
+        }
+        WaveSpawn
+        {
+            Name 5c
+            WaitForAllDead  5b
+            Where spawnbot_secondary
+            TotalCount 4
+            MaxActive 4
+            SpawnCount  1
+            WaitBeforeStarting  10
+            WaitBetweenSpawns   10
+            TotalCurrency 200
+            TFBot
+			{
+				Template T_TFBot_Giant_Soldier_Spammer
+				Attributes AlwaysCrit
+			}
+        }
+    }
+}

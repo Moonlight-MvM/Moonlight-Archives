@@ -1,0 +1,1347 @@
+#base robot_standard.pop
+#base robot_giant.pop
+
+//NOTES
+//tank_path_a is a normal tank path that breaks the front barricade.
+//tank_path_b is a bigrock-style tank path that will race to the hatch out of the way of whatever is going on at the front.
+
+
+
+WaveSchedule
+{
+    StartingCurrency 400
+    CanBotsAttackWhileInSpawnRoom no
+    RespawnWaveTime 5
+    AddSentryBusterWhenDamageDealtExceeds 3000
+    AddSentryBusterWhenKillCountExceeds 15
+    Advanced 1
+
+    Mission // Sentry Busters
+    {
+        Where spawnbot
+        Objective DestroySentries
+        BeginAtWave 1
+        RunForThisManyWaves 7
+        DesiredCount 1
+    
+        CooldownTime 35
+    
+        TFBot
+        { 
+            Template T_TFBot_SentryBuster
+        }
+    }
+
+    Mission // wave 1 snipers
+    {
+        Where spawnbot_flank
+        Objective Sniper
+        BeginAtWave 1
+        RunForThisManyWaves 1
+        DesiredCount 1
+    
+        InitialCooldown 50
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Class Sniper
+            Skill Hard
+            MaxVisionRange 3000 
+        }
+    }
+
+    Mission // wave 2 snipers
+    {
+        Where spawnbot_flank
+        Objective Sniper
+        BeginAtWave 2
+        RunForThisManyWaves 1
+        DesiredCount 1
+    
+        InitialCooldown 30
+        CooldownTime 45
+    
+        TFBot
+        { 
+            Class Sniper
+            Skill Hard
+            MaxVisionRange 3000 
+        }
+    }
+
+    Mission // wave 3 + 4 snipers
+    {
+        Where spawnbot_flank
+        Objective Sniper
+        BeginAtWave 3
+        RunForThisManyWaves 2
+        DesiredCount 2
+    
+        InitialCooldown 30
+        CooldownTime 50
+    
+        TFBot
+        { 
+            Class Sniper
+            Skill Hard
+            MaxVisionRange 3000 
+        }
+    }
+
+    Mission
+    {
+        Where spawnbot_flank
+        Objective Sniper
+        BeginAtWave 5
+        RunForThisManyWaves 1
+        DesiredCount 3
+    
+        InitialCooldown 30
+        CooldownTime 40
+    
+        TFBot
+        { 
+            Template T_TFBot_Sniper_Sydney_Sleeper
+            Skill Hard
+            MaxVisionRange 3000 
+        }
+    }
+
+    
+
+    Templates 
+    {
+        T_TFBot_Soldier_Bazooka // yeah i like sketchy swing, how could you tell?
+		{
+			Class Soldier
+			Name "Bazooka Soldier"
+			ClassIcon soldier_bazooka
+			Skill Hard
+			Item "The Beggar's Bazooka"
+			WeaponRestrictions PrimaryOnly
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "The Beggar's Bazooka"
+				"auto fires full clip" 0
+				"can overload" 0
+			}
+		}
+        T_TFBot_Demo_Sticky
+        {
+			Class Demoman
+			Skill Easy
+			WeaponRestrictions SecondaryOnly
+			Name "Sticky Spammer"
+			ClassIcon demo_sticky_daan
+			ItemAttributes
+			{
+				ItemName    "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon"    1
+				"override projectile type"    27
+			}
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
+				"stickybomb charge rate" 0.001
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+				"max pipebombs decreased" -7
+				"Projectile range increased" 0.5
+			}
+        }
+        T_TFBot_Heavyweapons_Deflector
+        {
+            Class Heavyweapons
+            Name "Deflector Heavy"
+            ClassIcon heavy_deflector
+            Skill Hard
+            Item "The U-clank-a"
+            Item "Deflector"
+            WeaponRestrictions PrimaryOnly
+            MaxVisionRange 1200
+            ItemAttributes
+            {
+                ItemName "Deflector"
+                "attack projectiles" 1
+            }
+        }
+    }
+
+    Wave // Wave 1: $800
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+
+
+        WaveSpawn
+        {
+            Name "1continuous"
+            Where spawnbot
+            TotalCount 80
+            MaxActive 8
+            SpawnCount 8
+            WaitBeforeStarting 1
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 200
+
+            Support 1
+        
+            TFBot
+            {
+                Template T_TFBot_Scout_Melee
+				ClassIcon scout_bat_nys
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "bombrunner"
+            Where spawnbot
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 0
+
+            Support Limited
+        
+            TFBot
+            { 
+                Template T_TFBot_Scout_Melee
+				ClassIcon scout_bat_nys
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-1"
+            Where spawnbot
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 3
+            WaitBeforeStarting 6
+            WaitBetweenSpawns 1
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Class Soldier
+                Skill Normal
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-2"
+            WaitForAllSpawned "1a-1"
+            Where spawnbot
+            TotalCount 5
+            MaxActive 5
+            SpawnCount 5
+            WaitBeforeStarting 15
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Class Heavyweapons
+                Skill Easy
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-3"
+            WaitForAllSpawned "1a-2"
+            Where spawnbot
+            TotalCount 6
+            MaxActive 6
+            SpawnCount 6
+            WaitBeforeStarting 15
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Class Demoman 
+                Skill Normal
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-4"
+            WaitForAllSpawned "1a-3"
+            Where spawnbot
+            TotalCount 5
+            MaxActive 5
+            SpawnCount 5
+            WaitBeforeStarting 15
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Class Heavyweapons
+                Skill Easy
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-5"
+            WaitForAllSpawned "1a-4"
+            Where spawnbot
+            TotalCount 8
+            MaxActive 4
+            SpawnCount 4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 15
+        
+            TotalCurrency 50
+        
+            Squad
+            {
+                TFBot
+                { 
+                    Class Soldier
+                    Skill Hard
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-6"
+            WaitForAllSpawned "1a-5"
+            Where spawnbot
+            TotalCount 12
+            MaxActive 12
+            SpawnCount 6
+            WaitBeforeStarting 15
+            WaitBetweenSpawns 15
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Class Demoman
+                Skill Normal 
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1a-7"
+            WaitForAllSpawned "1a-6"
+            Where spawnbot
+            TotalCount 10
+            MaxActive 5
+            SpawnCount 5
+            WaitBeforeStarting 15
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 50
+        
+            TFBot
+            {
+                Class Heavyweapons
+                Skill Easy
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1b-1"
+            WaitForAllSpawned "1a-6"
+            Where spawnbot
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 25
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Giant_Soldier
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "1b-2"
+            WaitForAllSpawned "1b-1"
+            Where spawnbot
+            TotalCount 4
+            MaxActive 4
+            SpawnCount 4
+            WaitBeforeStarting 30
+        
+            TotalCurrency 150
+        
+            Squad
+            { 
+                TFBot
+                {
+                    Template T_TFBot_Giant_Soldier
+                } 
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+
+
+
+    }
+
+    Wave // Wave 2: $1000
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+
+
+        WaveSpawn
+        {
+            Name "2a"
+            Where spawnbot
+            TotalCount 3
+            MaxActive 3
+            SpawnCount 3
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 200
+        
+            Squad
+            { 
+                TFBot
+                {
+                    Template T_TFBot_Giant_Heavyweapons
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2a-1"
+            Where spawnbot
+            TotalCount 30
+            MaxActive 10
+            SpawnCount 6
+            WaitBeforeStarting 4
+            WaitBetweenSpawns 8
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Scout_Melee
+				ClassIcon scout_bat_nys
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2b-demo"
+            WaitForAllDead "2a"
+            Where spawnbot
+            TotalCount 24
+            MaxActive 12
+            SpawnCount 8
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Class Demoman
+                Skill Normal
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2b-soldier"
+            WaitForAllSpawned "2b-demo"
+            Where spawnbot
+            TotalCount 32
+            MaxActive 12
+            SpawnCount 8
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Class Soldier
+                Skill Normal
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2b-1"
+            WaitForAllSpawned "2a-1"
+            Where spawnbot
+            TotalCount 2
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting 7
+            WaitBetweenSpawns 18
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Giant_Scout_Fast
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2b-2"
+            WaitForAllDead "2b-1"
+            Where spawnbot
+            TotalCount 2
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 3
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Giant_Soldier_Spammer
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2c"
+            WaitForAllSpawned "2b-soldier"
+            Where spawnbot
+            TotalCount 3
+            MaxActive 3
+            SpawnCount 3
+            WaitBeforeStarting 13
+        
+            TotalCurrency 200
+        
+            Squad
+            { 
+                TFBot
+                {
+                    Template T_TFBot_Giant_Heavyweapons
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic_QuickUber
+                }
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "2support"
+            WaitForAllSpawned "2b-soldier"
+            Where spawnbot
+            TotalCount 100
+            MaxActive 8
+            SpawnCount 8
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+
+            Support 1
+        
+            TFBot
+            { 
+                Template T_TFBot_Scout_Melee
+				ClassIcon scout_bat_nys
+            }
+        }
+
+
+
+    }
+
+    Wave // Wave 3: $1100
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+
+        // support soldiers, they drop $200 total
+        WaveSpawn
+        {
+            Where spawnbot
+            TotalCount 40
+            MaxActive 4
+            SpawnCount 2
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 3
+        
+            TotalCurrency 200
+        
+            Support Limited
+
+            TFBot
+            { 
+                Class Soldier
+                Skill Normal
+            }
+        }
+
+        // first subwave gives $300
+        // FIRST SUBWAVE: burst demo
+        WaveSpawn
+        {
+            Name "3a"
+            Where spawnbot
+            TotalCount 2
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Giant_Demo_Burst
+            }
+        }
+
+        // FIRST SUBWAVE: demoknights
+        WaveSpawn
+        {
+            Name "3a"
+            Where spawnbot_flank
+            TotalCount 24
+            MaxActive 16
+            SpawnCount 8
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 200
+        
+            TFBot
+            { 
+                Template T_TFBot_Demoman_Knight
+            }
+        }
+
+        // second subwave gives $400
+        // SECOND SUBWAVE: 35k tank
+        WaveSpawn
+        {
+            Name "3b"
+            WaitForAllDead "3a"
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 300
+        
+            Tank
+            {
+                Name "Tank"
+                StartingPathTrackNode "tank_path_a10"
+                Health 35000
+                Speed 75
+                
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+
+        // SECOND SUBWAVE: infinite clip soldiers
+        WaveSpawn
+        {
+            Name "3b"
+            WaitForAllDead "3a"
+            Where spawnbot
+            TotalCount 4
+            MaxActive 4
+            SpawnCount 2
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 25
+        
+            TotalCurrency 100
+
+            Squad
+            {
+                TFBot
+                { 
+                    Template T_TFBot_Giant_Soldier_Spammer
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+            }
+        }
+
+        // MANNSLAUGHTER-STYLE PUNISH: heavies with uber medics ($200)
+        WaveSpawn
+        {
+            Name "3c"
+            WaitForAllDead "3b"
+            Where spawnbot
+            TotalCount 12
+            MaxActive 6
+            SpawnCount 6
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 150
+        
+            Squad
+            { 
+                TFBot
+                {
+                    Template T_TFBot_Giant_Heavyweapons
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+            }
+        }
+
+        WaveSpawn // bat scouts
+        {
+            Name "3c"
+            WaitForAllDead "3b"
+            Where spawnbot
+            TotalCount 20
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 50
+
+            Support 1
+        
+            TFBot
+            { 
+                Template T_TFBot_Scout_Melee
+				ClassIcon scout_bat_nys
+            }
+        }
+    }
+
+    Wave // Wave 4: $900
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        
+        WaveSpawn
+        {
+            Name "4s"
+            Where spawnbot
+            TotalCount 2
+            MaxActive 3
+            SpawnCount 2
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 0
+            
+            Support 1
+        
+            TFBot
+            {
+                Template T_TFBot_Scout_Melee
+				ClassIcon scout_bat_nys
+            }
+        }
+
+        // first subwave drops $300
+        // FIRST SUBWAVE: deflectors and soldiers
+        WaveSpawn
+        {
+            Name "4a-1"
+            Where spawnbot
+            TotalCount 24
+            MaxActive 10
+            SpawnCount 8
+            WaitBeforeStarting 2
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Heavyweapons_Deflector
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "4a-2"
+            Where spawnbot
+            TotalCount 24
+            MaxActive 10
+            SpawnCount 8
+            WaitBeforeStarting 10
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Class Demoman
+                Skill Hard
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "4a"
+            Where spawnbot
+            TotalCount 2
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting 30
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            TFBot
+            { 
+                Template T_TFBot_Giant_Demoman
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "4a-3"
+            WaitForAllSpawned "4a"
+            Where spawnbot
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            TFBot
+            {
+                Template T_TFBot_Giant_Soldier_Spammer
+            }
+        }
+
+        // second subwave drops $200
+        // SECOND SUBWAVE: giant soldiers with uber medics
+        WaveSpawn
+        {
+            Name "4b-1"
+            WaitForAllDead "4a"
+            Where spawnbot
+            TotalCount 8
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 3
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            Squad
+            {
+                TFBot
+                {
+                    Template T_TFBot_Giant_Soldier_Spammer
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+            }
+        }
+
+        // SECOND SUBWAVE: demoknights
+        WaveSpawn
+        {
+            Name "4b-2"
+            WaitForAllDead "4a"
+            Where spawnbot
+            TotalCount 20
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 100
+        
+            TFBot
+            {
+                Template T_TFBot_Demoman_Knight
+            }
+        }
+
+        // third subwave gives $400
+        // THIRD SUBWAVE: giant heavies
+
+        WaveSpawn
+        {
+            Name "4c-1"
+            WaitForAllSpawned "4b-1"
+            Where spawnbot
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 20
+        
+            TotalCurrency 50
+        
+            TFBot
+            { 
+                Template T_TFBot_Giant_Heavyweapons
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "4c-2"
+            WaitForAllSpawned "4c-1"
+            Where spawnbot
+            TotalCount 8
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 30
+            WaitBetweenSpawns 30
+        
+            TotalCurrency 150
+        
+            Squad
+            {
+                TFBot
+                {
+                    Template T_TFBot_Giant_Heavyweapons
+                }
+                TFBot
+                {
+                    Template T_TFBot_Soldier_Extended_Concheror
+                }
+                TFBot
+                {
+                    Template T_TFBot_Soldier_Extended_Concheror
+                }
+                TFBot
+                {
+                    Template T_TFBot_Soldier_Extended_Concheror
+                }
+            }
+        }
+
+        // THIRD SUBWAVE: support soldiers
+        WaveSpawn
+        {
+            Name "4c-2"
+            WaitForAllSpawned "4b-2"
+            Where spawnbot
+            TotalCount 30
+            MaxActive 12
+            SpawnCount 6
+            WaitBeforeStarting 8
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 100
+
+            Support 1
+        
+            TFBot
+            {
+                Class Soldier
+                Skill Normal
+            }
+        }
+
+    }
+
+    Wave // Wave 5: $900
+    {
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+        
+        // first subwave gives $200
+        // FIRST SUBWAVE: scattergun scouts
+        WaveSpawn
+        {
+            Name "5a-1"
+            Where spawnbot
+            TotalCount 32
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 5
+        
+            TotalCurrency 100
+        
+            TFBot
+            {
+                Class Scout
+                Skill Normal
+            }
+        }
+
+        // FIRST SUBWAVE: infinite clip soldier with uber medics
+        WaveSpawn
+        {
+            Name "5a-2"
+            Where spawnbot
+            TotalCount 8
+            MaxActive 4
+            SpawnCount 4
+            WaitBeforeStarting 15
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            Squad
+            {
+                TFBot
+                {
+                    Template T_TFBot_Giant_Soldier_Spammer
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+            }
+        }
+
+        // second subwave drops $600
+        // SECOND SUBWAVE: path b tanks
+        WaveSpawn // 4 tanks, 20k HP each
+        {
+            Name "5b"
+            WaitForAllSpawned "5a-2"
+            TotalCount 4
+            MaxActive 4
+            SpawnCount 1
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 40
+        
+            TotalCurrency 300
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "tank_path_b1"
+                Health 20000
+                Speed 75
+                
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+
+        // SECOND SUBWAVE: giant demos
+        WaveSpawn
+        {
+            Name "5b-1"
+            WaitForAllSpawned "5a-2"
+            Where spawnbot
+            TotalCount 4
+            MaxActive 4
+            SpawnCount 1
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            TFBot
+            {
+                Template T_TFBot_Giant_Demoman
+            }
+        }
+
+        // SECOND SUBWAVE: support bat scouts
+        WaveSpawn
+        {
+            Name "5support"
+            WaitForAllSpawned "5a-1"
+            Where spawnbot
+            TotalCount 48
+            MaxActive 8
+            SpawnCount 8
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 0
+        
+            TotalCurrency 100
+        
+            TFBot
+            {
+                Template T_TFBot_Scout_Melee
+                Attributes AlwaysCrit
+				ClassIcon scout_bat_nys
+            }
+        }
+
+        // THIRD SUBWAVE: heavies with medics
+        WaveSpawn
+        {
+            Name "5c"
+            WaitForAllSpawned "5a-2"
+            Where spawnbot
+            TotalCount 20
+            MaxActive 10
+            SpawnCount 5
+            WaitBeforeStarting 65
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            Squad
+            {
+                TFBot
+                {
+                    Class Heavy
+                    Skill Normal
+                }
+                TFBot
+                {
+                    Class Heavy
+                    Skill Easy
+                }
+                TFBot
+                {
+                    Class Heavy
+                    Skill Easy
+                }
+                TFBot
+                {
+                    Class Heavy
+                    Skill Easy
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+            }
+        }
+
+        // THIRD SUBWAVE: giant deflectors with medics
+        WaveSpawn
+        {
+            Name "5c"
+            WaitForAllSpawned "5b-1"
+            Where spawnbot
+            TotalCount 8
+            MaxActive 8
+            SpawnCount 4
+            WaitBeforeStarting 5
+            WaitBetweenSpawns 20
+        
+            TotalCurrency 100
+        
+            Squad
+            {
+                TFBot
+                {
+                    Template T_TFBot_Giant_Heavyweapons
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+                TFBot
+                {
+                    Template T_TFBot_Medic
+                }
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "5d"
+            WaitForAllDead "5c"
+            Where spawnbot
+            TotalCount 32
+            MaxActive 8
+            SpawnCount 8
+            WaitBeforeStarting 0
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 100
+
+            Support Limited
+        
+            TFBot
+            { 
+                Template T_TFBot_Soldier_Extended_Buff_Banner
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "5d"
+            WaitForAllSpawned "5b"
+            Where spawnbot
+            TotalCount 2
+            MaxActive 2
+            SpawnCount 1
+            WaitBeforeStarting 70
+            WaitBetweenSpawns 10
+        
+            TotalCurrency 200
+        
+            TFBot
+            {
+                Template T_TFBot_Giant_Heavyweapons
+            }
+        }
+
+        // FINAL TANK: 45k
+        WaveSpawn // Tank # HP
+        {
+            Name "5e"
+            WaitForAllSpawned "5b"
+            TotalCount 1
+            MaxActive 1
+            SpawnCount 1
+            WaitBeforeStarting 75
+        
+            TotalCurrency 400
+        
+            Tank
+            {
+                Name "tankboss"
+                StartingPathTrackNode "tank_path_a10"
+                Health 35000
+                Speed 75
+                Skin 1
+        
+                OnBombDroppedOutput
+                {
+                    Target boss_deploy_relay
+                    Action Trigger
+                }
+            }
+        }
+    }
+
+}
