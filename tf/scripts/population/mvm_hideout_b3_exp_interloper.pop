@@ -351,7 +351,7 @@ WaveSchedule
 		}
 	}
 	
-	// Wave 2/5 ($600)
+	// Wave 2/5 ($800)
 	
 	// 3 Giant Scouts
 	// 26 Pyros
@@ -405,6 +405,7 @@ WaveSchedule
 			TFBot
 			{
 			    Class Pyro
+				Skill Easy
 			}
 		}
 		
@@ -446,10 +447,12 @@ WaveSchedule
 			    TFBot
 				{
 			        Class Pyro
+					Skill Easy
 				}
 			    TFBot
 				{
 			        Class Pyro
+					Skill Easy
 				}
 			}
 		}
@@ -465,7 +468,7 @@ WaveSchedule
 			WaitForAllSpawned "wave01"
 			WaitBeforeStarting 20
 			WaitBetweenSpawns 10
-			TotalCurrency 100
+			TotalCurrency 300
 			
 			TFBot
 			{
@@ -476,7 +479,7 @@ WaveSchedule
 	
 	// Wave 3/5 ($700)
 	
-	// 1 Tank (16k HP)
+	// 1 Tank (12k HP)
 	// 2 Giant Burst-Fire Soldiers with 2 Uber Medics
 	
 	// 6 Giant Bowmen
@@ -485,7 +488,7 @@ WaveSchedule
 	
 	// 4 Giant Pyros
 	// 24 Heater Heavies
-	// 1 Tank (21k HP)
+	// 1 Tank (15k HP)
 	
 	Wave
 	{
@@ -511,7 +514,7 @@ WaveSchedule
 			FirstSpawnWarningSound "mvm\mvm_tank_start.wav"
 			Tank
 			{
-				Health 16000
+				Health 12000
 				Speed 75
 				Name "tank"
 				StartingPathTrackNode "boss_path_1"
@@ -589,6 +592,7 @@ WaveSchedule
 			TFBot
 			{
 			    Class Pyro
+				Skill Easy
 			}
 		}
 		
@@ -678,7 +682,7 @@ WaveSchedule
 			FirstSpawnWarningSound "mvm\mvm_tank_start.wav"
 			Tank
 			{
-				Health 21000
+				Health 15000
 				Speed 75
 				Name "tank"
 				StartingPathTrackNode "boss_path_1"
@@ -694,7 +698,7 @@ WaveSchedule
 	
 	// Wave 4/5($1500)
 	
-	// 2 Tanks (22k HP)
+	// 2 Tanks (17k HP)
 	// 8 Giant Rapid Fire Demomen squadded with a kritz medic
 	// 2 Colonel Barrages (Spawn after all tanks have spawned) squadded with 3 uber medics
 	// 64 Scouts (Easy Skill)
@@ -723,12 +727,12 @@ WaveSchedule
 			
 			TotalCurrency 300
 			WaitBeforeStarting 20
-			WaitBetweenSpawns 100
+			WaitBetweenSpawns 130
 			FirstSpawnWarningSound "mvm\mvm_tank_start.wav"
 			LastSpawnWarningSound "mvm\mvm_tank_start.wav"
 			Tank
 			{
-				Health 22000
+				Health 17000
 				Speed 75
 				Name "tank"
 				StartingPathTrackNode "boss_path_1"
@@ -886,7 +890,7 @@ WaveSchedule
 	
 	// Wave 5/5 ($1300)
 	
-	// 4 Tanks (18k HP)
+	// 4 Tanks (15k HP)
     // 4 Giant Heavies (1/2 Force Flank)
 	
 	// 6 Giant Burst-Fire Demomen squadded with two kritz medics
@@ -946,7 +950,7 @@ WaveSchedule
 			LastSpawnWarningSound "mvm\mvm_tank_start.wav"
 			Tank
 			{
-				Health 20000
+				Health 13000
 				Speed 75
 				Name "tank"
 				StartingPathTrackNode "boss_path_1"
@@ -1114,10 +1118,10 @@ WaveSchedule
 			FirstSpawnWarningSound "mvm\mvm_tank_start.wav"
 			Tank
 			{
-				Health 30000 //20000 //25000
+				Health 20000 //25000
 				Speed 75
 				Name "tank"
-				//Skin 1
+				Skin 1
 				StartingPathTrackNode "boss_path_1"
 				
 				OnBombDroppedOutput
@@ -1140,7 +1144,7 @@ WaveSchedule
 			FirstSpawnWarningSound "mvm\mvm_tank_start.wav"
 			Tank
 			{
-				Health 19000 //15000
+				Health 15000
 				Speed 75
 				Name "tank"
 				StartingPathTrackNode "boss_path_1"

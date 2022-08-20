@@ -1817,6 +1817,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Pyro
+				ClassIcon Pyro_reflect_daan
 			}
 		}
 
@@ -1918,6 +1919,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Pyro
+				ClassIcon Pyro_reflect_daan
 			}
 		}
 

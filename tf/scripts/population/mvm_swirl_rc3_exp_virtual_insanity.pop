@@ -1,4 +1,3 @@
-
 // Virtual Insanity
 // mvm_swirl Expert
 // Made by Ciaran for the Moonlight MvM 2022 Tour
@@ -942,6 +941,7 @@ the_quirky_gatebot_expert_mission_that_appears_to_be_seemingly_low_payout_but_tr
 		TFBot
 		{
 			Template	T_TFBot_Engineer_Sentry_Teleporter
+			ClassIcon engineer_telein
 			TeleportWhere	spawnbot_main
 			TeleportWhere	spawnbot_left
 			TeleportWhere	spawnbot_right
@@ -991,6 +991,7 @@ the_quirky_gatebot_expert_mission_that_appears_to_be_seemingly_low_payout_but_tr
 		TFBot
 		{
 			Template	T_TFBot_Engineer_Sentry_Teleporter
+			ClassIcon engineer_telein
 			TeleportWhere	spawnbot_main
 			TeleportWhere	spawnbot_left
 			TeleportWhere	spawnbot_right

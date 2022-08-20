@@ -1087,6 +1087,7 @@ WaveSchedule
 				{
 					Template T_TFBot_Giant_Pyro
 					Tag bot_giant
+					ClassIcon pyro_reflect_daan
 				}
 		}
 

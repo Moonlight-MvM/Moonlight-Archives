@@ -127,8 +127,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		Where	spawnbot_mission_sniper
 		BeginAtWave	1
 		RunForThisManyWaves	1
-		InitialCooldown	40
-		CooldownTime	40
+		InitialCooldown	35
+		CooldownTime	35
 		DesiredCount	2
 		TFBot
 		{
@@ -164,7 +164,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		InitialCooldown 20
 		CooldownTime 20
 		
-		DesiredCount 1
+		DesiredCount 2
 			TFBot
 			{
 				Template	T_TFBot_Engineer_Sentry_Battle
@@ -180,7 +180,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		RunForThisManyWaves 2
 
 		InitialCooldown 10
-		CooldownTime 25
+		CooldownTime 15
 		
 		DesiredCount 1
 			TFBot
@@ -196,7 +196,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		BeginAtWave	5
 		RunForThisManyWaves	2
 		InitialCooldown	55
-		CooldownTime	40
+		CooldownTime	20
 		DesiredCount	4
 		TFBot
 		{
@@ -272,7 +272,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		Objective	Spy
 		Where	spawnbot_mission_spy
 		BeginAtWave	6
-		RunForThisManyWaves	1
+		RunForThisManyWaves	2
 		InitialCooldown	30
 		CooldownTime	20
 		DesiredCount	2
@@ -571,7 +571,12 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					Template	T_TFBot_Giant_Demo_RapidFire
 					Name	"Giant Demoman"
 					Item	"glengarry bonnet"
-					Item	"the chargin targe"
+					Item	"the chargin' targe"
+					CharacterAttributes
+					{
+						"charge time increased" -1.5
+						"charge recharge rate increased" -1337
+					}
 					ItemAttributes
 					{
 						ItemName tf_weapon_grenadelauncher
@@ -580,9 +585,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				}
 				TFBot
 				{
-					Template	T_TFBot_Medic_QuickUber
-					Item	"the warsworn helmet"
-					Name	"Quick-Uber Medic"
+					Template	T_TFBot_Medic_SlowRecharge
+					Item	"prussian pickelhaube"
 				}
 			}
 		}
@@ -670,15 +674,13 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				}
 				TFBot
 				{
-					Template	T_TFBot_Medic_QuickUber
-					Item	"the warsworn helmet"
-					Name	"Quick-Uber Medic"
+					Template	T_TFBot_Medic_SlowRecharge
+					Item	"prussian pickelhaube"
 				}
 				TFBot
 				{
-					Template	T_TFBot_Medic_QuickUber
-					Item	"the warsworn helmet"
-					Name	"Quick-Uber Medic"
+					Template	T_TFBot_Medic_SlowRecharge
+					Item	"prussian pickelhaube"
 				}
 			}
 		}
@@ -702,7 +704,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	20
 			Tank
 			{
-				Health	21500
+				Health	23500
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput
@@ -731,6 +733,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Giant_Soldier_RocketShotgun
+				item	"the war pig"
 			}
 		}
 		WaveSpawn
@@ -1057,10 +1060,11 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitForAllSpawned	W4-A1
 			TotalCurrency	200
 			TotalCount	30
-			MaxActive	5
-			SpawnCount	5
+			MaxActive	6
+			SpawnCount	2
 			Support Limited
 			WaitBeforeStarting	20
+			WaitBetweenSpawns 	2
 			Where	spawnbot_single_flag
 			RandomChoice
 			{
@@ -1078,9 +1082,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TotalCurrency	100
 			TotalCount	20
 			MaxActive	5
-			SpawnCount	5
+			SpawnCount	2
 			WaitBeforeStarting	10
-			WaitBetweenSpawns	5
+			WaitBetweenSpawns	2
 			Support	1
 			Where	spawnbot_single_flag
 			TFBot
@@ -1241,7 +1245,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBetweenSpawns	38
 			Tank
 			{
-				Health	15000
+				Health	18000
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput
@@ -1264,7 +1268,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	69
 			Tank
 			{
-				Health	20000
+				Health	24000
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput
@@ -1350,13 +1354,30 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				}
 				TFBot
 				{
-					ClassIcon	soldier_directhit_lite
-					Name	"Direct Hit Soldier"
+					ClassIcon	soldier_burstfire
+					Name	"Burst Fire Soldier"
 					Class	Soldier
-					Attributes HoldFireUntilFullReload
 					Skill	Expert
-					Item	"the direct hit"
-					Item	"the hellmet"
+					Item	"exquisite rack"
+					Item	"powerhouse_rocketlauncher_shellshocker"
+					Attributes	HoldFireUntilFullReload
+					ItemAttributes
+					{
+						ItemName	powerhouse_rocketlauncher_shellshocker
+						"clip size upgrade atomic" -1
+						"fire rate bonus" -1
+						"set_item_texture_wear" 0.2
+					}
+					ItemAttributes
+					{
+						ItemName	"tyrantium helmet"
+						"set item tint RGB"	1315860
+					}
+					Item	"tyrantium helmet"
+					CharacterAttributes
+					{
+						"Projectile speed increased"	0.9
+					}
 				}
 			}
 		}
@@ -1622,7 +1643,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	35
 			Tank
 			{
-				Health	27500
+				Health	29000
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput
@@ -1645,7 +1666,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	140
 			Tank
 			{
-				Health	39000
+				Health	42000
 				Speed	75
 				Skin	1
 				Name "tankboss"

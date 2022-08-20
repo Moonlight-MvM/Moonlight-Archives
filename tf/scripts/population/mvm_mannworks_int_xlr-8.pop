@@ -3,7 +3,7 @@
 
 //Goofy aah mannworks int
 //Made by Package O Lies
-
+//Apperantly the default ai is easy and not normal, how and why was I misinformed and what the fuck is the mandela effect
 
 //spawnbot, left and right spawn
 //spawnbot_mission_sniper, carrier tank cliff
@@ -481,10 +481,12 @@ WaveSchedule
 				TFBot
 				{
 					Class Scout
+					Skill Normal
 				}
 				TFBot
 				{
 					Class Scout
+					Skill Normal
 				}
 			}	
 		}
@@ -528,6 +530,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
+				Skill Normal
 			}
 		}
 		WaveSpawn
@@ -655,6 +658,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
+				Skill Normal
 			}
 		}
 		WaveSpawn
@@ -694,6 +698,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
+				Skill Normal
 			}
 		}
 		WaveSpawn
@@ -808,6 +813,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
+				Skill Normal
 			}
 		}
 		WaveSpawn
@@ -1280,9 +1286,9 @@ WaveSchedule
 			Where spawnbot_left
 			WaitForAllDead 8aa
 			TotalCurrency 50
-			TotalCount 24
-			SpawnCount 4
-			MaxActive 12
+			TotalCount 30
+			SpawnCount 5
+			MaxActive 15
 			WaitBetweenSpawns 7.6
 			WaitBeforeStarting 0
 

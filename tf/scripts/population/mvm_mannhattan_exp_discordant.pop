@@ -137,87 +137,6 @@ WaveSchedule
 				}
 			}
 		}
-		T_TFGateBot_Giant_Soldier_SlowBarrage_Crit //The better major crits
-		{
-			Class Soldier
-			Name "Major Crits"
-			ClassIcon soldier_barrage
-			Health 4200
-
-			EventChangeAttributes
-			{
-				Default
-				{
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag			// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-
-					Item "MvM GateBot Light Soldier"
-					Tag bot_giant
-					Skill Expert
-					WeaponRestrictions PrimaryOnly
-					Attributes MiniBoss
-					Attributes HoldFireUntilFullReload		
-					Attributes AlwaysCrit					
-					ItemAttributes
-					{
-						ItemName "TF_WEAPON_ROCKETLAUNCHER"
-						"clip size upgrade atomic" 26.0
-						"faster reload rate" 0.11
-						"fire rate bonus" 0.2
-						"projectile spread angle penalty" 5
-					}
-					CharacterAttributes
-					{
-						"health regen"	40
-						"move speed bonus"	0.5
-						"damage bonus" 1.5
-						"damage force reduction" 0.4
-						"airblast vulnerability multiplier" 0.4
-						"override footstep sound set" 3
-						"airblast vertical vulnerability multiplier" 0.1
-						"Projectile speed increased" 0.4
-					}
-				}
-				RevertGateBotsBehavior
-				{
-					Item "MvM GateBot Light Soldier"
-					ItemAttributes               // turn off light hat
-					{
-						ItemName "MvM GateBot Light Soldier"
-						"item style override" 1
-					}
-					Tag bot_giant
-					Skill Expert
-					WeaponRestrictions PrimaryOnly
-					Attributes MiniBoss
-					Attributes HoldFireUntilFullReload				
-					Attributes AlwaysCrit					
-					ItemAttributes
-					{
-						ItemName "TF_WEAPON_ROCKETLAUNCHER"
-						"clip size upgrade atomic" 26.0
-						"faster reload rate" 0.22
-						"fire rate bonus" 0.2
-						"projectile spread angle penalty" 5
-					}
-					CharacterAttributes
-					{
-						"health regen"	40
-						"move speed bonus"	0.5
-						"damage bonus" 1.5
-						"damage force reduction" 0.4
-						"airblast vulnerability multiplier" 0.4
-						"override footstep sound set" 3
-						"airblast vertical vulnerability multiplier" 0.1
-						"rage giving scale" 0.1
-						"Projectile speed increased" 0.4
-					}
-				}
-			}
-		}
-	
 		T_TFGateBot_Soldier_Expert
 		{
 			Class Soldier
@@ -317,79 +236,6 @@ WaveSchedule
 			Name "Demoman"
 			Skill Normal
 			Item "The Chargin' Targe"
-		}
-		T_TFBot_Demo_Stickybomb_Giant
-		{
-			Name "Giant Stickybomb Demo"
-			Class Demoman
-			ClassIcon demo_sticky_daan_giant
-			Health 3300
-			Skill Expert
-			Item "The Strontium Stove Pipe"
-			Item "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
-			WeaponRestrictions SecondaryOnly
-			Attributes MiniBoss
-			Tag bot_giant
-
-			ItemAttributes
-			{
-				ItemName "TF_WEAPON_GRENADELAUNCHER"
-				"is_passive_weapon" 1
-				"override projectile type" 27
-				"fire rate penalty" 2000
-			}
-
-			ItemAttributes
-			{
-				ItemName "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
-				"max pipebombs decreased" -7
-				"faster reload rate" 0.01
-				"stickybomb charge rate" 0.01
-				"projectile range decreased" 0.45
-				"fire rate bonus" 0.7
-				"no self blast dmg" 2
-			}
-
-			CharacterAttributes
-			{
-				"move speed bonus"	0.5
-				"damage force reduction" 0.25
-				"airblast vulnerability multiplier" 0.25
-				"override footstep sound set" 4
-			}
-		}
-		T_TFBot_Giant_Demo_Barrage //MK II variant
-		{
-			Class Demoman
-			Name "Rainmaker"
-			ClassIcon demo_scatter
-			//Scale 1.8 Had to remove because mannhattan funnies
-			Skill Expert
-			Health 3750
-			Attributes MiniBoss
-			tag bot_giant
-			Item "Glengarry Bonnet"
-			WeaponRestrictions PrimaryOnly
-			Attributes HoldFireUntilFullReload
-			
-			ItemAttributes
-			{
-				ItemName "tf_weapon_grenadelauncher"
-				"damage Bonus" 1.4
-				"Clip Size Bonus" 8
-				"faster reload rate" 0.08
-				"fire rate bonus" 0.3
-				"projectile spread angle penalty" 5
-				"Projectile speed increased"	1.1
-			}
-			CharacterAttributes
-			{
-				"move speed bonus"	0.5
-				"damage force reduction" 0.4
-				"airblast vulnerability multiplier" 0.4
-				"override footstep sound set" 4
-			}
-				
 		}
 		T_TFGateBot_Heavy_Easy_Nocrit
 		{
@@ -618,33 +464,6 @@ WaveSchedule
 				"bot medic uber health threshold" 69420
 			}
 		}
-		
-		T_TFBot_Medic_Vaccinator_Blast_75res
-		{
-			ClassIcon	medic_blast
-			Name	"Blast Resist Medic"
-			Class	Medic
-			Skill	Normal
-			Item "The Virus Doctor"
-			Attributes	SpawnWithFullCharge
-			Attributes	VaccinatorBlast
-			Tag bot_squad_member
-			ItemAttributes
-			{
-				ItemName	tf_weapon_medigun
-				"lunchbox adds minicrits"	3
-				"medigun charge is resists"	3
-				"Attach Particle Effect" 702
-				"uber duration bonus" 5
-				"ubercharge rate bonus"	100
-				"medigun blast resist passive"	0.75
-				"medigun blast resist deployed"	0.75
-			}
-			CharacterAttributes
-			{
-				"bot medic uber health threshold"	500
-			}
-		}
 		T_TFBot_Medic_Vaccinator_Bullet_75res
 		{
 			ClassIcon	medic_bullet
@@ -692,40 +511,6 @@ WaveSchedule
 				"bot medic uber deploy delay duration" 900
 			}
 			Item	"german gonzila"
-		}
-		T_TFBot_Medic_Kritz_Giant
-		{
-			Name "Giant Kritz Medic"
-			Class Medic
-			ClassIcon medic_kritz_giant
-			Skill Expert
-			Health 4500
-			Item "The Virus Doctor"
-			Item "The Byte'd Beak"
-			Attributes MiniBoss
-			Attributes SpawnWithFullCharge
-			Attributes IgnoreEnemies
-			Item "The Kritzkrieg"
-			Item "The Overdose"
-			Tag bot_giant
-			
-			ItemAttributes
-			{
-				ItemName "The Kritzkrieg"
-				"ubercharge rate bonus" 100
-				"uber duration bonus" 92
-				"heal rate bonus" 200
-			}
-			
-			CharacterAttributes
-			{
-				"move speed bonus"	0.5
-				"damage force reduction" 0.01
-				"airblast vulnerability multiplier" 0.01
-				"airblast vertical vulnerability multiplier" 0.01
-				"bot medic uber health threshold" 9001
-				"health regen" 10
-			}
 		}
 		T_TFGateBot_Heavy_IronFist_Airblast_Crit
 		{
@@ -809,7 +594,6 @@ WaveSchedule
 		InitialCooldown 25
 		Where spawnbot_mission_sniper0
 		Where spawnbot_mission_sniper1
-		Where spawnbot_upper2
 		BeginAtWave 2
 		RunForThisManyWaves 1
 		DesiredCount 2
@@ -819,6 +603,26 @@ WaveSchedule
         TFBot
 		{
 			Template T_TFBot_Sniper_Sydney_Sleeper
+        }
+	}
+	Mission	
+	{
+		Objective Sniper
+
+		InitialCooldown 15
+		Where spawnbot_mission_sniper0
+		Where spawnbot_mission_sniper1
+		BeginAtWave 5
+		RunForThisManyWaves 1
+		DesiredCount 1
+
+		CooldownTime 15
+
+        TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
+			Item "The Razorback"
+			Skill Expert
         }
 	}
 	Mission	
@@ -833,12 +637,13 @@ WaveSchedule
 		RunForThisManyWaves 1
 		DesiredCount 2
 
-		CooldownTime 24
+		CooldownTime 25
 
         TFBot
 		{
 			Template T_TFBot_Spy
 			Skill Expert
+			Item "The Big Earner"
 			ClassIcon Spy
         }
 	}
@@ -854,13 +659,12 @@ WaveSchedule
 		RunForThisManyWaves 1
 		DesiredCount 2
 
-		CooldownTime 20
+		CooldownTime 30
 
         TFBot
 		{
 			Template T_TFBot_Spy
 			Item "Your Eternal Reward"
-			Item "Familiar Fez"
 			Skill Expert
         }
 	}
@@ -874,19 +678,20 @@ WaveSchedule
 		Where spawnbot_upper2
 		BeginAtWave 5
 		RunForThisManyWaves 1
-		CooldownTime 15
+		CooldownTime 12
 		DesiredCount 1
 
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Battle
+			Item "The Jag"
 		}
 	}
 	Mission	
 	{
 		Objective Sniper
 
-		InitialCooldown 45
+		InitialCooldown 30
 		Where spawnbot_mission_sniper0
 		Where spawnbot_mission_sniper1
 		Where spawnbot_upper2
@@ -894,7 +699,7 @@ WaveSchedule
 		RunForThisManyWaves 1
 		DesiredCount 2
 
-		CooldownTime 50
+		CooldownTime 30
 
         TFBot
 		{
@@ -922,12 +727,12 @@ WaveSchedule
 		RunForThisManyWaves 1
 		DesiredCount 2
 
-		CooldownTime 40
+		CooldownTime 45
 
         TFBot
 		{
 			Template T_TFBot_Spy
-			Item "The Big Earner"
+			Item "Your Eternal Reward"
 			Skill Expert
         }
 	}
@@ -1171,8 +976,7 @@ WaveSchedule
 			RandomSpawn 1
 			TFBot
 			{
-				Class Soldier
-				Skill Expert
+				Template T_TFGateBot_Soldier_Expert
 			}
 		}
 		WaveSpawn
@@ -1388,7 +1192,7 @@ WaveSchedule
 			TotalCount 8
 			SpawnCount 8
 			MaxActive 8
-			WaitBeforeStarting 12
+			WaitBeforeStarting 10
 			WaitBetweenSpawns 7
 			RandomSpawn 1
 			TFBot
@@ -1408,8 +1212,8 @@ WaveSchedule
 			TotalCount 8
 			SpawnCount 4
 			MaxActive 8
-			WaitBeforeStarting 1
-			WaitBetweenSpawns 15
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 13
 			Squad
 			{
 				TFBot //gatebot with damage bonus removed
@@ -1881,11 +1685,6 @@ WaveSchedule
 			MaxActive 8
 			WaitBeforeStarting 0
 			WaitBetweenSpawns 13
-			FirstSpawnOutput
-			{
-				Target spawnbot_mission_sniper0                
-				Action Disable
-			}
 			Squad
 			{
 				TFBot
@@ -2036,17 +1835,6 @@ WaveSchedule
 				{
 					Template T_TFGateBot_Demoman_Hard
 				}
-			}
-		}
-		WaveSpawn
-		{
-			Name spyenabler
-			WaitForAllSpawned 4ab
-			WaitBeforeStarting 8
-			FirstSpawnOutput
-			{
-				Target spawnbot_mission_sniper0                  
-				Action Enable
 			}
 		}
 		WaveSpawn
@@ -2647,7 +2435,6 @@ WaveSchedule
 
 						Item "MvM GateBot Light Demoman"
 						Skill Expert
-			Skill Expert
 			Attributes MiniBoss
 			tag bot_giant
 			WeaponRestrictions PrimaryOnly
@@ -2677,7 +2464,6 @@ WaveSchedule
 						ItemName "MvM GateBot Light Demoman"
 						"item style override" 1
 					}
-					Skill Expert
 					Skill Expert
 			Attributes MiniBoss
 			tag bot_giant
@@ -2767,7 +2553,6 @@ WaveSchedule
 
 						Item "MvM GateBot Light Demoman"
 						Skill Expert
-			Skill Expert
 			Attributes MiniBoss
 			tag bot_giant
 			WeaponRestrictions PrimaryOnly
@@ -2797,7 +2582,6 @@ WaveSchedule
 						ItemName "MvM GateBot Light Demoman"
 						"item style override" 1
 					}
-					Skill Expert
 					Skill Expert
 			Attributes MiniBoss
 			tag bot_giant
@@ -2866,7 +2650,7 @@ WaveSchedule
 			TotalCurrency 50
 			TotalCount 40
 			SpawnCount 5
-			MaxActive 7
+			MaxActive 6
 			WaitBeforeStarting 20
 			WaitBetweenSpawns 8
 			RandomSpawn 1
@@ -3104,10 +2888,6 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Scout_FAN
 				Tag bot_giant
-				//CharacterAttributes
-				//{
-					//"rage giving scale" 0.1 trolled
-				//}
 			}
 		}
 		
@@ -3139,9 +2919,9 @@ WaveSchedule
 					Item "MvM GateBot Light Pyro"
 					Skill Hard
 					CharacterAttributes
-				{
-					"Airblast Disabled" 1
-				}
+					{
+						"Airblast Disabled" 1
+					}
 				}
 				RevertGateBotsBehavior
 				{
@@ -3153,9 +2933,9 @@ WaveSchedule
 					}
 					Skill Hard
 					CharacterAttributes
-				{
+					{
 					"Airblast Disabled" 1
-				}
+					}
 				}
 			}
 			}
@@ -3253,11 +3033,11 @@ WaveSchedule
 			Where spawnbot_main1
 			Where spawnbot_main2
 			TotalCurrency 50
-			TotalCount 4
+			TotalCount 5
 			SpawnCount 1
 			MaxActive 2
 			WaitBeforeStarting 10
-			WaitBetweenSpawns 16
+			WaitBetweenSpawns 13
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_FAN

@@ -57,6 +57,7 @@ population
 		TFBot
 		{
 			Template	T_TFBot_Engineer_Sentry_Teleporter
+			ClassIcon engineer_telein
 			TeleportWhere spawnbot
 			TeleportWhere spawnbot_main
 			TeleportWhere spawnbot_secondary

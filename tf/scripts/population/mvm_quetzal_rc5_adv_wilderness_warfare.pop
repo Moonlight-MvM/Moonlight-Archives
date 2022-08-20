@@ -1334,6 +1334,7 @@ WaveSchedule
 				"cancel falling damage" 1
 				"move speed penalty" 0.5
 				"rage giving scale" 0.1
+				"increased jump height" 2
 			}
 		}
 		//////////////////////
@@ -1391,6 +1392,7 @@ WaveSchedule
 				"move speed penalty" 0.5
 				"rage giving scale" 0.1
 				"health regen" 150
+				"increased jump height" 2
 			}
 		}
 		//////////////////////
