@@ -2333,7 +2333,7 @@ WaveSchedule
 			Where spawnbot_main0
 			Where spawnbot_main1
 			Where spawnbot_main2
-			WaitForAllSpawned 3aa
+		//	WaitForAllSpawned 3aa
 			TotalCurrency 50
 			TotalCount 16
 			SpawnCount 4
@@ -2686,7 +2686,7 @@ WaveSchedule
 							"is_passive_weapon" 1
 							"fire rate bonus" 0.5
 							"faster reload rate" -0.8
-							"Clip Side Upgrade Atomic" 999.0 //Sometimes I wish rafmod wasn't a buggy shitstain
+							"clip size upgrade atomic" 999.0 //Sometimes I wish rafmod wasn't a buggy shitstain
 							"Override projectile type" 6
 							"damage bonus" 6
 							"Projectile speed increased" 0.4
@@ -2739,7 +2739,7 @@ WaveSchedule
 							"is_passive_weapon" 1
 							"fire rate bonus" 0.5
 							"faster reload rate" 0.01
-							"Clip Side Upgrade Atomic" 900.0 
+							"clip Size upgrade atomic" 900.0 
 							"Override projectile type" 6
 							"damage bonus" 6
 							"Projectile speed increased" 0.4

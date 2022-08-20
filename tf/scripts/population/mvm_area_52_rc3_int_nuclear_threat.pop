@@ -1667,7 +1667,6 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name stage1b
-			WaitForAllSpawned stage1a
 			Where spawnbot_side
 			TotalCount 36
 			MaxActive 12

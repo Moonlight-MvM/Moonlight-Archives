@@ -1455,7 +1455,7 @@ WaveSchedule
 	{
 		Objective DestroySentries
 
-		Where spawnbot_mission_sentrybuster
+		Where spawnbot
 		BeginAtWave 1
 		RunForThisManyWaves 8
 

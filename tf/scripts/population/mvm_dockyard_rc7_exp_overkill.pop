@@ -1509,7 +1509,6 @@ WaveSchedule
 			Where spawnbot_main_1
 			RandomSpawn 1
 			TotalCurrency 100
-			WaitForAllSpawned 1ca
 			TotalCount 2
 			SpawnCount 2
 			MaxActive 2
@@ -1529,7 +1528,6 @@ WaveSchedule
 			Where spawnbot_main_1
 			RandomSpawn 1
 			TotalCurrency 150
-			WaitForAllSpawned 1ca
 			TotalCount 10
 			SpawnCount 2
 			MaxActive 2

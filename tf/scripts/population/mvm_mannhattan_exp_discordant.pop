@@ -1923,7 +1923,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name 4carrier
-			WaitForAllSpawned 4ab
+		//	WaitForAllSpawned 4ab
 			Where spawnbot_main0
 			Where spawnbot_main1
 			Where spawnbot_main2
@@ -2177,7 +2177,6 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name the
-			WaitForAllDead 4cb
 			Where spawnbot_main0
 			Where spawnbot_main1
 			Where spawnbot_main2
@@ -2195,7 +2194,6 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name 5aa
-			WaitForAllDead 4ca
 			Where spawnbot_main0
 			Where spawnbot_main1
 			Where spawnbot_main2
@@ -2215,7 +2213,6 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name 5aa
-			WaitForAllDead 4ca
 			Where spawnbot_main0_squad
 			Where spawnbot_main1
 			Where spawnbot_main2

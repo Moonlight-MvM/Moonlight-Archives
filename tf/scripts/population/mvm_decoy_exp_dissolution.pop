@@ -1517,7 +1517,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		WaveSpawn
 		{
 			Name	W7-2-1
-			WaitForAllSpawned	W7-1
 			TotalCurrency	50
 			TotalCount	36
 			MaxActive	12
