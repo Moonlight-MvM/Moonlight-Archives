@@ -1,0 +1,3438 @@
+#base robot_giant.pop
+#base robot_standard.pop
+//#base robot_package_forever.pop
+#base robot_gatebot.pop
+
+//2nd Mannhattan Advanced I'm doing since the other ones aren't getting updated at all
+//UPDATE, it's expert now because Hydrogen's team sucks at this video game
+//Made by Package O Lies
+
+
+
+
+//spawnbot_main0_squad, I have no idea what this does but it exists
+
+//spawnbot_main0, First spawn, main
+
+//spawnbot_main1, Gate A, left side
+
+//spawnbot_main2, Gate B, main
+
+//spawnbot_upper0, First spawn, flank
+
+//Spawnbot_main1_slow, Gate A, right side
+
+//spawnbot_upper2, Gate B, flank
+
+//Spawnbot_mission_sniper0, Sniper spawn, first spawn flank 
+
+//spawnbot_mission_sniper1, Gate B, flank
+
+WaveSchedule
+{
+	StartingCurrency	400
+	RespawnWaveTime	6
+	CanBotsAttackWhileInSpawnRoom	no
+	FixedRespawnWaveTime	No
+	AddSentryBusterWhenDamageDealtExceeds	3000
+	AddSentryBusterWhenKillCountExceeds	20
+	Advanced	1
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Templates
+	{
+		T_TFGateBot_Scout_Melee_Crit
+		{
+			Class Scout
+			ClassIcon scout_bat_nys
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Scout"
+					Skill Normal
+					WeaponRestrictions MeleeOnly
+					Attributes AlwaysCrit
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Scout"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Scout"
+						"item style override" 1
+					}
+					Attributes AlwaysCrit
+					Skill Normal
+					WeaponRestrictions MeleeOnly
+				}
+			}
+		}
+		T_TFGateBot_Giant_Scout_Fast
+		{
+			Class Scout
+			Name "Super Scout"
+			ClassIcon scout_giant_fast
+			Health 1200
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					
+					Skill Easy
+					Item "The Holy Mackerel"
+					WeaponRestrictions MeleeOnly
+					Item "The Bolt Boy"
+					Item "MvM GateBot Light Scout"
+					Tag bot_giant
+					MaxVisionRange 900
+					Skill Expert
+					Attributes MiniBoss
+					CharacterAttributes
+					{
+						"move speed bonus"	2
+						"damage force reduction" 0.6
+						"airblast vulnerability multiplier" 0.6
+						"override footstep sound set" 5
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "The Bolt Boy"
+					Item "The Force-a-Nature"
+					Item "MvM GateBot Light Scout"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Scout"
+						"item style override" 1
+					}
+					Tag bot_giant
+					Skill Easy
+					Item "The Holy Mackerel"
+					WeaponRestrictions MeleeOnly
+					Item "The Bolt Boy"
+					Item "MvM GateBot Light Scout"
+					MaxVisionRange 900
+					Skill Expert
+					Attributes MiniBoss
+					CharacterAttributes
+					{
+						"move speed bonus"	2
+						"damage force reduction" 0.6
+						"airblast vulnerability multiplier" 0.6
+						"override footstep sound set" 5
+					}
+				}
+			}
+		}
+		T_TFGateBot_Giant_Soldier_SlowBarrage_Crit //The better major crits
+		{
+			Class Soldier
+			Name "Major Crits"
+			ClassIcon soldier_barrage
+			Health 4200
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Soldier"
+					Tag bot_giant
+					Skill Expert
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					Attributes HoldFireUntilFullReload		
+					Attributes AlwaysCrit					
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_ROCKETLAUNCHER"
+						"clip size upgrade atomic" 26.0
+						"faster reload rate" 0.11
+						"fire rate bonus" 0.2
+						"projectile spread angle penalty" 5
+					}
+					CharacterAttributes
+					{
+						"health regen"	40
+						"move speed bonus"	0.5
+						"damage bonus" 1.5
+						"damage force reduction" 0.4
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 3
+						"airblast vertical vulnerability multiplier" 0.1
+						"Projectile speed increased" 0.4
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					Tag bot_giant
+					Skill Expert
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					Attributes HoldFireUntilFullReload				
+					Attributes AlwaysCrit					
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_ROCKETLAUNCHER"
+						"clip size upgrade atomic" 26.0
+						"faster reload rate" 0.22
+						"fire rate bonus" 0.2
+						"projectile spread angle penalty" 5
+					}
+					CharacterAttributes
+					{
+						"health regen"	40
+						"move speed bonus"	0.5
+						"damage bonus" 1.5
+						"damage force reduction" 0.4
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 3
+						"airblast vertical vulnerability multiplier" 0.1
+						"rage giving scale" 0.1
+						"Projectile speed increased" 0.4
+					}
+				}
+			}
+		}
+	
+		T_TFGateBot_Soldier_Expert
+		{
+			Class Soldier
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Soldier"
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					Skill Expert
+				}
+			}
+		}
+		T_TFGateBot_Heavy_Easy_Nocrit //No clue why vlave had easy ai heavies get crits on cap
+		{
+			Class Heavy
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Heavy"
+					Skill Easy
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					Skill Easy
+				}
+			}
+		}
+		T_TFBot_Pyro_Fury
+		{
+			Name "Fury Pyro"
+			Class Pyro
+			Skill Hard
+			ClassIcon pyro_dragon_fury_swordstone
+			MaxVisionRange 800
+			Item "The Dragon's Fury"
+			Item "The Sengoku Scorcher"
+		}
+		T_TFBot_Pyro_Fury_Giant
+		{
+			Name "Giant Fury Pyro"
+			Class Pyro
+			Skill Expert
+			ClassIcon pyro_dragon_fury_swordstone
+			MaxVisionRange 800
+			Attributes MiniBoss
+			Health 3300
+			Item "The Dragon's Fury"
+			Item "The Sengoku Scorcher"
+			Tag bot_giant
+			
+			ItemAttributes
+			{
+				ItemName "The Dragon's Fury"
+				"item_meter_charge_rate" 0.75
+			}
+			
+			CharacterAttributes
+			{
+				"move speed bonus" 0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 6
+			}
+		}
+		T_TFBot_Demo_Charger
+		{
+			Class Demoman
+			Name "Demoman"
+			Skill Normal
+			Item "The Chargin' Targe"
+		}
+		T_TFBot_Demo_Stickybomb_Giant
+		{
+			Name "Giant Stickybomb Demo"
+			Class Demoman
+			ClassIcon demo_sticky_daan_giant
+			Health 3300
+			Skill Expert
+			Item "The Strontium Stove Pipe"
+			Item "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon" 1
+				"override projectile type" 27
+				"fire rate penalty" 2000
+			}
+
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
+				"max pipebombs decreased" -7
+				"faster reload rate" 0.01
+				"stickybomb charge rate" 0.01
+				"projectile range decreased" 0.45
+				"fire rate bonus" 0.7
+				"no self blast dmg" 2
+			}
+
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.25
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 4
+			}
+		}
+		T_TFBot_Giant_Demo_Barrage //MK II variant
+		{
+			Class Demoman
+			Name "Rainmaker"
+			ClassIcon demo_scatter
+			//Scale 1.8 Had to remove because mannhattan funnies
+			Skill Expert
+			Health 3750
+			Attributes MiniBoss
+			tag bot_giant
+			Item "Glengarry Bonnet"
+			WeaponRestrictions PrimaryOnly
+			Attributes HoldFireUntilFullReload
+			
+			ItemAttributes
+			{
+				ItemName "tf_weapon_grenadelauncher"
+				"damage Bonus" 1.4
+				"Clip Size Bonus" 8
+				"faster reload rate" 0.08
+				"fire rate bonus" 0.3
+				"projectile spread angle penalty" 5
+				"Projectile speed increased"	1.1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+			}
+				
+		}
+		T_TFGateBot_Heavy_Easy_Nocrit
+		{
+			Class Heavy
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Heavy"
+					Skill Easy
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					Skill Easy
+				}
+			}
+		}
+		T_TFGateBot_Giant_Heavyweapons
+		{
+			Class Heavyweapons
+			Name "Giant Heavy"
+			Health 5000
+			ClassIcon heavy_giant
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "tf_weapon_minigun"
+					Item "MvM GateBot Light Heavy"
+					Skill Expert
+					WeaponRestrictions PrimaryOnly
+					MaxVisionRange 1200
+					Attributes MiniBoss
+					Tag bot_giant
+					ItemAttributes
+					{
+						ItemName "tf_weapon_minigun"
+						"damage bonus"	1.5
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "tf_weapon_minigun"
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					Skill Expert
+					WeaponRestrictions PrimaryOnly
+					MaxVisionRange 1200
+					Attributes MiniBoss
+					Tag bot_giant
+					ItemAttributes
+					{
+						ItemName "tf_weapon_minigun"
+						"damage bonus"	1.5
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
+				}
+			}
+		}
+		T_TFBot_Giant_Heavy_Booster
+		{
+			Class Heavyweapons
+				Name "Giant Crit-on-Kill Heavy"
+				Health 5500
+				ClassIcon 	heavy_deflector_booster2
+
+			
+				EventChangeAttributes
+			{
+				Default
+				{
+					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
+					Tag bot_gatebot				// having these will cause bots to run towards gates
+					BehaviorModifiers push		// having these will cause bots to run towards gates
+					Attributes IgnoreFlag		// having these will cause bots to run towards gates
+					Item "MvM GateBot Light Heavy"
+					Tag bot_giant
+					Skill Expert
+					Item "The Team Captain"
+					Item "Deflector"
+					MaxVisionRange 1600
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.5
+						"attack projectiles" 2
+						"Critboost on kill" 12
+						"killstreak tier" 2            
+						"killstreak idleeffect" 2
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.4
+						"airblast vertical vulnerability multiplier" 0.1
+						"override footstep sound set" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Heavy"
+					Tag bot_giant
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					Skill Expert
+					Item "The Team Captain"
+					Item "Deflector"
+					MaxVisionRange 1600
+					Attributes UseBossHealthBar
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "The Team Captain"
+					}
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.5
+						"attack projectiles" 2
+						"Critboost on kill" 12
+						"killstreak tier" 2            
+						"killstreak idleeffect" 2
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.4
+						"airblast vertical vulnerability multiplier" 0.1
+						"override footstep sound set" 2
+					}
+				}
+			}
+		}
+		T_TFBot_Medic_Kritz
+		{
+			Name "Kritz Medic"
+			Class Medic
+			ClassIcon medic_kritz
+			Skill Expert
+			Attributes SpawnWithFullCharge
+			Attributes IgnoreEnemies	
+			Item "The Combat Medic's Crusher Cap"
+			Item "Flatliner"
+			Item "The Kritzkrieg"
+			Item "The Overdose"
+			
+			ItemAttributes
+			{
+				ItemName "The Kritzkrieg"
+				"ubercharge rate bonus" 100
+				"uber duration bonus" 92
+			}
+			
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 69420
+			}
+		}
+		T_TFBot_Medic_Kritz_Armored
+		{
+			Name "Armored Kritz Medic"
+			Class Medic
+			ClassIcon medic_kritz_armored_lite
+			Health 450
+			Scale 1.4
+			tag bot_giant
+			Skill Expert
+			Attributes SpawnWithFullCharge	
+			Item "The Combat Medic's Crusher Cap"
+			Item "Flatliner"
+			Item "The Kritzkrieg"
+			Item "The Overdose"
+			
+			ItemAttributes
+			{
+				ItemName "The Kritzkrieg"
+				"ubercharge rate bonus" 100
+				"uber duration bonus" 92
+			}
+			
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 69420
+			}
+		}
+		
+		T_TFBot_Medic_Vaccinator_Blast_75res
+		{
+			ClassIcon	medic_blast
+			Name	"Blast Resist Medic"
+			Class	Medic
+			Skill	Normal
+			Item "The Virus Doctor"
+			Attributes	SpawnWithFullCharge
+			Attributes	VaccinatorBlast
+			Tag bot_squad_member
+			ItemAttributes
+			{
+				ItemName	tf_weapon_medigun
+				"lunchbox adds minicrits"	3
+				"medigun charge is resists"	3
+				"Attach Particle Effect" 702
+				"uber duration bonus" 5
+				"ubercharge rate bonus"	100
+				"medigun blast resist passive"	0.75
+				"medigun blast resist deployed"	0.75
+			}
+			CharacterAttributes
+			{
+				"bot medic uber health threshold"	500
+			}
+		}
+		T_TFBot_Medic_Vaccinator_Bullet_75res
+		{
+			ClassIcon	medic_bullet
+			Name	"Bullet Resist Medic"
+			Class	Medic
+			Skill	Normal
+			Item "The Virus Doctor"
+			Attributes	SpawnWithFullCharge
+			Attributes	VaccinatorBullets
+			Tag bot_squad_member
+			ItemAttributes
+			{
+				ItemName	tf_weapon_medigun
+				"lunchbox adds minicrits"	3
+				"Attach Particle Effect" 703
+				"medigun bullet resist passive" 0.75
+				"medigun bullet resist deployed" 0.75
+				"medigun charge is resists"	3
+				"uber duration bonus"	5
+				"ubercharge rate bonus"	100
+			}
+			CharacterAttributes
+			{
+				"bot medic uber health threshold"	500
+			}
+		}
+		T_TFBot_Medic_Shield
+		{
+			ClassIcon	medic_shield_lite
+			Name	"Shield Medic"
+			Class	Medic
+			Skill	Expert
+			WeaponRestrictions	SecondaryOnly
+			Attributes	"SpawnWithFullCharge"
+			Attributes  "ProjectileShield"
+			Attributes IgnoreEnemies
+			ItemAttributes
+			{
+				ItemName	"tf_weapon_medigun"
+				"increase buff duration"	2.2
+				"generate rage on heal"	1
+			}
+			CharacterAttributes
+			{
+				"bot medic uber deploy delay duration" 900
+			}
+			Item	"german gonzila"
+		}
+		T_TFBot_Medic_Kritz_Giant
+		{
+			Name "Giant Kritz Medic"
+			Class Medic
+			ClassIcon medic_kritz_giant
+			Skill Expert
+			Health 4500
+			Item "The Virus Doctor"
+			Item "The Byte'd Beak"
+			Attributes MiniBoss
+			Attributes SpawnWithFullCharge
+			Attributes IgnoreEnemies
+			Item "The Kritzkrieg"
+			Item "The Overdose"
+			Tag bot_giant
+			
+			ItemAttributes
+			{
+				ItemName "The Kritzkrieg"
+				"ubercharge rate bonus" 100
+				"uber duration bonus" 92
+				"heal rate bonus" 200
+			}
+			
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.01
+				"airblast vulnerability multiplier" 0.01
+				"airblast vertical vulnerability multiplier" 0.01
+				"bot medic uber health threshold" 9001
+				"health regen" 10
+			}
+		}
+		T_TFGateBot_Heavy_IronFist_Airblast_Crit
+		{
+			Class Heavyweapons
+			Name "Steel Gauntlet Pusher"
+			ClassIcon heavy_steelfist
+			Health 900
+			Scale 1.5
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
+					Tag bot_gatebot				// having these will cause bots to run towards gates
+					BehaviorModifiers push		// having these will cause bots to run towards gates
+					Attributes IgnoreFlag		// having these will cause bots to run towards gates
+
+					Item "The carl"
+					Item "Fists of Steel"
+					Attributes AlwaysCrit
+					ItemAttributes
+					{
+						ItemName "Fists of Steel"
+						"damage causes airblast" 1
+						"damage bonus" 1.5
+					}
+					Item "MvM GateBot Light Heavy"
+					WeaponRestrictions MeleeOnly
+					Tag bot_giant
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					Item "The carl"
+					Item "Fists of Steel"
+					Attributes AlwaysCrit
+					ItemAttributes
+					{
+						ItemName "Fists of Steel"
+						"damage causes airblast" 1
+						"damage bonus" 1.5
+					}
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					WeaponRestrictions MeleeOnly
+					Tag bot_giant
+					Skill Expert
+				}
+			}
+		}
+	}
+	
+	Mission	//sentry buster
+	{
+		Objective DestroySentries
+
+		InitialCooldown 30
+		Where spawnbot_main0
+		Where spawnbot_main1
+		Where spawnbot_main2
+		BeginAtWave 1
+		RunForThisManyWaves 6
+
+		CooldownTime 30
+
+        TFBot
+		{
+			Template T_TFBot_SentryBuster
+			Tag bot_sentrybuster
+        }
+	}
+	Mission	
+	{
+		Objective Sniper
+
+		InitialCooldown 25
+		Where spawnbot_mission_sniper0
+		Where spawnbot_mission_sniper1
+		Where spawnbot_upper2
+		BeginAtWave 2
+		RunForThisManyWaves 1
+		DesiredCount 2
+
+		CooldownTime 30
+
+        TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
+        }
+	}
+	Mission	
+	{
+		Objective Spy
+
+		InitialCooldown 22
+		Where spawnbot_mission_sniper0
+		Where spawnbot_main1
+		Where spawnbot_main2
+		BeginAtWave 3
+		RunForThisManyWaves 1
+		DesiredCount 2
+
+		CooldownTime 24
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+			Skill Expert
+			ClassIcon Spy
+        }
+	}
+	Mission	
+	{
+		Objective Spy
+
+		InitialCooldown 30
+		Where spawnbot_mission_sniper0
+		Where spawnbot_main1
+		Where spawnbot_main2
+		BeginAtWave 4
+		RunForThisManyWaves 1
+		DesiredCount 2
+
+		CooldownTime 20
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+			Item "Your Eternal Reward"
+			Item "Familiar Fez"
+			Skill Expert
+        }
+	}
+	Mission
+	{
+		Objective Engineer  
+
+		InitialCooldown 60
+		Where spawnbot_upper0
+		Where spawnbot_main1
+		Where spawnbot_upper2
+		BeginAtWave 5
+		RunForThisManyWaves 1
+		CooldownTime 15
+		DesiredCount 1
+
+		TFBot
+		{
+			Template T_TFBot_Engineer_Sentry_Battle
+		}
+	}
+	Mission	
+	{
+		Objective Sniper
+
+		InitialCooldown 45
+		Where spawnbot_mission_sniper0
+		Where spawnbot_mission_sniper1
+		Where spawnbot_upper2
+		BeginAtWave 6
+		RunForThisManyWaves 1
+		DesiredCount 2
+
+		CooldownTime 50
+
+        TFBot
+		{
+			Template T_TFBot_Sniper
+			ClassIcon sniper_headshot_deadly
+			Name "Machina Sniper"
+			Skill Normal
+			Item "The Machina"
+			CharacterAttributes
+			{
+				"SRifle Charge rate increased" 0.8
+				"projectile penetration" 1
+			}
+        }
+	}
+	Mission	
+	{
+		Objective Spy
+
+		InitialCooldown 30
+		Where spawnbot_mission_sniper0
+		Where spawnbot_main1
+		Where spawnbot_main2
+		BeginAtWave 6
+		RunForThisManyWaves 1
+		DesiredCount 2
+
+		CooldownTime 40
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+			Item "The Big Earner"
+			Skill Expert
+        }
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target holograms_centerpath_relay
+			Action Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			
+			Name 1carrier
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			Support 1
+			TotalCount 50
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 20
+			WaitBetweenSpawnsAfterDeath 0
+			
+			TFBot
+			{
+				Class Sniper
+				WeaponRestrictions SecondaryOnly
+				Skill Easy
+				Name "SMG Sniper"
+				ClassIcon sniper_smg_tind
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1aa
+			Where spawnbot_main0_squad
+			TotalCurrency 75
+			TotalCount 5
+			SpawnCount 5
+			MaxActive 5
+			WaitBeforeStarting 0
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFGateBot_Giant_Soldier_Spammer
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ab
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 75
+			TotalCount 20
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 17
+			WaitBetweenSpawns 10
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFGateBot_Scout_Melee_Crit
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ab
+			WaitForAllSpawned 1aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 125
+			TotalCount 21
+			SpawnCount 3
+			MaxActive 9
+			WaitBeforeStarting 20
+			WaitBetweenSpawns 5
+			RandomSpawn 1
+			Squad
+			{
+				FormationSize 250
+				TFBot
+				{
+					Template T_TFGateBot_Heavy_Normal
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Soldier_Hard
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Soldier_Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ab
+			WaitForAllDead 1aa
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 25
+			TotalCount 1
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 14
+
+			TFBot
+			{
+				Template T_TFGateBot_Giant_Scout_Fast
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ac
+			WaitForAllDead 1ab
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 25
+			TotalCount 2
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 22
+
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Fast
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ba
+			WaitForAllSpawned 1ab
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 75
+			TotalCount 25
+			SpawnCount 5
+			MaxActive 10
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 10
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFGateBot_Scout_Melee_Crit
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1bb
+			WaitForAllSpawned 1ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 50
+			TotalCount 16
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 8
+			WaitBetweenSpawns 7
+			RandomSpawn 1
+			TFBot
+			{
+				Class Scout
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ba
+			WaitForAllDead 1ab
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 12
+			SpawnCount 4
+			MaxActive 10
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 4
+			RandomSpawn 1
+			TFBot
+			{
+				Class Soldier
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1ca
+			WaitForAllDead 1ba
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 99
+			TotalCount 2
+			SpawnCount 2
+			MaxActive 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 4
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_Extended_Concheror
+					Tag bot_giant
+					Item "Jumper's Jeepcap"
+				}
+				TFBot
+				{
+					Template T_TFBot_Giant_Medic_Regen
+					Tag bot_giant
+					Name "Giant Regen Medic"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 1cb
+			WaitForAllSpawned 1ca
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 1
+			TotalCount 1
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 2
+			WaitBetweenSpawns 4
+			TFBot
+			{
+				Class Soldier
+				Skill Expert
+				Item "The Direct Hit"
+				Name "Troller of Montenegro"
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target holograms_3way_relay
+			Action Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			
+			Name 2aa
+			Where spawnbot_main0
+			TotalCurrency 75
+			TotalCount 1
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 4
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_SlowBarrage
+				Name "A Tank (REAL)"
+				Item "The Patriot Peak"
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2ab
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			TotalCurrency 75
+			TotalCount 18
+			SpawnCount 9
+			MaxActive 18
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 8
+			RandomSpawn 1
+			TFBot
+			{
+				Class Scout
+			ClassIcon scout_fan
+			Name "Force-A-Nature Scout"
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Scout"
+					Skill Expert
+					Item "The Force-a-Nature"
+					MaxVisionRange 500
+					CharacterAttributes
+				{
+					"move speed bonus" 1.1
+				}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Scout"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Scout"
+						"item style override" 1
+					}
+					Skill Expert
+					Item "The Force-a-Nature"
+					MaxVisionRange 500
+					CharacterAttributes
+				{
+					"move speed bonus" 1.1
+				}
+				}
+			}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2ba
+			WaitForAllSpawned 2ab
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 16
+			SpawnCount 4
+			MaxActive 10
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 6
+			Squad
+			{
+				TFBot
+				{
+					Class Pyro
+					Skill Expert 
+					CharacterAttributes
+					{
+						"airblast disabled" 1
+					}
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2bb
+			WaitForAllSpawned 2ab
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 7
+			SpawnCount 7
+			MaxActive 7
+			WaitBeforeStarting 13
+			WaitBetweenSpawns 20
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFGateBot_Demoman_Normal
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2ba
+			WaitForAllDead 2bb
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 50
+			TotalCount 8
+			SpawnCount 8
+			MaxActive 8
+			WaitBeforeStarting 12
+			WaitBetweenSpawns 7
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFGateBot_Demoman_Normal
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2ca
+			WaitForAllSpawned 2ba
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 125
+			TotalCount 8
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 1
+			WaitBetweenSpawns 15
+			Squad
+			{
+				TFBot //gatebot with damage bonus removed
+				{
+					Class Heavyweapons 
+			ClassIcon heavy_heater_giant
+			Health 5000
+			Name "Giant Heater Heavy"
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Heavy"
+					Skill Expert
+					WeaponRestrictions PrimaryOnly
+					Item "The Huo Long Heatmaker"
+					Attributes MiniBoss
+					Item "The Bunsen Brave"
+					Tag bot_giant
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					Skill Expert
+					WeaponRestrictions PrimaryOnly
+					Item "The Huo Long Heatmaker"
+					Attributes MiniBoss
+					Tag bot_giant
+					Item "The Bunsen Brave"
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
+				}
+			}
+				}
+				TFBot
+				{
+					Class Pyro
+					Skill Hard
+					Attributes AlwaysFireWeapon
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2support
+			Support 1
+			WaitForAllDead 2ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 50
+			SpawnCount 6
+			MaxActive 9
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFBot_Sniper_Huntsman
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2da
+			WaitForAllDead 2ca
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 8
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 14
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Demoman
+					ClassIcon demo_spammer
+					Item "Scotsman's Stove Pipe"
+					Tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			
+			Name 2db
+			WaitForAllSpawned 2da
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 75
+			TotalCount 4
+			SpawnCount 4
+			MaxActive 4
+			WaitBeforeStarting 16
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Demo_Burst
+					Item "Scotch Bonnet"
+					Tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Quickuber
+					Name "Quick Uber Medic"
+					Tag bot_squad_member
+				}
+			}
+		}
+	}
+	Wave //3 way hatch relay
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target holograms_3way_relay
+			Action Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+		
+			Name 3suckywuckyfuckthiswave
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 25
+			TotalCount 20
+			SpawnCount 5
+			MaxActive 10
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 17
+			
+			TFBot
+			{
+				Template T_TFBot_Demo_Charger
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+		
+			Name 3aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 3
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 18
+			TFBot
+			{
+				Template T_TFBot_Pyro_Fury_Giant
+				tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+		
+			Name 3aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 150
+			TotalCount 3
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 2
+			WaitBetweenSpawns 18
+			TFBot
+			{
+				Template T_TFGateBot_Giant_Soldier_Spammer
+			}
+		}
+		WaveSpawn
+		{
+		
+			Name 3aa
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 2
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 22
+			WaitBetweenSpawns 18
+			TFBot
+			{
+				Template T_TFGateBot_Giant_Scout_FAN
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+		
+			Name 3ba
+			WaitForAllDead 3aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 200
+			TotalCount 8
+			SpawnCount 2
+			MaxActive 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 20
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Demo_Burst
+					Item "Scotch Bonnet"
+					tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Sniper_Huntsman_Spammer
+					ClassIcon sniper_bow_multi
+					tag bot_giant
+				}
+			}
+		}
+		WaveSpawn
+		{
+		
+			Name 3ba
+			WaitForAllDead 3aa
+			Where spawnbot_upper0
+			Where spawnbot_main1_slow
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 3
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 20
+			WaitBetweenSpawns 20
+			TFBot
+			{
+				Template T_TFGateBot_Giant_Scout_FAN
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			Name 3ba
+			WaitForAllDead 3aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 48
+			SpawnCount 6
+			MaxActive 12
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 9
+				TFBot
+				{
+					Class Pyro
+	
+					EventChangeAttributes
+					{
+						Default
+						{
+							Tag bot_gatebot 				// having these will cause bots to run towards gates
+							Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+							BehaviorModifiers push			// having these will cause bots to run towards gates
+							Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+							Item "MvM GateBot Light Pyro"
+							Skill Normal
+							CharacterAttributes
+					{
+						"Airblast Disabled" 1
+					}
+						}
+						RevertGateBotsBehavior
+						{
+							Item "MvM GateBot Light Pyro"
+							ItemAttributes               // turn off light hat
+							{
+								ItemName "MvM GateBot Light Pyro"
+								"item style override" 1
+							}
+							Skill Normal
+							CharacterAttributes
+					{
+						"Airblast Disabled" 1
+					}
+						}
+					}
+				}
+		}
+		WaveSpawn
+		{
+		
+			Name 3db
+			WaitForAllDead 3ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 200
+			TotalCount 4
+			SpawnCount 2
+			MaxActive 4
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 3
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Fast
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			Name 3final
+			WaitForAllSpawned 3ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 25
+			TotalCount 25
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 1
+			WaitBetweenSpawns 10
+			TFBot
+			{
+				Template T_TFBot_Soldier_RocketShotgun
+			}
+		}
+		WaveSpawn
+		{
+			Name 3carrier
+			WaitForAllSpawned 3aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			Support 1
+			TotalCount 25
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 4
+			WaitBetweenSpawnsAfterDeath 0
+			
+			TFBot
+			{
+				Template T_TFBot_Soldier_RocketShotgun
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target holograms_centerpath_relay
+			Action Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name 4aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 75
+			TotalCount 8
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 13
+			FirstSpawnOutput
+			{
+				Target spawnbot_mission_sniper0                
+				Action Disable
+			}
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFGateBot_Giant_Heavyweapons_Deflector
+				}
+				TFBot
+				{
+					Class Soldier
+					Name "Extended Buff Soldier"
+					ClassIcon soldier_buff
+
+					EventChangeAttributes
+					{
+						Default
+						{
+							BehaviorModifiers push			// having these will cause bots to run towards gates
+							Attributes IgnoreFlag			// having these will cause bots to run towards gates
+							Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+							Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+							Item "The Buff Banner"
+							Item "MvM GateBot Light Soldier"
+							Skill Expert
+							Attributes SpawnWithFullCharge
+							CharacterAttributes
+							{
+								"increase buff duration"	9.0
+							}
+						}
+						RevertGateBotsBehavior
+						{
+							Item "The Buff Banner"
+							Item "MvM GateBot Light Soldier"
+							ItemAttributes               // turn off light hat
+							{
+								ItemName "MvM GateBot Light Soldier"
+								"item style override" 1
+							}
+							Skill Expert
+							Attributes SpawnWithFullCharge
+							CharacterAttributes
+							{
+								"increase buff duration"	9.0
+							}
+						}
+					}
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Heavy_IronFist
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Shield
+					Tag bot_squad_member
+				}
+				
+			}
+		}
+		WaveSpawn
+		{
+			Name 4aa
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 25
+			TotalCount 6
+			SpawnCount 2
+			MaxActive 6
+			WaitBeforeStarting 14
+			WaitBetweenSpawns 7
+				TFBot
+				{
+					Template T_TFGateBot_Heavy_IronFist
+				}
+		}
+		WaveSpawn
+		{
+			Name 4aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 5
+			SpawnCount 5
+			MaxActive 5
+			WaitBeforeStarting 26
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFGateBot_Giant_Soldier_RocketShotgun
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Shield
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Vaccinator_Bullet_75res
+					Tag bot_squad_member
+				}
+				TFBot
+			{
+				Class Soldier
+			Name "Extended Buff Soldier"
+			ClassIcon soldier_buff
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag			// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+
+					Item "The Buff Banner"
+					Item "MvM GateBot Light Soldier"
+					Skill Expert
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+						"increase buff duration"	9.0
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "The Buff Banner"
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					Skill Expert
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+						"increase buff duration"	9.0
+					}
+				}
+			}
+			}
+				TFBot
+				{
+					Template T_TFGateBot_Demoman_Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name spyenabler
+			WaitForAllSpawned 4ab
+			WaitBeforeStarting 8
+			FirstSpawnOutput
+			{
+				Target spawnbot_mission_sniper0                  
+				Action Enable
+			}
+		}
+		WaveSpawn
+		{
+			Name 4bb
+			WaitForAllDead 4aa
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 150
+			TotalCount 6
+			SpawnCount 3
+			MaxActive 6
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 20
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons_Deflector
+					Tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Shield
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Vaccinator_Bullet_75res
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 4bb
+			WaitForAllDead 4aa
+			Where spawnbot_main0
+			Where spawnbot_main1_slow
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 42
+			SpawnCount 6
+			MaxActive 12
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7.2
+			RandomSpawn 1
+				TFBot
+				{
+					Class Pyro
+	
+					EventChangeAttributes
+					{
+						Default
+						{
+							Tag bot_gatebot 				// having these will cause bots to run towards gates
+							Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+							BehaviorModifiers push			// having these will cause bots to run towards gates
+							Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+							Item "MvM GateBot Light Pyro"
+							Skill Normal
+							CharacterAttributes
+					{
+						"Airblast Disabled" 1
+					}
+						}
+						RevertGateBotsBehavior
+						{
+							Item "MvM GateBot Light Pyro"
+							ItemAttributes               // turn off light hat
+							{
+								ItemName "MvM GateBot Light Pyro"
+								"item style override" 1
+							}
+							Skill Normal
+							CharacterAttributes
+					{
+						"Airblast Disabled" 1
+					}
+						}
+					}
+				}
+		}
+		WaveSpawn
+		{
+			Name 4carrier
+			WaitForAllSpawned 4ab
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 50
+			TotalCount 50
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 6
+			WaitBetweenSpawnsAfterDeath 0
+			TFBot
+			{
+				Class Pyro
+				ClassIcon pyro_giant
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name 4ca
+			WaitForAllDead 4bb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 200
+			TotalCount 5
+			SpawnCount 1
+			MaxActive 3
+			WaitBeforeStarting 3
+			WaitBetweenSpawns 7
+			TFBot
+			{
+				Class Soldier
+			Name "Giant Black Box Soldier"
+			ClassIcon soldier_blackbox_conch_lite
+			Health 4200
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "The Black Box"
+					Item "MvM GateBot Light Soldier"
+					Skill Expert
+					Attributes MiniBoss
+					Tag bot_giant
+					WeaponRestrictions PrimaryOnly
+					Attributes HoldFireUntilFullReload
+					Item "The Concheror"
+					Attributes SpawnWithFullCharge 
+					ItemAttributes
+					{
+						ItemName "The Black Box"
+						"damage bonus" 0.45
+						"fire rate bonus" 0.001
+						"clip size upgrade atomic" 0
+						"faster reload rate" 1.6
+						"blast radius increased" 1.25
+						//"Projectile speed increased" 0.4
+						"projectile spread angle penalty" 4
+						"heal on hit for rapidfire" 1000
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.4
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 3
+						"Projectile speed increased" 0.9
+						"deploy time increased" 0.5
+						"increase buff duration" 100
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "The Black Box"
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					Skill Expert
+					Attributes MiniBoss
+					Tag bot_giant
+					WeaponRestrictions PrimaryOnly
+					Attributes HoldFireUntilFullReload
+					Item "The Concheror"
+					Attributes SpawnWithFullCharge 
+					ItemAttributes
+					{
+						ItemName "The Black Box"
+						"damage bonus" 0.33
+						"fire rate bonus" 0.001
+						"clip size upgrade atomic" 0
+						"faster reload rate" 1.6
+						"blast radius increased" 1.25
+						//"Projectile speed increased" 0.4
+						"projectile spread angle penalty" 4
+						"heal on hit for rapidfire" 1000
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.4
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 3
+						"Projectile speed increased" 0.9
+						"deploy time increased" 0.5
+						"increase buff duration" 100
+					}
+				}
+			}
+			}
+		}
+		WaveSpawn
+		{
+			Name 4cb
+			WaitForAllDead 4bb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 28
+			SpawnCount 7
+			MaxActive 12
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 14
+			RandomSpawn 1
+			RandomChoice
+			{
+				TFBot
+				{
+					Class Scout
+				}
+				TFBot
+				{
+					Class Demoman
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 4engis
+			WaitForAllDead 4bb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 0
+			Support Limited
+			TotalCount 4
+			SpawnCount 1
+			MaxActive 3
+			WaitBeforeStarting 28
+			WaitBetweenSpawns 10
+			TFBot
+			{
+				Template T_TFBot_Engineer_Sentry_Battle_TeleIn
+				Attributes IgnoreFlag
+			}
+		}
+		WaveSpawn
+		{
+			Name 4support
+			WaitForAllSpawned 4cb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 50
+			TotalCount 50
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 7
+			RandomSpawn 1
+			TFBot
+			{
+				Class Pyro
+				ClassIcon pyro_giant
+				Skill Hard
+				CharacterAttributes
+				{
+					"airblast disabled" 1
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 4da
+			WaitForAllDead 4ca
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 150
+			TotalCount 12
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 15
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_Spammer
+					Item "The Lucky Shot"
+					Tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Shield
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Kritz
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Vaccinator_Bullet_75res
+					Tag bot_squad_member
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target holograms_3way_relay
+			Action Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name the
+			WaitForAllDead 4cb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 1
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 0
+			TFBot
+			{
+				Template T_TFBot_Scout_FAN //Haha get fucked
+				ClassIcon scout_fan
+			}
+		}
+		WaveSpawn
+		{
+			Name 5aa
+			WaitForAllDead 4ca
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 24
+			SpawnCount 4
+			MaxActive 12
+			WaitBeforeStarting 1
+			WaitBetweenSpawns 7
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFBot_Demoman_Knight
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name 5aa
+			WaitForAllDead 4ca
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 150
+			TotalCount 6
+			SpawnCount 6
+			MaxActive 6
+			WaitBeforeStarting 1
+			WaitBetweenSpawns 17
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavy_Booster
+					Tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Giant_Medic
+					Tag bot_giant
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 5ba
+			WaitForAllSpawned 5aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 32
+			SpawnCount 4
+			MaxActive 8
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 8
+			RandomSpawn 1
+			TFBot
+			{
+				Class Scout
+				ClassIcon scout_fan
+				Name "Force-A-Nature Scout"
+				Skill Expert
+				Item "The Bolt Boy"
+				Item "The Force-a-Nature"
+				MaxVisionRange 500
+				CharacterAttributes
+				{
+					"move speed bonus" 1.1
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 5ba
+			WaitForAllDead 5aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 18
+			SpawnCount 2
+			MaxActive 6
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 4
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFGateBot_Heavy_IronFist_Airblast
+				ClassIcon heavy_steelfist_pusher
+			}
+		}
+		WaveSpawn
+		{
+			Name 5ba
+			WaitForAllDead 5aa
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 50
+			TotalCount 4
+			SpawnCount 1
+			MaxActive 3
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 11.1
+			TFBot
+				{
+					Class Demoman
+			Name "Giant Rapid Fire Demoman"
+			ClassIcon demo_spammer
+						Health 3300
+					EventChangeAttributes
+				{
+					Default
+					{
+						Tag bot_gatebot 				// having these will cause bots to run towards gates
+						Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+						BehaviorModifiers push			// having these will cause bots to run towards gates
+						Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+						Item "MvM GateBot Light Demoman"
+						Skill Expert
+			Skill Expert
+			Attributes MiniBoss
+			tag bot_giant
+			WeaponRestrictions PrimaryOnly
+			 Item "The Tide Turner"
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"charge time increased" 0.9
+			}
+					
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Demo"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Demoman"
+						"item style override" 1
+					}
+					Skill Expert
+					Skill Expert
+			Attributes MiniBoss
+			tag bot_giant
+			WeaponRestrictions PrimaryOnly
+			 Item "The Tide Turner"
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"charge time increased" 0.9
+			}
+				}
+			}
+				}
+		}
+		WaveSpawn
+		{
+			Name 5bb
+			WaitForAllDead 5ba
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 125
+			TotalCount 12
+			SpawnCount 6
+			MaxActive 7
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 17
+			Squad
+			{
+				TFBot
+				{
+					Class Demoman
+			Name "Giant Rapid Fire Demoman"
+			ClassIcon demo_spammer
+						Health 3300
+					EventChangeAttributes
+				{
+					Default
+					{
+						Tag bot_gatebot 				// having these will cause bots to run towards gates
+						Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+						BehaviorModifiers push			// having these will cause bots to run towards gates
+						Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+						Item "MvM GateBot Light Demoman"
+						Skill Expert
+			Skill Expert
+			Attributes MiniBoss
+			tag bot_giant
+			WeaponRestrictions PrimaryOnly
+			 Item "The Tide Turner"
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"charge time increased" 0.9
+			}
+					
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Demo"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Demoman"
+						"item style override" 1
+					}
+					Skill Expert
+					Skill Expert
+			Attributes MiniBoss
+			tag bot_giant
+			WeaponRestrictions PrimaryOnly
+			 Item "The Tide Turner"
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"charge time increased" 0.9
+			}
+				}
+			}
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Heavy_IronFist_Airblast
+					ClassIcon heavy_steelfist_pusher
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Kritz_Armored
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 5bb
+			WaitForAllDead 5ba
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 125
+			TotalCount 12
+			SpawnCount 6
+			MaxActive 7
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 16
+			Squad
+			{
+				TFBot
+				{
+					Class Demoman
+			Name "Giant Rapid Fire Demoman"
+			ClassIcon demo_spammer
+						Health 3300
+					EventChangeAttributes
+				{
+					Default
+					{
+						Tag bot_gatebot 				// having these will cause bots to run towards gates
+						Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+						BehaviorModifiers push			// having these will cause bots to run towards gates
+						Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+						Item "MvM GateBot Light Demoman"
+						Skill Expert
+			Skill Expert
+			Attributes MiniBoss
+			tag bot_giant
+			WeaponRestrictions PrimaryOnly
+			 Item "The Tide Turner"
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"charge time increased" 0.9
+			}
+					
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Demo"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Demoman"
+						"item style override" 1
+					}
+					Skill Expert
+					Skill Expert
+			Attributes MiniBoss
+			tag bot_giant
+			WeaponRestrictions PrimaryOnly
+			 Item "The Tide Turner"
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.4
+				"fire rate bonus" 0.75
+
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"charge time increased" 0.9
+			}
+				}
+			}
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Heavy_IronFist_Airblast
+					ClassIcon heavy_steelfist_pusher
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Kritz_Armored
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 5bc
+			WaitForAllSpawned 5ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 50
+			TotalCount 40
+			SpawnCount 5
+			MaxActive 7
+			WaitBeforeStarting 20
+			WaitBetweenSpawns 8
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFBot_Sniper_Huntsman
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name 5bc
+			WaitForAllSpawned 5bb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 50
+			TotalCount 33
+			SpawnCount 3
+			MaxActive 6
+			WaitBeforeStarting 20
+			WaitBetweenSpawns 5
+			TFBot
+			{
+				Class Scout
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name 5ca
+			WaitForAllDead 5bb
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 150
+			TotalCount 6
+			SpawnCount 3
+			MaxActive 6
+			WaitBeforeStarting 1
+			WaitBetweenSpawns 24
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_SlowBarrage
+					Item "The Patriot Peak"
+					BehaviorModifiers Push //Prevents funnies if bomb resets
+					Tag bot_giant
+				}
+				TFBot
+				{
+					Template T_TFBot_Giant_Medic_Regen
+					Name "Giant Regen Medic"
+					Tag bot_giant
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Kritz_Armored
+					Tag bot_squad_member
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target holograms_3way_relay
+			Action Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			
+			Name 6aa
+			Where spawnbot_main0
+			TotalCurrency 150
+			FirstSpawnWarningSound "npc/strider/striderx_alert4.wav"
+			DoneWarningSound "ambient\explosions\explode_2.wav"
+			TotalCount 1
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 0
+			
+
+			TFBot
+			{
+				Class Soldier
+				Name "The Harmonizer"
+				ClassIcon soldier_rocketrain_giant
+				Scale 1.9
+				Skill Expert
+				Health 38917
+				EventChangeAttributes
+				{
+					Default
+					{
+						
+						Attributes MiniBoss
+						tag bot_giant
+						Skill Expert
+						Attributes HoldFireUntilFullReload
+						Item "MvM GateBot Light Soldier"
+						Item "tf_weapon_shotgun_soldier"
+						Item "The Shogun's Shoulder Guard"
+						WeaponRestrictions SecondaryOnly
+						Attributes UseBossHealthBar
+						Tag bot_gatebot 				// having these will cause bots to run towards gates
+						Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+						BehaviorModifiers push			// having these will cause bots to run towards gates
+						Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+						
+						
+						ItemAttributes
+						{
+							ItemName "TF_WEAPON_ROCKETLAUNCHER"
+							"damage bonus" 0.95
+							"clip size upgrade atomic" 10
+							"faster reload rate" 0.2
+							"fire rate bonus" 0.001
+							"is_passive_weapon" 1
+							"projectile spread angle penalty" 4
+							"Projectile speed increased" 0.75
+							"auto fires when full" 1
+							"auto fires full clip" 1
+						}
+						ItemAttributes
+						{
+							ItemName "tf_weapon_shotgun_soldier"
+							"damage bonus" 13
+							"override projectile type" 2
+							"faster reload rate" 0.275
+							"fire rate bonus" 0.001
+							"clip size upgrade atomic" 8.0
+							"projectile spread angle penalty" 15
+							"Projectile speed increased" 0.40
+							"auto fires when full" 1
+							"auto fires full clip" 1
+							"Attach Particle Effect" 702
+						
+						}
+						CharacterAttributes
+						{
+							"rage giving scale" 0.1
+							"move speed bonus"	0.5
+							"damage force reduction" 0.5
+							"airblast vulnerability multiplier" 0.5
+							"override footstep sound set" 4
+						}
+					}
+					RevertGateBotsBehavior
+					{
+						Attributes MiniBoss
+						tag bot_giant
+						Skill Expert
+						Attributes HoldFireUntilFullReload
+						Item "MvM GateBot Light Soldier"
+						Item "tf_weapon_shotgun_soldier"
+						Item "The Shogun's Shoulder Guard"
+						Attributes UseBossHealthBar
+						WeaponRestrictions SecondaryOnly
+						
+						ItemAttributes
+						{
+							ItemName "MvM GateBot Light Soldier"
+							"item style override" 1
+						}	
+						ItemAttributes
+						{
+							ItemName "TF_WEAPON_ROCKETLAUNCHER"
+							"damage bonus" 0.9
+							"clip size upgrade atomic" 12
+							"faster reload rate" 0.2
+							"fire rate bonus" 0.001
+							"is_passive_weapon" 1
+							"Projectile speed increased" 0.65
+							"projectile spread angle penalty" 4
+							"auto fires when full" 1
+							"auto fires full clip" 1
+						}
+						ItemAttributes
+						{
+							ItemName "tf_weapon_shotgun_soldier"
+							"damage bonus" 13
+							"override projectile type" 2
+							"faster reload rate" 0.275
+							"fire rate bonus" 0.001
+							"clip size upgrade atomic" 8.0
+							"projectile spread angle penalty" 14
+							"Projectile speed increased" 0.40
+							"auto fires when full" 1
+							"auto fires full clip" 1
+							"Attach Particle Effect" 702
+						
+						}
+						CharacterAttributes
+						{
+							"rage giving scale" 2
+							"move speed bonus"	0.5
+							"damage force reduction" 0.5
+							"airblast vulnerability multiplier" 0.5
+							"override footstep sound set" 4
+						}
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 6aa
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 25
+			TotalCount 3
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 13
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_FAN
+				Tag bot_giant
+				//CharacterAttributes
+				//{
+					//"rage giving scale" 0.1 trolled
+				//}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name 6aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 100
+			TotalCount 12
+			SpawnCount 4
+			MaxActive 12
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 8
+			TFBot
+			{
+				Class Pyro
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Pyro"
+					Skill Hard
+					CharacterAttributes
+				{
+					"Airblast Disabled" 1
+				}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Pyro"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Pyro"
+						"item style override" 1
+					}
+					Skill Hard
+					CharacterAttributes
+				{
+					"Airblast Disabled" 1
+				}
+				}
+			}
+			}
+		}
+		WaveSpawn
+		{
+			Name 6carrier
+			WaitForAllSpawned 6aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 25
+			TotalCount 25
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 6
+			WaitBetweenSpawnsAfterDeath 0
+			TFBot
+			{
+				Template T_TFBot_Demo_Charger
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name 6ba
+			WaitForAllDead 6aa
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 50
+			TotalCount 5
+			SpawnCount 5
+			MaxActive 5
+			WaitBeforeStarting 0
+			RandomSpawn 1
+			TFBot
+			{
+				Template T_TFGateBot_Giant_Scout_FAN
+			}
+		}
+		WaveSpawn
+		{
+			Name 6ba
+			WaitForAllDead 6aa
+			Where spawnbot_main0_squad
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 100
+			TotalCount 15
+			SpawnCount 5
+			MaxActive 10
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 18
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFGateBot_Giant_Heavyweapons_Deflector
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Shield
+					Tag bot_squad_member
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic
+					Skill Expert
+					Item "Field Practice"
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 6bb
+			WaitForAllDead 6aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 4
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 16
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_FAN
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			Name 6ba
+			WaitForAllSpawned 6aa
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 50
+			TotalCount 27
+			SpawnCount 3
+			MaxActive 6
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 8
+			RandomSpawn 1
+			TFBot
+			{
+				Class Pyro
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Pyro"
+					Skill Hard
+					CharacterAttributes
+				{
+					"Airblast Disabled" 1
+				}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Pyro"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Pyro"
+						"item style override" 1
+					}
+					Skill Hard
+					CharacterAttributes
+				{
+					"Airblast Disabled" 1
+				}
+				}
+			}
+			}
+		}
+		WaveSpawn
+		{
+			Name 6finalsupports
+			WaitForAllSpawned 6ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			Support 1
+			TotalCurrency 50
+			TotalCount 40
+			SpawnCount 4
+			MaxActive 9
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 8
+			RandomSpawn 1
+			RandomChoice
+			{
+				TFBot
+				{
+					Class Pyro
+					Skill Expert
+					Item "Traffic Cone"
+					ClassIcon pyro_reflect_daan
+				}
+				TFBot
+				{
+					Class Pyro
+					Skill Expert
+					Item "Traffic Cone"
+					ClassIcon pyro_reflect_daan
+				}
+				TFBot
+				{
+					Class Heavy
+					Skill Hard
+					
+				}
+				TFBot
+				{
+					Template T_TFBot_Demoman_Knight
+					Attributes AlwaysCrit
+					Skill Expert
+				}
+				TFBot
+				{
+					Template T_TFBot_Demoman_Knight
+					Attributes AlwaysCrit
+					Skill Expert
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 6ca
+			WaitForAllDead 6ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_main2
+			TotalCurrency 40
+			TotalCount 4
+			SpawnCount 1
+			MaxActive 2
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 15
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_FAN
+				Tag bot_giant
+			}
+		}
+		WaveSpawn
+		{
+			Name 6ca
+			WaitForAllDead 6ba
+			Where spawnbot_main0
+			Where spawnbot_main1
+			Where spawnbot_upper2
+			TotalCurrency 300
+			TotalCount 12
+			SpawnCount 4
+			MaxActive 6
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 20
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_SlowBarrage
+					Item "The Patriot Peak"
+					BehaviorModifiers Push //Prevents funnies if bomb reset
+					Tag bot_giant
+					Attributes AlwaysCrit
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Shield
+					Tag bot_squad_member
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name 6final
+			WaitForAllSpawned 6ca
+			Where spawnbot_main0
+			Where spawnbot_main1_slow
+			Where spawnbot_main2
+			TotalCurrency 10
+			TotalCount 2
+			SpawnCount 1
+			MaxActive 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 2
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_FAN
+				Tag bot_giant
+			}
+		}
+	}
+}

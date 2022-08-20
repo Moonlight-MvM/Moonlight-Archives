@@ -1,0 +1,1344 @@
+#base robot_giant.pop
+#base robot_standard.pop
+population
+{
+	StartingCurrency	600
+	RespawnWaveTime	6
+	CanBotsAttackWhileInSpawnRoom	no
+	Templates
+	{
+	}
+	Mission
+	{
+		Objective	DestroySentries
+		Where	spawnbot
+		BeginAtWave	1
+		RunForThisManyWaves	9
+		InitialCooldown	25
+		CooldownTime	40
+		DesiredCount	1
+		TFBot
+		{
+			Template	T_TFBot_SentryBuster
+		}
+	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		BeginAtWave	1
+		RunForThisManyWaves	5
+		InitialCooldown	30
+		CooldownTime	50
+		DesiredCount	2
+		TFBot
+		{
+			Name	"Kunai Spy"
+			ClassIcon spy_kunai
+			Template	T_TFBot_Spy
+			Item	"conniver's kunai"
+			Item	"the ebenezer"
+		}
+	}
+	Mission
+	{
+		Objective	Sniper
+		Where	spawnbot_mission_sniper
+		BeginAtWave	2
+		RunForThisManyWaves	3
+		InitialCooldown	30
+		CooldownTime	45
+		DesiredCount	3
+		TFBot
+		{
+			Template	T_TFBot_Sniper
+			Skill	Hard
+			Item	"the b.m.o.c."
+		}
+	}
+	Mission
+	{
+		Objective	Sniper
+		Where	spawnbot_mission_sniper
+		BeginAtWave	5
+		RunForThisManyWaves	2
+		InitialCooldown	30
+		CooldownTime	45
+		DesiredCount	3
+		TFBot
+		{
+			Template	T_TFBot_Sniper_Sydney_Sleeper
+			Skill	Hard
+			Item	"the cold killer"
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w1_scout
+			TotalCurrency	200
+			TotalCount	42
+			MaxActive	12
+			SpawnCount	6
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	12
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Skill	Easy
+					Name	"Scout"
+					Template	T_TFBot_Scout_Scattergun_SlowFire
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	16
+			MaxActive	10
+			SpawnCount	4
+			WaitBeforeStarting	15
+			WaitBetweenSpawns	25
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon pyro_reflect_daan
+					Health	175
+					Name	Pyro
+					Class	Pyro
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Item	"the blizzard breather"
+					Item	"the sub zero suit"
+				}
+				TFBot
+				{
+					ClassIcon pyro_reflect_daan
+					Health	175
+					Name	Pyro
+					Class	Pyro
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Item	"the blizzard breather"
+					Item	"the sub zero suit"
+				}
+				TFBot
+				{
+					ClassIcon	demo
+					Health	175
+					Name	Demoman
+					Class	Demoman
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Item	"the sub zero suit"
+				}
+				TFBot
+				{
+					ClassIcon	demo
+					Health	175
+					Name	Demoman
+					Class	Demoman
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			TotalCount	30
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	16
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Skill	Normal
+					Template	T_TFBot_Heavyweapons_Heavyweight_Champ
+					Item	"dec2014 heavy_parka"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w1_heavy
+			TotalCurrency	100
+			TotalCount	12
+			MaxActive	6
+			SpawnCount	2
+			WaitBeforeStarting	13
+			WaitBetweenSpawns	18
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+					ClassIcon heavy_steelfist
+					Item	"the b.m.o.c."
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	25
+			WaitBetweenSpawns	10
+			Support	1
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	soldier
+					Health	200
+					Name	Soldier
+					Class	Soldier
+					Skill	Hard
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w1_scout
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	14
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Skill	Expert
+					Template	T_TFBot_Scout_Sandman
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned	w1_heavy
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier_Spammer
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w2_soldier
+			TotalCurrency	200
+			TotalCount	20
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	17
+			WaitBetweenSpawns	20
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier_Spammer
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+					ClassIcon heavy_steelfist
+					Item	"the b.m.o.c."
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+					ClassIcon heavy_steelfist
+					Item	"the b.m.o.c."
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+					Item	"tyrantium helmet"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			TotalCount	1
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	14
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Tank
+			{
+				Health	28000
+				Name	Tank
+				Speed	75
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w2_scout
+			TotalCurrency	300
+			TotalCount	72
+			MaxActive	12
+			SpawnCount	6
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	18
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Skill	Expert
+					Template	T_TFBot_Scout_Melee
+					ClassIcon scout_bat_nys
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	8
+			WaitBetweenSpawns	18
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	heavy_warrior_tind
+					Health	175
+					Name	"Dwarf Heavy"
+					Scale	0.8
+					Class	HeavyWeapons
+					Skill	Expert
+					WeaponRestrictions	MeleeOnly
+					Attributes	"AlwaysCrit"
+					Item	"warrior's spirit"
+					Item	"dec2014 heavy_parka"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned	w2_soldier
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	6
+			WaitBeforeStarting	14
+			WaitBetweenSpawns	0
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier_Spammer_Reload
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+					Item	"tyrantium helmet"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w3_pyro
+			TotalCurrency	200
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	4
+			WaitBeforeStarting	15
+			WaitBetweenSpawns	15
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Pyro
+					ClassIcon pyro_reflect_daan
+					Item	"the sub zero suit"
+					Item	"the blizzard breather"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w3_soldier
+			TotalCurrency	200
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	4
+			WaitBeforeStarting	15
+			WaitBetweenSpawns	15
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Demo_Burst
+					Item	"the sub zero suit"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned	w3_pyro
+			TotalCurrency	150
+			TotalCount	6
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	8
+			WaitBetweenSpawns	22
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier
+					Name	"Giant Direct Hit Soldier"
+					ClassIcon 	soldier_directhit_lite
+					Item	"the direct hit"
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	16
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Skill	Expert
+					Template	T_TFBot_Scout_Sandman
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	14
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Gnome
+					Item	"dec2014 heavy_parka"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned	w3_pyro
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	18
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	soldier
+					Health	200
+					Name	Soldier
+					Class	Soldier
+					Skill	Normal
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w3_soldier
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	2
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Tank
+			{
+				Health	30000
+				Name	Tank
+				Speed	75
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	15
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Sniper_Huntsman
+					Item	"the b.m.o.c."
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w4_heavy
+			TotalCurrency	250
+			TotalCount	36
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	12
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Demo_Burst
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	150
+			TotalCount	42
+			MaxActive	9
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	12
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout_popper2
+					Health	125
+					Name	"Soda Popper Scout"
+					Class	Scout
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					ItemAttributes
+					{
+						ItemName	"bonk leadwear"
+						"set item tint RGB"	8208497
+					}
+					Item	"the soda popper"
+					Item	"the sub zero suit"
+					Item	"bonk leadwear"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	50
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	4
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier
+					Name	"Giant Direct Hit Soldier"
+					ClassIcon 	soldier_directhit_lite
+					Item	"the direct hit"
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	20
+			WaitBetweenSpawns	25
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Scout_Fast
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	5
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	27
+			WaitBetweenSpawns	25
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Scout_Baseball
+					Item	"the sub zero suit"
+					Item	"batter's helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	35
+			WaitBetweenSpawns	38
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Heavyweapons_Deflector
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Name	"Giant Regen Medic"
+					Template	T_TFBot_Giant_Medic_Regen
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	50
+			TotalCount	10
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	40
+			WaitBetweenSpawns	14
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon pyro_reflect_daan
+					Health	175
+					Name	Pyro
+					Class	Pyro
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Item	"the blizzard breather"
+					Item	"the sub zero suit"
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w5_pyro
+			TotalCurrency	300
+			TotalCount	18
+			MaxActive	9
+			SpawnCount	3
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	18
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier_Spammer
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Name	"Shield Medic"
+					ClassIcon	medic_shield_lite
+					Attributes	"SpawnWithFullCharge"
+					Attributes	"ProjectileShield"
+					Attributes  "IgnoreEnemies"
+					Skill	Expert
+					Item	"the byte'd beak"
+					Item	"the quick-fix"
+					ItemAttributes
+					{
+						ItemName	"the quick-fix"
+						"generate rage on heal"	1
+					}
+				}
+				TFBot
+				{
+					Skill	Hard
+					Template	T_TFBot_Soldier_Extended_Buff_Banner
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	300
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	34
+			Where	spawnbot
+			Tank
+			{
+				Health	24000
+				Name	Tank
+				Speed	75
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	7
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	25
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Scout_Baseball
+					Item	"the sub zero suit"
+					Item	"batter's helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned	w5_pyro
+			TotalCurrency	200
+			TotalCount	24
+			MaxActive	6
+			SpawnCount	6
+			WaitBeforeStarting	8
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Soldier_RocketShotgun
+					Attributes	"AlwaysCrit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w5_pyro
+			TotalCurrency	150
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	30
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Giant Heater Heavy"
+					ClassIcon	heavy_heater
+					Template	T_TFBot_Giant_Heavyweapons
+					Attributes	"AlwaysCrit"
+					Item	"the huo long heatmaker"
+					Item	"the bunsen brave"
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w5_pyro
+			TotalCurrency	50
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	26
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Tank
+			{
+				Health	30000
+				Name	Tank
+				Speed	75
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	40
+			WaitBetweenSpawns	20
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Skill	Expert
+					Template	T_TFBot_Scout_Sandman
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	2
+			WaitBetweenSpawns	24
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout_popper2
+					Health	125
+					Name	"Soda Popper Scout"
+					Class	Scout
+					Skill	Hard
+					WeaponRestrictions	PrimaryOnly
+					ItemAttributes
+					{
+						ItemName	"bonk leadwear"
+						"set item tint RGB"	8208497
+					}
+					Item	"the soda popper"
+					Item	"bonk leadwear"
+					Item	"the sub zero suit"
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w6_pyro
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	14
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Heavyweapons_Deflector
+					Item	"the all-father"
+					Item	"the b.m.o.c."
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	20
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Scout_Fast
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w6_heavy
+			WaitForAllSpawned	w6_pyro
+			TotalCurrency	200
+			TotalCount	6
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	20
+			WaitBetweenSpawns	30
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Heavyweapons_Deflector
+					Item	"the all-father"
+				}
+				TFBot
+				{
+					Name	"Giant Regen Medic"
+					Template	T_TFBot_Giant_Medic_Regen
+					Item	"the byte'd beak"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	20
+			WaitBetweenSpawns	25
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	soldier_directhit_lite
+					Health	200
+					Name	"Direct Hit Soldier"
+					Class	Soldier
+					Skill	Hard
+					WeaponRestrictions	PrimaryOnly
+					Attributes	"AlwaysCrit"
+					Item	"the direct hit"
+					Item	"tyrantium helmet"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+					ClassIcon heavy_steelfist
+					Item	"the all-father"
+					Item	"the b.m.o.c."
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	14
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon pyro_reflect_daan
+					Health	175
+					Name	Pyro
+					Class	Pyro
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Attributes	"AlwaysCrit"
+					Item	"the blizzard breather"
+					Item	"the sub zero suit"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w6_tank
+			WaitForAllSpawned	w6_heavy
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	35
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Tank
+			{
+				Health	36000
+				Name	Tank
+				Speed	75
+				Skin	1
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w6_colonel
+			WaitForAllSpawned	w6_tank
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	4
+			WaitBetweenSpawns	3
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier_SlowBarrage
+					Attributes	"AlwaysCrit"
+					Item	"the all-father"
+					Item	"exquisite rack"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w6_pyro
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	14
+			Support	1
+			Where	spawnbot_giant
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	soldier
+					Health	200
+					Name	Soldier
+					Class	Soldier
+					Skill	Hard
+					Item	"tyrantium helmet"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	56
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	15
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout_popper2
+					Health	125
+					Name	"Soda Popper Scout"
+					Class	Scout
+					Skill	Normal
+					WeaponRestrictions	PrimaryOnly
+					Attributes	"AlwaysCrit"
+					ItemAttributes
+					{
+						ItemName	"bonk leadwear"
+						"set item tint RGB"	8208497
+					}
+					Item	"the soda popper"
+					Item	"the sub zero suit"
+					Item	"bonk leadwear"
+				}
+			}
+		}
+	}
+}

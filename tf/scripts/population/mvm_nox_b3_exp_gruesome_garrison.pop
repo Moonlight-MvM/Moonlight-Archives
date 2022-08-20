@@ -1,0 +1,3202 @@
+//Created by Yoovy: https://steamcommunity.com/profiles/76561198017198600/
+
+#base robot_giant.pop
+#base robot_standard.pop
+
+WaveSchedule
+{
+	StartingCurrency 400
+	RespawnWaveTime 6
+	CanBotsAttackWhileInSpawnRoom no
+	Advanced 1
+	Templates
+	{
+		UltraRareScout //1% chance of spawning on Subwave 1 of Wave 1
+		//:holyfuck:
+		{
+			Class Scout
+			Name "Ultra Rare Scout"
+			Skill Hard
+			
+			Item "The Warsworn Helmet"
+			Item "The Little Drummer Mann"
+			Item "Upgradeable TF_WEAPON_SCATTERGUN"
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_SCATTERGUN"
+				"killstreak idleeffect" 2
+				"is australium item" 1
+				"killstreak tier" 1
+				"turn to gold" 1
+			}
+		}
+		YoovyBot_Giant_Heavy_Heater
+		{
+			Class Heavy
+			Name "Giant Heater Heavy"
+			Health 5000
+			ClassIcon heavy_heater_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Huo Long Heatmaker"
+			ItemAttributes
+			{
+				ItemName "The Huo Long Heatmaker"
+				"damage penalty" 1
+				"damage bonus" 1.4
+			}
+			Item "The Bunsen Brave"
+			ItemAttributes
+			{
+				ItemName "The Bunsen Brave"
+				"set item tint RGB" 13595446
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Medic_Kritzkrieg
+		{
+			Class Medic
+			Name "Kritzkrieg Medic"
+			ClassIcon medic_kritz
+			
+			Attributes SpawnWithFullCharge
+			Attributes AlwaysCrit
+			
+			Item "The Kritzkrieg"
+			ItemAttributes
+			{
+				ItemName "The Kritzkrieg"
+				"uber duration bonus" 7153200
+			}
+			Item "The Combat Medic's Crusher Cap"
+			
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 7202004
+			}
+		}
+		YoovyBot_Soldier_Buff_Extended
+		{
+			Class Soldier
+			Name "Extended Buff Soldier"
+			ClassIcon soldier_buff
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "The Buff Banner"
+			Item "Defiant Spartan"
+			
+			CharacterAttributes
+			{
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+			}
+		}
+		YoovyBot_Heavy_SteelFist_Push
+		{
+			Class Heavy
+			Name "Steel Gauntlet Pusher"
+			Health 900
+			Scale 1.5
+			ClassIcon heavy_steelfist_pusher
+			
+			WeaponRestrictions MeleeOnly
+			Tag bot_giant
+			
+			Item "Fists of Steel"
+			ItemAttributes
+			{
+				ItemName "Fists of Steel"
+				"damage causes airblast" 1
+				"killstreak idleeffect" 1
+				"damage bonus" 1.54
+			}
+			Item "Mad Mask"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.8
+				"damage force reduction" 0.8
+			}
+		}
+		YoovyBot_Scout_Bonk
+		{
+			Class Scout
+			Name "Bonk Scout"
+			ClassIcon scout_bonk
+			
+			Item "Bonk! Atomic Punch"
+			Item "Bonk Leadwear"
+		}
+		T_TFBot_Giant_Heavyweapons_Deflector_Yoovy
+		{
+			Class Heavy
+			Name "Giant Deflector Heavy"
+			Health 5000
+			ClassIcon Heavy_deflector
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Deflector"
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"attack projectiles" 2
+				"damage bonus" 1.5
+			}
+			Item "The U-Clank-A"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		T_TFBot_Pyro_Yoovy
+		{
+			Class Pyro
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_FLAMETHROWER
+				"airblast disabled" 1
+			}
+		}
+		YoovyBot_Giant_Scout_Sandman
+		{
+			Class Scout
+			Name "Major League Scout"
+			Health 1600
+			ClassIcon scout_stun_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Sandman"
+			ItemAttributes
+			{
+				ItemName "The Sandman"
+				"effect bar recharge rate increased" 0.1
+				"max health additive penalty" 0
+				"damage bonus" 1.25
+			}
+			Item "Batter's Helmet"
+			Item "MNC Mascot Outfit"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+			}
+		}
+		YoovyBot_Giant_Scout_FAN
+		{
+			Class Scout
+			Name "Giant Force-a-Nature Scout"
+			Health 1600
+			ClassIcon Scout_fan_mipmap
+			
+			Attributes MiniBoss
+			MaxVisionRange 500
+			Tag bot_giant
+			
+			Item "The Force-a-Nature"
+			ItemAttributes
+			{
+				ItemName "The Force-a-Nature"
+				"damage bonus" 1.25
+			}
+			Item "The Fed-Fightin' Fedora"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+			}
+		}
+		YoovyBot_Giant_Scout
+		{
+			Class Scout
+			Name "Giant Scout"
+			Health 1600
+			ClassIcon scout_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_SCATTERGUN
+				"damage bonus" 1.25
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+			}
+		}
+		T_TFBot_Giant_Soldier_RapidFire_Buff_Extended
+		{
+			Class Soldier
+			Name "Giant Buff Rapid Fire Soldier"
+			Health 3800
+			ClassIcon soldier_buff_spammer
+			
+			Attributes HoldFireUntilFullReload
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"fire rate bonus" 0.5
+			}
+			Item "The Buff Banner"
+			Item "Defiant Spartan"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+				"move speed penalty" 0.5
+			}
+		}
+		T_TFBot_Giant_Soldier_RapidFire_Backup_Extended
+		{
+			Class Soldier
+			Name "Giant Backup Rapid Fire Soldier"
+			Health 3800
+			ClassIcon soldier_backup_spammer
+			
+			Attributes HoldFireUntilFullReload
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"fire rate bonus" 0.5
+			}
+			Item "The Battalion's Backup"
+			Item "Full Metal Drill Hat"
+			ItemAttributes
+			{
+				ItemName "Full Metal Drill Hat"
+				"set item tint RGB" 2636109
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+				"move speed penalty" 0.5
+			}
+		}
+		T_TFBot_Giant_Demoman_RapidFire
+		{
+			Class Demoman
+			Name "Giant Rapid Fire Demoman"
+			Health 3300
+			ClassIcon demo_spammer_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "warbird_grenadelauncher_butcherbird"
+			ItemAttributes
+			{
+				ItemName "warbird_grenadelauncher_butcherbird"
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"fire rate bonus" 0.75
+			}
+			Item "Scotch Bonnet"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		T_TFBot_Demoman_Knight_Yoovy
+		{
+			Class Demoman
+			Name "Demoknight"
+			ClassIcon demoknight
+			Health 150
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Eyelander"
+			ItemAttributes
+			{
+				ItemName "The Eyelander"
+				"max health additive penalty" 1
+				"critboost on kill" 3
+			}
+			Item "The Chargin' Targe"
+			Item "Spiral Sallet"
+			
+			CharacterAttributes
+			{
+				"gesture speed increase" 1.5
+			}
+		}
+		T_TFBot_Heavy_Shotgun
+		{
+			Class Heavy
+			Name "Shotgun Heavy"
+			ClassIcon heavy_shotgun
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Well-Rounded Rifleman"
+		}
+		T_TFBot_Giant_Soldier_Barrage
+		{
+			Name "Colonel Barrage"
+			Class Soldier
+			Skill Expert
+			Health 4000
+			ClassIcon soldier_barrage
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Item	"gentlemanne_rocketlauncher_coffinnail"
+			Item	"The Patriot Peak"
+			Item	"The Diplomat"
+			ItemAttributes
+			{
+				ItemName "gentlemanne_rocketlauncher_coffinnail"
+				"projectile spread angle penalty" 5
+				"Projectile speed increased" 0.4
+				"clip size upgrade atomic" 26.0
+				"set_item_texture_wear" 0
+				"faster reload rate" 0.22
+				"fire rate bonus" 0.2
+				"damage bonus" 1.5
+			}
+			CharacterAttributes
+			{
+				"airblast vertical vulnerability multiplier" 0.1
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"damage force reduction" 0.4
+				"move speed bonus" 0.5
+				"health regen" 40
+			}
+		}
+		T_TFBot_Giant_Demoman_NotRapid
+		{
+			Name "Giant Demoman"
+			Class Demoman
+			Skill Expert
+			Health 3300
+			ClassIcon demo_giant
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"clip size upgrade atomic" 2
+				"fire rate bonus" 0.75
+			}
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 4
+				"damage force reduction" 0.5
+				"move speed penalty" 0.5
+			}
+		}
+		T_TFBot_Sniper_SMG
+		{
+			Name "SMG Sniper"
+			Class Sniper
+			Skill Normal
+			ClassIcon sniper_smg_tind
+			WeaponRestrictions SecondaryOnly
+			Item "The Conspicuous Camouflage"
+		}
+		T_TFBot_Giant_Pyro_Phlog
+		{
+			Class Pyro
+			Name "Giant Phlogistinator Pyro"
+			Health 3000
+			ClassIcon pyro_phlog_giant
+			
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Phlogistinator"
+			ItemAttributes
+			{
+				ItemName "The Phlogistinator"
+				"airblast disabled" 0
+			}
+			Item "The Mishap Mercenary"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"increase buff duration" 1.5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Medic_Uber
+		{
+			Class Medic
+			Name "Uber Medic"
+			ClassIcon medic_uber
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "Medic's Mountain Cap"
+			ItemAttributes
+			{
+				ItemName "Medic's Mountain Cap"
+				"set item tint RGB" 1315860
+			}
+		}
+		T_TFBot_Medic_Uber_Quick
+		{
+			Class Medic
+			Name "Quick-Uber Medic"
+			ClassIcon medic_uber
+			Skill Normal
+			Attributes SpawnWithFullCharge
+			Item "Titanium Tyrolean"
+			ItemAttributes
+			{
+				ItemName "Titanium Tyrolean"
+				"set item tint RGB" 8626083
+			}
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_MEDIGUN"
+				"ubercharge rate bonus" 5
+				"uber duration bonus" -3
+			}
+			CharacterAttributes
+			{
+				"heal rate bonus" 0.1
+			}
+		}
+		T_TFBot_Medic_QuickFix_Yoovy
+		{
+			Class Medic
+			Name "Quick-Fix Medic"
+			Skill Easy
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				Itemname "The Quick-Fix"
+				"ubercharge rate bonus" 0.01
+			}
+		}
+		T_TFBot_Sniper_Carbine
+		{
+			Name "Carbine Contraption"
+			Class Sniper
+			Skill Normal
+			Health 300
+			Scale 1.25
+			ClassIcon sniper_carbine
+			WeaponRestrictions SecondaryOnly
+			Item "The Dread Hiding Hood"
+			Item "The Cleaner's Carbine"
+			Item "Wagga Wagga Wear"
+			ItemAttributes
+			{
+				ItemName "The Cleaner's Carbine"
+				"minicritboost on kill" 3
+				"clip size penalty" 1
+				"fire rate penalty" 1
+			}
+		}
+		T_TFBot_Giant_Soldier_BurstFire_Buff_Extended
+		{
+			Class Soldier
+			Name "Giant Buff Burst Fire Soldier"
+			Health 3800
+			ClassIcon soldier_burstfire_buff
+			
+			Attributes HoldFireUntilFullReload
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"clip size upgrade atomic" 5.0
+				"reload time decreased" 0.6
+				"set_item_texture_wear" 0
+				"fire rate bonus" 0.1
+			}
+			Item "The Buff Banner"
+			Item "Defiant Spartan"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"increase buff duration" 9
+				"damage force reduction" 0.4
+				"deploy time decreased" 0.1
+				"move speed penalty" 0.5
+			}
+		}
+		T_TFBot_Heavy_Deflector
+		{
+			Name "Deflector Heavy"
+			Class Heavy
+			Skill Hard
+			ClassIcon heavy_deflector
+			Item "The U-clank-a"
+			Item "Deflector"
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"attack projectiles" 1
+			}
+		}
+		T_TFBot_Giant_Soldier_RapidFire
+		{
+			Name "Giant Rapid Fire Soldier"
+			Class Soldier
+			Skill Expert
+			Health 3800
+			ClassIcon soldier_spammer
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag	bot_giant
+			Item	"craftsmann_rocketlauncher_americanpastoral"
+			Item	"The Gilded Guard"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"faster reload rate" -0.8
+				"fire rate bonus" 0.5
+			}
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"damage force reduction" 0.4
+				"move speed bonus" 0.5
+				"override footstep sound set" 3
+			}
+		}
+		YoovyBot_Giant_Medic_QF_Bigheal
+		{
+			Class Medic
+			Name "Giant Big-Heal Medic"
+			Health 4500
+			ClassIcon medic_giant
+			
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+				"heal rate bonus" 400
+			}
+			Item "The Gentleman's Ushanka"
+			ItemAttributes
+			{
+				ItemName "The Gentleman's Ushanka"
+				"set item tint RGB" 8626083
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"bot medic uber health threshold" 150
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Soldier_Conch_Extended
+		{
+			Class Soldier
+			Name "Extended Conch Soldier"
+			ClassIcon soldier_conch
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "The Concheror"
+			Item "Furious Fukaamigasa"
+			
+			CharacterAttributes
+			{
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+			}
+		}
+		T_TFBot_Giant_Scout_Fast_Yoovy
+		{
+			Class Scout
+			Name "Super Scout"
+			Health 1200
+			ClassIcon scout_giant_fast
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Holy Mackerel"
+			ItemAttributes
+			{
+				ItemName "The Holy Mackerel"
+				"damage bonus" 1.25
+			}
+			Item "The Bolt Boy"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+				"move speed bonus" 2
+			}
+		}
+		YoovyBot_SentryBuster
+		{
+			Class Demoman
+			Name "Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+			}
+		}
+		YoovyBot_SentryBuster_Woodsy
+		{
+			Class Demoman
+			Name "Woodsy Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "The Bushman's Boonie"
+			Item "The Triggerman's Tacticals"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3
+				"torso scale" 0.3
+			}
+		}
+		YoovyBot_Giant_Pyro_Airblast
+		{
+			Class Pyro
+			Name "Giant Airblast Pyro"
+			Health 3000
+			ClassIcon pyro_reflect_daan_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Traffic Cone"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+	}
+	
+	//SentryBuster
+	Mission
+	{
+		Objective DestroySentries
+
+		Where spawnbot_mission_sentry_buster
+		BeginAtWave 1
+		RunForThisManyWaves 5
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 1
+
+		RandomChoice
+		{
+			TFBot
+			{
+				Template YoovyBot_SentryBuster
+			}
+			TFBot
+			{
+				Template YoovyBot_SentryBuster_Woodsy
+			}
+		}
+	}
+	
+	//Wave 2 Spy
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 2
+		RunForThisManyWaves 1
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+        }
+	}
+	//Wave 4 Spy
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 4
+		RunForThisManyWaves 1
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+        }
+	}
+	
+	//Wave 2 Razorback Sniper
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 2
+		RunForThisManyWaves 1
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Sniper_Razorback
+			Item "dec2014 hunter_vest"
+			MaxVisionRange 2500
+			Skill Hard
+        }
+	}
+	//Waves 3 & 4 Sydney Sniper
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 3
+		RunForThisManyWaves 2
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
+			Item "The Bushwacka"
+			Item "Ol' Snaggletooth"
+			Item "Crocodile Dandy"
+			MaxVisionRange 2500
+			Skill Hard
+        }
+	}
+	
+	//Wave 5 Battle Walk-In Engineer
+	Mission 
+	{
+		Objective Engineer
+
+		Where spawnbot_all
+		BeginAtWave 5
+		RunForThisManyWaves 1
+
+		InitialCooldown 35
+		CooldownTime 35
+		
+		DesiredCount 1
+
+        TFBot
+		{
+			Template T_TFBot_Engineer_Sentry_Battle
+			Name "Sentry Engineer"
+        }
+	}
+	//WAVE 1 //Currency $900 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		
+		// SUBWAVE 1 /////////////// $475 ///////////////
+		//
+		///////////////
+		// 1 Super Scout /// $25
+		//
+		// 1 Tank (15,000, Left Path) /// $300
+		//
+		// 28 Scouts /// $100
+		//
+		// 12 Demomen /// $50
+		///////////////
+		
+		WaveSpawn //super scout bomb rush
+		{
+			Name wave01_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 25
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Fast_Yoovy
+				Tag default
+			}
+		}
+		
+		WaveSpawn //15,000 health tank, left path
+		{
+			Name wave01_subwave01_tank
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 250
+			
+			Tank
+			{
+				Health 15000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_left_1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}	
+		}
+		
+		WaveSpawn //scouts left side
+		{
+			Name wave01_subwave01
+			
+			Where spawnbot_left
+			
+			TotalCount 14
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 6.5
+			
+			TotalCurrency 50
+			
+			RandomChoice
+			{
+				TFBot
+				{
+					Template UltraRareScout
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+					Tag default
+				}
+			}
+		}
+		
+		WaveSpawn //scouts right side
+		{
+			Name wave01_subwave01
+			
+			Where spawnbot_right
+			
+			TotalCount 14
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 6.5
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Scout
+				Skill Normal
+				Tag default
+			}
+		}
+		
+		WaveSpawn //demomen everywhere
+		{
+			Name wave01_subwave01
+			
+			Where spawnbot
+			Where spawnbot_left
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 12
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 6.5
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Demoman
+				Skill Normal
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant pyros
+		{
+			Name wave01_subwave01
+			
+			Where spawnbot
+			Where spawnbot_left
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 6.5
+			WaitBetweenSpawns 19
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Pyro_Airblast
+				Skill Expert
+				Tag default
+			}
+		}
+		// SUBWAVE 2 /////////////// $200 ///////////////
+		//
+		///////////////
+		// 21 Scouts /// $100
+		//
+		// 4 Giant Soldiers /// $100
+		///////////////
+		
+		WaveSpawn //scouts everywhere
+		{
+			Name wave01_subwave02
+			
+			WaitForAllDead wave01_subwave01
+			
+			Where spawnbot
+			Where spawnbot_left
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 28
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 6
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template YoovyBot_Scout_Bonk
+				Skill Normal
+				Tag default
+			}
+		}
+		WaveSpawn //giant soldiers
+		{
+			Name wave01_subwave02
+			
+			WaitForAllDead wave01_subwave01
+			
+			Where spawnbot
+			Where spawnbot_left
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 8
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 18
+			
+			TotalCurrency 100
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Kritzkrieg
+					Skill Hard
+					Tag default
+				}
+			}
+		}
+		// SUBWAVE 3 /////////////// $225 ///////////////
+		//
+		///////////////
+		// 48 Limited Heavyweight Champs /// $175
+		//
+		// 12 Limited Pyros /// $50
+		//
+		// 2 Giant Soldiers /// $200
+		///////////////
+		
+		WaveSpawn //support pyros everywhere
+		{
+			Name wave01_subwave03
+			
+			WaitForAllSpawned wave01_subwave02
+			
+			Where spawnbot
+			Where spawnbot_left
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 12
+			MaxActive 3
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 2
+			
+			TotalCurrency 25
+			
+			Support Limited
+			
+			TFBot
+			{
+				Template T_TFBot_Pyro_Yoovy
+				Skill Normal
+				Tag default_front
+			}
+		}
+		WaveSpawn //support heavyweight champs everywhere
+		{
+			Name wave01_subwave03
+			
+			WaitForAllSpawned wave01_subwave02
+			
+			Where spawnbot
+			Where spawnbot_left
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 36
+			MaxActive 9
+			SpawnCount 3
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 2
+			
+			TotalCurrency 50
+			
+			Support Limited
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Heavyweight_Champ
+				Skill Expert
+				Tag default_front
+			}
+		}
+		
+		WaveSpawn //giant soldiers
+		{
+			Name wave01_subwave03
+			
+			WaitForAllSpawned wave01_subwave02
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 24
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_Barrage
+				Tag default
+			}
+		}
+	}
+	//WAVE 2 //Currency $900 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		
+		// SUBWAVE 1 /////////////// $450 ///////////////
+		//
+		///////////////
+		// 2 Super Scouts /// $50
+		//
+		// 21 Bowmen /// $125
+		//
+		// 21 Soldiers /// $125
+		//
+		// 3 Giant Heavies /// $150
+		///////////////
+		
+		WaveSpawn //major league scout bomb rush
+		{
+			Name wave02_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 2
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Sandman
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //bowmen
+		{
+			Name wave02_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 21
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 125
+			
+			
+			TFBot
+			{
+				Template T_TFBot_Sniper_Huntsman
+				Item "Larrikin Robin"
+				Tag default
+			}
+		}
+		
+		WaveSpawn //soldiers
+		{
+			Name wave02_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 21
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 125
+			
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant heavies
+		{
+			Name wave02_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 9
+			MaxActive 9
+			SpawnCount 3
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 150
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_Barrage
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $225 ///////////////
+		//
+		///////////////
+		// 2 giant heavies /// $100
+		//
+		// 36 Airblast Pyros /// $125
+		///////////////
+		
+		WaveSpawn //giant heavies
+		{
+			Name wave02_subwave02_giantheavies
+			
+			WaitForAllSpawned	wave02_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 12
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Heavy_Heater
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //airblast pyros
+		{
+			Name wave02_subwave02
+			
+			WaitForAllSpawned	wave02_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 36
+			MaxActive 12
+			SpawnCount 6
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 125
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Normal
+				ClassIcon pyro_reflect_daan
+				Name "Airblast Pyro"
+				Item "Traffic Cone"
+				Tag default_front
+			}
+		}
+		// SUBWAVE 3 /////////////// $225 ///////////////
+		//
+		///////////////
+		// 24 Soldiers /// $50
+		//
+		// 12 Airblast Pyros /// $25
+		//
+		// 6 Giant Demomen /// $150
+		///////////////
+		
+		WaveSpawn //soldiers
+		{
+			Name wave02_subwave03
+			
+			WaitForAllDead	wave02_subwave02_giantheavies
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Tag default
+			}
+		}
+		
+		WaveSpawn //airblast pyros
+		{
+			Name wave02_subwave03
+			
+			WaitForAllDead	wave02_subwave02_giantheavies
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 12
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 25
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Normal
+				ClassIcon pyro_reflect_daan
+				Name "Airblast Pyro"
+				Item "Traffic Cone"
+				Tag default_front
+			}
+		}
+		
+		WaveSpawn //giant demomen left side
+		{
+			Name wave02_subwave03
+			
+			WaitForAllDead	wave02_subwave02_giantheavies
+			
+			Where spawnbot_left
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 28
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Demoman_NotRapid
+				Tag default
+			}
+		}
+		WaveSpawn //giant demomen middle
+		{
+			Name wave02_subwave03
+			
+			WaitForAllDead	wave02_subwave02_giantheavies
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 28
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Demoman_NotRapid
+				Tag default
+			}
+		}
+		WaveSpawn //giant demomen right side
+		{
+			Name wave02_subwave03
+			
+			WaitForAllDead	wave02_subwave02_giantheavies
+			
+			Where spawnbot_right
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 28
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Demoman_NotRapid
+				Tag default
+			}
+		}
+	}
+	//WAVE 3 //Currency $900 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		
+		// SUBWAVE 1 /////////////// $600 ///////////////
+		//
+		///////////////
+		// 3 Super Scouts /// $75
+		//
+		// 21 Buff Soldiers /// $125
+		//
+		// 35 SMG Snipers /// $150
+		//
+		// 3 Giant Phlogistinator Pyros /// $150
+		// Paired with a Quick-Uber Medic each (3 Quick-Uber Medics)
+		//
+		// 1 Tank (12,500, Opposite Path) /// $100
+		///////////////
+		
+		WaveSpawn //giant force-a-nature scout bomb rush
+		{
+			Name wave03_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 3
+			MaxActive 3
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 2
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_FAN
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //buff soldiers
+		{
+			Name wave03_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 18
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 9
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 125
+			
+			
+			TFBot
+			{
+				Template YoovyBot_Soldier_Buff_Extended
+				Skill Normal
+				Tag default
+			}
+		}
+		
+		WaveSpawn //shotgun heavies
+		{
+			Name wave03_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 35
+			MaxActive 10
+			SpawnCount 5
+			WaitBeforeStarting 9
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			
+			TFBot
+			{
+				Template T_TFBot_Heavy_Shotgun
+				Skill Hard
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant phlogistinator pyros uber medic group
+		{
+			Name wave03_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 6
+			MaxActive 6
+			SpawnCount 2
+			WaitBeforeStarting 9
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 150
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Pyro_Phlog
+					Skill Expert
+					Tag default
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+					Tag default
+				}
+			}
+		}
+		
+		WaveSpawn //12,500 health tank, opposite path
+		{
+			Name wave03_subwave01_tanks
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 30
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 100
+			
+			Tank
+			{
+				Health 12500
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_abomb"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}	
+		}
+		
+		// SUBWAVE 2 /////////////// $300 ///////////////
+		//
+		///////////////
+		// 18 SMG Snipers /// $150
+		// Paired with a Quick-Fix Medic each (18 Quick-Fix Medics)
+		//
+		// 21 Carbine Snipers /// $75
+		//
+		// 3 Giant Burst Fire Soldiers /// $75
+		///////////////
+		
+		WaveSpawn //smg snipers quick-fix medic group
+		{
+			Name wave03_subwave02
+			
+			WaitForAllDead	wave03_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 30
+			MaxActive 12
+			SpawnCount 6
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Heavy_Shotgun
+					Skill Hard
+					Tag default_end
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickFix_Yoovy
+					Tag default
+				}
+			}
+		}
+		
+		WaveSpawn //carbine snipers
+		{
+			Name wave03_subwave02
+			
+			WaitForAllDead	wave03_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 21
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Template T_TFBot_Sniper_Carbine
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant burst fire soldiers
+		{
+			Name wave03_subwave02
+			
+			WaitForAllDead	wave03_subwave01
+			
+			Where spawnbot_left
+			Where spawnbot_giant
+			Where spawnbot_right
+			RandomSpawn 1
+			
+			TotalCount 6
+			MaxActive 6
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 75
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_BurstFire_Buff_Extended
+					Skill Expert
+					Tag default
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Tag default
+				}
+			}
+		}
+	}
+	//WAVE 4 //Currency $900 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		
+		// SUBWAVE 1 /////////////// $600 ///////////////
+		//
+		///////////////
+		// 8 Super Scouts /// $200
+		//
+		// 32 Demoknights /// $125
+		//
+		// 28 Deflector Heavies /// $150
+		//
+		// 4 Giant Demomen /// $100
+		///////////////
+		
+		WaveSpawn //giant scout bomb rush
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 2
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //demoknights
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 32
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 11
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			
+			TFBot
+			{
+				Template T_TFBot_Demoman_Knight_Yoovy
+				Tag default
+			}
+		}
+		
+		WaveSpawn //deflector heavies
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 28
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 11
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			
+			TFBot
+			{
+				Template T_TFBot_Heavy_Deflector
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant demomen
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 11
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Demoman_RapidFire
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //super scouts
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 21
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Fast_Yoovy
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $300 ///////////////
+		//
+		///////////////
+		// 12 Soldiers /// $100
+		//
+		// 12 Heavies /// $100
+		//
+		// 2 Giant Heavies /// $100
+		// Paired with a Giant Regen Medic each (2 Giant Regen Medics)
+		///////////////
+		
+		WaveSpawn //soldiers
+		{
+			Name wave04_subwave02
+			
+			WaitForAllDead	wave04_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 18
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Hard
+				Tag default_end
+			}
+		}
+		
+		WaveSpawn //heavies
+		{
+			Name wave04_subwave02
+			
+			WaitForAllDead	wave04_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 12
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Heavy_Deflector
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant heavies giant regen medic group
+		{
+			Name wave04_subwave02
+			
+			WaitForAllDead	wave04_subwave01
+			
+			Where spawnbot_adjacent
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_RapidFire
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Giant_Medic_QF_Bigheal
+					Tag default
+				}
+			}
+		}
+	}
+	//WAVE 5 //Currency $900 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		
+		// SUBWAVE 1 /////////////// $600 ///////////////
+		//
+		///////////////
+		// 10 Extended Concheror Soldiers /// $25
+		//
+		// 5 Super Scouts /// $125
+		//
+		// 1 Tank (30,000 Health, Same path) /// $50
+		//
+		// 14 Demomen /// $75
+		//
+		// 6 Steel Gauntlet Pushers /// $50
+		//
+		// 2 Giant Heavyweight Champs /// $50
+		//
+		// 4 Giant Extended Buff Soldiers //$200
+		///////////////
+		
+		WaveSpawn //silence breaker
+		{
+			Name wave05_subwave01
+			FirstSpawnWarningSound "#music\hl2_song16.mp3"
+			
+			Where spawnbot_giant
+			
+			TotalCount 10
+			MaxActive 10
+			SpawnCount 10
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 25
+			
+			TFBot
+			{
+				Template YoovyBot_Soldier_Conch_Extended
+				Skill Hard
+				Attributes AlwaysCrit
+				Tag default
+			}
+		}
+		WaveSpawn //super scout bomb rush
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 5
+			MaxActive 5
+			SpawnCount 1
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 2
+			
+			TotalCurrency 125
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Fast_Yoovy
+				Skill Easy
+				Tag default
+			}
+		}
+		
+		WaveSpawn //30,000 health tank, same path
+		{
+			Name wave05_subwave01_tank
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 28
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 50
+			
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_wbomb"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}	
+		}
+		
+		WaveSpawn //demomen
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 14
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 38
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 75
+			
+			
+			TFBot
+			{
+				Class Demoman
+				Skill Hard
+				Tag default
+			}
+		}
+		
+		WaveSpawn //steel gauntlet pushers
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 6
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 38
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			
+			TFBot
+			{
+				Template YoovyBot_Heavy_SteelFist_Push
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant heavyweight champs
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 38
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Boxing_Heavy
+				Attributes AlwaysCrit
+				Name "Giant Heavyweight Champ"
+				Item "The Heavy-Weight Champ"
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant extended buff soldiers
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 43
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_RapidFire_Buff_Extended
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		WaveSpawn //giant extended buff soldiers
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 53
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_RapidFire_Buff_Extended
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $175 ///////////////
+		//
+		///////////////
+		// 14 Demomen /// $50
+		//
+		// 35 Shotgun Heavies /// $75
+		//
+		// 6 Giant Extended Backup Soldiers /// $50
+		///////////////
+		
+		WaveSpawn //demomen
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead	wave05_subwave01
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 14
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 6
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Demoman
+				Skill Hard
+				Tag default_end
+			}
+		}
+		
+		WaveSpawn //shotgun heavies
+		{
+			Name wave05_subwave02_shotguns
+			
+			WaitForAllDead	wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 35
+			MaxActive 10
+			SpawnCount 5
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 6
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Template T_TFBot_Heavy_Shotgun
+				Skill Hard
+				Attributes AlwaysCrit
+			}
+		}
+		
+		WaveSpawn //giant extended backup soldiers left side
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead	wave05_subwave01
+			
+			Where spawnbot_left
+			
+			TotalCount 3
+			MaxActive 3
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 18
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_RapidFire_Backup_Extended
+				Skill Expert
+				Tag default
+			}
+		}
+		WaveSpawn //giant extended backup soldiers right side
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead	wave05_subwave01
+			
+			Where spawnbot_right
+			
+			TotalCount 3
+			MaxActive 3
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 18
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_RapidFire_Backup_Extended
+				Skill Expert
+				Tag default
+			}
+		}
+		
+		// SUBWAVE 3 /////////////// $175 ///////////////
+		//
+		///////////////
+		// 1 Tank (30,000 Health, Same path) /// $50
+		//
+		// 3 Giant Heavies /// $50
+		// Paired with 6 Quick-Uber Medic each (18 Quick-Uber Medics)
+		//
+		// Support Scouts /// $0
+		// Only start spawning after Giant Heavies are dead.
+		///////////////
+		
+		WaveSpawn //30,000 health tank, same path
+		{
+			Name wave05_subwave03_stickytank
+			
+			WaitForAllDead	wave05_subwave02
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 0
+			
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name "tankbossfinale"
+				Skin 1
+				StartingPathTrackNode "boss_path_wbomb"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}	
+		}
+		
+		WaveSpawn //giant heavies uber medic group left side
+		{
+			Name wave05_subwave03
+			
+			WaitForAllDead	wave05_subwave02
+			
+			Where spawnbot_left
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 25
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons_Deflector_Yoovy
+					Attributes AlwaysCrit
+					Skill Expert
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+			}
+		}
+		WaveSpawn //giant heavies uber medic group middle
+		{
+			Name wave05_subwave03
+			
+			WaitForAllDead	wave05_subwave02
+			
+			Where spawnbot_giant
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 25
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons_Deflector_Yoovy
+					Attributes AlwaysCrit
+					Skill Expert
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+			}
+		}
+		WaveSpawn //giant heavies uber medic group right side
+		{
+			Name wave05_subwave03
+			
+			WaitForAllDead	wave05_subwave02
+			
+			Where spawnbot_right
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 25
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons_Deflector_Yoovy
+					Attributes AlwaysCrit
+					Skill Expert
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+					Tag default
+				}
+			}
+		}
+		
+		WaveSpawn //support scouts
+		{
+			Name wave05_subwave03_support
+			
+			WaitForAllSpawned	wave05_subwave03
+			
+			Where spawnbot_all
+			RandomSpawn 1
+			
+			TotalCount 12
+			MaxActive 12
+			SpawnCount 4
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 6
+			
+			TotalCurrency 0
+			
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Skill Normal
+			}
+		}
+	}
+}

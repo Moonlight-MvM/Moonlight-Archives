@@ -1,0 +1,2295 @@
+//Created by Yoovy: https://steamcommunity.com/profiles/76561198017198600/
+
+#base robot_giant.pop
+#base robot_standard.pop
+
+WaveSchedule
+{
+	StartingCurrency 400
+	RespawnWaveTime 5
+	CanBotsAttackWhileInSpawnRoom no
+	Advanced 1
+	Templates
+	{
+		YoovyBot_Giant_Demoman_RapidFire
+		{
+			Class Demoman
+			Name "Giant Rapid Eggnog Lobber"
+			Health 3300
+			ClassIcon demo_spammer_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "warbird_grenadelauncher_butcherbird"
+			ItemAttributes
+			{
+				ItemName "warbird_grenadelauncher_butcherbird"
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"fire rate bonus" 0.75
+			}
+			Item "EOTL_Brisk-weather Beanie"
+			Item "The Sub Zero Suit"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Scout_Fast
+		{
+			Class Scout
+			Name "Gift Delivery Service"
+			Health 1200
+			ClassIcon scout_giant_fast
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Festive Holy Mackerel"
+			ItemAttributes
+			{
+				ItemName "Festive Holy Mackerel"
+				"damage bonus" 1.25
+			}
+			Item "The Bolt Boy"
+			Item "The Bootie Time"
+			Item "Seasonal Employee"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+				"move speed bonus" 2
+			}
+		}
+		YoovyBot_Giant_Scout_Sandman_Armored
+		{
+			Class Scout
+			Name "Top Elf Employee"
+			Health 3000
+			ClassIcon scout_stun_giant_armored
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Sandman"
+			ItemAttributes
+			{
+				ItemName "The Sandman"
+				"effect bar recharge rate increased" 0.1
+				"max health additive penalty" 0
+				"damage bonus" 1.25
+			}
+			Item "The Giftcrafter"
+			Item "The Bootie Time"
+			Item "Elf-Made Bandanna"
+			Item "Das Metalmeatencasen"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"move speed penalty" 0.75
+			}
+		}
+		T_TFBot_Giant_Heavy_Brassbeast
+		{
+			Class Heavy
+			Name "Giant Grouchy Grumpster"
+			Health 5000
+			ClassIcon heavy_brass_nys_giant
+			Skill Expert
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Brass Beast"
+			ItemAttributes
+			{
+				ItemName "The Brass Beast"
+				"aiming movespeed decreased" 1
+				"spunup_damage_resistance" 1
+				"damage bonus" 1.7
+			}
+			Item "dec2014 heavy_parka"
+			Item "EOTL_hiphunter_jacket"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Scout_Sandman
+		{
+			Class Scout
+			Name "Toy Testing Elf"
+			ClassIcon scout_stun
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Sandman"
+			ItemAttributes
+			{
+				ItemName "The Sandman"
+				"max health additive penalty" 0
+			}
+			Item "The Giftcrafter"
+			Item "The Bootie Time"
+			Item "Elf-Made Bandanna"
+			Item "Seasonal Employee"
+		}
+		YoovyBot_Giant_Scout_Sandman
+		{
+			Class Scout
+			Name "Toy Examiner Elf"
+			Health 1600
+			ClassIcon scout_stun_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Sandman"
+			ItemAttributes
+			{
+				ItemName "The Sandman"
+				"effect bar recharge rate increased" 0.1
+				"max health additive penalty" 0
+				"damage bonus" 1.25
+			}
+			Item "The Giftcrafter"
+			Item "The Bootie Time"
+			Item "Elf-Made Bandanna"
+			Item "Seasonal Employee"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+			}
+		}
+		T_TFBot_Giant_Soldier_RapidFire
+		{
+			Name "Giant Rapid Fire Toy Soldier"
+			Class Soldier
+			Skill Expert
+			Health 3800
+			ClassIcon soldier_spammer
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag	bot_giant
+			Item	"craftsmann_rocketlauncher_americanpastoral"
+			Item	"The Toy Soldier"
+			Item	"The Hurt Locher"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"faster reload rate" -0.8
+				"fire rate bonus" 0.5
+			}
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"damage force reduction" 0.4
+				"move speed bonus" 0.5
+				"override footstep sound set" 3
+			}
+		}
+		T_TFBot_Medic_Uber_Quick
+		{
+			Class Medic
+			Name "Christmas Spirit"
+			ClassIcon medic_uber
+			Skill Normal
+			Attributes SpawnWithFullCharge
+			Item "The Smissmass Sorcerer"
+			Item "Festive Frames"
+			Item "Medical Monarch"
+			Item "Festive Medigun 2011"
+			ItemAttributes
+			{
+				ItemName "Festive Medigun 2011"
+				"ubercharge rate bonus" 5
+				"uber duration bonus" -3
+			}
+			CharacterAttributes
+			{
+				"heal rate bonus" 0.1
+			}
+		}
+		YoovyBot_Medic_Uber
+		{
+			Class Medic
+			Name "Miracle Healing"
+			ClassIcon medic_uber
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "Candy Crown"
+			Item "Vampiric Vesture"
+			Item "Festive Medigun 2011"
+		}
+		T_TFBot_Giant_Soldier_Barrage
+		{
+			Name "Colonel the Action Figure"
+			Class Soldier
+			Skill Expert
+			Health 4000
+			ClassIcon soldier_barrage
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Item	"gentlemanne_rocketlauncher_coffinnail"
+			Item	"dec2014 Skullcap"
+			Item	"The Diplomat"
+			ItemAttributes
+			{
+				ItemName "gentlemanne_rocketlauncher_coffinnail"
+				"projectile spread angle penalty" 5
+				"Projectile speed increased" 0.4
+				"clip size upgrade atomic" 26.0
+				"set_item_texture_wear" 0
+				"faster reload rate" 0.22
+				"fire rate bonus" 0.2
+				"damage bonus" 1.5
+			}
+			CharacterAttributes
+			{
+				"airblast vertical vulnerability multiplier" 0.1
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"damage force reduction" 0.4
+				"move speed bonus" 0.5
+				"health regen" 40
+			}
+		}
+		YoovyBot_Giant_Medic_QF_Bigheal
+		{
+			Class Medic
+			Name "Mr. Ludwig Limited Figure"
+			Health 4500
+			ClassIcon medic_giant
+			
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+				"heal rate bonus" 400
+			}
+			Item "Neckwear Headwear"
+			Item "Dead of Night"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"bot medic uber health threshold" 150
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Medic_QF_Regen
+		{
+			Class Medic
+			Name "Self-Repairing Toy Doctor"
+			Health 4500
+			ClassIcon medic_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+				"heal rate bonus" 200
+			}
+			Item "Lil' Bitey"
+			Item "The Chronoscarf"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+				"health regen" 50
+			}
+		}
+		T_TFBot_Medic_QuickFix_BigHeal
+		{
+			Class Medic
+			Name "Cold Snap Warmer"
+			Skill Hard
+			Item "Hat Chocolate"
+			Item "Der Wintermantel"
+			Item "The Quick-Fix"
+			ClassIcon medic
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate bonus" 0.1
+				"heal rate bonus" 10
+			}
+		}
+		YoovyBot_SentryBuster_Snowy
+		{
+			Class Demoman
+			Name "Snowy Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "EOTL_Brisk-weather Beanie"
+			Item "EOTL_demopants"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3.5
+				"torso scale" 0.25
+			}
+		}
+		YoovyBot_SentryBuster_Christmas
+		{
+			Class Demoman
+			Name "Jolly Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "Smissmas Saxton"
+			Item "EOTL_demopants"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3.5
+				"torso scale" 0.25
+			}
+		}
+	}
+	
+	//SentryBuster
+	Mission
+	{
+		Objective DestroySentries
+
+		Where spawnbot
+		BeginAtWave 1
+		RunForThisManyWaves 7
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 1
+
+		RandomChoice
+		{
+			TFBot
+			{
+				Template YoovyBot_SentryBuster_Snowy
+			}
+			TFBot
+			{
+				Template YoovyBot_SentryBuster_Christmas
+			}
+		}
+	}
+	
+	//Wave 2 Spy
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 2
+		RunForThisManyWaves 1
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+			Name "Midnight Nightmare"
+			Item "Festive Revolver 2014"
+			Item "Festive Knife 2011"
+			Item "Smissmas Saxton"
+        }
+	}
+	//Wave 4 Spy
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 4
+		RunForThisManyWaves 1
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+			Name "Midnight Nightmare"
+			Item "Festive Revolver 2014"
+			Item "Festive Knife 2011"
+			Item "Smissmas Saxton"
+        }
+	}
+	//Wave 7 Spy
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 7
+		RunForThisManyWaves 1
+
+		InitialCooldown 45
+		CooldownTime 45
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Spy
+			Name "Midnight Nightmare"
+			Item "Festive Revolver 2014"
+			Item "Festive Knife 2011"
+			Item "Smissmas Saxton"
+        }
+	}
+	
+	//Wave 3 Sniper
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 3
+		RunForThisManyWaves 1
+
+		InitialCooldown 20
+		CooldownTime 20
+		
+		DesiredCount 3
+
+        TFBot
+		{
+			Template T_TFBot_Sniper
+			Name "Australian Christmas"
+			Item "Festive Sniper Rifle 2011"
+			Item "The Snow Scoper"
+			Item "The Killing Tree"
+			Skill Hard
+			MaxVisionRange 2500
+        }
+	}
+	//Wave 4 Sniper
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 4
+		RunForThisManyWaves 1
+
+		InitialCooldown 20
+		CooldownTime 20
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template T_TFBot_Sniper
+			Name "Australian Christmas"
+			Item "Festive Sniper Rifle 2011"
+			Item "The Snow Scoper"
+			Item "The Killing Tree"
+			Skill Hard
+			MaxVisionRange 2500
+        }
+	}
+	//Wave 6 Razorback Sydney Sniper
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 6
+		RunForThisManyWaves 1
+
+		InitialCooldown 30
+		CooldownTime 30
+		
+		DesiredCount 6
+
+        TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
+			Name "Pissmas Miracle"
+			Item "Blitzen Bowl"
+			Item "EOTL_hiphunter_jacket"
+			Item "The Jarmaments"
+			Item "The Razorback"
+			Skill Hard
+			MaxVisionRange 2500
+        }
+	}
+	//WAVE 1 //Currency $600 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $300 ///////////////
+		//
+		///////////////
+		// 35 Scouts /// $250
+		// 1/2 Scattergun, 1/2 Sandman
+		//
+		// 6 Pyros /// $50
+		// Paired with a Quick-Uber Medic each (6 Quick-Uber Medics)
+		///////////////
+		
+		WaveSpawn //scouts and sandmen
+		{
+			Name wave01_subwave01
+			Where spawnbot
+			TotalCount 35
+			MaxActive 10
+			SpawnCount 5
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 250
+			
+			RandomChoice
+			{
+				TFBot
+				{
+					Class Scout
+					Skill Easy
+					Name "Workshop Elf"
+					Item "The Giftcrafter"
+					Item "Seasonal Employee"
+					Item "The Bootie Time"
+					Item "Festive Scattergun 2011"
+				}
+				TFBot
+				{
+					Template YoovyBot_Scout_Sandman
+					Skill Expert
+				}
+			}
+		}
+		
+		WaveSpawn //pyro uber medics squad
+		{
+			Name wave01_subwave01_pyrosubers
+			Where spawnbot
+			TotalCount 12
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0.1 //scouts will always start with bomb
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			Squad
+			{
+				TFBot
+				{
+					Class Pyro
+					Skill Easy
+					Name "Flamedeer"
+					Item "Pyro the Flamedeer"
+					Item "Sweet Smissmas Sweater"
+					Item "Flammable Favor"
+					Item "Festive Flamethrower 2011"
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+				}
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $300 ///////////////
+		//
+		///////////////
+		// 24 Soldiers /// $200
+		//
+		// 6 Heavyweight Champs /// $50
+		// Paired with a Quick-Uber Medic each (6 Quick-Uber Medics)
+		//
+		// 14 Heavies /// $50
+		///////////////
+		
+		WaveSpawn //soldiers
+		{
+			Name wave01_subwave02
+			
+			WaitForAllDead wave01_subwave01
+			
+			Where spawnbot
+			TotalCount 15
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 200
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Name "Toy Soldier"
+				Item "The Toy Soldier"
+				Item "The Golden Garment"
+				Item "Festive Rocket Launcher 2011"
+			}
+		}
+		
+		WaveSpawn //heavyweight uber medics squad
+		{
+			Name wave01_subwave02
+			
+			WaitForAllDead wave01_subwave01
+			
+			Where spawnbot_giant
+			RandomSpawn 1
+			
+			TotalCount 12
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Heavyweapons_Heavyweight_Champ
+					Name "Freezing Tussler"
+					Item "The Outdoorsman"
+					Item "Weight Room Warmer"
+					Skill Expert
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+				}
+			}
+		}
+		
+		WaveSpawn //heavies
+		{
+			Name wave01_subwave02
+			
+			WaitForAllDead wave01_subwave01
+			
+			Where spawnbot_giant
+			RandomSpawn 1
+			
+			TotalCount 14
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Heavy
+				Skill Easy
+				Name "Grumpster"
+				Item "Gnome Dome"
+				Item "Siberian Sweater"
+				Item "Festive Minigun 2011"
+			}
+		}
+	}
+	//WAVE 2 //Currency $800 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// SPY MISSION
+	
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $450 ///////////////
+		//
+		///////////////
+		// 1 Tank (20,000) /// $200
+		//
+		// 18 Soldiers /// $200
+		//
+		// 6 Steel Gauntlets /// $50
+		///////////////
+		
+		WaveSpawn //20,000 health tank
+		{
+			Name wave02_subwave01_tank
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 200
+			
+			Tank
+			{
+				Health 25000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}				
+		}
+		
+		WaveSpawn //extended conch group of soldiers
+		{
+			Name wave02_subwave01
+			
+			Where spawnbot_giant
+			TotalCount 18
+			MaxActive 9
+			SpawnCount 3
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 200
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Name "Toy Soldier"
+				Item "The Toy Soldier"
+				Item "The Golden Garment"
+				Item "Festive Rocket Launcher 2011"
+			}
+		}
+		
+		WaveSpawn //steel gauntlets
+		{
+			Name wave02_subwave01
+			
+			Where spawnbot_giant
+			TotalCount 6
+			MaxActive 3
+			SpawnCount 1
+			WaitBeforeStarting 7 //give time for soldiers to spawn and move bomb into play area
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Fist
+				Name "Polar Punchie"
+				Item "Mooshanka"
+				Item "Siberian Sweater"
+				Skill Expert
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $350 ///////////////
+		//
+		///////////////
+		// 1 Major League Scout /// $50
+		//
+		// 20 Scouts /// $100
+		//
+		// 16 Soldiers /// $100
+		//
+		// 2 Major League Scouts /// $100
+		///////////////
+		
+		WaveSpawn //scouts
+		{
+			Name wave02_subwave02
+			
+			WaitForAllDead wave02_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 20
+			MaxActive 12
+			SpawnCount 4
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 6
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Scout
+				Skill Easy
+				Name "Workshop Elf"
+				Item "The Giftcrafter"
+				Item "Seasonal Employee"
+				Item "The Bootie Time"
+				Item "Festive Scattergun 2011"
+			}
+		}
+		
+		WaveSpawn //soldiers
+		{
+			Name wave02_subwave02
+			
+			WaitForAllDead wave02_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 8
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 6
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Name "Toy Soldier"
+				Item "The Toy Soldier"
+				Item "The Golden Garment"
+				Item "Festive Rocket Launcher 2011"
+			}
+		}
+		
+		WaveSpawn //major league scouts
+		{
+			Name wave02_subwave02
+			
+			WaitForAllDead wave02_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 16
+			WaitBetweenSpawns 18
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Sandman
+				Skill Expert
+			}
+		}
+	}
+	//WAVE 3 //Currency $700 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// SNIPER MISSION
+	
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $700 ///////////////
+		//
+		///////////////
+		// 54 Limited Heavies /// $500
+		//
+		// 4 Giant Rapid Fire Demomen /// $150
+		//
+		// 2 Giant Rapid Fire Soldiers /// $50
+		///////////////
+		
+		WaveSpawn //support heavies
+		{
+			Name wave03_subwave01
+			
+			Where spawnbot
+			Where spawnbot_giant
+			RandomSpawn 1
+			
+			TotalCount 54
+			MaxActive 8
+			SpawnCount 6
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 10
+			
+			TotalCurrency 500
+			
+			Support Limited
+			
+			TFBot
+			{
+				Class Heavy
+				Skill Easy
+				Name "Grumpster"
+				Item "Gnome Dome"
+				Item "Siberian Sweater"
+				Item "Festive Minigun 2011"
+			}
+		}
+		
+		WaveSpawn //giant rapid fire demomen
+		{
+			Name wave03_subwave_giantsoldiers
+			
+			Where spawnbot
+			
+			TotalCount 16
+			MaxActive 16
+			SpawnCount 4
+			WaitBeforeStarting 0.1
+			WaitBetweenSpawns 14
+			
+			TotalCurrency 150
+			
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Giant_Demoman_RapidFire
+					Skill Expert
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickFix_BigHeal
+					Skill Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickFix_BigHeal
+					Skill Hard
+				}
+			}
+		}
+		
+		WaveSpawn //giant rapid fire soldiers
+		{
+			Name wave03_subwave_giantdemomen
+			
+			WaitForAllDead	wave03_subwave_giantsoldiers
+			
+			Where spawnbot_giant
+			
+			TotalCount 10
+			MaxActive 10
+			SpawnCount 10
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 50
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_RapidFire
+					Skill Expert
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickFix_BigHeal
+					Skill Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickFix_BigHeal
+					Skill Hard
+				}
+			}
+		}
+	}
+	//WAVE 4 //Currency $1,000 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $550 ///////////////
+		//
+		///////////////
+		// 1 Tank (30,000) /// $200
+		//
+		// 24 Scouts /// $150
+		//
+		// 24 Soldiers /// $150
+		//
+		// 1 Giant Heavy /// $50
+		///////////////
+		
+		WaveSpawn //30,000 health tank
+		{
+			Name wave04_subwave01_tank
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 200
+			
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}				
+		}
+		
+		WaveSpawn //scouts
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Scout
+				Skill Easy
+				Name "Workshop Elf"
+				Item "The Giftcrafter"
+				Item "Seasonal Employee"
+				Item "The Bootie Time"
+				Item "Festive Scattergun 2011"
+			}
+		}
+		
+		WaveSpawn //soldiers
+		{
+			Name wave04_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Demoman
+				Skill Normal
+				Name "Eggnog Lobber"
+				Item "EOTL_Brisk-weather Beanie"
+				Item "The Sub Zero Suit"
+				Item "Festive Grenade Launcher"
+			}
+		}
+		
+		WaveSpawn //giant heavy
+		{
+			Name wave04_subwave01_giantheavy
+			
+			Where spawnbot_giant
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 40 //appears with tank but very late to back up stragglers
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Heavyweapons
+				Name "Giant Grumpster"
+				Item "Gnome Dome"
+				Item "Siberian Sweater"
+				Item "Festive Minigun 2011"
+				ItemAttributes
+				{
+					ItemName "Festive Minigun 2011"
+					"damage bonus" 1.5
+				}
+				Skill Expert
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $450 ///////////////
+		//
+		///////////////
+		// 6 Extended Buff Soldiers /// $200
+		// Paired with 3 Soldiers on each (18 Soldiers)
+		//
+		// 28 Scouts /// $150
+		//
+		// 2 Giant Deflector Heavies /// $100
+		///////////////
+		
+		WaveSpawn //extended buff group of soldiers
+		{
+			Name wave04_subwave02
+			
+			WaitForAllDead wave04_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 20
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 200
+			
+			Squad
+			{
+				TFBot
+				{
+					Class Soldier
+					Skill Normal
+					Name "Toy Soldier"
+					Item "The Toy Soldier"
+					Item "The Golden Garment"
+					Item "Festive Rocket Launcher 2011"
+				}
+				TFBot
+				{
+					Class Demoman
+					Skill Normal
+					Name "Eggnog Lobber"
+					Item "EOTL_Brisk-weather Beanie"
+					Item "The Sub Zero Suit"
+					Item "Festive Grenade Launcher"
+				}
+				TFBot
+				{
+					Class Demoman
+					Skill Normal
+					Name "Eggnog Lobber"
+					Item "EOTL_Brisk-weather Beanie"
+					Item "The Sub Zero Suit"
+					Item "Festive Grenade Launcher"
+				}
+				TFBot
+				{
+					Class Demoman
+					Skill Normal
+					Name "Eggnog Lobber"
+					Item "EOTL_Brisk-weather Beanie"
+					Item "The Sub Zero Suit"
+					Item "Festive Grenade Launcher"
+				}
+			}
+		}
+		
+		WaveSpawn //scouts
+		{
+			Name wave04_subwave02
+			
+			WaitForAllDead wave04_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 20
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Scout
+				Skill Easy
+				Name "Workshop Elf"
+				Item "The Giftcrafter"
+				Item "Seasonal Employee"
+				Item "The Bootie Time"
+				Item "Festive Scattergun 2011"
+			}
+		}
+		
+		WaveSpawn //giant heavies
+		{
+			Name wave04_subwave02
+			
+			WaitForAllDead wave04_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 11
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Heavyweapons
+				Name "Giant Grumpster"
+				Item "Gnome Dome"
+				Item "Siberian Sweater"
+				Item "Festive Minigun 2011"
+				ItemAttributes
+				{
+					ItemName "Festive Minigun 2011"
+					"damage bonus" 1.5
+				}
+				Skill Expert
+			}
+		}
+	}
+	//WAVE 5 //Currency $1,000 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// SPY MISSION
+	
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $450 ///////////////
+		//
+		///////////////
+		// 24 Airblast Pyros /// $200
+		//
+		// 12 Heavies /// $200
+		// Paired with a Uber Medic each (12 Uber Medics)
+		//
+		// 6 Steel Gauntlets /// $50\
+		///////////////
+		
+		WaveSpawn
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 14
+			
+			TotalCurrency	100
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Sandman
+				Skill Expert
+			}
+		}
+		WaveSpawn //airblast pyros
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Normal
+				ClassIcon pyro_reflect_daan
+				Name "Airblast Flamedeer"
+				Item "Traffic Cone"
+				Item "Pyro the Flamedeer"
+				Item "Sweet Smissmas Sweater"
+				Item "Flammable Favor"
+				Item "Festive Flamethrower 2011"
+			}
+		}
+		
+		WaveSpawn //heavy uber medic group
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0.1
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			Squad
+			{
+				TFBot
+				{
+					Class Heavy
+					Skill Easy
+					Name "Grumpster"
+					Item "Gnome Dome"
+					Item "Siberian Sweater"
+					Item "Festive Minigun 2011"
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Uber_Quick
+					Skill Hard
+				}
+			}
+		}
+		
+		WaveSpawn //steel gauntlets
+		{
+			Name wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 0.1
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Fist
+				Name "Polar Punchie"
+				Item "Mooshanka"
+				Item "Siberian Sweater"
+				Skill Expert
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $550 ///////////////
+		//
+		///////////////
+		// 8 Steel Gauntlets /// $100
+		//
+		// 18 Heavies /// $100
+		//
+		// 12 Steel Gauntlets /// $300
+		// Paired with a Pyro each (12 Pyros)
+		//
+		// Limited Support: Extended Concheror Soldiers /// $50
+		///////////////
+		
+		WaveSpawn //steel gauntlets
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead wave05_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 8
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 5 //steel gauntlet rush
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Fist
+				Name "Polar Punchie"
+				Item "Mooshanka"
+				Item "Siberian Sweater"
+				Skill Expert
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 17
+			WaitBetweenSpawns 14
+			
+			TotalCurrency	100
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Sandman_Armored
+				Skill Expert
+			}
+		}
+		WaveSpawn //heavies
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 18
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Class Heavy
+				Skill Easy
+				Name "Grumpster"
+				Item "Gnome Dome"
+				Item "Siberian Sweater"
+				Item "Festive Minigun 2011"
+			}
+		}
+		
+		WaveSpawn //steel gauntlets
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 12
+			MaxActive 6
+			SpawnCount 2
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Fist
+				Name "Polar Punchie"
+				Item "Mooshanka"
+				Item "Siberian Sweater"
+				Skill Expert
+			}
+		}
+		
+		WaveSpawn //pyros
+		{
+			Name wave05_subwave02
+			
+			WaitForAllDead wave05_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 12
+			MaxActive 6
+			SpawnCount 2
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Normal
+				ClassIcon pyro_reflect_daan
+				Name "Airblast Flamedeer"
+				Item "Traffic Cone"
+				Item "Pyro the Flamedeer"
+				Item "Sweet Smissmas Sweater"
+				Item "Flammable Favor"
+				Item "Festive Flamethrower 2011"
+			}
+		}
+	}
+	//WAVE 6 //Currency $800 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $300 ///////////////
+		//
+		///////////////
+		// 35 Bowmen /// $200
+		//
+		// 18 Soldiers /// $50
+		//
+		// 2 Giant Heavies /// $50
+		///////////////
+		
+		WaveSpawn
+		{
+			Name wave06_subwave01
+			
+			Where spawnbot
+			Where spawnbot_giant
+			RandomSpawn 1
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Template T_TFBot_Sniper_Huntsman
+				Name "Woodsman"
+				Item "The K-9 Mane"
+				Item "The Criminal Cloak"
+				Item "The Triggerman's Tacticals"
+				Item "Festive Huntsman"
+				ItemAttributes
+				{
+					ItemName "Festive Huntsman"
+					"damage penalty" 0.5
+				}
+				Attributes AlwaysCrit
+				Skill Hard
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name wave06_subwave01
+			
+			Where spawnbot
+			Where spawnbot_giant
+			RandomSpawn 1
+			
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Name "Toy Soldier"
+				Item "The Toy Soldier"
+				Item "The Golden Garment"
+				Item "Festive Rocket Launcher 2011"
+			}
+		}
+		
+		WaveSpawn //giant heavies
+		{
+			Name wave06_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 6
+			MaxActive 6
+			SpawnCount 2
+			WaitBeforeStarting 7
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 75
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavy_Brassbeast
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber
+					Skill Hard
+				}
+			}
+		}
+		
+		WaveSpawn //super scouts
+		{
+			Name wave06_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 12
+			WaitBetweenSpawns 14
+			
+			TotalCurrency 75
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Fast
+				Skill Easy
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $400 ///////////////
+		//
+		///////////////
+		// 4 Giant Heavies /// $350
+		// Paired with a Quick-Uber Medic on each (4 Quick-Uber Medics)
+		//
+		// 14 Bowmen /// $50
+		///////////////
+		
+		WaveSpawn //soldiers
+		{
+			Name wave06_subwave02
+			
+			WaitForAllSpawned	wave06_subwave01
+			
+			Where spawnbot
+			Where spawnbot_giant
+			RandomSpawn 1
+			
+			TotalCount 40
+			MaxActive 16
+			SpawnCount 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 200
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Normal
+				Name "Toy Soldier"
+				Item "The Toy Soldier"
+				Item "The Golden Garment"
+				Item "Festive Rocket Launcher 2011"
+			}
+		}
+		
+		WaveSpawn //many giant heavies with uber squads
+		{
+			Name wave06_subwave02
+			
+			WaitForAllSpawned	wave06_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 20
+			
+			TotalCurrency 100
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons
+					Name "Giant Grumpster"
+					Item "Gnome Dome"
+					Item "Siberian Sweater"
+					Item "Festive Minigun 2011"
+					ItemAttributes
+					{
+						ItemName "Festive Minigun 2011"
+						"damage bonus" 1.5
+					}
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Giant_Medic_QF_Regen
+					Skill Expert
+				}
+			}
+		}
+	}
+	//WAVE 7 //Currency $900 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// SPY MISSION
+	// SNIPER MISSION
+	
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput					
+		{
+			Target wave_finished_relay
+			Action trigger
+		}
+		WaitWhenDone 65
+		Checkpoint Yes
+		
+		// SUBWAVE 1 /////////////// $450 ///////////////
+		//
+		///////////////
+		// 28 Scouts /// $150
+		//
+		// 28 Demomen /// $150
+		//
+		// 6 Giant Rapid Fire Soldiers /// $150
+		///////////////
+		
+		WaveSpawn //scouts
+		{
+			Name wave07_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 28
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 150
+			
+			TFBot
+			{
+				Class Scout
+				Skill Hard
+				Name "Workshop Elf"
+				Item "The Giftcrafter"
+				Item "Seasonal Employee"
+				Item "The Bootie Time"
+				Item "Festive Scattergun 2011"
+			}
+		}
+		
+		WaveSpawn //demomen
+		{
+			Name wave07_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 28
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Class Demoman
+				Skill Hard
+				Attributes AlwaysCrit
+				Name "Eggnog Lobber"
+				Item "EOTL_Brisk-weather Beanie"
+				Item "The Sub Zero Suit"
+				Item "Festive Grenade Launcher"
+			}
+		}
+		
+		WaveSpawn //giant rapid fire soldiers
+		{
+			Name wave07_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 14
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 100
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_Barrage
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Giant_Medic_QF_Bigheal
+					Skill Expert
+				}
+			}
+		}
+		
+		// SUBWAVE 2 /////////////// $200 ///////////////
+		//
+		///////////////
+		// 2 TANKS (20,000 Health) /// $100
+		//
+		// 40 Airblast Pyros /// $150
+		//
+		// 24 Soldiers /// $100
+		//
+		// 2 Giant Deflector Heavies /// $100
+		///////////////
+		
+		WaveSpawn //20,000 health tank
+		{
+			Name wave07_subwave02_tank1
+			
+			WaitForAllDead wave07_subwave01
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 50
+			
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}				
+		}
+		
+		WaveSpawn //20,000 health tank
+		{
+			Name wave07_subwave02_tank2
+			
+			WaitForAllDead wave07_subwave01
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 19
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 50
+			
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}				
+		}
+		
+		WaveSpawn //airblast pyros
+		{
+			Name wave07_subwave02
+			
+			WaitForAllDead wave07_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 40
+			MaxActive 10
+			SpawnCount 5
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Normal
+				ClassIcon pyro_reflect_daan
+				Name "Airblast Flamedeer"
+				Item "Traffic Cone"
+				Item "Pyro the Flamedeer"
+				Item "Sweet Smissmas Sweater"
+				Item "Flammable Favor"
+				Item "Festive Flamethrower 2011"
+			}
+		}
+		
+		WaveSpawn //direct hit soldiers
+		{
+			Name wave07_subwave02
+			
+			WaitForAllDead wave07_subwave01
+			
+			Where spawnbot
+			
+			TotalCount 21
+			MaxActive 6
+			SpawnCount 3
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			TFBot
+			{
+				Class Soldier
+				Skill Hard
+				Item "The Direct Hit"
+				Name "Frontier Toy Soldier"
+				Item "The Toy Soldier"
+				Item "The Golden Garment"
+				ClassIcon soldier_directhit_lite
+			}
+		}
+		
+		WaveSpawn //giant deflector heavies
+		{
+			Name wave07_subwave02
+			
+			WaitForAllDead wave07_subwave01
+			
+			Where spawnbot_giant
+			
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 32
+			WaitBetweenSpawns 20
+			
+			TotalCurrency 100
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Heavy_Brassbeast
+				Skill Expert
+			}
+		}
+		WaveSpawn //scouts
+		{
+			Name wave07_subwave03_support
+			
+			WaitForAllDead	wave07_subwave02
+			
+			Where spawnbot
+			
+			TotalCount 48
+			MaxActive 8
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 7
+			
+			TotalCurrency 50
+			
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Skill Hard
+				ClassIcon scout_giant
+				Name "Workshop Elf"
+				Item "The Giftcrafter"
+				Item "Seasonal Employee"
+				Item "The Bootie Time"
+				Item "Festive Scattergun 2011"
+			}
+		}
+		WaveSpawn //45,000 health tank
+		{
+			Name wave07_subwave03_tank1
+			
+			WaitForAllDead wave07_subwave02
+			
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 0
+			
+			TotalCurrency 50
+			
+			Tank
+			{
+				Health 35000
+				Speed 75
+				Name "tankbossfinal"
+				Skin 1
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}				
+		}
+		WaveSpawn //giant medics and heavies
+		{
+			Name wave07_subwave03
+			
+			WaitForAllDead	wave07_subwave02
+			
+			Where spawnbot_giant
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 50
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavy_Brassbeast
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Giant_Medic_QF_Regen
+					Skill Expert
+				}
+			}
+		}
+		WaveSpawn //giant scouts
+		{
+			Name wave07_subwave03
+			
+			WaitForAllDead	wave07_subwave02
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 2
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 21
+			
+			TotalCurrency 25
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Fast
+				Skill Easy
+			}
+		}
+		WaveSpawn //giant scouts
+		{
+			Name wave07_subwave03_B
+			
+			WaitForAllDead	wave07_subwave03
+			
+			Where spawnbot
+			
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 1
+			
+			TotalCurrency 25
+			
+			TFBot
+			{
+				Template YoovyBot_Giant_Scout_Fast
+				Skill Easy
+			}
+		}
+	}
+}

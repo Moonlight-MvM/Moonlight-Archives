@@ -1,0 +1,2943 @@
+//Created by Yoovy: https://steamcommunity.com/profiles/76561198017198600/
+
+WaveSchedule
+{
+	StartingCurrency 800
+	RespawnWaveTime 5
+	CanBotsAttackWhileInSpawnRoom no
+	Templates
+	{
+		//////////////////////
+		//Scout
+		//////////////////////
+		//Wave 1: 28
+		//////////////////////
+		//Wave 5: 21
+		//////////////////////
+		YoovyBot_Scout
+		{
+			Class Scout
+		}
+		//////////////////////
+		//Soldier
+		//////////////////////
+		//Wave 1: 29
+		//////////////////////
+		//Wave 4: Support
+		//////////////////////
+		//Wave 5: 12
+		//////////////////////
+		YoovyBot_Soldier
+		{
+			Class Soldier
+		}
+		//////////////////////
+		//Demoman
+		//////////////////////
+		//Wave 1: 10
+		//////////////////////
+		//Wave 4: 24
+		//////////////////////
+		//Wave 6: 14
+		//////////////////////
+		YoovyBot_Demoman
+		{
+			Class Demoman
+		}
+		//////////////////////
+		//Giant Half-Zatoichi Demoknight
+		//////////////////////
+		//Wave 1: 2
+		//////////////////////
+		YoovyBot_Giant_Demoman_Knight_Samurai
+		{
+			Class Demoman
+			Name "Giant Half-Zatoichi Demoknight"
+			Health 3300
+			ClassIcon demoknight_samurai_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Half-Zatoichi"
+			ItemAttributes
+			{
+				ItemName "The Half-Zatoichi"
+				"minicritboost on kill" 3
+				"honorbound" 0
+			}
+			Item "The Splendid Screen"
+			Item "Demo Kabuto"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"gesture speed increase" 1.5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Shotgun Heavy
+		//////////////////////
+		//Wave 1: 18
+		//////////////////////
+		//Wave 8: Support
+		//////////////////////
+		YoovyBot_Heavy_Shotgun
+		{
+			Class Heavy
+			Name "Shotgun Heavy"
+			ClassIcon heavy_shotgun
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Well-Rounded Rifleman"
+		}
+		//////////////////////
+		//Giant Soldier
+		//////////////////////
+		//Wave 1: 2
+		//////////////////////
+		YoovyBot_Giant_Soldier
+		{
+			Class Soldier
+			Name "Giant Soldier"
+			Health 3800
+			ClassIcon soldier_giant
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Quick-Fix Medic
+		//////////////////////
+		//Wave 2: 6
+		//////////////////////
+		YoovyBot_Medic_QF
+		{
+			Class Medic
+			Name "Quick-Fix Medic"
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+			}
+		}
+		//////////////////////
+		//Armored Force-a-Nature Scout
+		//////////////////////
+		//Wave 2: 12
+		//////////////////////
+		YoovyBot_Scout_FAN_Armored
+		{
+			Class Scout
+			Name "Armored Force-a-Nature Scout"
+			Health 650
+			Scale 1.4
+			ClassIcon scout_fan_armored
+			
+			MaxVisionRange 500
+			Tag bot_giant
+			
+			Item "The Force-a-Nature"
+			Item "The Fed-Fightin' Fedora"
+			Item "Das Metalmeatencasen"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.9
+				"damage force reduction" 0.9
+				"move speed penalty" 0.85
+				"voice pitch scale" 0.7
+				"head scale" 0.7
+			}
+		}
+		//////////////////////
+		//Pyro
+		//////////////////////
+		//Wave 2: 30
+		//////////////////////
+		YoovyBot_Pyro
+		{
+			Class Pyro
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_FLAMETHROWER
+				"airblast disabled" 1
+			}
+		}
+		//////////////////////
+		//Giant Burst Fire Demoman
+		//////////////////////
+		//Wave 2: 2
+		//////////////////////
+		//Wave 5: 4
+		//////////////////////
+		YoovyBot_Giant_Demoman_BurstFire
+		{
+			Class Demoman
+			Name "Giant Burst Fire Demoman"
+			Health 3300
+			ClassIcon demo_burst_giant
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "warbird_grenadelauncher_butcherbird"
+			ItemAttributes
+			{
+				ItemName "warbird_grenadelauncher_butcherbird"
+				"projectile spread angle penalty" 5
+				"projectile speed increased" 1.1
+				"clip size upgrade atomic" 7
+				"reload time decreased" 0.65
+				"set_item_texture_wear" 0
+				"fire rate bonus" 0.1
+			}
+			Item "The Frag Proof Fragger"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Heavyweight Champ
+		//////////////////////
+		//Wave 2: 18
+		//////////////////////
+		YoovyBot_Heavy_KGB
+		{
+			Class Heavy
+			Name "Heavyweight Champ"
+			ClassIcon heavy_champ
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Killing Gloves of Boxing"
+			Item "Pugilist's Protector"
+		}
+		//////////////////////
+		//Lightweight Champ
+		//////////////////////
+		//Wave 2: 18
+		//////////////////////
+		YoovyBot_Heavy_GRU
+		{
+			Class Heavy
+			Name "Lightweight Champ"
+			ClassIcon heavy_gru
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "Gloves of Running Urgently MvM"
+			Item "Pugilist's Protector"
+			ItemAttributes
+			{
+				ItemName "Pugilist's Protector"
+				"set item tint RGB" 15185211
+			}
+		}
+		//////////////////////
+		//Giant Rapid Fire Soldier
+		//////////////////////
+		//Wave 2: 2
+		//////////////////////
+		YoovyBot_Giant_Soldier_RapidFire
+		{
+			Class Soldier
+			Name "Giant Rapid Fire Soldier"
+			Health 3800
+			ClassIcon Soldier_spammer
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"fire rate bonus" 0.5
+			}
+			Item "The Gilded Guard"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Spy
+		//////////////////////
+		//Wave 2: Support
+		//////////////////////
+		//Wave 8: Support
+		//////////////////////
+		YoovyBot_Spy
+		{
+			Class Spy
+			
+			Attributes IgnoreFlag
+		}
+		//////////////////////
+		//Caber Demoknight
+		//////////////////////
+		//Wave 3: 35
+		//////////////////////
+		YoovyBot_Demoman_Knight_Caber
+		{
+			Class Demoman
+			Name "Caber Demoknight"
+			ClassIcon demo_caber_nys_bright
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Ullapool Caber"
+			ItemAttributes
+			{
+				ItemName "The Ullapool Caber"
+				"fire rate penalty" 1
+				"damage penalty" 1
+			}
+			Item "The Chargin' Targe"
+			Item "The Grenadier Helm"
+		}
+		//////////////////////
+		//Flare Pyro
+		//////////////////////
+		//Wave 3: 42
+		//////////////////////
+		YoovyBot_Pyro_Flare
+		{
+			Class Pyro
+			Name "Flare Pyro"
+			ClassIcon pyro_flare
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Flare Gun"
+			Item "Skullbrero"
+			ItemAttributes
+			{
+				ItemName "Skullbrero"
+				"set item tint RGB" 5801378
+			}
+		}
+		//////////////////////
+		//Giant Charged Soldier
+		//////////////////////
+		//Wave 3: 4
+		//////////////////////
+		YoovyBot_Giant_Soldier_Charged
+		{
+			Class Soldier
+			Name "Giant Charged Soldier"
+			Health 3800
+			ClassIcon Soldier_crit
+			
+			Attributes HoldFireUntilFullReload
+			Attributes AlwaysCrit
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "powerhouse_rocketlauncher_shellshocker"
+			ItemAttributes
+			{
+				ItemName "powerhouse_rocketlauncher_shellshocker"
+				"projectile speed decreased" 0.5
+				"set_item_texture_wear" 0
+				"faster reload rate" -1
+				"fire rate penalty" 2
+			}
+			Item "Worms Gear"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Extended Conch Soldier
+		//////////////////////
+		//Wave 3: 15
+		//////////////////////
+		//Wave 6: 28
+		//////////////////////
+		YoovyBot_Soldier_Conch_Extended
+		{
+			Class Soldier
+			Name "Extended Conch Soldier"
+			ClassIcon soldier_conch
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "The Concheror"
+			Item "Furious Fukaamigasa"
+			
+			CharacterAttributes
+			{
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+			}
+		}
+		//////////////////////
+		//Giant Airblast Pyro
+		//////////////////////
+		//Wave 3: 2
+		//////////////////////
+		YoovyBot_Giant_Pyro_Airblast
+		{
+			Class Pyro
+			Name "Giant Airblast Pyro"
+			Health 3000
+			ClassIcon pyro_reflect_daan_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Traffic Cone"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Sniper
+		//////////////////////
+		//Wave 3: Support
+		//////////////////////
+		//Wave 6: Support
+		//////////////////////
+		//Wave 8: Support
+		//////////////////////
+		YoovyBot_Sniper
+		{
+			Class Sniper
+			
+			Attributes IgnoreFlag
+			MaxVisionRange 2500
+		}
+		//////////////////////
+		//Super Scout
+		//////////////////////
+		//Wave 4: 4
+		//////////////////////
+		//Wave 6: 12
+		//////////////////////
+		YoovyBot_Giant_Scout_Fast
+		{
+			Class Scout
+			Name "Super Scout"
+			Health 1200
+			ClassIcon scout_giant_fast
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Holy Mackerel"
+			ItemAttributes
+			{
+				ItemName "The Holy Mackerel"
+				"damage bonus" 1.25
+			}
+			Item "The Bolt Boy"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"damage force reduction" 0.5
+				"move speed bonus" 2
+			}
+		}
+		//////////////////////
+		//Tomislav Heavy
+		//////////////////////
+		//Wave 4: 12
+		//////////////////////
+		//Wave 8: Support
+		//////////////////////
+		YoovyBot_Heavy_Tomislav
+		{
+			Class Heavy
+			Name "Tomislav Heavy"
+			ClassIcon heavy_accurate_lite
+			
+			Item "Tomislav"
+			Item "Capone's Capper"
+		}
+		//////////////////////
+		//Giant Burst Fire Soldier
+		//////////////////////
+		//Wave 4: 2
+		//////////////////////
+		//Wave 7: 4
+		//////////////////////
+		YoovyBot_Giant_Soldier_BurstFire
+		{
+			Class Soldier
+			Name "Giant Burst Fire Soldier"
+			Health 3800
+			ClassIcon Soldier_burstfire
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"clip size upgrade atomic" 5.0
+				"reload time decreased" 0.6
+				"set_item_texture_wear" 0
+				"fire rate bonus" 0.1
+			}
+			Item "The Slo-Poke"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Quick-Uber Medic
+		//////////////////////
+		//Wave 4: 4
+		//////////////////////
+		YoovyBot_Medic_Uber_ShortUber
+		{
+			Class Medic
+			Name "Quick-Uber Medic"
+			ClassIcon medic_uber
+			
+			Attributes SpawnWithFullCharge
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_MEDIGUN
+				"ubercharge rate bonus" 5
+				"uber duration bonus" -3
+				"heal rate penalty" 0.1
+			}
+			Item "Titanium Tyrolean"
+			ItemAttributes
+			{
+				ItemName "Titanium Tyrolean"
+				"set item tint RGB" 8626083
+			}
+		}
+		//////////////////////
+		//Steel Gauntlet
+		//////////////////////
+		//Wave 4: 18
+		//////////////////////
+		//Wave 7: 20
+		//////////////////////
+		YoovyBot_Heavy_SteelFist
+		{
+			Class Heavy
+			Name "Steel Gauntlet"
+			Health 900
+			Scale 1.5
+			ClassIcon heavy_steelfist
+			
+			WeaponRestrictions MeleeOnly
+			Tag bot_giant
+			
+			Item "Fists of Steel"
+			Item "The U-Clank-A"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.8
+				"damage force reduction" 0.8
+			}
+		}
+		//////////////////////
+		//Bullet Vaccinator Medic
+		//////////////////////
+		//Wave 4: 6
+		//////////////////////
+		YoovyBot_Medic_VaccBullet
+		{
+			Class Medic
+			Name "Bullet Vaccinator Medic"
+			ClassIcon medic_bullet
+			
+			Attributes SpawnWithFullCharge
+			Attributes VaccinatorBullets
+			
+			Item "gentlemanne_medigun_coffinnail"
+			ItemAttributes
+			{
+				ItemName "gentlemanne_medigun_coffinnail"
+				"medigun bullet resist deployed" 0.75
+				"medigun bullet resist passive" 0.1
+				"overheal fill rate reduced" 0.34
+				"medigun charge is resists" 3
+				"lunchbox adds minicrits" 3
+				"ubercharge rate bonus" 1.67
+				"uber duration bonus" 5
+			}
+			Item "Berliner's Bucket Helm"
+			Item "Das Metalmeatencasen"
+			ItemAttributes
+			{
+				ItemName "Das Metalmeatencasen"
+				"attach particle effect" 3045
+			}
+			
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 7202004
+			}
+		}
+		//////////////////////
+		//Blast Vaccinator Medic
+		//////////////////////
+		//Wave 4: 6
+		//////////////////////
+		YoovyBot_Medic_VaccBlast
+		{
+			Class Medic
+			Name "Blast Vaccinator Medic"
+			ClassIcon medic_blast
+			
+			Attributes SpawnWithFullCharge
+			Attributes VaccinatorBlast
+			
+			Item "gentlemanne_medigun_coffinnail"
+			ItemAttributes
+			{
+				ItemName "gentlemanne_medigun_coffinnail"
+				"medigun blast resist deployed" 0.75
+				"medigun blast resist passive" 0.1
+				"overheal fill rate reduced" 0.34
+				"medigun charge is resists" 3
+				"lunchbox adds minicrits" 3
+				"ubercharge rate bonus" 1.67
+				"uber duration bonus" 5
+			}
+			Item "Das Naggenvatcher"
+			Item "Coldfront Carapace"
+			ItemAttributes
+			{
+				ItemName "Coldfront Carapace"
+				"attach particle effect" 3070
+			}
+			
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 7202004
+			}
+		}
+		//////////////////////
+		//Fire Vaccinator Medic
+		//////////////////////
+		//Wave 4: 6
+		//////////////////////
+		YoovyBot_Medic_VaccFire
+		{
+			Class Medic
+			Name "Fire Vaccinator Medic"
+			ClassIcon medic_fire
+			
+			Attributes SpawnWithFullCharge
+			Attributes VaccinatorFire
+			
+			Item "harvest_medigun_wildwood"
+			ItemAttributes
+			{
+				ItemName "harvest_medigun_wildwood"
+				"medigun fire resist deployed" 0.75
+				"medigun fire resist passive" 0.1
+				"overheal fill rate reduced" 0.34
+				"medigun charge is resists" 3
+				"lunchbox adds minicrits" 3
+				"ubercharge rate bonus" 1.67
+				"uber duration bonus" 5
+			}
+			Item "Berlin Brain Bowl"
+			Item "Vitals Vest"
+			ItemAttributes
+			{
+				ItemName "Vitals Vest"
+				"attach particle effect" 3042
+			}
+			
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 7202004
+			}
+		}
+		//////////////////////
+		//Teleporter Engineer
+		//////////////////////
+		//Wave 4: Support
+		//////////////////////
+		YoovyBot_Engineer_WalkIn_Tele
+		{
+			Class Engineer
+			Name "Teleporter Engineer"
+			Health 275
+			ClassIcon engineer_telein
+			
+			TeleportWhere spawnbot
+			TeleportWhere spawnbot_side
+			TeleportWhere spawnbot_lowerflank
+			TeleportWhere spawnbot_sidebuilding
+			Attributes IgnoreFlag
+			
+			Item "The Eureka Effect"
+			ItemAttributes
+			{
+				ItemName "The Eureka Effect"
+				"Construction rate decreased" 1
+			}
+			Item "Wavefinder"
+			Item "The Antarctic Researcher"
+		}
+		//////////////////////
+		//Bat Scout
+		//////////////////////
+		//Wave 5: 53
+		//////////////////////
+		YoovyBot_Scout_Melee
+		{
+			Class Scout
+			Name "Bat Scout"
+			ClassIcon scout_bat_nys
+			
+			WeaponRestrictions MeleeOnly
+		}
+		//////////////////////
+		//Big-Heal Medic
+		//////////////////////
+		//Wave 5: 14
+		//////////////////////
+		YoovyBot_Medic_QF_BigHeal
+		{
+			Class Medic
+			Name "Big-Heal Medic"
+			ClassIcon medic
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+				"heal rate bonus" 10
+			}
+			Item "The Gentleman's Ushanka"
+			ItemAttributes
+			{
+				ItemName "The Gentleman's Ushanka"
+				"set item tint RGB" 8626083
+			}
+		}
+		//////////////////////
+		//Colonel Barrage
+		//////////////////////
+		//Wave 5: 2
+		//////////////////////
+		YoovyBot_Giant_Soldier_Barrage
+		{
+			Class Soldier
+			Name "Colonel Barrage"
+			Health 4200
+			ClassIcon soldier_barrage_giant
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "gentlemanne_rocketlauncher_coffinnail"
+			ItemAttributes
+			{
+				ItemName "gentlemanne_rocketlauncher_coffinnail"
+				"projectile spread angle penalty" 5
+				"projectile speed decreased" 0.4
+				"clip size upgrade atomic" 26
+				"reload time decreased" 0.22
+				"set_item_texture_wear" 0
+				"fire rate bonus" 0.2
+				"damage bonus" 1.5
+			}
+			Item "The Patriot Peak"
+			Item "The Diplomat"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+				"health regen" 50
+			}
+		}
+		//////////////////////
+		//Big Earner Spy
+		//////////////////////
+		//Wave 5: Support
+		//////////////////////
+		YoovyBot_Spy_BigEarner
+		{
+			Class Spy
+			Name "Big Earner Spy"
+			Health 100
+			
+			Attributes IgnoreFlag
+			
+			Item "The Big Earner"
+			ItemAttributes
+			{
+				ItemName "The Big Earner"
+				"max health additive penalty" 0
+			}
+			Item "A Hat to Kill For"
+		}
+		//////////////////////
+		//Airblast Pyro
+		//////////////////////
+		//Wave 6: 38
+		//////////////////////
+		YoovyBot_Pyro_Airblast
+		{
+			Class Pyro
+			Name "Airblast Pyro"
+			ClassIcon pyro_reflect_daan
+			
+			Item "Traffic Cone"
+		}
+		//////////////////////
+		//Giant Deflector Heavy
+		//////////////////////
+		//Wave 6: 4
+		//////////////////////
+		YoovyBot_Giant_Heavy_Deflector
+		{
+			Class Heavy
+			Name "Giant Deflector Heavy"
+			Health 5000
+			ClassIcon heavy_deflector
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Deflector"
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"attack projectiles" 2
+				"damage bonus" 1.5
+			}
+			Item "The U-Clank-A"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Giant Quick-Fix Medic
+		//////////////////////
+		//Wave 6: 2
+		//////////////////////
+		//Wave 7: 2
+		//////////////////////
+		YoovyBot_Giant_Medic_QF
+		{
+			Class Medic
+			Name "Giant Quick-Fix Medic"
+			Health 4500
+			ClassIcon medic_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+				"heal rate bonus" 200
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Sentry Engineer
+		//////////////////////
+		//Wave 6: Support
+		//////////////////////
+		//Wave 8: Support
+		//////////////////////
+		YoovyBot_Engineer_WalkIn_NoTele
+		{
+			Class Engineer
+			Name "Sentry Engineer"
+			Health 275
+			
+			Attributes IgnoreFlag
+		}
+		//////////////////////
+		//Armored Major League Scout
+		//////////////////////
+		//Wave 7: 5
+		//////////////////////
+		YoovyBot_Giant_Scout_Sandman_Armored
+		{
+			Class Scout
+			Name "Armored Major League Scout"
+			Health 3000
+			ClassIcon scout_stun_giant_armored
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Sandman"
+			ItemAttributes
+			{
+				ItemName "The Sandman"
+				"effect bar recharge rate increased" 0.1
+				"max health additive penalty" 0
+				"damage bonus" 1.25
+			}
+			Item "Batter's Helmet"
+			Item "MNC Mascot Outfit"
+			Item "Das Metalmeatencasen"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"move speed penalty" 0.75
+			}
+		}
+		//////////////////////
+		//Demoknight
+		//////////////////////
+		//Wave 7: 86
+		//Wave 7: Support
+		//////////////////////
+		YoovyBot_Demoman_Knight
+		{
+			Class Demoman
+			Name "Demoknight"
+			ClassIcon demoknight
+			Health 150
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Eyelander"
+			ItemAttributes
+			{
+				ItemName "The Eyelander"
+				"max health additive penalty" 1
+				"critboost on kill" 3
+			}
+			Item "The Chargin' Targe"
+			Item "Spiral Sallet"
+			
+			CharacterAttributes
+			{
+				"gesture speed increase" 1.5
+			}
+		}
+		//////////////////////
+		//Black Box Soldier
+		//////////////////////
+		//Wave 7: 24
+		//////////////////////
+		YoovyBot_Soldier_BlackBox
+		{
+			Class Soldier
+			Name "Black Box Soldier"
+			ClassIcon soldier_heal2
+			
+			Item "The Black Box"
+			Item "The War Pig"
+		}
+		//////////////////////
+		//Giant Samurai Warrior
+		//////////////////////
+		//Wave 7: 10
+		//////////////////////
+		YoovyBot_Giant_Demoman_Knight_Samurai_Warrior
+		{
+			Class Demoman
+			Name "Giant Samurai Warrior"
+			Health 3800
+			ClassIcon demoknight_samurai_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes AirChargeOnly
+			Attributes MiniBoss
+			Attributes AutoJump
+			AutoJumpMin 10
+			AutoJumpMax 10
+			Tag bot_giant
+			
+			Item "The Half-Zatoichi"
+			ItemAttributes
+			{
+				ItemName "The Half-Zatoichi"
+				"damage bonus" 1.5
+				"honorbound" 0
+			}
+			Item "The Splendid Screen"
+			ItemAttributes
+			{
+				ItemName "The Splendid Screen"
+				"charge recharge rate increased" 7
+				"attack not cancel charge" 1
+				"charge time increased" 1.25
+			}
+			Item "Legendary Lid"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"bot custom jump particle" 1
+				"gesture speed increase" 1.5
+				"damage force reduction" 0.4
+				"increased jump height" 2.3
+				"cancel falling damage" 1
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Soda Popper Scout
+		//////////////////////
+		//Wave 7: 18
+		//////////////////////
+		YoovyBot_Scout_SP
+		{
+			Class Scout
+			Name "Soda Popper Scout"
+			ClassIcon scout_popper2
+			
+			MaxVisionRange 500
+			
+			Item "The Soda Popper"
+			Item "The Fed-Fightin' Fedora"
+			ItemAttributes
+			{
+				ItemName "The Fed-Fightin' Fedora"
+				"set item tint RGB" 8208497
+			}
+		}
+		//////////////////////
+		//Giant HOK Deflector Heavy
+		//////////////////////
+		//Wave 7: 2
+		//////////////////////
+		YoovyBot_Giant_Heavy_Deflector_HOK
+		{
+			Class Heavy
+			Name "Giant HOK Deflector Heavy"
+			Health 5000
+			ClassIcon Heavy_deflector_healonkill
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Deflector"
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"attack projectiles" 2
+				"heal on kill" 5000
+				"damage bonus" 1.5
+			}
+			Item "The Tungsten Toque"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		//////////////////////
+		//Bruiser
+		//////////////////////
+		//Wave 8: Support
+		//////////////////////
+		YoovyBot_Heavy_Eviction
+		{
+			Class Heavy
+			Name "Bruiser"
+			ClassIcon heavy_eviction_nys
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Eviction Notice"
+			ItemAttributes
+			{
+				ItemName "The Eviction Notice"
+				"mod_maxhealth_drain_rate" 0
+			}
+			Item "Copper's Hard Top"
+		}
+		//////////////////////
+		//Al Capone
+		//////////////////////
+		//Wave 8: 1
+		//////////////////////
+		YoovyBot_Chief_Heavy_Eviction
+		{
+			Class Heavy
+			Name "Al Capone"
+			Health 60000
+			ClassIcon heavy_eviction_nys_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes UseBossHealthBar
+			Attributes MiniBoss
+			Tag bot_giant
+			Scale 1.9
+			
+			Item "The Eviction Notice"
+			ItemAttributes
+			{
+				ItemName "The Eviction Notice"
+				"mod_maxhealth_drain_rate" 0
+				"damage causes airblast" 1
+				"killstreak idleeffect" 3
+				"bleeding duration" 2
+				"killstreak tier" 1
+				"damage penalty" 1
+				"damage bonus" 2
+				"hand scale" 1.2
+			}
+			Item "Sophisticated Smoker"
+			Item "Commissar's Coat"
+			
+			CharacterAttributes
+			{
+				"airblast vertical vulnerability multiplier" 0.1
+				"airblast vulnerability multiplier" 0.1
+				"override footstep sound set" 7
+				"damage force reduction" 0.1
+				"move speed penalty" 0.35
+				"rage giving scale" 0.1
+				"health regen" 150
+			}
+		}
+		//////////////////////
+		//Sentry Busters
+		//////////////////////
+		YoovyBot_SentryBuster
+		{
+			Class Demoman
+			Name "Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+			}
+		}
+		YoovyBot_SentryBuster_Urban
+		{
+			Class Demoman
+			Name "Urban Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "Killer Exclusive"
+			Item "The Mann of the House"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3
+				"torso scale" 0.2
+			}
+		}
+		YoovyBot_SentryBuster_Worker
+		{
+			Class Demoman
+			Name "Worker Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "Base Metal Billycock"
+			Item "EOTL_blinks_breeches"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3
+				"torso scale" 0.35
+			}
+		}
+		YoovyBot_SentryBuster_Officer
+		{
+			Class Demoman
+			Name "Officer Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "The Law"
+			Item "The Man in Slacks"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3
+				"torso scale" 0.4
+			}
+		}
+	}
+	//Sentrybusters
+	//Waves 1-7
+	Mission 
+	{
+		Objective DestroySentries
+
+		Where spawnbot_mission_sentrybuster
+		BeginAtWave 1
+		RunForThisManyWaves 7
+
+		InitialCooldown	30
+		CooldownTime 30
+		
+		DesiredCount 1
+
+		RandomChoice
+		{
+			TFBot
+			{
+				Template YoovyBot_SentryBuster
+				Skill Expert
+			}
+			TFBot
+			{
+				Template YoovyBot_SentryBuster_Urban
+				Skill Expert
+			}
+			TFBot
+			{
+				Template YoovyBot_SentryBuster_Worker
+				Skill Expert
+			}
+			TFBot
+			{
+				Template YoovyBot_SentryBuster_Officer
+				Skill Expert
+			}
+		}
+	}
+	//Sentrybusters
+	//Wave 8
+	Mission 
+	{
+		Objective DestroySentries
+
+		Where spawnbot_mission_sentrybuster
+		BeginAtWave 8
+		RunForThisManyWaves 1
+
+		InitialCooldown	5
+		CooldownTime 20
+		
+		DesiredCount 1
+
+		TFBot
+		{
+			Template YoovyBot_SentryBuster_Officer
+			Skill Expert
+		}
+	}
+	//Wave 2 SPY
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 2
+		RunForThisManyWaves 1
+
+		InitialCooldown	30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template YoovyBot_Spy
+			Skill Hard
+        }
+	}
+	//Wave 5 SPY
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 5
+		RunForThisManyWaves 1
+
+		InitialCooldown	30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template YoovyBot_Spy_BigEarner
+			Skill Hard
+        }
+	}
+	//Wave 8 SPY
+	Mission 
+	{
+		Objective Spy
+
+		Where spawnbot_mission_spy
+		BeginAtWave 8
+		RunForThisManyWaves 1
+
+		InitialCooldown	5
+		CooldownTime 15
+		
+		DesiredCount 3
+
+        TFBot
+		{
+			Template YoovyBot_Spy
+			Skill Hard
+        }
+	}
+	//Wave 3 SNIPER
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 3
+		RunForThisManyWaves 1
+
+		InitialCooldown	30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template YoovyBot_Sniper
+			Skill Hard
+        }
+	}
+	//Wave 6 SNIPER
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 6
+		RunForThisManyWaves 1
+
+		InitialCooldown	30
+		CooldownTime 30
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template YoovyBot_Sniper
+			Skill Hard
+        }
+	}
+	//Wave 8 SNIPER
+	Mission 
+	{
+		Objective Sniper
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 8
+		RunForThisManyWaves 1
+
+		InitialCooldown	5
+		CooldownTime 15
+		
+		DesiredCount 3
+
+        TFBot
+		{
+			Template YoovyBot_Sniper
+			Skill Hard
+        }
+	}
+	//Wave 4 TELEPORTER ENGINEER
+	Mission 
+	{
+		Objective Engineer
+
+		Where spawnbot_mission_sniper
+		BeginAtWave 4
+		RunForThisManyWaves 1
+
+		InitialCooldown	45
+		CooldownTime 45
+		
+		DesiredCount 1
+
+        TFBot
+		{
+			Template YoovyBot_Engineer_WalkIn_Tele
+			Skill Expert
+        }
+	}
+	//Wave 6 SENTRY ENGINEER
+	Mission 
+	{
+		Objective Engineer
+
+		Where spawnbot_sidebuilding
+		BeginAtWave 6
+		RunForThisManyWaves 1
+
+		InitialCooldown	45
+		CooldownTime 45
+		
+		DesiredCount 1
+
+        TFBot
+		{
+			Template YoovyBot_Engineer_WalkIn_NoTele
+			Skill Expert
+        }
+	}
+	//Wave 8 SENTRY ENGINEER
+	Mission 
+	{
+		Objective Engineer
+
+		Where spawnbot_sidebuilding
+		BeginAtWave 8
+		RunForThisManyWaves 1
+
+		InitialCooldown	10
+		CooldownTime 15
+		
+		DesiredCount 2
+
+        TFBot
+		{
+			Template YoovyBot_Engineer_WalkIn_NoTele
+			Skill Expert
+        }
+	}
+	//////////////////////
+	//WAVE 1 $1,000
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W1_01
+			TotalCurrency	100
+			TotalCount	28
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Scout
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name	W1_01
+			TotalCurrency	100
+			TotalCount	15
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot_sidebuilding
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Soldier
+					Skill Normal
+				}
+				TFBot
+				{
+					Template	YoovyBot_Demoman
+					Skill Normal
+				}
+				TFBot
+				{
+					Template	YoovyBot_Demoman
+					Skill Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W1_01
+			TotalCurrency	200
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Giant_Demoman_Knight_Samurai
+				Skill Expert
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W1_02
+			WaitForAllDead W1_01
+			TotalCurrency	200
+			TotalCount	20
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Soldier
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W1_02
+			WaitForAllDead W1_01
+			TotalCurrency	100
+			TotalCount	21
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot_lowerflank
+			TFBot
+			{
+				Template	YoovyBot_Heavy_Shotgun
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W1_02
+			WaitForAllDead W1_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Giant_Soldier
+				Skill Expert
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 2 $800
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W2_01
+			TotalCurrency	50
+			TotalCount	6
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Scout_FAN_Armored
+				Attributes AlwaysCrit
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W2_01
+			TotalCurrency	100
+			TotalCount	30
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Pyro
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W2_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Demoman_BurstFire
+				Skill Expert
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W2_02
+			WaitForAllDead	W2_01
+			TotalCurrency	100
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot_lowerflank
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Scout_FAN_Armored
+					Attributes AlwaysCrit
+					Skill Normal
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_QF
+					Skill Easy
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W2_02
+			WaitForAllDead	W2_01
+			TotalCurrency	125
+			TotalCount	15
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot_sidebuilding
+			TFBot
+			{
+				Template	YoovyBot_Heavy_KGB
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W2_02
+			WaitForAllDead	W2_01
+			TotalCurrency	125
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot_sidebuilding
+			TFBot
+			{
+				Template	YoovyBot_Heavy_GRU
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W2_02
+			WaitForAllDead	W2_01
+			TotalCurrency	200
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Soldier_RapidFire
+				Skill Expert
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 3 $800
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn //25,000 health tank
+		{
+			Name W3_01_TANK
+			TotalCurrency	100
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 25000
+				Speed 75
+				Name tankboss
+				StartingPathTrackNode tank_start
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W3_01
+			TotalCurrency	100
+			TotalCount	35
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	7
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Demoman_Knight_Caber
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W3_01
+			TotalCurrency	100
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	5.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Pyro_Flare
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W3_01_GIANTCHARGED
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	12
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Soldier_Charged
+				Skill Normal
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W3_02
+			WaitForAllDead	W3_01
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Pyro_Flare
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W3_02
+			WaitForAllDead	W3_01
+			TotalCurrency	100
+			TotalCount	15
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Soldier_Conch_Extended
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W3_02
+			WaitForAllDead	W3_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Giant_Soldier_Charged
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W3_02
+			WaitForAllDead	W3_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Giant_Pyro_Airblast
+				Skill Expert
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 4 $800
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W4_01
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	14
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Scout_Fast
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4_01
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Demoman
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4_01
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot_sidebuilding
+			TFBot
+			{
+				Template	YoovyBot_Heavy_Tomislav
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4_01
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Giant_Soldier_BurstFire
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_Uber_ShortUber
+					Skill Hard
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_Uber_ShortUber
+					Skill Hard
+				}
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W4_02
+			WaitForAllDead	W4_01
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Heavy_SteelFist
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_VaccBullet
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4_02
+			WaitForAllDead	W4_01
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Heavy_SteelFist
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_VaccBlast
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4_02
+			WaitForAllDead	W4_01
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Heavy_SteelFist
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_VaccFire
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4_02_SUPPORT
+			WaitForAllDead	W4_01
+			TotalCurrency	200
+			TotalCount	40
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template	YoovyBot_Soldier
+				Skill Normal
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 5 $1,000
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W5_01
+			TotalCurrency	100
+			TotalCount	35
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Scout_Melee
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W5_01
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot_side
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Soldier
+					Attributes	AlwaysCrit
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_QF_BigHeal
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W5_01
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	14
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Demoman_Burstfire
+				Skill Expert
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn //Two 20,000 health tanks
+		{
+			Name W5_02_TANKS
+			WaitForAllDead	W5_01
+			TotalCurrency	200
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 15
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Name tankboss
+				StartingPathTrackNode tank_start
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}				
+		}
+		WaveSpawn
+		{
+			Name	W5_02
+			WaitForAllDead	W5_01
+			TotalCurrency	150
+			TotalCount	28
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Scout_Melee
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W5_02
+			WaitForAllDead	W5_01
+			TotalCurrency	150
+			TotalCount	21
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Scout
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name	W5_02
+			WaitForAllDead	W5_01
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	12
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Giant_Soldier_Barrage
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Medic_QF_BigHeal
+					Skill Hard
+				}
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 6 $900
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W6_01
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	14
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Scout_Fast
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name	W6_01
+			TotalCurrency	100
+			TotalCount	28
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Soldier_Conch_Extended
+				Attributes AlwaysCrit
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W6_01
+			TotalCurrency	100
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Pyro_Airblast
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W6_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot_lowerflank
+			TFBot
+			{
+				Template	YoovyBot_Giant_Heavy_Deflector
+				Skill Expert
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W6_02
+			WaitForAllDead W6_01
+			TotalCurrency	50
+			TotalCount	14
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	4
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Pyro_Airblast
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	W6_02
+			WaitForAllDead W6_01
+			TotalCurrency	50
+			TotalCount	14
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	4
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Demoman
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W6_02
+			WaitForAllDead W6_01
+			TotalCurrency	200
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	8
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Scout_Fast
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name	W6_02
+			WaitForAllDead W6_01
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	20
+			Where	spawnbot_lowerflank
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Giant_Heavy_Deflector
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Giant_Medic_QF
+					Skill Expert
+				}
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 7 $900
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W7_01
+			TotalCurrency	25
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot_lowerflank
+			TFBot
+			{
+				Template	YoovyBot_Giant_Scout_Sandman_Armored
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_01
+			TotalCurrency	75
+			TotalCount	32
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Demoman_Knight
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_01
+			TotalCurrency	75
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Soldier_BlackBox
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_01
+			TotalCurrency	100
+			TotalCount	5
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	12
+			Where	spawnbot_lowerflank
+			TFBot
+			{
+				Template	YoovyBot_Giant_Scout_Sandman_Armored
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_01
+			TotalCurrency	75
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	12
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Giant_Soldier_BurstFire
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		//////////////////////
+		//SUBWAVE 2
+		//////////////////////
+		WaveSpawn //30,000 health tank
+		{
+			Name W7_02_TANK
+			WaitForAllDead	W7_01
+			TotalCurrency	50
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name tankbossfinal
+				Skin 1
+				StartingPathTrackNode tank_start
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_02
+			WaitForAllDead	W7_01
+			TotalCurrency	50
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Demoman_Knight
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_02
+			WaitForAllDead	W7_01
+			TotalCurrency	100
+			TotalCount	20
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	YoovyBot_Heavy_SteelFist
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_02
+			WaitForAllDead	W7_01
+			TotalCurrency	100
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	14
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Giant_Demoman_Knight_Samurai_Warrior
+				Skill Expert
+			}
+		}
+		//////////////////////
+		//SUBWAVE 3
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W7_03
+			WaitForAllDead	W7_02
+			TotalCurrency	50
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot_side
+			TFBot
+			{
+				Template	YoovyBot_Giant_Demoman_Knight_Samurai_Warrior
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_03
+			WaitForAllDead	W7_02
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	YoovyBot_Giant_Heavy_Deflector_HOK
+					Attributes AlwaysCrit
+					Skill Expert
+				}
+				TFBot
+				{
+					Template	YoovyBot_Giant_Medic_QF
+					Skill Expert
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_03_SUPPORT
+			WaitForAllDead	W7_02
+			TotalCurrency	50
+			TotalCount	30
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Where	spawnbot_sidebuilding
+			RandomSpawn 1
+			Support 1
+			TFBot
+			{
+				Template	YoovyBot_Demoman_Knight
+				ClassIcon demoknight_giant
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W7_03_SUPPORT
+			WaitForAllDead	W7_02
+			TotalCurrency	50
+			TotalCount	21
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Where	spawnbot_sidebuilding
+			RandomSpawn 1
+			Support 1
+			TFBot
+			{
+				Template	YoovyBot_Scout_SP
+				Skill Hard
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 8 $500
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		//////////////////////
+		//SUBWAVE 1
+		//////////////////////
+		WaveSpawn
+		{
+			Name	W8_BOSS_DIALOGUE
+			FirstSpawnWarningSound "vo\mvm\mght\heavy_mvm_m_meleedare13.mp3"
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_DIALOGUE
+			FirstSpawnWarningSound "vo\mvm\mght\heavy_mvm_m_laughlong01.mp3"
+			WaitBeforeStarting 5
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS
+			TotalCurrency	50
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot_side
+			FirstSpawnWarningSound "mvm\giant_heavy\giant_heavy_entrance.wav"
+			DoneWarningSound "vo\mvm\mght\heavy_mvm_m_paincrticialdeath03.mp3"
+			TFBot
+			{
+				Template	YoovyBot_Chief_Heavy_Eviction
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_EXPLOSION
+			WaitForAllDead	W8_BOSS
+			FirstSpawnWarningSound	"ambient\explosions\explode_2.wav"
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_EXPLOSION
+			WaitForAllDead	W8_BOSS
+			FirstSpawnWarningSound	"ambient\explosions\explode_2.wav"
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_SUPPORT
+			TotalCurrency	100
+			TotalCount	20
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	8
+			Where	spawnbot
+			Where	spawnbot_side
+			Where	spawnbot_sidebuilding
+			Where	spawnbot_lowerflank
+			RandomSpawn 1
+			Support Limited
+			TFBot
+			{
+				Template	YoovyBot_Heavy_Eviction
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_SUPPORT
+			TotalCurrency	150
+			TotalCount	20
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	8
+			Where	spawnbot
+			Where	spawnbot_side
+			Where	spawnbot_sidebuilding
+			Where	spawnbot_lowerflank
+			RandomSpawn 1
+			Support Limited
+			TFBot
+			{
+				Template	YoovyBot_Heavy_Shotgun
+				Attributes AlwaysCrit
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_SUPPORT
+			TotalCurrency	100
+			TotalCount	20
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	8
+			Where	spawnbot
+			Where	spawnbot_side
+			Where	spawnbot_sidebuilding
+			Where	spawnbot_lowerflank
+			RandomSpawn 1
+			Support Limited
+			TFBot
+			{
+				Template	YoovyBot_Heavy_Tomislav
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	W8_BOSS_SUPPORT
+			TotalCurrency	100
+			TotalCount	20
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	8
+			Where	spawnbot
+			Where	spawnbot_side
+			Where	spawnbot_sidebuilding
+			Where	spawnbot_lowerflank
+			RandomSpawn 1
+			Support Limited
+			TFBot
+			{
+				Template	YoovyBot_Pyro
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+	}
+}
