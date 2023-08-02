@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "HUD/leaderboard_class_heavy_deflector_accurate"
+	"$translucent" 1
+}

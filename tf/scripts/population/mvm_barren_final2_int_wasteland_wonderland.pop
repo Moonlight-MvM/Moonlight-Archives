@@ -1,0 +1,1064 @@
+////Wasteland Wonderland By Skin King
+//Difficulty Interm
+//Map Barren
+#base robot_giant.pop
+#base robot_standard.pop
+
+WaveSchedule
+{
+	StartingCurrency	400
+	RespawnWaveTime	4
+	CanBotsAttackWhileInSpawnRoom	no
+	
+	Mission
+	{
+		Objective	DestroySentries
+		BeginAtWave	1
+		RunForThisManyWaves 8
+		InitialCooldown 30
+		CooldownTime	30
+		DesiredCount	1
+		Where	spawnbot
+		
+		TFBot
+		{
+			Template	T_TFBot_SentryBuster
+		}
+	}
+	
+		Mission
+	{
+		BeginAtWave	4
+		RunForThisManyWaves	5
+		Objective	Sniper
+		Where	spawnbot_flank
+		InitialCooldown	30
+		CooldownTime	30
+		DesiredCount	2
+		TFBot
+		{
+			Template	T_TFBot_Sniper
+		}
+	}
+	
+	Wave	//wave 1	~~~600 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+		
+		WaveSpawn
+		{
+			Name	w1a
+			TotalCurrency	200
+			TotalCount	48
+			MaxActive	6
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			TFBot
+			{
+				Template	T_TFBot_Scout_Melee
+				ClassIcon	scout_bat_nys
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name	w1a
+			TotalCurrency	200
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_flank
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Shotgun
+				Skill	Normal
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name	w1a-1
+			WaitForAllSpawned w1a
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	0.5
+			WaitBetweenSpawns	6
+			TFBot
+			{
+				Template	T_TFBot_Giant_Soldier
+			}
+		}	
+		
+		WaveSpawn
+		{
+			Name	w1a-1
+			WaitForAllSpawned w1a
+			TotalCurrency	100
+			Support	limited
+			TotalCount	160
+			MaxActive	16
+			SpawnCount	1
+			Where	spawnbot_flank
+			Where	spawnbot
+			WaitBeforeStarting	0.5
+			WaitBetweenSpawns	1
+			TFBot
+			{
+				Template	T_TFBot_Demoman_Knight
+			}
+		}
+	}
+
+	Wave	//wave 2	~~~800 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+		
+		WaveSpawn
+		{
+			Name	w2a
+			TotalCurrency	200
+			TotalCount	25
+			MaxActive	15
+			SpawnCount	5
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	12
+			TFBot
+			{
+				Class	Soldier
+				Skill	Normal
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name	w2a-1
+			Support 1
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	2
+			SpawnCount	1
+			Where	spawnbot_flank
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	7
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Fist
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name	w2b
+			WaitForAllSpawned w2a
+			Support limited 
+			TotalCurrency	200
+			TotalCount	40
+			MaxActive	10
+			SpawnCount	1
+			Where	spawnbot
+			Where	spawnbot_flank
+			WaitBeforeStarting	2.5
+			WaitBetweenSpawns	0.5
+			RandomChoice
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Heavyweight_Champ
+				}
+				
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Heavyweight_Champ
+				}
+				
+				TFBot
+				{
+					Template	T_TFBot_Sniper_Huntsman
+				}
+			}	
+		}
+		
+		WaveSpawn
+		{
+			Name	w2b
+			WaitForAllSpawned w2a
+			TotalCurrency	200
+			TotalCount	9
+			MaxActive	9
+			SpawnCount	3
+			Where	spawnbot
+			WaitBeforeStarting	2.5
+			WaitBetweenSpawns	20
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Boxing_Heavy
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+					Tag	bot_squad_member
+				}	
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+					Tag	bot_squad_member
+				}
+			}	
+		}
+	}	
+	
+	Wave	//wave 3	~~~1000 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+		
+		WaveSpawn
+		{
+			Name	w3a
+			TotalCurrency	150
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			Where	spawnbot
+			WaitBeforeStarting	0.5
+			WaitBetweenSpawns	0
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Scout_Baseball_Armored	
+					Attributes AlwaysCrit
+				}
+				TFBot
+				{	
+					Template	T_TFBot_Soldier_Extended_Concheror	
+					Tag bot_squad_member
+				}
+
+				TFBot
+				{	
+					Template	T_TFBot_Soldier_Extended_Concheror	
+					Tag bot_squad_member
+				}
+			}	
+		}
+	
+		WaveSpawn
+		{
+			Name	w3a-1
+			WaitForAllDead	w3a
+			TotalCurrency	800
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+
+			Tank
+			{
+				Health	20000
+				Name	"tankboss"
+				Speed	75
+				StartingPathTrackNode	"tank_path_1"
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name	w3a-1
+			WaitForAllDead w3a
+			TotalCurrency	50
+			TotalCount	9
+			MaxActive	9
+			SpawnCount	3
+			Where	spawnbot
+			WaitBeforeStarting	2.5
+			WaitBetweenSpawns	25
+			Squad
+			{		
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier
+				}
+				
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickFix
+					
+				}
+				
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickFix
+					
+				}
+			}	
+		}	
+		
+		WaveSpawn
+		{
+			Name	w3a-1
+			WaitForAllDead w3a
+			Support 1
+			TotalCount	2000
+			MaxActive	12
+			SpawnCount	6
+			Where	spawnbot
+			WaitBeforeStarting	2.5
+			WaitBetweenSpawns	15
+			TFBot
+			{
+				Class	Scout
+				Skill	Easy
+			}
+		}
+	}
+
+	Wave	//wave 4	~~~1200 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+		
+		WaveSpawn
+		{
+			Name	w4a
+			TotalCurrency	200
+			TotalCount	51
+			MaxActive	14
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1.5
+			
+			RandomChoice
+			{
+				TFBot
+				{
+					Template	T_TFBot_Scout_SunStick
+					ClassIcon	scout_sunstick_swordstone
+				}	
+			
+				TFBot
+				{
+					Class	Pyro
+					Skill	Expert
+					
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_FLAMETHROWER"
+						"airblast disabled" 1
+					}
+				}	
+			}			
+		}
+	
+		WaveSpawn
+		{
+			Name	w4a
+			TotalCurrency	200
+			TotalCount	7
+			MaxActive	4
+			SpawnCount	1
+			Where	spawnbot_flank
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			
+			TFBot
+			{
+				Template	T_TFBot_Giant_Pyro_Flare_Spammer
+				ClassIcon	pyro_detonator_lite_spammer
+			}
+		}	
+	
+		WaveSpawn
+		{
+			Name	w4b
+			WaitForAllDead	w4a
+			TotalCurrency	200
+			TotalCount	16
+			MaxActive	12
+			SpawnCount	4
+			Where	spawnbot
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	12
+			
+			TFBot
+			{
+				Class	Demoman
+				Skill	Normal
+			}	
+		}	
+			
+		WaveSpawn
+		{
+			Name	w4b
+			WaitForAllDead	w4a
+			TotalCurrency	200
+			TotalCount	6
+			MaxActive	2
+			SpawnCount	2
+			Where	spawnbot
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	15	
+			
+			TFBot
+			{
+				Template	T_TFBot_Scout_Shortstop
+			}	
+		}	
+			
+		WaveSpawn
+		{
+			Name	w4c
+			WaitForAllSpawned	w4b
+			TotalCurrency	200
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	10	
+			
+			TFBot
+			{
+				Template	T_TFBot_Giant_Soldier_Crit
+			}	
+		}	
+			
+		WaveSpawn
+		{
+			Name	w4c
+			WaitForAllSpawned	w4b
+			TotalCurrency	200
+			TotalCount	35
+			MaxActive	14
+			SpawnCount	7
+			Where	spawnbot_flank
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	7	
+			
+			TFBot	///cant be bothered to make a fat scout from scratch
+			{
+				Template	T_TFBot_Heavyweapons_Shotgun
+				ClassIcon	heavy_fatscout_2
+				Item	"The Robot Running Man"
+				Name	"Fat Scout"
+				
+				CharacterAttributes	
+				{
+					"move speed bonus"	1.3
+				}	
+			}	
+		}	
+	}		
+	
+	Wave	//wave 5	~~~1100 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}		
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+			
+		WaveSpawn
+		{
+			Name	w5a
+			TotalCurrency	200
+			TotalCount	72
+			MaxActive	12
+			SpawnCount	12
+			Where	spawnbot_flank
+			Where	spawnbot
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	0
+			
+			TFBot	
+			{
+				Template	T_TFBot_Demoman_Knight
+			}
+		}	
+			
+		WaveSpawn
+		{
+			Name	w5a
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	20
+			
+			TFBot	
+			{
+				Template	T_TFBot_Giant_Heavyweapons
+			}
+		}	
+			
+		WaveSpawn
+		{
+			Name	w5a-1
+			TotalCurrency	300
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+
+			Tank
+			{
+				Health	25000
+				Name	"tankboss"
+				Speed	75
+				StartingPathTrackNode	"tank_path_1"
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}	
+
+		WaveSpawn
+		{
+			Name	w5b
+			WaitForAllSpawned	w5a
+			TotalCurrency	200
+			TotalCount	29
+			MaxActive	14
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	1	
+			
+			RandomChoice
+			{
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Buff_Banner
+				}	
+				TFBot
+				{
+					Template	T_TFBot_Sniper_Huntsman
+				}
+			}		
+		}
+			
+		WaveSpawn
+		{
+			Name	w5b
+			WaitForAllSpawned	w5a
+			TotalCurrency	200
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	25	
+
+			TFBot
+			{
+				Template		T_TFBot_Giant_Scout_Baseball
+			}	
+		}	
+	}
+			
+	Wave	//wave 6	~~~1100 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}		
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+			
+		WaveSpawn
+		{
+			Name	w6a
+			TotalCurrency	100
+			TotalCount	32
+			MaxActive	8
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	0
+			
+			TFBot	
+			{
+				Template	T_TFBot_Sniper_Huntsman
+			}
+		}		
+			
+		WaveSpawn
+		{
+			Name	w6a
+			TotalCurrency	100
+			TotalCount	32
+			MaxActive	8
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	0
+			
+			TFBot	
+			{
+				Class	Scout
+				Skill	Normal
+			}
+		}	
+
+		WaveSpawn
+		{
+			Name	w6a
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	20
+			
+			TFBot	
+			{
+				Template	T_TFBot_Giant_Demoman
+				ClassIcon	demo_spammer
+				Attributes	AlwaysCrit
+			}
+		}	
+		
+		WaveSpawn
+		{
+			Name	w6b
+			WaitForAllSpawned	w6a
+			TotalCurrency	200
+			TotalCount	40
+			MaxActive	10
+			SpawnCount	2
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	2
+			
+			Squad
+			{
+				TFBot
+				{
+					Template		T_TFBot_Heavyweapons_Heavyweight_Champ
+				}	
+				
+				TFBot
+				{
+					Template		T_TFBot_Medic_QuickUber
+					Attributes	SpawnWithFullCharge
+				}	
+			}	
+		}	
+		
+		WaveSpawn
+		{
+			Name	w6b
+			WaitForAllSpawned	w6a
+			TotalCurrency	200
+			TotalCount	5
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot_flank
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	5
+
+			TFBot
+			{
+				Template	T_TFBot_Demoman_Samurai
+			}
+		}
+
+		WaveSpawn
+		{
+			Name	w6c
+			WaitForAllSpawned	w6b
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	9
+			SpawnCount	3
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	5
+
+			TFBot
+			{
+				Class	Heavy
+				Skill	Normal	
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name	w6c
+			WaitForAllSpawned	w6b
+			TotalCurrency	300
+			TotalCount	9
+			MaxActive	9
+			SpawnCount	3
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	15
+
+			Squad
+			{	
+				TFBot
+				{
+					Template	T_TFBot_Giant_Soldier_Spammer_Reload
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Attributes	SpawnWithFullCharge
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Attributes	SpawnWithFullCharge
+				}
+			}
+		}	
+	}
+	
+	Wave	//wave 7	~~~1300 cash~~~
+	{
+
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}		
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
+                }
+            "
+        }
+			
+		WaveSpawn
+		{
+			Name	w7a
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	20
+			
+			TFBot	
+			{
+				Template	T_TFBot_Giant_Heavyweapons
+			}
+		}		
+		
+		WaveSpawn
+		{
+			Name	w7a
+			TotalCurrency	100
+			TotalCount	36
+			MaxActive	12
+			SpawnCount	4
+			Where	spawnbot_flank
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	5
+			
+			TFBot	
+			{
+				Class	Soldier
+				Skill	Normal
+				Attributes	AlwaysCrit
+			}
+		}
+
+		WaveSpawn
+		{
+			Name	w7b
+			WaitForAllSpawned	w7a
+			TotalCurrency	100
+			TotalCount	35
+			MaxActive	7
+			SpawnCount	1
+			Where	spawnbot_flank
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	1
+
+			TFBot
+			{
+				Template	T_TFBot_Pyro_Flaregun
+			}
+		}	
+
+		WaveSpawn
+		{
+			Name	w7b
+			WaitForAllSpawned	w7a
+			TotalCurrency	100
+			TotalCount	35
+			MaxActive	7
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	1
+
+			TFBot
+			{
+				Class	Demoman
+				Skill	Hard
+			}
+		}		
+		
+		WaveSpawn
+		{
+			Name	w7b
+			WaitForAllSpawned	w7a
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	15
+
+			TFBot
+			{
+				Template	T_TFBot_Giant_Pyro
+				Attributes	AlwaysCrit
+				Attributes	AlwaysFireWeapon
+				
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"airblast disabled" 1
+				}
+			}
+		}		
+		
+		WaveSpawn
+		{
+			Name	w7c
+			WaitForAllSpawned	w7b
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	20
+
+			TFBot
+			{
+				Template	T_TFBot_Giant_Heavyweapons_Shotgun
+			}
+		}	
+
+		WaveSpawn
+		{
+			Name	w7c
+			WaitForAllSpawned	w7b
+			Support limited
+			TotalCurrency	100
+			TotalCount	36
+			MaxActive	12
+			SpawnCount	2
+			Where	spawnbot
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	5
+
+			TFBot
+			{
+				Template	T_TFBot_Soldier_Extended_Concheror
+			}
+		}
+
+		WaveSpawn
+		{
+			Name	w7c
+			WaitForAllDead	w7b
+			TotalCurrency	400
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+
+			Tank
+			{
+				Health	30000
+				Name	"tankboss"
+				Speed	75
+				Skin	1
+				StartingPathTrackNode	"tank_path_1"
+				OnKilledOutput
+				{
+					Target	boss_dead_relay
+					Action	Trigger
+				}
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+	}
+}	

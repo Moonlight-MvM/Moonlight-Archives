@@ -292,7 +292,24 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		{
 			Target	wave_finished_relay
 			Action	Trigger
-		}	
+		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_right_relay`, `Trigger`)
+				ClientPrint(null,3,`\x08FF54F1FFEach wave will consist of forced bomb paths.`)
+				ClientPrint(null,3,`\x08FF54F1FFAny form of wave fail does NOT force the path to be different, so don't waste your time on that.`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+		}
 		WaveSpawn
 		{
 			TotalCurrency	200
@@ -301,7 +318,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting 2
 			Tank
 			{
-				Health	11000
+				Health	14000
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput
@@ -453,6 +470,21 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_left_relay`, `Trigger`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+        }	
 		WaveSpawn
 		{
 			Name	W2-A1 //Insta-punish if you don't kill kritz meds.
@@ -640,6 +672,21 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 	}
 	Wave
 	{
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_right_relay`, `Trigger`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+        }	
 		WaveSpawn
 		{
 			Name W3-A1
@@ -885,6 +932,21 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_left_relay`, `Trigger`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+        }	
 		WaveSpawn
 		{
 			TotalCurrency	100
@@ -1106,6 +1168,21 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_right_relay`, `Trigger`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+        }	
 		WaveSpawn
 		{
 			Name	W5-A1
@@ -1268,7 +1345,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	69
 			Tank
 			{
-				Health	24000
+				Health	25000
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput
@@ -1296,6 +1373,21 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_left_relay`, `Trigger`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+        }
 		WaveSpawn
 		{
 			Name	W6-A1 //These things are a menace. I kind of only noticed it once meds aren't dropped nor if they're not killed fast enough. Tread with care and don't ask for nerfs.
@@ -1466,6 +1558,21 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+                EntFire(`bombpath_right_relay`, `Trigger`)
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dissolution`)
+                }
+            "
+        }
 		WaveSpawn
 		{
 			Name	W7-2
@@ -1642,7 +1749,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	35
 			Tank
 			{
-				Health	29000
+				Health	31000
 				Speed	75
 				Name "tankboss"
 				OnKilledOutput

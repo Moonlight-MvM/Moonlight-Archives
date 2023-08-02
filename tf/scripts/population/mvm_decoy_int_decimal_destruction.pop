@@ -110,6 +110,18 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
+                }
+            "
+		}
 		WaveSpawn
 		{
 			Name	1A-1
@@ -236,6 +248,18 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
+                }
+            "
+		}
 		WaveSpawn
 		{
 			Name	W2-A2
@@ -252,7 +276,7 @@ WaveSchedule
 				TFBot
 				{
 					Name	"Giant Rapid Fire Manmelter Pyro"
-					ClassIcon pyro_manmelter_spammer_yoovy
+					ClassIcon pyro_manmelter_spammer
 					Template	T_TFBot_Giant_Pyro_Flare_Spammer
 					ItemAttributes
 					{
@@ -414,6 +438,18 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
+                }
+            "
+		}
 		WaveSpawn
 		{
 			Name	W3-A1
@@ -513,6 +549,18 @@ WaveSchedule
 		{
 			Target	wave_finished_relay
 			Action	Trigger
+		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
+                }
+            "
 		}
 		WaveSpawn
 		{
@@ -649,6 +697,18 @@ WaveSchedule
 		{
 			Target	wave_finished_relay
 			Action	Trigger
+		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
+                }
+            "
 		}
 		WaveSpawn
 		{
@@ -872,6 +932,18 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
+                }
+            "
+		}
 		WaveSpawn
 		{
 			Name	W6-A2
@@ -890,7 +962,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName	tf_weapon_rocketlauncher
-					"damage bonus"	0.25
+					"damage bonus"	1.25
 				}
 				CharacterAttributes
 				{
@@ -1003,7 +1075,7 @@ WaveSchedule
             {
                 ItemName "tf_weapon_flamethrower"
                 "airblast_destroy_projectile" 1
-		"mult airblast refire time" 0.001
+				"mult airblast refire time" 0.001
                 "airblast pushback scale" 0.01
 			}	
 				CharacterAttributes

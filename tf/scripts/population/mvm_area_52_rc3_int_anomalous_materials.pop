@@ -1,0 +1,3747 @@
+//Created by: 
+//Yoovy: https://steamcommunity.com/profiles/76561198017198600/
+WaveSchedule
+{
+	StartingCurrency 800
+	FixedRespawnWaveTime yes
+	RespawnWaveTime 3
+	CanBotsAttackWhileInSpawnRoom no
+	Templates
+	{
+		YoovyBot_Giant_Soldier
+		{
+			Class Soldier
+			Name "Giant Soldier"
+			Health 3800
+			ClassIcon soldier_giant
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Soldier_RapidFire
+		{
+			Class Soldier
+			Name "Giant Rapid Fire Soldier"
+			Health 3800
+			ClassIcon Soldier_spammer
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"killstreak tier" 1
+				"fire rate bonus" 0.5
+			}
+			Item "The Gilded Guard"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Soldier_RapidFire_Buff_Extended
+		{
+			Class Soldier
+			Name "Giant Rapid Buff Soldier"
+			Health 3800
+			ClassIcon soldier_buff_spammer
+			
+			Attributes HoldFireUntilFullReload
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"killstreak tier" 1
+				"fire rate bonus" 0.5
+			}
+			Item "The Buff Banner"
+			Item "Defiant Spartan"
+			ItemAttributes
+			{
+				ItemName "Defiant Spartan"
+				"set item tint RGB" 15185211
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Soldier_RapidFire_Conch_Extended
+		{
+			Class Soldier
+			Name "Giant Rapid Conch Soldier"
+			Health 3800
+			ClassIcon soldier_conch_spammer
+			
+			Attributes HoldFireUntilFullReload
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"killstreak tier" 1
+				"fire rate bonus" 0.5
+			}
+			Item "The Concheror"
+			Item "Furious Fukaamigasa"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyGateBot_Giant_Soldier_RapidFire_Conch_Extended_Expert
+		{
+			Class Soldier
+			Name "Giant Rapid Conch Soldier"
+			Health 3800
+			ClassIcon soldier_conch_spammer
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					
+					Attributes HoldFireUntilFullReload
+					Attributes SpawnWithFullCharge
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "craftsmann_rocketlauncher_americanpastoral"
+					ItemAttributes
+					{
+						ItemName "craftsmann_rocketlauncher_americanpastoral"
+						"projectile speed decreased" 0.65
+						"set_item_texture_wear" 0
+						"reload time decreased" -1
+						"killstreak tier" 1
+						"fire rate bonus" 0.5
+					}
+					Item "The Concheror"
+					Item "MvM GateBot Light Soldier"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 5
+						"damage force reduction" 0.4
+						"increase buff duration" 9
+						"deploy time decreased" 0.1
+						"move speed penalty" 0.5
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Attributes HoldFireUntilFullReload
+					Attributes SpawnWithFullCharge
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "craftsmann_rocketlauncher_americanpastoral"
+					ItemAttributes
+					{
+						ItemName "craftsmann_rocketlauncher_americanpastoral"
+						"projectile speed decreased" 0.65
+						"set_item_texture_wear" 0
+						"reload time decreased" -1
+						"killstreak tier" 1
+						"fire rate bonus" 0.5
+					}
+					Item "The Concheror"
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 5
+						"damage force reduction" 0.4
+						"increase buff duration" 9
+						"deploy time decreased" 0.1
+						"move speed penalty" 0.5
+					}
+				}
+			}
+		}
+		YoovyBot_Giant_Soldier_RapidFire_Backup_Extended
+		{
+			Class Soldier
+			Name "Giant Rapid Backup Soldier"
+			Health 3800
+			ClassIcon soldier_backup_spammer
+			
+			Attributes HoldFireUntilFullReload
+			Attributes SpawnWithFullCharge
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "craftsmann_rocketlauncher_americanpastoral"
+			ItemAttributes
+			{
+				ItemName "craftsmann_rocketlauncher_americanpastoral"
+				"projectile speed decreased" 0.65
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"killstreak tier" 1
+				"fire rate bonus" 0.5
+			}
+			Item "The Battalion's Backup"
+			Item "Full Metal Drill Hat"
+			ItemAttributes
+			{
+				ItemName "Full Metal Drill Hat"
+				"set item tint RGB" 2636109
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"increase buff duration" 9
+				"deploy time decreased" 0.1
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_SentryBuster_Military
+		{
+			Class Demoman
+			Name "Military Grade Sentry Buster"
+			Health 2500
+			ClassIcon sentry_buster
+			
+			WeaponRestrictions	MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Ullapool Caber"
+			Item "Full Metal Drill Hat"
+			Item "Gone Commando"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 7
+				"damage force reduction" 0.4
+				"cannot be backstabbed" 1
+				"voice pitch scale" 1.5
+				"move speed bonus" 2
+				
+				"head scale" 3
+				"torso scale" 0.25
+			}
+		}
+		YoovyBot_Giant_Demoman_IronBomberFuse
+		{
+			Class Demoman
+			Name "Giant Mine Layer Demoman"
+			Health 3300
+			ClassIcon demo_clusterbomb_blast_giant
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Iron Bomber"
+			ItemAttributes
+			{
+				ItemName "The Iron Bomber"
+				"projectile speed increased" 1.1
+				"clip size upgrade atomic" 7
+				"damage causes airblast" 1
+				"blast radius decreased" 1
+				"reload time decreased" 0.65
+				"fire rate bonus" 0.1
+				"fuse bonus" 2.2
+			}
+			Item "Blast Defense"
+			Item "The Juggernaut Jacket"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Heavy_Rocket
+		{
+			Class Heavy
+			Name "Giant Rocketeer"
+			Health 5000
+			ClassIcon heavy_rocket_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Iron Curtain"
+			ItemAttributes
+			{
+				ItemName "Iron Curtain"
+				"projectile spread angle penalty" 4
+				"projectile speed increased" 1.2
+				"override projectile type" 2
+				"fire rate penalty" 3
+				"damage bonus" 13
+			}
+			Item "The Team Captain"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Sniper_Huntsman
+		{
+			Class Sniper
+			Name "Bowman"
+			ClassIcon sniper_bow
+			
+			Item "The Huntsman"
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage penalty" 0.5
+			}
+			Item "Larrikin Robin"
+		}
+		YoovyGateBot_Sniper_Huntsman_Conch_Hard
+		{
+			Class Sniper
+			Name "Concheror Bowman"
+			ClassIcon sniper_bow_conch
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Attributes SpawnWithFullCharge
+					Item "MvM GateBot Light Sniper"
+					Item "The Huntsman"
+					Item "The Concheror"
+					CharacterAttributes
+					{
+						"deploy time decreased" 0.54
+					}
+					
+					Skill Hard
+				}
+				RevertGateBotsBehavior
+				{
+					Attributes SpawnWithFullCharge
+					Item "MvM GateBot Light Sniper"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Sniper"
+						"item style override" 1
+					}
+					Item "The Huntsman"
+					Item "The Concheror"
+					CharacterAttributes
+					{
+						"deploy time decreased" 0.54
+					}
+					
+					Skill Hard
+				}
+			}
+		}
+		YoovyBot_Scout
+		{
+			Class Scout
+		}
+		YoovyBot_Giant_Demoman_Knight
+		{
+			Class Demoman
+			Name "Giant Demoknight"
+			Health 3300
+			ClassIcon demoknight_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Eyelander"
+			ItemAttributes
+			{
+				ItemName "The Eyelander"
+				"max health additive penalty" 0
+				"critboost on kill" 3
+			}
+			Item "The Chargin' Targe"
+			Item "Ali Baba's Wee Booties"
+			Item "Spiral Sallet"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"gesture speed increase" 1.5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyGateBot_Heavy_Easy
+		{
+			Class Heavy
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Item "MvM GateBot Light Heavy"
+					Skill Easy
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					Skill Easy
+				}
+			}
+		}
+		YoovyGateBot_Giant_Heavy_KGB_Expert
+		{
+			Class Heavy
+			Name "Giant Heavyweight Champ"
+			Health 5000
+			ClassIcon heavy_champ_giant
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					WeaponRestrictions MeleeOnly
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "The Killing Gloves of Boxing"
+					ItemAttributes
+					{
+						ItemName "The Killing Gloves of Boxing"
+						"killstreak tier" 1
+						"fire rate bonus" 0.6
+						"damage bonus" 1.25
+					}
+					Item "The Heavy-Weight Champ"
+					Item "MvM GateBot Light Heavy"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.25
+						"override footstep sound set" 5
+						"damage force reduction" 0.25
+						"move speed penalty" 0.5
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions MeleeOnly
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "The Killing Gloves of Boxing"
+					ItemAttributes
+					{
+						ItemName "The Killing Gloves of Boxing"
+						"killstreak tier" 1
+						"fire rate bonus" 0.6
+						"damage bonus" 1.25
+					}
+					Item "The Heavy-Weight Champ"
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.25
+						"override footstep sound set" 5
+						"damage force reduction" 0.25
+						"move speed penalty" 0.5
+					}
+				}
+			}
+		}
+		YoovyBot_Giant_Heavy_KGB
+		{
+			Class Heavy
+			Name "Giant Heavyweight Champ"
+			Health 5000
+			ClassIcon heavy_champ_giant
+			
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Killing Gloves of Boxing"
+			ItemAttributes
+			{
+				ItemName "The Killing Gloves of Boxing"
+				"fire rate bonus" 0.6
+				"damage bonus" 1.25
+			}
+			Item "Pugilist's Protector"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_Blue
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 5801378
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_White
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"set item tint RGB" 15132390
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 15132390
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_Orange
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"set item tint RGB" 13595446
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 13595446
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_Yellow
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"set item tint RGB" 15185211
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 15185211
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_Pink
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"set item tint RGB" 16738740
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 16738740
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_Purple
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"set item tint RGB" 8208497
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 8208497
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Soldier_Bison_Green
+		{
+			Class Soldier
+			Name "Giant Bison Soldier"
+			Health 3800
+			ClassIcon soldier_bison_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"dmg penalty vs players" 1.25
+				"reload time decreased" -1
+				"set item tint RGB" 3329330
+				"killstreak effect" 1
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 3329330
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Pyro
+		{
+			Class Pyro
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_FLAMETHROWER
+				"airblast disabled" 1
+			}
+		}
+		YoovyBot_Pyro_Gas
+		{
+			Class Pyro
+			Name "Gas Passer Pyro"
+			ClassIcon pyro_gaspasser_tind
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Degreaser"
+			ItemAttributes
+			{
+				ItemName "The Degreaser"
+				"airblast disabled" 1
+			}
+			Item "The Gas Passer"
+			Item "The Attendant"
+			Item "The Gas Guzzler"
+		}
+		YoovyBot_Sniper_SMG
+		{
+			Class Sniper
+			Name "SMG Sniper"
+			ClassIcon sniper_smg_tind
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Conspicuous Camouflage"
+		}
+		YoovyGateBot_Sniper_SMG_Easy
+		{
+			Class Sniper
+			Name "SMG Sniper"
+			ClassIcon sniper_smg_tind
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions SecondaryOnly
+			
+					Item "The Conspicuous Camouflage"
+					Item "MvM GateBot Light Sniper"
+					
+					Skill Easy
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions SecondaryOnly
+			
+					Item "The Conspicuous Camouflage"
+					Item "MvM GateBot Light Sniper"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Sniper"
+						"item style override" 1
+					}
+					
+					Skill Easy
+				}
+			}
+		}
+		YoovyBot_Soldier
+		{
+			Class Soldier
+		}
+		YoovyBot_Giant_Demoman_RapidFire
+		{
+			Class Demoman
+			Name "Giant Rapid Fire Demoman"
+			Health 3300
+			ClassIcon demo_spammer_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "warbird_grenadelauncher_butcherbird"
+			ItemAttributes
+			{
+				ItemName "warbird_grenadelauncher_butcherbird"
+				"set_item_texture_wear" 0
+				"reload time decreased" -1
+				"killstreak tier" 1
+				"fire rate bonus" 0.75
+			}
+			Item "Scotch Bonnet"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyGateBot_Heavy_Shotgun_Normal
+		{
+			Class Heavy
+			Name "Shotgun Heavy"
+			ClassIcon heavy_shotgun
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions SecondaryOnly
+					
+					Item "MvM GateBot Light Heavy"
+					
+					Skill Normal
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions SecondaryOnly
+					
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					
+					Skill Normal
+				}
+			}
+		}
+		YoovyGateBot_Heavy_SteelFist_Expert
+		{
+			Class Heavy
+			Name "Steel Gauntlet"
+			Health 900
+			Scale 1.5
+			ClassIcon heavy_steelfist
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions MeleeOnly
+					Tag bot_giant
+					
+					Item "Fists of Steel"
+					Item "MvM GateBot Light Heavy"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.8
+						"damage force reduction" 0.8
+					}
+					
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions MeleeOnly
+					Tag bot_giant
+					
+					Item "Fists of Steel"
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.8
+						"damage force reduction" 0.8
+					}
+					
+					Skill Expert
+				}
+			}
+		}
+		YoovyBot_Medic_QF
+		{
+			Class Medic
+			Name "Quick-Fix Medic"
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+			}
+			Item "dec2014 Surgeon's Shako"
+		}
+		YoovyBot_Medic_QF_BigHeal
+		{
+			Class Medic
+			Name "Big-Heal Medic"
+			ClassIcon medic
+			
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate penalty" 0.01
+				"ubercharge rate bonus" 1
+				"heal rate bonus" 10
+			}
+			Item "The Colonel's Coat"
+		}
+		YoovyBot_Scout_Pistol
+		{
+			Class Scout
+			Name "Pistol Scout"
+			ClassIcon scout_pistol_nys
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Airdog"
+		}
+		YoovyBot_Heavy
+		{
+			Class Heavy
+		}
+		YoovyBot_Scout_Sandman
+		{
+			Class Scout
+			Name "Minor League Scout"
+			Health 110
+			ClassIcon scout_stun
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Sandman"
+			ItemAttributes
+			{
+				ItemName "The Sandman"
+				"max health additive penalty" 0
+			}
+			Item "Batter's Helmet"
+		}
+		YoovyGateBot_Scout_Sandman_Expert
+		{
+			Class Scout
+			Name "Minor League Scout"
+			Health 110
+			ClassIcon scout_stun
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions MeleeOnly
+					
+					Item "The Sandman"
+					ItemAttributes
+					{
+						ItemName "The Sandman"
+						"max health additive penalty" 0
+					}
+					Item "MvM GateBot Light Scout"
+					
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions MeleeOnly
+					
+					Item "The Sandman"
+					ItemAttributes
+					{
+						ItemName "The Sandman"
+						"max health additive penalty" 0
+					}
+					Item "MvM GateBot Light Scout"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Scout"
+						"item style override" 1
+					}
+					
+					Skill Expert
+				}
+			}
+		}
+		YoovyBot_Heavy_Tomislav
+		{
+			Class Heavy
+			Name "Tomislav Heavy"
+			ClassIcon heavy_accurate_lite
+			
+			Item "Tomislav"
+			Item "Capone's Capper"
+		}
+		YoovyBot_Giant_Soldier_Charged
+		{
+			Class Soldier
+			Name "Giant Charged Soldier"
+			Health 3800
+			ClassIcon Soldier_crit
+			
+			Attributes HoldFireUntilFullReload
+			Attributes AlwaysCrit
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "powerhouse_rocketlauncher_shellshocker"
+			ItemAttributes
+			{
+				ItemName "powerhouse_rocketlauncher_shellshocker"
+				"projectile speed decreased" 0.5
+				"set_item_texture_wear" 0
+				"faster reload rate" -1
+				"fire rate penalty" 2
+				"killstreak tier" 1
+			}
+			Item "Worms Gear"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyGateBot_Demoman_Normal
+		{
+			Class Demoman
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Item "MvM GateBot Light Demoman"
+					Skill Normal
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Demoman"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Demoman"
+						"item style override" 1
+					}
+					Skill Normal
+				}
+			}
+		}
+		YoovyBot_Sniper_Huntsman_RapidFire_SubGiant
+		{
+			Class Sniper
+			Name "Archer"
+			Health 1200
+			Scale 1.5
+			ClassIcon sniper_bow_multi
+			
+			MaxVisionRange 1200
+			Tag bot_giant
+			
+			Item "The Huntsman"
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.4
+				"damage penalty" 0.5
+			}
+			Item "Larrikin Robin"
+			Item "The Golden Garment"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.8
+				"damage force reduction" 0.8
+				"move speed penalty" 0.85
+				"voice pitch scale" 0.7
+				"head scale" 0.7 
+			}
+		}
+		YoovyGateBot_Giant_Pyro_AlwaysFire_Expert
+		{
+			Class Pyro
+			Name "Giant Pyro"
+			Health 3000
+			ClassIcon pyro_giant
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Attributes AlwaysFireWeapon
+					Attributes MiniBoss
+					Tag bot_giant
+			
+					ItemAttributes
+					{
+						ItemName TF_WEAPON_FLAMETHROWER
+						"airblast disabled" 1
+						"killstreak tier" 1
+					}
+					Item "MvM GateBot Light Pyro"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 5
+						"damage force reduction" 0.4
+						"move speed penalty" 0.5
+					}
+					
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					Attributes AlwaysFireWeapon
+					Attributes MiniBoss
+					Tag bot_giant
+			
+					ItemAttributes
+					{
+						ItemName TF_WEAPON_FLAMETHROWER
+						"airblast disabled" 1
+						"killstreak tier" 1
+					}
+					
+					Item "MvM GateBot Light Pyro"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Pyro"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.4
+						"override footstep sound set" 5
+						"damage force reduction" 0.4
+						"move speed penalty" 0.5
+					}
+					
+					Skill Expert
+				}
+			}
+		}
+		YoovyBot_Medic_Uber_Quick
+		{
+			Class Medic
+			Name "Quick-Uber Medic"
+			ClassIcon medic_uber
+			
+			Attributes SpawnWithFullCharge
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_MEDIGUN
+				"ubercharge rate bonus" 5
+				"uber duration bonus" -3
+				"heal rate penalty" 0.1
+			}
+			Item "Titanium Tyrolean"
+			ItemAttributes
+			{
+				ItemName "Titanium Tyrolean"
+				"set item tint RGB" 8626083
+			}
+		}
+		YoovyBot_Scout_Shortstop_Subgiant
+		{
+			Class Scout
+			Name "Homerunner Scout"
+			Health 650
+			Scale 1.3
+			ClassIcon scout_shortstop
+			
+			Tag bot_giant
+			
+			Item "The Shortstop"
+			Item "Boston Brain Bucket"
+			ItemAttributes
+			{
+				ItemName "Boston Brain Bucket"
+				"item style override" 2
+			}
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.9
+				"damage force reduction" 0.9
+				"voice pitch scale" 0.7
+				"move speed bonus" 1.25
+				"head scale" 0.7
+			}
+		}
+		YoovyBot_Engineer_WalkIn_NoTele
+		{
+			Class Engineer
+			Name "Sentry Engineer"
+			Health 275
+			
+			Attributes IgnoreFlag
+		}
+		YoovyBot_Spy
+		{
+			Class Spy
+			
+			Attributes IgnoreFlag
+		}
+		YoovyBot_Soldier_Bison_Blue
+		{	
+			Class Soldier
+			Name "Bison Soldier"
+			ClassIcon soldier_bison
+			
+			WeaponRestrictions SecondaryOnly
+			
+			Item "The Righteous Bison"
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"set item tint RGB" 5801378
+			}
+			item "Lord Cockswain's Pith Helmet"
+			ItemAttributes
+			{
+				ItemName "Lord Cockswain's Pith Helmet"
+				"set item tint RGB" 5801378
+			}
+		}
+		YoovyGateBot_Soldier_Bison_Yellow_Hard
+		{	
+			Class Soldier
+			Name "Bison Soldier"
+			ClassIcon soldier_bison
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions SecondaryOnly
+					
+					Item "The Righteous Bison"
+					ItemAttributes
+					{
+						ItemName "The Righteous Bison"
+						"set item tint RGB" 15185211
+					}
+					Item "MvM GateBot Light Soldier"
+					
+					Skill Hard
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions SecondaryOnly
+					
+					Item "The Righteous Bison"
+					ItemAttributes
+					{
+						ItemName "The Righteous Bison"
+						"set item tint RGB" 5801378
+					}
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					
+					Skill Hard
+				}
+			}
+		}
+		YoovyBot_Demoman_Knight
+		{
+			Class Demoman
+			Name "Demoknight"
+			ClassIcon demoknight
+			Health 150
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "The Eyelander"
+			ItemAttributes
+			{
+				ItemName "The Eyelander"
+				"max health additive penalty" 1
+				"critboost on kill" 3
+			}
+			Item "The Chargin' Targe"
+			Item "Spiral Sallet"
+			
+			CharacterAttributes
+			{
+				"gesture speed increase" 1.5
+			}
+		}
+		YoovyGateBot_Demoman_Knight_Expert
+		{
+			Class Demoman
+			Name "Demoknight"
+			ClassIcon demoknight
+			Health 150
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions MeleeOnly
+			
+					Item "The Eyelander"
+					ItemAttributes
+					{
+						ItemName "The Eyelander"
+						"max health additive penalty" 1
+						"critboost on kill" 3
+					}
+					Item "The Chargin' Targe"
+					Item "MvM GateBot Light Demoman"
+					
+					CharacterAttributes
+					{
+						"gesture speed increase" 1.5
+					}
+					
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions MeleeOnly
+			
+					Item "The Eyelander"
+					ItemAttributes
+					{
+						ItemName "The Eyelander"
+						"max health additive penalty" 1
+						"critboost on kill" 3
+					}
+					Item "The Chargin' Targe"
+					Item "MvM GateBot Light Demoman"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Demoman"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"gesture speed increase" 1.5
+					}
+					
+					Skill Expert
+				}
+			}
+		}
+		YoovyBot_Giant_Sniper_Huntsman_RapidFire_SubGiant
+		{
+			Class Sniper
+			Name "Giant Archer"
+			Health 3800
+			Scale 1.75
+			ClassIcon sniper_bow_multi_giant
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			 
+			Item "The Huntsman"
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.4
+			}
+			Item "Larrikin Robin"
+			Item "The Golden Garment"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"damage force reduction" 0.6
+				"move speed penalty" 0.5
+				"voice pitch scale" 0
+				"head scale" 0.55
+			}
+		}
+		YoovyBot_Sniper_Huntsman_Buff_Extended
+		{
+			Class Sniper
+			Name "Extended Buff Bowman"
+			ClassIcon sniper_bow_buff
+			
+			Attributes SpawnWithFullCharge
+			
+			Item "The Huntsman"
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage penalty" 0.5
+			}
+			Item "The Tartan Spartan"
+			Item "The Buff Banner"
+			CharacterAttributes
+			{
+				"increase buff duration" 9
+				"deploy time decreased" 0.54
+			}
+		}
+		YoovyGateBot_Soldier_Normal
+		{
+			Class Soldier
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Item "MvM GateBot Light Soldier"
+					
+					Skill Normal
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Soldier"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Soldier"
+						"item style override" 1
+					}
+					
+					Skill Normal
+				}
+			}
+		}
+		YoovyBot_Giant_Heavy
+		{
+			Class Heavy
+			Name "Giant Heavy"
+			Health 5000
+			ClassIcon heavy_giant
+			MaxVisionRange 1200
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			ItemAttributes
+			{
+				ItemName TF_WEAPON_MINIGUN
+				"damage bonus" 1.5
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Scout_Melee
+		{
+			Class Scout
+			Name "Bat Scout"
+			ClassIcon scout_bat_nys
+			
+			WeaponRestrictions MeleeOnly
+		}
+		YoovyBot_Sniper
+		{
+			Class Sniper
+			
+			Attributes IgnoreFlag
+			MaxVisionRange 2500
+		}
+		YoovyBot_Demoman_Knight_Samurai_Warrior
+		{
+			Class Demoman
+			Name "Samurai Warrior"
+			Health 650
+			Scale 1.3
+			ClassIcon demoknight_samurai
+			
+			WeaponRestrictions MeleeOnly
+			Attributes AirChargeOnly
+			Attributes AutoJump
+			AutoJumpMin 10
+			AutoJumpMax 10
+			Tag bot_giant
+			
+			Item "The Half-Zatoichi"
+			ItemAttributes
+			{
+				ItemName "The Half-Zatoichi"
+				"damage bonus" 1.5
+			}
+			Item "The Splendid Screen"
+			ItemAttributes
+			{
+				ItemName "The Splendid Screen"
+				"charge recharge rate increased" 7
+				"attack not cancel charge" 1
+				"charge time increased" 2
+			}
+			Item "Legendary Lid"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.9
+				"bot custom jump particle" 1
+				"gesture speed increase" 1.5
+				"damage force reduction" 0.9
+				"increased jump height" 2.3
+				"cancel falling damage" 1
+			}
+		}
+		YoovyBot_Pyro_Deflector
+		{
+			Class Pyro
+			Name "Deflector Pyro"
+			ClassIcon pyro_reflect_daan
+			
+			Item "The U-clank-a"
+			ItemAttributes
+			{
+				ItemName "The U-clank-a"
+				"set item tint RGB" 7511618
+			}
+			
+			Item "warbird_flamethrower_warhawk"
+			ItemAttributes
+			{
+				ItemName "warbird_flamethrower_warhawk"
+				"airblast_destroy_projectile" 1
+				"set_item_texture_wear" 0
+				"killstreak tier" 1
+			}
+		}
+		YoovyGateBot_Giant_Heavy_Heater_Expert
+		{
+			Class Heavy
+			Name "Giant Heater Heavy"
+			Health 5000
+			ClassIcon heavy_heater_giant
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "The Huo Long Heatmaker"
+					ItemAttributes
+					{
+						ItemName "The Huo Long Heatmaker"
+						"damage penalty" 1
+						"damage bonus" 1.4
+					}
+					Item "MvM GateBot Light Heavy"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.25
+						"override footstep sound set" 5
+						"damage force reduction" 0.25
+						"move speed penalty" 0.5
+					}
+					
+					Skill Expert
+				}
+				RevertGateBotsBehavior
+				{
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "The Huo Long Heatmaker"
+					ItemAttributes
+					{
+						ItemName "The Huo Long Heatmaker"
+						"damage penalty" 1
+						"damage bonus" 1.4
+					}
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.25
+						"override footstep sound set" 5
+						"damage force reduction" 0.25
+						"move speed penalty" 0.5
+					}
+					
+					Skill Expert
+				}
+			}
+		}
+		YoovyBot_Demoman_Knight_GolfPush
+		{
+			Class Demoman
+			Name "Foreknight"
+			ClassIcon demoknight_nineiron
+			
+			WeaponRestrictions MeleeOnly
+			
+			Item "Nessie's Nine Iron"
+			ItemAttributes
+			{
+				ItemName "Nessie's Nine Iron"
+				"damage causes airblast" 1
+				"critboost on kill" 3
+			}
+			Item "The Splendid Screen"
+			Item "Tam O'Shanter"
+			Item "The Gaelic Golf Bag"
+			
+			CharacterAttributes
+			{
+				"gesture speed increase" 1.5
+			}
+		}
+		YoovyGateBot_Giant_Scout_Fast_Easy
+		{
+			Class Scout
+			Name "Super Scout"
+			Health 1200
+			ClassIcon scout_giant_fast
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					WeaponRestrictions MeleeOnly
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "The Holy Mackerel"
+					ItemAttributes
+					{
+						ItemName "The Holy Mackerel"
+						"killstreak tier" 1
+					}
+					Item "MvM GateBot Light Scout"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.5
+						"override footstep sound set" 7
+						"damage force reduction" 0.5
+						"move speed bonus" 2
+					}
+					
+					Skill Easy
+				}
+				RevertGateBotsBehavior
+				{
+					WeaponRestrictions MeleeOnly
+					Attributes MiniBoss
+					Tag bot_giant
+					
+					Item "The Holy Mackerel"
+					ItemAttributes
+					{
+						ItemName "The Holy Mackerel"
+						"killstreak tier" 1
+					}
+					Item "The Bolt Boy"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.5
+						"override footstep sound set" 7
+						"damage force reduction" 0.5
+						"move speed bonus" 2
+					}
+					
+					Skill Easy
+				}
+			}
+		}
+		YoovyBot_Giant_Heavy_Shotgun_BurstFire
+		{
+			Class Heavy
+			Name "Giant Shotgun Heavy"
+			Health 5000
+			ClassIcon heavy_shotgun_giant
+			
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "gentlemanne_shotgun_coffinnail"
+			ItemAttributes
+			{
+				ItemName "gentlemanne_shotgun_coffinnail"
+				"bullets per shot bonus" 10
+				"set_item_texture_wear" 0
+				"faster reload rate" 0.1
+				"fire rate bonus" 2.5
+				"damage penalty" 0.5
+			}
+			Item "The Heavy Artillery Officer's Cap"
+			Item "The Diplomat"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.7
+			}
+		}
+		YoovyBot_Giant_Demoman_BurstFire
+		{
+			Class Demoman
+			Name "Giant Burst Fire Demoman"
+			Health 3300
+			ClassIcon demo_burst_giant
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "warbird_grenadelauncher_butcherbird"
+			ItemAttributes
+			{
+				ItemName "warbird_grenadelauncher_butcherbird"
+				"projectile spread angle penalty" 5
+				"projectile speed increased" 1.1
+				"clip size upgrade atomic" 7
+				"reload time decreased" 0.65
+				"set_item_texture_wear" 0
+				"fire rate bonus" 0.1
+			}
+			Item "The Frag Proof Fragger"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyBot_Giant_Soldier_BurstFire_Mega
+		{
+			Class Soldier
+			Name "Mega Burst Fire Soldier"
+			Health 4000
+			ClassIcon soldier_burstfire
+			
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "concealedkiller_rocketlauncher_sandcannon"
+			ItemAttributes
+			{
+				ItemName "concealedkiller_rocketlauncher_sandcannon"
+				"projectile speed decreased" 0.9
+				"clip size upgrade atomic" 5.0
+				"reload time decreased" 0.6
+				"set_item_texture_wear" 0
+				"fire rate bonus" 0.2
+			}
+			Item "dec2014 Skullcap"
+			ItemAttributes
+			{
+				ItemName "dec2014 Skullcap"
+				"set item tint RGB" 12955537
+			}
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 5
+				"damage force reduction" 0.4
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyGateBot_Pyro_Normal
+		{
+			Class Pyro
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					ItemAttributes
+					{
+						ItemName TF_WEAPON_FLAMETHROWER
+						"airblast disabled" 1
+					}
+					Item "MvM GateBot Light Pyro"
+					
+					Skill Normal
+				}
+				RevertGateBotsBehavior
+				{
+					ItemAttributes
+					{
+						ItemName TF_WEAPON_FLAMETHROWER
+						"airblast disabled" 1
+					}
+					Item "MvM GateBot Light Pyro"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Pyro"
+						"item style override" 1
+					}
+					
+					Skill Normal
+				}
+			}
+		}
+		YoovyBot_Sniper_Huntsman_Conch_Extended
+		{
+			Class Sniper
+			Skill Hard
+			Name "Extended Conch Bowman"
+			ClassIcon sniper_bow_conch
+			
+			Attributes SpawnWithFullCharge
+			Item "The Huntsman"
+			Item "Furious Fukaamigasa"
+			Item "The Concheror"
+			CharacterAttributes
+			{
+				"increase buff duration" 9
+				"deploy time decreased" 0.54
+			}
+		}
+		YoovyBot_Sniper_Huntsman_Backup_Extended
+		{
+			Class Sniper
+			Skill Hard
+			Name "Extended Backup Bowman"
+			ClassIcon sniper_bow_backup
+			
+			Attributes SpawnWithFullCharge
+			Item "The Huntsman"
+			Item "Full Metal Drill Hat"
+			ItemAttributes
+			{
+				ItemName "Full Metal Drill Hat"
+				"set item tint RGB" 2636109
+			}
+			Item "The Battalion's Backup"
+			CharacterAttributes
+			{
+				"deploy time decreased" 0.54
+			}
+		}
+		YoovyBot_Giant_Heavy_Deflector
+		{
+			Class Heavy
+			Name "Giant Deflector Heavy"
+			Health 5000
+			ClassIcon Heavy_deflector
+			MaxVisionRange 1200
+			
+			Attributes MiniBoss
+			Tag bot_giant
+			
+			Item "Deflector"
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"attack projectiles" 2
+				"damage bonus" 1.5
+			}
+			Item "The U-Clank-A"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.25
+				"override footstep sound set" 5
+				"damage force reduction" 0.25
+				"move speed penalty" 0.5
+			}
+		}
+		YoovyGateBot_Sniper_Huntsman_RapidFire_SubGiant_Hard
+		{
+			Class Sniper
+			Name "Archer"
+			Health 1200
+			Scale 1.5
+			ClassIcon sniper_bow_multi
+			
+			EventChangeAttributes
+			{
+				Default
+				{
+					BehaviorModifiers push
+					Attributes IgnoreFlag
+					Tag nav_prefer_gate1_flank
+					Tag bot_gatebot
+					Tag bot_giant
+					
+					Item "The Huntsman"
+					ItemAttributes
+					{
+						ItemName "The Huntsman"
+						"fire rate bonus" 0.4
+						"damage penalty" 0.5
+					}
+					Item "The Golden Garment"
+					Item "MvM GateBot Light Sniper"
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.8
+						"damage force reduction" 0.8
+						"move speed penalty" 0.85
+						"voice pitch scale" 0.7
+						"head scale" 0.7 
+					}
+					
+					MaxVisionRange 1200
+					Skill Hard
+				}
+				RevertGateBotsBehavior
+				{
+					Tag bot_giant
+					
+					Item "The Huntsman"
+					ItemAttributes
+					{
+						ItemName "The Huntsman"
+						"fire rate bonus" 0.4
+						"damage penalty" 0.5
+					}
+					Item "The Golden Garment"
+					Item "MvM GateBot Light Sniper"
+					ItemAttributes
+					{
+						ItemName "MvM GateBot Light Sniper"
+						"item style override" 1
+					}
+					
+					CharacterAttributes
+					{
+						"airblast vulnerability multiplier" 0.8
+						"damage force reduction" 0.8
+						"move speed penalty" 0.85
+						"voice pitch scale" 0.7
+						"head scale" 0.7 
+					}
+					
+					MaxVisionRange 1200
+					Skill Hard
+				}
+			}
+		}
+		YoovyBot_Heavy_SteelFist
+		{
+			Class Heavy
+			Name "Steel Gauntlet"
+			Health 900
+			Scale 1.5
+			ClassIcon heavy_steelfist
+			
+			WeaponRestrictions MeleeOnly
+			Tag bot_giant
+			
+			Item "Fists of Steel"
+			Item "The U-Clank-A"
+			
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.8
+				"damage force reduction" 0.8
+			}
+		}
+	}
+	//Sentrybusters
+	//Wave 1-6
+	Mission 
+	{
+		Objective DestroySentries
+		Where spawnbot
+		BeginAtWave 1
+		RunForThisManyWaves 6
+		InitialCooldown	30
+		CooldownTime 30
+		
+		DesiredCount 1
+		TFBot
+		{
+			Template YoovyBot_SentryBuster_Military
+			Skill Expert
+		}
+	}
+	//Spies
+	//Wave 3
+	Mission 
+	{
+		Objective Spy
+		Where spawnbot_mission_spy
+		BeginAtWave 3
+		RunForThisManyWaves 1
+		InitialCooldown	25
+		CooldownTime 25
+		
+		DesiredCount 2
+		TFBot
+		{
+			Template YoovyBot_Spy
+			Skill Hard
+		}
+	}
+	//Snipers
+	//Wave 4
+	Mission 
+	{
+		Objective Sniper
+		Where spawnbot
+		BeginAtWave 4
+		RunForThisManyWaves 1
+		InitialCooldown	25
+		CooldownTime 25
+		
+		DesiredCount 2
+		TFBot
+		{
+			Template YoovyBot_Sniper
+			Skill Hard
+		}
+	}
+	//////////////////////
+	//WAVE 1 $800
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                IncludeScript(`area52_newspawnbot`)
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
+                }
+            "
+        }
+		WaveSpawn
+		{
+			Name W1_01
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Scout
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_01
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Sniper_Huntsman
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_01_GIANTS
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Demoman_Knight
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_02
+			WaitForAllDead W1_01_GIANTS
+			TotalCurrency	100
+			TotalCount	21
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Scout
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_02_GATE
+			WaitForAllDead W1_01_GIANTS
+			TotalCurrency	50
+			TotalCount	16
+			MaxActive	8
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	3.5
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Heavy_Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_02_GATE
+			WaitForAllDead W1_01_GIANTS
+			TotalCurrency	75
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Giant_Heavy_KGB_Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_02
+			WaitForAllDead W1_01_GIANTS
+			TotalCurrency	75
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	28
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Heavy_KGB
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_03
+			WaitForAllDead W1_02_GATE
+			TotalCurrency	150
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Soldier
+				Skill Expert
+			}	
+		}
+		WaveSpawn
+		{
+			Name W1_03_SUPPORT
+			WaitForAllDead W1_02_GATE
+			TotalCurrency	50
+			TotalCount	50
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	2
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Pyro
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W1_03_SUPPORT
+			WaitForAllDead W1_02_GATE
+			TotalCurrency	50
+			TotalCount	50
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	4
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Pyro_Gas
+				Skill Easy
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 2 $700
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                IncludeScript(`area52_newspawnbot`)
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
+                }
+            "
+        }
+		WaveSpawn
+		{
+			Name W2_01
+			TotalCurrency	75
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Sniper_SMG
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_01_GATE
+			TotalCurrency	75
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Sniper_SMG_Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_01
+			TotalCurrency	75
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Soldier
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_01_GATE
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Demoman_RapidFire
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_02_GATE
+			WaitForAllDead W2_01_GATE
+			TotalCurrency	100
+			TotalCount	12
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Heavy_Shotgun_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_02_GATE
+			WaitForAllDead W2_01_GATE
+			TotalCurrency	25
+			TotalCount	6
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Heavy_SteelFist_Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_02
+			WaitForAllDead W2_01_GATE
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Soldier_RapidFire
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_03
+			WaitForAllDead W2_02_GATE
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	15
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Soldier_RapidFire
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_03_SUPPORT
+			WaitForAllDead W2_02_GATE
+			TotalCurrency	25
+			TotalCount	25
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Scout_Pistol
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W2_03_SUPPORT
+			WaitForAllDead W2_02_GATE
+			TotalCurrency	25
+			TotalCount	25
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Heavy
+				Skill Easy
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 3 $700
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                IncludeScript(`area52_newspawnbot`)
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
+                }
+            "
+        }
+		WaveSpawn
+		{
+			Name W3_01_GATESCOUTS
+			TotalCurrency	2
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Scout_Sandman
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_01_GATESCOUTS
+			TotalCurrency	298
+			TotalCount	30
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Scout_Sandman_Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_01
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	0.1
+			WaitBetweenSpawns	3.5
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Heavy_Tomislav
+				Skill Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_01
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Giant_Soldier_Charged
+					Skill Normal
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_QF_BigHeal
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_02_GATEBOT
+			WaitForAllDead W3_01_GATESCOUTS
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Demoman_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_02
+			WaitForAllDead W3_01_GATESCOUTS
+			TotalCurrency	25
+			TotalCount	6
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Sniper_Huntsman_RapidFire_SubGiant
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_02_GATEBOT
+			WaitForAllDead W3_01_GATESCOUTS
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyGateBot_Giant_Pyro_AlwaysFire_Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_QF_BigHeal
+					Skill Hard
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_QF_BigHeal
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_03
+			WaitForAllDead W3_02_GATEBOT
+			TotalCurrency	50
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	15
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Heavy_Rocket
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_03_SUPPORT
+			WaitForAllDead W3_02_GATEBOT
+			TotalCurrency	75
+			TotalCount	75
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0.5
+			Where	spawnbot
+			Where	spawnbot
+			RandomSpawn 1
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Scout
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W3_03_SUPPORT
+			WaitForAllDead W3_02_GATEBOT
+			TotalCurrency	0
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Engineer_WalkIn_NoTele
+				ClassIcon engineer
+				Skill Expert
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 4 $1,000
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                IncludeScript(`area52_newspawnbot`)
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
+                }
+            "
+        }
+		WaveSpawn //25,000 health tank
+		{
+			Name W4_01_TANK
+			TotalCurrency	100
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 25000
+				Speed 75
+				Name tankboss
+				StartingPathTrackNode tank_path_1
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_01
+			TotalCurrency	75
+			TotalCount	15
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					Template YoovyBot_Soldier
+					Skill Normal
+				}
+				TFBot
+				{
+					Template YoovyGateBot_Soldier_Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_01
+			TotalCurrency	75
+			TotalCount	15
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					Template YoovyBot_Demoman_Knight
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyGateBot_Demoman_Knight_Expert
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Sniper_Huntsman_RapidFire_SubGiant
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_02
+			WaitForAllSpawned W4_01
+			TotalCurrency	100
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Sniper_Huntsman
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_02_GATE
+			WaitForAllSpawned W4_01
+			TotalCurrency	100
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Soldier_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_02
+			WaitForAllSpawned W4_01
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Heavy
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_03
+			WaitForAllDead W4_02_GATE
+			TotalCurrency	100
+			TotalCount	16
+			MaxActive	9
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Demoman_Knight
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber_Quick
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_03
+			WaitForAllDead W4_02_GATE
+			TotalCurrency	100
+			TotalCount	15
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	2
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Soldier
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_03
+			WaitForAllDead W4_02_GATE
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Sniper_Huntsman_RapidFire_SubGiant
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W4_03_SUPPORT
+			WaitForAllDead W4_02_GATE
+			TotalCurrency	50
+			TotalCount	50
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Scout_Melee
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 5 $1,200
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                IncludeScript(`area52_newspawnbot`)
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
+                }
+            "
+        }
+		WaveSpawn //10,000 health gate tank
+		{
+			Name W5_01_GATETANK
+			TotalCurrency	100
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 15000
+				Speed 75
+				Name tankboss_gate
+				Skin 1
+				StartingPathTrackNode tank_boss_path_1
+				OnKilledOutput                                  
+				{
+					Target boss_tank_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_01_GIANTS
+			TotalCurrency	25
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Demoman_Knight_Samurai_Warrior
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_01
+			TotalCurrency	100
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Demoman_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_01
+			TotalCurrency	75
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Pyro_Deflector
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_01_GIANTS
+			TotalCurrency	75
+			TotalCount	3
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	12
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Demoman_Knight_Samurai_Warrior
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_01_GIANTS
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	16
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Giant_Heavy_Heater_Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_02_GATE
+			WaitForAllDead W5_01_GIANTS
+			TotalCurrency	75
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Demoman_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_02
+			WaitForAllDead W5_01_GIANTS
+			TotalCurrency	50
+			TotalCount	18
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Demoman_Knight_GolfPush
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_02_GATE
+			WaitForAllDead W5_01_GIANTS
+			TotalCurrency	150
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Giant_Scout_Fast_Easy
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_02
+			WaitForAllDead W5_01_GIANTS
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Heavy_Shotgun_BurstFire
+				Skill Expert
+			}
+		}
+		WaveSpawn //30,000 health tank
+		{
+			Name W5_03_TANK
+			WaitForAllDead W5_02_GATE
+			TotalCurrency	100
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name tankboss
+				StartingPathTrackNode tank_path_1
+				OnKilledOutput                                  
+				{
+					Target boss_tank_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_03
+			WaitForAllDead W5_02_GATE
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Demoman_IronBomberFuse
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_03
+			WaitForAllDead W5_02_GATE
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Soldier_BurstFire_Mega
+				Skill Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_03_SUPPORT
+			WaitForAllDead W5_02_GATE
+			TotalCurrency	25
+			TotalCount	25
+			MaxActive	8
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Scout
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_03_GIANT_SUPPORT
+			WaitForAllDead W5_03_TANK
+			TotalCurrency	25
+			TotalCount	25
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0.5
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Scout
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W5_03_TANK_SUPPORT
+			WaitForAllDead W5_03
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0.5
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Scout
+				Skill Normal
+			}
+		}
+	}
+	//////////////////////
+	//WAVE 6 $1,200
+	//////////////////////
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+        InitWaveOutput
+        {
+            Target gamerules
+            Action RunScriptCode
+            Param "
+                IncludeScript(`area52_newspawnbot`)
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
+                }
+            "
+        }
+		WaveSpawn
+		{
+			Name W6_01_TRIO
+			TotalCurrency	25
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Giant_Soldier_RapidFire_Buff_Extended
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Sniper_Huntsman_Conch_Extended
+					Skill Hard
+				}
+				TFBot
+				{
+					Template YoovyBot_Sniper_Huntsman_Backup_Extended
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_01_TRIO
+			TotalCurrency	25
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Giant_Soldier_RapidFire_Conch_Extended
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Sniper_Huntsman_Buff_Extended
+					Skill Hard
+				}
+				TFBot
+				{
+					Template YoovyBot_Sniper_Huntsman_Backup_Extended
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_01_TRIO
+			TotalCurrency	25
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Giant_Soldier_RapidFire_Backup_Extended
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Sniper_Huntsman_Conch_Extended
+					Skill Hard
+				}
+				TFBot
+				{
+					Template YoovyBot_Sniper_Huntsman_Buff_Extended
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_01
+			TotalCurrency	25
+			TotalCount	9
+			MaxActive	9
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Pyro_Normal
+			}
+		}
+		WaveSpawn //18,000 health gate tank
+		{
+			Name W6_02_GATETANK
+			WaitForAllDead W6_01_TRIO
+			TotalCurrency	125
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 12500
+				Speed 75
+				Name tankboss_gate
+				Skin 1
+				StartingPathTrackNode tank_boss_path_1
+				OnKilledOutput                                  
+				{
+					Target boss_tank_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_02
+			WaitForAllDead W6_01_TRIO
+			TotalCurrency	200
+			TotalCount	30
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Sniper_Huntsman_Conch_Extended
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_02_GIANT
+			WaitForAllDead W6_01_TRIO
+			TotalCurrency	100
+			TotalCount	6
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Sniper_Huntsman_RapidFire_SubGiant
+				Skill Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_02_GIANT
+			WaitForAllDead W6_01_TRIO
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	21
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Giant_Heavy_Deflector
+				Skill Expert
+			}
+		}
+		WaveSpawn //30,000 health tank
+		{
+			Name W6_03_TANK
+			WaitForAllDead W6_02_GIANT
+			TotalCurrency	125
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 0
+			WaitBetweenSpawns 0
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name tankboss_final
+				StartingPathTrackNode tank_path_1
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_03
+			WaitForAllDead W6_02_GIANT
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyBot_Pyro
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_03_GATE
+			WaitForAllDead W6_02_GIANT
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Pyro_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_03_GATE
+			WaitForAllDead W6_02_GIANT
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Sniper_Huntsman_RapidFire_SubGiant_Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_03_GATE
+			WaitForAllDead W6_02_GIANT
+			TotalCurrency	50
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	18
+			Where	spawnbot
+			TFBot
+			{
+				Template YoovyGateBot_Giant_Soldier_RapidFire_Conch_Extended_Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_04
+			WaitForAllDead W6_03_GATE
+			TotalCurrency	50
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template YoovyBot_Giant_Heavy_Deflector
+					Skill Expert
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber_Quick
+					Skill Hard
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber_Quick
+					Skill Hard
+				}
+				TFBot
+				{
+					Template YoovyBot_Medic_Uber_Quick
+					Skill Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_04_SUPPORT
+			WaitForAllDead W6_03_GATE
+			TotalCurrency	25
+			TotalCount	25
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Pyro_Deflector
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name W6_04_SUPPORT
+			WaitForAllDead W6_03_GATE
+			TotalCurrency	25
+			TotalCount	25
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	6
+			Where	spawnbot
+			Support 1
+			TFBot
+			{
+				Template YoovyBot_Heavy_SteelFist
+				Skill Expert
+			}
+		}
+	}
+}
