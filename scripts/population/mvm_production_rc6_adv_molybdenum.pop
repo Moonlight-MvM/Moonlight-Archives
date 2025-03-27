@@ -1204,11 +1204,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -1516,11 +1513,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -1604,7 +1598,7 @@ WaveSchedule
 					Item "The Eliminators Safeguard"
 					ItemAttributes
 					{
-						ItemName "The Eliminator's Safeguard"
+						ItemName "The Eliminators Safeguard"
 						"item style override" 1
 						"set item tint RGB" 8154199
 					}
@@ -1685,7 +1679,7 @@ WaveSchedule
 					Item "The Eliminators Safeguard"
 					ItemAttributes
 					{
-						ItemName "The Eliminator's Safeguard"
+						ItemName "The Eliminators Safeguard"
 						"item style override" 1
 						"set item tint RGB" 8154199
 					}
@@ -1837,11 +1831,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -2065,11 +2056,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -2328,11 +2316,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -2691,11 +2676,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -3097,11 +3079,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-			    IncludeScript(`molybdenum_decor`)
-
-            "
+            Action RunScriptFile
+            Param "molybdenum_decor"
         }
         DoneOutput
         {
@@ -3138,27 +3117,14 @@ WaveSchedule
 					Action Trigger
 				}
             }
-            FirstSpawnOutput
-            {
-                Target gamerules
-                Action RunScriptCode
-                Param "
-                    SpawnEntityFromTable(`training_annotation` , {
-                        targetname = `tank_notice`
-                        display_text = `Kill the boss before the tank reaches the hatch!`
-                        lifetime = `7`
-                        origin = `-1210 1150 -12`
-                        }
-                    )
-                    EntFire(`tank_notice`, `show`)
-                    EntFire(`tank_notice`, `kill`, ``, 8)
-                "
-            }
             LastSpawnOutput
             {
                 Target "tankboss"
-                Action "color"
-                Param "0 0 0"
+                Action RunScriptCode
+                Param "
+                    self.AcceptInput(`Color`, `0`, null, null)
+                    EntFireByHandle(self, `RunScriptCode`, `Molybdenum.tank_annotation(self)`, 0.5, null, null)
+                "
             }
         }
 
