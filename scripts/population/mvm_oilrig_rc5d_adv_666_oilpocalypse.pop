@@ -252,12 +252,25 @@ WaveSchedule
 		}
 		InitWaveOutput
 		{
-		    Target gamerules
-			Action RunScriptcode
+		    Target BigNet
+			Action RunScriptCode
 			Param "
-			    ClientPrint(null,3,`\x08BC19BCFFA Wheel of Fate will be present during some parts of the wave, providing various effects.`)
-				Convars.SetValue(`tf_forced_holiday`, 8)
-			    // wheel script
+				::Oilpocalypse <- {
+					forced_holiday_original = Convars.GetInt(`tf_forced_holiday`)
+
+					function OnGameEvent_teamplay_round_start(_) {
+						Convars.SetValue(`tf_forced_holiday`, forced_holiday_original)
+						delete ::Oilpocalypse
+					}
+				}
+				__CollectGameEventCallbacks(::Oilpocalypse)
+
+				Convars.SetValue(`tf_forced_holiday`, Constants.EHoliday.kHoliday_FullMoon)
+
+				ClientPrint(null, Constants.EHudNotify.HUD_PRINTTALK,
+					`\x08BC19BCFFA Wheel of Fate will be present during some parts of the wave, providing various effects.`)
+
+				// wheel script
 				IncludeScript(`pda_wheeloffate`)
 				// Setting wheel position!
 				wheeloffate_logic(-380, -5075, 1800, 0, 180, 0)
@@ -266,27 +279,12 @@ WaveSchedule
 				// you can get the angles & origin via the getpos command, origin might need tinkering with the z value for it to look right.
 				// note that to insert decimals you'll likely need to put the origin cords in `quotes`, as shown.
 
-				// taken from braindawg to fix rain
-                for ( local particlesystems; particlesystems = Entities.FindByClassname(particlesystems, `info_particle_system`); )
-                {
-                    if ( particlesystems.GetName() == `newrain` )
-                    break;
-                     
-                    SpawnEntityFromTable(`info_particle_system`, {
-                        origin = (particlesystems.GetLocalOrigin() + Vector(0 0 120))
-                        targetname = `newrain`
-                        effect_name = `env_rain_002_256`
-                       start_active = 1
-                       flag_as_weather = 1
-                    })
-               }
-
-                SpawnEntityFromTable(`logic_timer`, {
-                    targetname = `tank_effect`
+				SpawnEntityFromTable(`logic_timer`, {
+					targetname = `tank_effect`
 					refiretime = `0.5`
-                    `ontimer#1`: `tankboss,addoutput,renderfx 15,0,-1`
-                    `ontimer#2`: `tankboss,color,100 0 100,0,-1`
-                })
+					`ontimer#1`: `tankboss,addoutput,renderfx 15,0,-1`
+					`ontimer#2`: `tankboss,color,100 0 100,0,-1`
+				})
 			"
 		}
 	    DoneOutput
@@ -645,8 +643,8 @@ WaveSchedule
 		    StartWaveOutput
 			{
 			    Target gamerules
-			    Action RunScriptCode
-				Param "wheel_superspeed_red()"
+			    Action CallScriptFunction
+				Param  "wheel_superspeed_red"
 			}
 			
 			WaitForAllDead "wave04"
@@ -1053,8 +1051,8 @@ WaveSchedule
                 Target gamerules
 				Action RunScriptCode
 				Param "
-				ClientPrint(null,3,`\x08BC19BCFFYou have a 75% chance to not take any form of damage during this spell!`)
-				ClientPrint(null,4,`You have a 75% chance to not take any form of damage during this spell!`)
+					ClientPrint(null, Constants.EHudNotify.HUD_PRINTTALK, `\x08BC19BCFFYou have a 75% chance to not take any form of damage during this spell!`)
+					ClientPrint(null, Constants.EHudNotify.HUD_PRINTCENTER, `You have a 75% chance to not take any form of damage during this spell!`)
 				"
 			}
 			
@@ -1074,8 +1072,8 @@ WaveSchedule
 		    StartWaveOutput
 			{
 			    Target gamerules
-			    Action RunScriptCode
-				Param "wheel_dodge()"
+			    Action CallScriptFunction
+				Param  "wheel_dodge"
 			}
 			
 			WaitForAllDead "wave08_part2"
@@ -1469,8 +1467,8 @@ WaveSchedule
 		    StartWaveOutput
 			{
 			    Target gamerules
-			    Action RunScriptCode
-				Param "wheel_uber()"
+			    Action CallScriptFunction
+				Param  "wheel_uber"
 			}
 
 			WaitBeforeStarting 10
@@ -1823,8 +1821,8 @@ WaveSchedule
 			FirstSpawnOutput
 			{
 			    Target gamerules
-			    Action RunScriptCode
-				Param "wheel_critboost()"
+			    Action CallScriptFunction
+				Param  "wheel_critboost"
 			}
 
 			Support Limited
