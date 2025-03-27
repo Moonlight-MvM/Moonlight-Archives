@@ -1370,12 +1370,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_left
+            Action Trigger
         }
 		DoneOutput					
 		{
@@ -1547,12 +1543,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_left
+            Action Trigger
         }
 		DoneOutput					
 		{
@@ -1805,12 +1797,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_right`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_right
+            Action Trigger
         }
 		DoneOutput					
 		{
@@ -1998,14 +1986,11 @@ WaveSchedule
 		{
 			Target	wave_start_relay
 			Action	Trigger
-		}		InitWaveOutput
+		}
+		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_right`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_right
+            Action Trigger
         }
 		DoneOutput					
 		{
@@ -2365,12 +2350,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_right`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_right
+            Action Trigger
         }
 		DoneOutput					
 		{
@@ -2682,15 +2663,11 @@ WaveSchedule
 		{
 			Target	wave_start_relay
 			Action	Trigger
-		}		
+		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_left
+            Action Trigger
         }
 		DoneOutput					
 		{
@@ -3082,15 +3059,11 @@ WaveSchedule
 		{
 			Target	wave_start_relay
 			Action	Trigger
-		}		
+		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-
-            "
+            Target wave_finished_nextwave_left
+            Action Trigger
         }
 		DoneOutput					
 		{
