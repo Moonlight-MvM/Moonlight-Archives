@@ -691,11 +691,7 @@ WaveSchedule
 				EntFire(`cave_door_sounds`,`kill`)
 				EntFire(`cave_door_sound_stop`,`kill`)
                 EntFire(`unorthodox_fog*`, `Kill`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Unorthodox Tech`)
-				}
+
 				ClientPrint(null,3,`\x0833FF00FF[NOTE] Each wave will have a forced path!`)
 				ClientPrint(null,3,`\x0833FF00FFThe robots are taking the left path!`)
             "
@@ -953,11 +949,7 @@ WaveSchedule
 				EntFire(`cave_door_sounds`,`kill`)
 				EntFire(`cave_door_sound_stop`,`kill`)
                 EntFire(`unorthodox_fog*`, `Kill`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Unorthodox Tech`)
-				}
+
 				ClientPrint(null,3,`\x0833FF00FFThe robots are taking the left path!`)
             "
         }
@@ -1257,11 +1249,7 @@ WaveSchedule
 				EntFire(`cave_door_sounds`,`kill`)
 				EntFire(`cave_door_sound_stop`,`kill`)
                 EntFire(`unorthodox_fog*`, `Kill`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Unorthodox Tech`)
-				}
+
 				ClientPrint(null,3,`\x0833FF00FFThe robots are taking the left path!`)
             "
         }
@@ -1469,11 +1457,7 @@ WaveSchedule
 				EntFire(`cave_door_sounds`,`kill`)
 				EntFire(`cave_door_sound_stop`,`kill`)
                 EntFire(`unorthodox_fog*`, `Kill`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Unorthodox Tech`)
-				}
+
 				ClientPrint(null,3,`\x0833FF00FFThe robots are taking the right path!`)
             "
         }
@@ -1963,11 +1947,7 @@ WaveSchedule
 				EntFire(`cave_door_sounds`,`kill`)
 				EntFire(`cave_door_sound_stop`,`kill`)
                 EntFire(`unorthodox_fog*`, `Kill`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Unorthodox Tech`)
-				}
+
 				ClientPrint(null,3,`\x0833FF00FFThe robots are taking the right path!`)
             "
         }
@@ -2263,11 +2243,7 @@ WaveSchedule
 				EntFire(`cave_door_sounds`,`kill`)
 				EntFire(`cave_door_sound_stop`,`kill`)
                 EntFire(`unorthodox_fog*`, `Kill`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Unorthodox Tech`)
-				}
+
 				ClientPrint(null,3,`\x0833FF00FFThe robots are taking the right path!`)
             "
         }

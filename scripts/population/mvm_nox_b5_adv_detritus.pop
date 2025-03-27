@@ -1301,18 +1301,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W1_01
@@ -1486,18 +1475,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W2_01_BOWMEN
@@ -1705,18 +1683,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W3_01
@@ -1874,18 +1841,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W4_01
@@ -2083,18 +2039,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W5_01
@@ -2402,18 +2347,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W6_01_GIANT_SCOUTS
@@ -2708,18 +2642,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Detritus`)
-                }
-            "
-        }
+
 		WaveSpawn //12,500 health tank
 		{
 			Name W7_01_TANK

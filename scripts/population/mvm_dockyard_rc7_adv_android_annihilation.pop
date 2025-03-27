@@ -548,18 +548,7 @@ Mission
 			Action	Trigger
 			Target	wave_finished_relay
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Android Annihilation`)
-                }
-            "
-        }
+
 	
 	WaveSpawn
 		{
@@ -885,18 +874,7 @@ Mission
 			Action	Trigger
 			Target	wave_finished_relay
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Android Annihilation`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name wave2a
@@ -1224,18 +1202,7 @@ Mission
 			Action	Trigger
 			Target	wave_finished_relay
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Android Annihilation`)
-                }
-            "
-        }
+
 		
 			WaveSpawn
 		{
@@ -1566,18 +1533,7 @@ Mission
 			Action	Trigger
 			Target	wave_finished_relay
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Android Annihilation`)
-                }
-            "
-        }
+
 	
 		WaveSpawn
 		{
@@ -1976,18 +1932,7 @@ Mission
 			Action	Trigger
 			Target	wave_finished_relay
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Android Annihilation`)
-                }
-            "
-        }
+
 			
 		WaveSpawn
 		{
@@ -2490,18 +2435,7 @@ Mission
 			Action	Trigger
 			Target	wave_finished_relay
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Android Annihilation`)
-                }
-            "
-        }
+
 		
 		WaveSpawn	
 		{

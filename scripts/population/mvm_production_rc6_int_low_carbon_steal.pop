@@ -266,16 +266,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 			
 		
@@ -406,16 +398,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`A_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target A_door_open
+            Action Trigger
         }
 		WaveSpawn
 		{
@@ -510,16 +494,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 		WaveSpawn
         {
@@ -722,16 +698,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 		WaveSpawn
 		{
@@ -885,16 +853,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 		
 		WaveSpawn
@@ -1088,16 +1048,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 		
 		WaveSpawn
@@ -1369,16 +1321,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 		WaveSpawn 
 		{
@@ -1532,16 +1476,8 @@ WaveSchedule
 		}
         InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				EntFire(`B_door_open`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Low Carbon Steal`)
-                }
-            "
+            Target B_door_open
+            Action Trigger
         }
 		WaveSpawn 
 		{

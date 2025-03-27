@@ -54,18 +54,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 		
 		WaveSpawn
 		{
@@ -151,18 +140,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 		
 		WaveSpawn
 		{
@@ -274,18 +252,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 		
 		WaveSpawn
 		{
@@ -412,18 +379,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 		
 		WaveSpawn
 		{
@@ -571,18 +527,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}		
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 			
 		WaveSpawn
 		{
@@ -705,18 +650,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}		
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 			
 		WaveSpawn
 		{
@@ -881,18 +815,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}		
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Wasteland Wonderland`)
-                }
-            "
-        }
+
 			
 		WaveSpawn
 		{

@@ -300,11 +300,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 EntFire(`bombpath_right_relay`, `Trigger`)
 				ClientPrint(null,3,`\x08FF54F1FFEach wave will consist of forced bomb paths.`)
 				ClientPrint(null,3,`\x08FF54F1FFAny form of wave fail does NOT force the path to be different, so don't waste your time on that.`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Nullified Processor`)
-                }
+
             "
         }
 		WaveSpawn
@@ -556,11 +552,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 //EntFire(`logic_auto`, `Kill`)
 				EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_left_relay`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Nullified Processor`)
-                }
+
             "
         }
 		WaveSpawn
@@ -775,11 +767,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 //EntFire(`logic_auto`, `Kill`)
 				EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_right_relay`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Nullified Processor`)
-                }
+
             "
         }
 		WaveSpawn
@@ -1061,11 +1049,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 //EntFire(`logic_auto`, `Kill`)
 				EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_left_relay`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Nullified Processor`)
-                }
+
             "
         }
 		WaveSpawn
@@ -1357,11 +1341,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 //EntFire(`logic_auto`, `Kill`)
 				EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_left_relay`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Nullified Processor`)
-                }
+
             "
         }
 		WaveSpawn

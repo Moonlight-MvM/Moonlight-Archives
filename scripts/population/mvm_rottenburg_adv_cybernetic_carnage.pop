@@ -124,18 +124,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		 InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -288,18 +277,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -484,18 +462,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -671,18 +638,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -888,18 +844,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -1101,18 +1046,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -1382,18 +1316,7 @@ population
 			Target	wave_start_relay_classic
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Cybernetic Carnage`)
-                }
-            "
-        }
+
 		DoneOutput
 		{
 			Target	wave_finished_relay

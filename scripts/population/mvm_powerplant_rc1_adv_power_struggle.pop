@@ -357,11 +357,6 @@ WaveSchedule
                 EntFire(`bombpath_arrows_final_left`, `turnon`, ``, 1)
 				EntFire(`sentry_nests_enable`, `Trigger`)
 				ClientPrint(null,3,`\x0833FF00FF[NOTE] Each wave will have a forced path.`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Power Struggle`)
-                }
 
             "
         }
@@ -563,11 +558,7 @@ WaveSchedule
                 EntFire(`bombpath_arrows_left`, `turnon`, ``, 1)
                 EntFire(`bombpath_arrows_final_right`, `turnon`, ``, 1)
 				EntFire(`sentry_nests_enable`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Power Struggle`)
-                }
+
             "
         }
 
@@ -785,11 +776,7 @@ WaveSchedule
                 EntFire(`bombpath_arrows_final_main`, `turnon`, ``, 1)
                 EntFire(`bombpath_arrows_final_left`, `turnon`, ``, 1)
 				EntFire(`sentry_nests_enable`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Power Struggle`)
-                }
+
             "
         }
 
@@ -1044,11 +1031,7 @@ WaveSchedule
                 EntFire(`bombpath_arrows_left`, `turnon`, ``, 1)
                 EntFire(`bombpath_arrows_final_right`, `turnon`, ``, 1)
 				EntFire(`sentry_nests_enable`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Power Struggle`)
-                }
+
             "
         }
 
@@ -1238,11 +1221,7 @@ WaveSchedule
                 EntFire(`bombpath_arrows_final_main`, `turnon`, ``, 1)
                 EntFire(`bombpath_arrows_final_middle`, `turnon`, ``, 1)
 				EntFire(`sentry_nests_enable`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Power Struggle`)
-                }
+
             "
         }
 
@@ -1491,11 +1470,7 @@ WaveSchedule
                 EntFire(`bombpath_arrows_final_main`, `turnon`, ``, 1)
                 EntFire(`bombpath_arrows_final_left`, `turnon`, ``, 1)
 				EntFire(`sentry_nests_enable`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Power Struggle`)
-                }
+
             "
         }
 

@@ -215,18 +215,7 @@ Wave
 			Target wave_finished_relay
 			Action trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Synthetic Synthwave`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name	wave1a	
@@ -412,18 +401,7 @@ Wave
 			Target wave_finished_relay
 			Action trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Synthetic Synthwave`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name wave2a
@@ -656,18 +634,7 @@ Wave
 			Target wave_finished_relay
 			Action trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Synthetic Synthwave`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name wave3a
@@ -950,18 +917,7 @@ Wave
 			Target wave_finished_relay
 			Action trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Synthetic Synthwave`)
-                }
-            "
-        }
+
 		WaveSpawn 
 		{
             Name wave4a
@@ -1228,18 +1184,7 @@ Wave
 			Target wave_finished_relay
 			Action trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Synthetic Synthwave`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name wave5a
@@ -1688,18 +1633,7 @@ Wave
 			Target wave_finished_relay
 			Action trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Synthetic Synthwave`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name	wave6a

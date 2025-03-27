@@ -2209,11 +2209,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
                 IncludeScript(`area52_newspawnbot`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
-                }
+
             "
         }
 		WaveSpawn
@@ -2407,11 +2403,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
                 IncludeScript(`area52_newspawnbot`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
-                }
+
             "
         }
 		WaveSpawn
@@ -2603,11 +2595,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
                 IncludeScript(`area52_newspawnbot`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
-                }
+
             "
         }
 		WaveSpawn
@@ -2823,11 +2811,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
                 IncludeScript(`area52_newspawnbot`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
-                }
+
             "
         }
 		WaveSpawn //25,000 health tank
@@ -3071,11 +3055,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
                 IncludeScript(`area52_newspawnbot`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
-                }
+
             "
         }
 		WaveSpawn //10,000 health gate tank
@@ -3390,11 +3370,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
                 IncludeScript(`area52_newspawnbot`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Anomalous Materials`)
-                }
+
             "
         }
 		WaveSpawn

@@ -527,19 +527,7 @@ WaveSchedule
 			Action Trigger
 		}
 
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param 
-			"
-			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-			if (ent)
-			{
-				NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Object Overflow`)
-			}
-            "
-        }
+
 
 		//////////////////////////
 		//			W1A			//
@@ -783,19 +771,7 @@ WaveSchedule
 			Action Trigger
 		}
 
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param 
-			"
-			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-			if (ent)
-			{
-				NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Object Overflow`)
-			}
-            "
-        }
+
 
 		//////////////////////////
 		//			W2A			//
@@ -1005,19 +981,7 @@ WaveSchedule
 			Action Trigger
 		}
 
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param 
-			"
-			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-			if (ent)
-			{
-				NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Object Overflow`)
-			}
-            "
-        }
+
 
 		//////////////////////////
 		//			W3A			//
@@ -1260,19 +1224,7 @@ WaveSchedule
 			Action Trigger
 		}
 
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param 
-			"
-			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-			if (ent)
-			{
-				NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Object Overflow`)
-			}
-            "
-        }
+
 
 		//////////////////////////
 		//			W4A			//
@@ -1501,19 +1453,7 @@ WaveSchedule
 			Action Trigger
 		}
 
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param 
-			"
-			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-			if (ent)
-			{
-				NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Object Overflow`)
-			}
-            "
-        }
+
 
 		WaveSpawn //Deagle scout support ($100)
 		{

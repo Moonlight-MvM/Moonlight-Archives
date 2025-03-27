@@ -674,18 +674,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			FirstSpawnWarningSound "vo\mvm\norm\heavy_mvm_go01.mp3"
@@ -1003,18 +992,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			FirstSpawnWarningSound "vo\mvm\norm\demoman_mvm_dominationdemoman04.mp3"
@@ -1249,18 +1227,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W3-A
@@ -1504,18 +1471,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			FirstSpawnWarningSound "vo\mvm\norm\engineer_mvm_dominationengineer_mvm06.mp3"
@@ -1741,18 +1697,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W4-A1
@@ -1991,18 +1936,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			FirstSpawnWarningSound "vo/mvm/mght/soldier_mvm_m_cheers02.mp3"
@@ -2277,18 +2211,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			FirstSpawnWarningSound "vo/mvm/mght/Soldier_mvm_m_laughlong01.mp3"
@@ -2493,16 +2416,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         }
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`activate_route_r`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Pollution Dilution`)
-                }
-            "
+            Target activate_route_r
+            Action Trigger
         }
 		WaveSpawn
 		{

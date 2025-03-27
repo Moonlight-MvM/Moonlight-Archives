@@ -175,18 +175,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Programmed Plains`)
-                }
-            "
-        }
+
         WaveSpawn 
         {
             Name wave1a1
@@ -430,18 +419,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Programmed Plains`)
-                }
-            "
-        }
+
       
         WaveSpawn 
         {
@@ -712,18 +690,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Programmed Plains`)
-                }
-            "
-        }
+
         WaveSpawn 
         {
             Name wave3tank1
@@ -969,18 +936,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Programmed Plains`)
-                }
-            "
-        }
+
         WaveSpawn 
         {
             Name wave4a1
@@ -1272,18 +1228,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Programmed Plains`)
-                }
-            "
-        }
+
         WaveSpawn
         {
             Name wave5a1
@@ -1586,18 +1531,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Programmed Plains`)
-                }
-            "
-        }
+
         WaveSpawn 
         {
             Name wave6a1

@@ -406,11 +406,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 EntFire(`bombpath_left`, `Trigger`)
 				ClientPrint(null,3,`\x08FF54F1FFEach wave will consist of forced bomb paths.`)
 				ClientPrint(null,3,`\x08FF54F1FFAny form of wave fail does NOT change it, so don't waste your time on that.`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Wild Wires`)
-                }
+
             "
         }
 		WaveSpawn
@@ -701,11 +697,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOff`)
 				EntFire(`bombpath_right_arrows`, `TurnOn`)
                 EntFire(`bombpath_right`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Wild Wires`)
-                }
+
             "
         }
 		WaveSpawn
@@ -969,11 +961,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_right_arrows`, `TurnOff`)
 				EntFire(`bombpath_left_arrows`, `TurnOn`)
                 EntFire(`bombpath_left`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Wild Wires`)
-                }
+
             "
         }
 		WaveSpawn
@@ -1254,11 +1242,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_right_arrows`, `TurnOff`)
 				EntFire(`bombpath_left_arrows`, `TurnOn`)
                 EntFire(`bombpath_left`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Wild Wires`)
-                }
+
             "
         }
 		WaveSpawn
@@ -1462,11 +1446,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOff`)
 				EntFire(`bombpath_right_arrows`, `TurnOn`)
                 EntFire(`bombpath_right`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Wild Wires`)
-                }
+
             "
         }
 		WaveSpawn
@@ -1761,11 +1741,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_right_arrows`, `TurnOff`)
 				EntFire(`bombpath_left_arrows`, `TurnOn`)
                 EntFire(`bombpath_left`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Wild Wires`)
-                }
+
             "
         }
 		WaveSpawn

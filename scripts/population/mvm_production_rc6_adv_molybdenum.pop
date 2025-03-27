@@ -1207,11 +1207,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput
@@ -1523,11 +1519,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput
@@ -1848,11 +1840,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput
@@ -2080,11 +2068,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput
@@ -2347,11 +2331,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput
@@ -2714,11 +2694,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput
@@ -3124,11 +3100,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 			    IncludeScript(`molybdenum_decor`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Molybdenum`)
-                }
+
             "
         }
         DoneOutput

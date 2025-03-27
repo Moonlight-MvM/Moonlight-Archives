@@ -620,11 +620,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				IncludeScript(`pathofradiance`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Path of Radiance`)
-                }
+
                 EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_clearall_relay`, `Trigger`)
                 EntFire(`cave_door`, `open`)
@@ -833,11 +829,7 @@ WaveSchedule
             Target gamerules
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Path of Radiance`)
-                }
+
                 EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_clearall_relay`, `Trigger`)
                 EntFire(`cave_door`, `open`)
@@ -1043,11 +1035,7 @@ WaveSchedule
             Target gamerules
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Path of Radiance`)
-                }
+
                 EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_clearall_relay`, `Trigger`)
                 EntFire(`cave_door`, `open`)
@@ -1394,11 +1382,7 @@ WaveSchedule
             Target gamerules
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Path of Radiance`)
-                }
+
                 EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_clearall_relay`, `Trigger`)
                 EntFire(`cave_door`, `open`)
@@ -1627,11 +1611,7 @@ WaveSchedule
             Target gamerules
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Path of Radiance`)
-                }
+
                 EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_clearall_relay`, `Trigger`)
                 EntFire(`cave_door`, `open`)
@@ -1838,11 +1818,7 @@ WaveSchedule
             Target gamerules
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Path of Radiance`)
-                }
+
                 EntFire(`bombpath_choose_relay`, `Kill`)
                 EntFire(`bombpath_clearall_relay`, `Trigger`)
                 EntFire(`cave_door`, `open`)

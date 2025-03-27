@@ -110,18 +110,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	1A-1
@@ -248,18 +237,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W2-A2
@@ -438,18 +416,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W3-A1
@@ -550,18 +517,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W4-A1
@@ -698,18 +654,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W5-A1
@@ -932,18 +877,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Decimal Destruction`)
-                }
-            "
-		}
+
 		WaveSpawn
 		{
 			Name	W6-A2

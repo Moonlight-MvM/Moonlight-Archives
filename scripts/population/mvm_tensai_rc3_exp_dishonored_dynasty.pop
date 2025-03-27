@@ -1633,18 +1633,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W1_01_SUPPORT_ALLWAVE
@@ -1806,18 +1795,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn //25,000 health tank
 		{
 			Name W2_01_TANK
@@ -2044,18 +2022,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W3_01_GIGAS
@@ -2278,18 +2245,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn //35,000 health tank
 		{
 			Name W4_01_TANK
@@ -2483,18 +2439,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W5_01_GIANTS
@@ -2735,18 +2680,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn //30,000 health tanks
 		{
 			Name W6_01_TANKS
@@ -3013,18 +2947,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W7_01
@@ -3480,18 +3403,7 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Exp Dishonored Dynasty`)
-                }
-            "
-        }
+
 		WaveSpawn
 		{
 			Name W8_SOUND

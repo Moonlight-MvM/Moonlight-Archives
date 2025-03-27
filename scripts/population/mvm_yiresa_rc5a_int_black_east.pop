@@ -1374,11 +1374,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
@@ -1555,11 +1551,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
@@ -1817,11 +1809,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_right`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
@@ -2016,11 +2004,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_right`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
@@ -2385,11 +2369,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_right`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
@@ -2709,11 +2689,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
@@ -3113,11 +3089,7 @@ WaveSchedule
             Action RunScriptCode
             Param "
 				EntFire(`wave_finished_nextwave_left`, `Trigger`)
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Int Black East`)
-				}
+
             "
         }
 		DoneOutput					
