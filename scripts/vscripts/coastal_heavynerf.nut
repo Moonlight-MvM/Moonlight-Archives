@@ -4,7 +4,7 @@ local popname = NetProps.GetPropString(objective_resource, "m_iszMvMPopfileName"
 ::__ML_coastal_heavynerf <- {
 
     function OnGameEvent_post_inventory_application(params) {
-    
+
         local player = GetPlayerFromUserID(params.userid)
 
         if (player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
@@ -31,4 +31,4 @@ local popname = NetProps.GetPropString(objective_resource, "m_iszMvMPopfileName"
 __CollectGameEventCallbacks(__ML_coastal_heavynerf)
 
 //fire post_inventory_application event on script load
-EntFire("player", "RunScriptCode", "self.Regenerate(true)")
+EntFire("player", "RunScriptCode", "if (!IsPlayerABot(self)) self.Regenerate(true)")
