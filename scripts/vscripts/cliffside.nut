@@ -31,7 +31,7 @@ local popname = NetProps.GetPropString(objective_resource, "m_iszMvMPopfileName"
     function OnGameEvent_teamplay_round_start(_)
     {
         if (popname !=  GetPropString(objective_resource, "m_iszMvMPopfileName"))
-            delete __ML_cliffside
+            delete ::__ML_cliffside
     }
 }
 

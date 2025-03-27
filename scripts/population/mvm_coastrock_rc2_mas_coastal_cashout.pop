@@ -643,20 +643,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				ClientPrint(null,3,`\x08FBFBAAEEHeavys miniguns have a -35% damage done to them, and the knockback of Pyro's airblast has been reduced.`)
 				ClientPrint(null,3,`\x08FBFBAAEESo shuffle around classes and see what sticks for each wave.`)
 				ClientPrint(null,3,`\x08FBFBAAEEHowever, do be careful of H̴̞͍̙̥̝͕̦̭̩̣͈͍̫̬̿͂͆ͩ͐́̀̍͘͜͜͡ͅị̷̠̀̑m̸̸̷̴̢̡̧̛̛̯̹͇̰͕̮͕͇̺̖̤̮̲̩̘ͮ̄̀ͥ̋ͨ̽ͬ͒͒ͤ͑͆̐͌̎̏́ͥ̚͝ͅ.`)
-
-                function OnGameEvent_post_inventory_application(params) {
-                    local player = GetPlayerFromUserID(params.userid)
-                    if(player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
-                        for(local i = 0; i < NetProps.GetPropArraySize(player, `m_hMyWeapons`); i++) {
-                            if(NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i).GetClassname() == `tf_weapon_minigun`) {
-                                local minigun = NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i)
-                                minigun.AddAttribute(`damage bonus HIDDEN`, 0.65, 0)
-                                break
-                            }
-                        }
-                    }
-                }
-                __CollectGameEventCallbacks(this)
+				
+                // minigun nerf moved to separate script
+				IncludeScript(`coastal_heavynerf`)
             "
 		}
 		WaveSpawn
@@ -864,19 +853,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOn`)
                 EntFire(`bombpath_left`, `Trigger`)
 
-                function OnGameEvent_post_inventory_application(params) {
-                    local player = GetPlayerFromUserID(params.userid)
-                    if(player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
-                        for(local i = 0; i < NetProps.GetPropArraySize(player, `m_hMyWeapons`); i++) {
-                            if(NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i).GetClassname() == `tf_weapon_minigun`) {
-                                local minigun = NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i)
-                                minigun.AddAttribute(`damage bonus HIDDEN`, 0.65, 0)
-                                break
-                            }
-                        }
-                    }
-                }
-                __CollectGameEventCallbacks(this)
+                // minigun nerf moved to separate script
+                IncludeScript(`coastal_heavynerf`)
             "
 		}
 		WaveSpawn
@@ -1196,19 +1174,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOff`)
                 EntFire(`bombpath_right`, `Trigger`)
 
-                function OnGameEvent_post_inventory_application(params) {
-                    local player = GetPlayerFromUserID(params.userid)
-                    if(player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
-                        for(local i = 0; i < NetProps.GetPropArraySize(player, `m_hMyWeapons`); i++) {
-                            if(NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i).GetClassname() == `tf_weapon_minigun`) {
-                                local minigun = NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i)
-                                minigun.AddAttribute(`damage bonus HIDDEN`, 0.65, 0)
-                                break
-                            }
-                        }
-                    }
-                }
-                __CollectGameEventCallbacks(this)
+                // minigun nerf moved to separate script
+                IncludeScript(`coastal_heavynerf`)
             "
 		}
 		WaveSpawn
@@ -1676,19 +1643,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOn`)
                 EntFire(`bombpath_left`, `Trigger`)
 
-                function OnGameEvent_post_inventory_application(params) {
-                    local player = GetPlayerFromUserID(params.userid)
-                    if(player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
-                        for(local i = 0; i < NetProps.GetPropArraySize(player, `m_hMyWeapons`); i++) {
-                            if(NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i).GetClassname() == `tf_weapon_minigun`) {
-                                local minigun = NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i)
-                                minigun.AddAttribute(`damage bonus HIDDEN`, 0.65, 0)
-                                break
-                            }
-                        }
-                    }
-                }
-                __CollectGameEventCallbacks(this)
+                // minigun nerf moved to separate script
+                IncludeScript(`coastal_heavynerf`)
             "
 		}
 		WaveSpawn
@@ -2221,19 +2177,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOn`)
                 EntFire(`bombpath_left`, `Trigger`)
 
-                function OnGameEvent_post_inventory_application(params) {
-                    local player = GetPlayerFromUserID(params.userid)
-                    if(player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
-                        for(local i = 0; i < NetProps.GetPropArraySize(player, `m_hMyWeapons`); i++) {
-                            if(NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i).GetClassname() == `tf_weapon_minigun`) {
-                                local minigun = NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i)
-                                minigun.AddAttribute(`damage bonus HIDDEN`, 0.65, 0)
-                                break
-                            }
-                        }
-                    }
-                }
-                __CollectGameEventCallbacks(this)
+                // minigun nerf moved to separate script
+                IncludeScript(`coastal_heavynerf`)
             "
 		}
 		WaveSpawn
@@ -2806,19 +2751,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`bombpath_left_arrows`, `TurnOff`)
                 EntFire(`bombpath_right`, `Trigger`)
 
-                function OnGameEvent_post_inventory_application(params) {
-                    local player = GetPlayerFromUserID(params.userid)
-                    if(player.GetTeam() == 2 && player.GetPlayerClass() == 6) {
-                        for(local i = 0; i < NetProps.GetPropArraySize(player, `m_hMyWeapons`); i++) {
-                            if(NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i).GetClassname() == `tf_weapon_minigun`) {
-                                local minigun = NetProps.GetPropEntityArray(player, `m_hMyWeapons`, i)
-                                minigun.AddAttribute(`damage bonus HIDDEN`, 0.65, 0)
-                                break
-                            }
-                        }
-                    }
-                }
-                __CollectGameEventCallbacks(this)
+                // minigun nerf moved to separate script
+                IncludeScript(`coastal_heavynerf`)
             "
 		}
 		WaveSpawn
@@ -3111,6 +3045,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				ClientPrint(null,3,`\x08FBFBAAEEWatch your back whenever possible!`)
 				ClientPrint(null,3,`\x08FBFBAAEE...did the weather also change or is it just me?`)
                 EntFire(`tf_objective_resource`, `$SetClientProp$m_iszMvMPopfileName`, `Home Stretch, Chief!`)
+				IncludeScript(`coastal_heavynerf`)
 				// local ent = Entities.FindByClassname(null, `tf_objective_resource`)
                 // if (ent)
                 // {
