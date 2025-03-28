@@ -1,4 +1,6 @@
 // mission by randomguy
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 WaveSchedule
 {
 	CanBotsAttackWhileInSpawnRoom no
@@ -1850,6 +1852,23 @@ WaveSchedule
 					Action Trigger
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFGate Tank deployed with 6k (6000) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFGate Tank deployed with 6k (6000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1900,6 +1919,23 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFGate Tank deployed with 11k (11000) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFGate Tank deployed with 11k (11000) HP!`)
+				"
 			}
 		}
 
@@ -1989,6 +2025,23 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 11k (11000) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 11k (11000) HP!`)
+				"
 			}
 		}
 	}
@@ -2344,6 +2397,15 @@ WaveSchedule
 					Action Trigger
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 25k (25000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -2413,6 +2475,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 25k (25000) HP!`)
+				"
 			}
 		}
 
