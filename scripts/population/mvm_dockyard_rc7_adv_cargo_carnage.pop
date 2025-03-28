@@ -1,6 +1,8 @@
 #base robot_standard.pop
 #base robot_giant.pop
 #base robot_gatebot.pop
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 
 // WAVE 1 - 0$ + B(100$)
 // -------------------
@@ -9,10 +11,6 @@
 //Collab by the fat and randomguy
 //Waves 1, 2, 3 by the fat
 //Waves 4, 5, 6 by randomguy
-
-//potato shitters when they find out that randomguy made 3 waves in this:
-//-0.00123(12) / 100 
-//bad mission
 
 
 WaveSchedule
@@ -1674,6 +1672,15 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 25k (25000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -2343,6 +2350,23 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 22.5k (22500) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 22.5k (22500) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -2532,6 +2556,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 40k (40000) HP!`)
+				"
 			}
 		}
 
