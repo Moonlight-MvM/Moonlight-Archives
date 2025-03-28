@@ -1,6 +1,8 @@
 //mission by randomguy
 #base robot_standard.pop
 #base robot_giant.pop
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 
 //30/8/2021 test notes
 //w1: make shortstops have normal (1x) movespeed
@@ -33,7 +35,7 @@
 //DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS 
 //DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS DEMOPANTS 
 
-hit_multiple_cachiggas
+WaveSchedule
 {
 	CanBotsAttackWhileInSpawnRoom no
 	RespawnWaveTime	2
@@ -468,6 +470,14 @@ hit_multiple_cachiggas
 				Target boss_spawn_relay
 				Action Trigger
 			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 15k (15000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -599,6 +609,14 @@ hit_multiple_cachiggas
 			{
 				Target boss_spawn_relay
 				Action Trigger
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 15k (15000) HP!`)
+				"
 			}
 		}
 	}
@@ -1039,6 +1057,14 @@ hit_multiple_cachiggas
 				Target boss_spawn_relay
 				Action Trigger
 			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 10k (10000) HP!`)
+				"
+			}
 		}
 		
 		WaveSpawn
@@ -1123,6 +1149,22 @@ hit_multiple_cachiggas
 				Target boss_spawn_relay
 				Action Trigger
 			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 10k (10000) HP!`)
+				"
+			}
+			StartWaveOutput
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 10k (10000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1204,6 +1246,51 @@ hit_multiple_cachiggas
 
 		WaveSpawn
 		{
+			WaitForAllDead	stage2
+			Support			Limited
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 10k (10000) HP!`)
+				"
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	stage2
+			Support			Limited
+			WaitBeforeStarting 30
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 10k (10000) HP!`)
+				"
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	stage2
+			Support			Limited
+			WaitBeforeStarting 60
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 10k (10000) HP!`)
+				"
+			}
+		}
+
+		WaveSpawn
+		{
 			Name stage3
 			WaitForAllDead stage2
 			Where spawnbot
@@ -1274,6 +1361,22 @@ hit_multiple_cachiggas
 			{
 				Target boss_spawn_relay
 				Action Trigger
+			}
+			
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned tanks
+			WaitBeforeStarting 45
+			Support			Limited
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 30k (30000) HP!`)
+				"
 			}
 		}
 
