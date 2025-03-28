@@ -21,8 +21,11 @@ local popname = NetProps.GetPropString(objective_resource, "m_iszMvMPopfileName"
         }
     }
     function OnGameEvent_recalculate_holidays(_) {
+        if (GetRoundState() != Constants.ERoundState.GR_STATE_PREROUND) return
 
-        if (GetRoundState() != 3) return
+        // fix preserved ent leak
+        local fog = Entities.FindByName(null, "the_fog_is_coming")
+        if (fog) fog.Kill()
 
         if (popname != NetProps.GetPropString(objective_resource, "m_iszMvMPopfileName"))
             delete ::__ML_coastal_heavynerf

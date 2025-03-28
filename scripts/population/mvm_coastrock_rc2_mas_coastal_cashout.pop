@@ -3102,6 +3102,19 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					"hand scale"	1.69
 				}
 			}
+			DoneOutput
+			{
+				Target the_fog_is_coming
+				Action RunScriptCode
+				Param "
+					SetSkyboxTexture(`sky_coastal_01`)
+					Entities.FindByName(null, `the_fog_trigger`).Kill()
+					self.AcceptInput(`SetStartDistLerpTo`, `2200.0`, null, null)
+					self.AcceptInput(`SetEndDistLerpTo`, `18000.0`, null, null)
+					NetProps.SetPropFloat(self, `m_fog.duration`, 2.5)
+					self.AcceptInput(`StartFogTransition`, `` null, null)
+				"
+			}
 		}
 		WaveSpawn
 		{
