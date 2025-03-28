@@ -2,6 +2,8 @@
 #base robot_standard.pop
 #base robot_giant.pop
 #base robot_gatebot.pop
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 
 WaveSchedule
 {
@@ -482,7 +484,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name giant1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 1
@@ -525,7 +527,7 @@ WaveSchedule
 			Name giant2
 			WaitForAllDead giant1
 			WaitForAllSpawned bat1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 2 //1 //2
 			MaxActive 1 //2
 			SpawnCount 1
@@ -603,7 +605,7 @@ WaveSchedule
 		{
 			Name no_pyrono_pyrono_pyrono_pyrono_pyrono_pyrono_pyro
 			WaitForAllSpawned stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 2
 			MaxActive 1
 			SpawnCount 1
@@ -662,7 +664,7 @@ WaveSchedule
 		{
 			Name stage3
 			WaitForAllSpawned stage2
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 2
@@ -786,7 +788,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -822,6 +824,15 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 25k (25000) HP!`)
+				"
+			}
 		}
 	}
 
@@ -842,7 +853,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
@@ -866,7 +877,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
@@ -1036,7 +1047,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 1
@@ -1074,7 +1085,7 @@ WaveSchedule
 		{
 			Name stage2
 			WaitForAllSpawned stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 3
 			MaxActive 2
 			SpawnCount 1
@@ -1095,7 +1106,7 @@ WaveSchedule
 		{
 			Name stage3_gs
 			WaitForAllDead stage2
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 2 //4
 			MaxActive 2 //4
 			SpawnCount 1
@@ -1118,7 +1129,7 @@ WaveSchedule
 		{
 			Name stage3
 			WaitForAllDead stage2
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 1
@@ -1193,12 +1204,21 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 30k (30000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
 		{
 			Name stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 2
@@ -1303,6 +1323,15 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 30k (30000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1310,7 +1339,7 @@ WaveSchedule
 			Name stage3
 			WaitForAllDead stage2
 			WaitForAllSpawned tank2
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 3 //9
 			MaxActive 3 //9
 			SpawnCount 1 //3
@@ -1398,12 +1427,21 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 20k (20000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
 		{
 			Name stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 8
 			MaxActive 4
 			SpawnCount 2
@@ -1450,7 +1488,7 @@ WaveSchedule
 		{
 			Name stage2
 			WaitForAllDead stage1
-			Where spawnbot_chief
+			Where spawnbot_chief_move
 			TotalCount 3
 			MaxActive 2
 			SpawnCount 1
@@ -1538,6 +1576,15 @@ WaveSchedule
 					Target boss_deploy_relay 
 					Action Trigger                         
 				}
+			}
+			
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 25k (25000) HP!`)
+				"
 			}
 		}
 
