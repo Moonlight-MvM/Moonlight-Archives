@@ -2206,11 +2206,8 @@ WaveSchedule
         InitWaveOutput
         {
             Target gamerules
-            Action RunScriptCode
-            Param "
-                IncludeScript(`area52_newspawnbot`)
-
-            "
+            Action RunScriptFile
+            Param "area52_newspawnbot"
         }
 		WaveSpawn
 		{
@@ -2397,15 +2394,6 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                IncludeScript(`area52_newspawnbot`)
-
-            "
-        }
 		WaveSpawn
 		{
 			Name W2_01
@@ -2589,15 +2577,6 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                IncludeScript(`area52_newspawnbot`)
-
-            "
-        }
 		WaveSpawn
 		{
 			Name W3_01_GATESCOUTS
@@ -2805,15 +2784,6 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                IncludeScript(`area52_newspawnbot`)
-
-            "
-        }
 		WaveSpawn //25,000 health tank
 		{
 			Name W4_01_TANK
@@ -3049,15 +3019,6 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                IncludeScript(`area52_newspawnbot`)
-
-            "
-        }
 		WaveSpawn //10,000 health gate tank
 		{
 			Name W5_01_GATETANK
@@ -3364,15 +3325,6 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                IncludeScript(`area52_newspawnbot`)
-
-            "
-        }
 		WaveSpawn
 		{
 			Name W6_01_TRIO
