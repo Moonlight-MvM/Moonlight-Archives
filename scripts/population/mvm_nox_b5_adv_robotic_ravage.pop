@@ -1,6 +1,7 @@
 // mission by randomguy
 // #base robot_randomguy_default.pop
-// NOTE TO EYES (<3) i will probably replace stock bots with my own versions, but i'll do that myself later unless you say you don't want. :3
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 WaveSchedule
 {
 	CanBotsAttackWhileInSpawnRoom no
@@ -1092,6 +1093,15 @@ WaveSchedule
 					Action Trigger
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 25k (25000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1409,6 +1419,15 @@ WaveSchedule
 					Action Trigger
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 16k (16000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1442,6 +1461,15 @@ WaveSchedule
 					Target boss_dead_relay
 					Action Trigger
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 16k (16000) HP!`)
+				"
 			}
 		}
 
@@ -1872,6 +1900,15 @@ WaveSchedule
 					Action Trigger
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 19k (19000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1904,6 +1941,15 @@ WaveSchedule
 					Target boss_dead_relay
 					Action Trigger
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 19k (19000) HP!`)
+				"
 			}
 		}
 
@@ -2057,6 +2103,15 @@ WaveSchedule
 					Target boss_dead_relay
 					Action Trigger
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 35k (35000) HP!`)
+				"
 			}
 		}
 	}
