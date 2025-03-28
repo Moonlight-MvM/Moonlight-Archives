@@ -888,13 +888,13 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "w3-giant2"
-			WaitForAllSpawned w3-giant1
+			WaitForAllDead w3-giant1
 			TotalCurrency 100
 			TotalCount 5
 			MaxActive 5
 			SpawnCount 1
 			WaitBetweenSpawns 5
-			WaitBeforeStarting 20
+			WaitBeforeStarting 0
 			Where spawnbot
 
 			TFBot
