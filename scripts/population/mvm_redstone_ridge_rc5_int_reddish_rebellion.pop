@@ -1,55 +1,9 @@
 //mission by randomguy
 #base robot_standard.pop
 #base robot_giant.pop
-//robot gatebot base deleted because i need to add disabledodge anyway for this map ugh
-
-//test session 1 (28/6/2021):
-//Tindall overall feedback:
-//w1: add 2 more knight groups, add weak giant (gflare maybe) to them, slightly speed up soldier spawns, make bats start at first gsoldier
-//w2: spawn heavies in groups of 3 with same rate, spawn first 2 gsnipes along heavies
-//w3: move gdemos to meleeheavy part, replace umeds with bigheal
-
-//test 2 (1/7/2021):
-//w1: speed up the gsoldier part at the end
-//w2: have more firepower
-//w3: flip gdemo and fist gatebot, last subwave weak
-//w4: somehow the one i made at 11 pm on 4 hrs sleep is the one that actually had push other than w1
-//overall: remember to give the FUCKING giants their FUCKING bot FUCKING giant tag you FUCKING RETARD!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-
-//test 3 (3/7/2021):
-//w2: make sollies bomb
-//w4: remove dmg bonus from colonels
-//w5: space out gscouts
-
-//test 4 (6/7/2021):
-//w1: fine (change solly spawncount to 3 and total to 12 - tindall)
-//w3: fine until i saw that middle spray (change giant armor sandman to giant sandman - tindall)
-//w4: why does the server fucking stutter this is fucking bullshit (change the 1 52 sandman wavespawn into 4 of 13 and make them spawn 2 0.1 seconds apart and all waiting for the previous death so server doesn't be fucking retarded - ultmax)
-//w6: okayish (halve entire first subwave, halve spies, reduce scout max by a third - tindall)
-
-//ported to redstone ridge on 7/7/2021 because m1 say baaad
-//w1: buff starting to $1300, remove snipers, remove quickfixes
-//w2: man literally too mad to judge
-
-//this map is shit but m1 likes it so hopefully tindall does too M1 I FUCKING IF YOU FUCKING I WILL FUCKING FUCK FUC FUCK
-
-//test 5 (7/7/2021):
-//w4: increase waitbetween on colonel and flare
-//w6: add 5 heavies for first part
-
-//test 6(12/7/2021):
-//w2: slow down final 3 SMG spawn
-//w6: lower demoman AI, increase time between support spawns
-
-//angry rant here removed fuck you
-
-//test 7(24/7/2021):
-//w1: make demoknights shieldless bottleknights, decrease max on scout/soldier part
-//w3: reduce maxactive for giant scouts to 1 with 0 wait, make pyros support
-
-//jUDGING!!! PASS JUST GOTTA DO THESE CHANGESFEWIOUFIUEWFNEWIFNEWIUFNHEWIUBFUEWHBFYUEWFIUPG
-//w3: toned down pyro support
-//w6: made g defs into g heavies
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
+//how long do u reckon it'll take for someone to confuse this with the new redridge?
 
 WaveSchedule
 {
