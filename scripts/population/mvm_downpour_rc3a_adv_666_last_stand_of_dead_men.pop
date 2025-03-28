@@ -1,6 +1,9 @@
 //mission by randomguy
+//named after a book btw
 #base robot_standard.pop
 #base robot_giant.pop
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 
 WaveSchedule
 {
@@ -286,6 +289,23 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 30k (30000) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 30k (30000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -385,6 +405,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 45k (45000) HP!`)
+				"
 			}
 		}
 
@@ -526,6 +555,23 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 40k (40000) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 40k (40000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -655,6 +701,23 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 50k (50000) HP!`)
+				"
+			}
+			LastSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 50k (50000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -686,6 +749,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 65k (65000) HP!`)
+				"
 			}
 		}
 
@@ -808,6 +880,15 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 60k (60000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -839,6 +920,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 60k (60000) HP!`)
+				"
 			}
 		}
 
@@ -890,6 +980,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 70k (70000) HP!`)
+				"
 			}
 		}
 
