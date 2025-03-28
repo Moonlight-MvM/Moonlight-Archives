@@ -1,6 +1,8 @@
 //mission by randomguy
 #base robot_standard.pop
 #base robot_giant.pop
+#base custom_weapons_randomguy.pop
+#base overclock_cactus_general.pop
 
 WaveSchedule
 {
@@ -339,6 +341,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 12.5k (12500) HP!`)
+				"
 			}
 		}
 
@@ -729,6 +740,15 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 15k (15000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -978,6 +998,15 @@ WaveSchedule
 					Action Trigger                         
 				}
 			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 20k (20000) HP!`)
+				"
+			}
 		}
 
 		WaveSpawn
@@ -1181,6 +1210,15 @@ WaveSchedule
 					Target boss_deploy_relay
 					Action Trigger                         
 				}
+			}
+
+			FirstSpawnOutPut
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				ClientPrint(null,3,`\x0799CCFFTank deployed with 27.5k (27500) HP!`)
+				"
 			}
 		}
 
