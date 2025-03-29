@@ -3,7 +3,6 @@
 #base robot_giant.pop
 #base custom_weapons_randomguy.pop
 #base overclock_cactus_general.pop
-//how long do u reckon it'll take for someone to confuse this with the new redridge?
 
 WaveSchedule
 {

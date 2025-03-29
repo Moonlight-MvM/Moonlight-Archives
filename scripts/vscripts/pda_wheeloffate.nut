@@ -1,47 +1,29 @@
 // Wheel of Fate script by PDA Expert, for use in MVM missions.
 // Inspired by the Wheel of Fate seen in Wizardy.
-::ROOT <- getroottable()
-if ("PDA_WheelOfFate" in ::ROOT) return
+
+printl("Wheel script loaded succsesfully.")
 PrecacheModel("models/props_lakeside_event/buff_plane.mdl")
+//PrecacheModel("")
 
-::PDA_WheelOfFate <- {
-	mvm_stats = Entities.FindByClassname(null, "tf_mann_vs_machine_stats")
-
-	function OnGameEvent_recalculate_holidays(_) {
-		if (GetRoundState() != Constants.ERoundState.GR_STATE_PREROUND) return
-		if (NetProps.GetPropInt(mvm_stats, "m_iCurrentWaveIdx") != 0) return
-
-		delete ::wheeloffate_logic
-		foreach (name, _ in ::ROOT)
-			if (startswith(name, "wheel_"))
-				delete ::ROOT[name]
-
-		delete ::PDA_WheelOfFate
-	}
-}
-__CollectGameEventCallbacks(::PDA_WheelOfFate)
-
-
-if (Entities.FindByName(null, "filter_redteam") == null)
+function filter_redspawn()
 {
-	printl("No redteam filter under the name of filter_redteam was found, spawning in one for the sake of easier use!")
-	SpawnEntityFromTable("filter_activator_tfteam" , {
-		targetname = "filter_redteam"
-		teamnum = Constants.ETFTeam.TF_TEAM_RED
-	})
+    SpawnEntityFromTable("filter_activator_tfteam" , {
+            targetname = "filter_redteam"
+        	negated = "0"
+		    teamnum = "2"
+        }
+    )
 }
 
-if (Entities.FindByName(null, "filter_bluteam") == null)
+if(Entities.FindByName(null, "filter_redteam") == null) 
 {
-	printl("No bluteam filter under the name of filter_bluteam was found, spawning in one for the sake of easier use!")
-	SpawnEntityFromTable("filter_activator_tfteam" , {
-		targetname = "filter_bluteam"
-		teamnum = Constants.ETFTeam.TF_TEAM_BLUE
-	})
+  printl("No redteam filter under the name of filter_redteam was found, spawning in one for the sake of easier use!")
+  filter_redspawn()
 }
 
 ::wheeloffate_logic <- function(x, y, z, angx, angy, angz)  // magic numbers you set in the popfile.
 {
+	
 	local wheel_card = SpawnEntityFromTable("prop_dynamic" {
 	        targetname = "wheel_card"
 			model = "models/props_lakeside_event/buff_plane.mdl"
@@ -50,47 +32,47 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			startdisabled = 1
 		}
 	)
-
+	
 	wheel_card.SetLocalOrigin(Vector(x, y, z))
 	wheel_card.SetLocalAngles(QAngle(angx, angy, angz))
-
+	
 	local wheel_sparks1 = SpawnEntityFromTable("info_particle_system" {
     	    targetname = "green_wof_sparks"
 			effect_name = "green_wof_sparks"
 		}
 	)
-
+	
 	wheel_sparks1.SetLocalOrigin(Vector(x + 3, y - 18, z - 6))
 	wheel_sparks1.SetLocalAngles(QAngle(angx, angy + 286, angz))
-
+	
 
 	local wheel_sparks2 = SpawnEntityFromTable("info_particle_system" {
     	    targetname = "green_wof_sparks"
 			effect_name = "green_wof_sparks"
 		}
 	)
-
+	
 	wheel_sparks2.SetLocalOrigin(Vector(x - 8, y - 18, z - 6))
 	wheel_sparks2.SetLocalAngles(QAngle(angx, angy + 247, angz))
-
+	
 	local wheel_steam1 = SpawnEntityFromTable("info_particle_system" {
     	    targetname = "green_steam_cap"
 			effect_name = "green_steam_plume"
 		}
 	)
-
+	
 	wheel_steam1.SetLocalOrigin(Vector(x - 14, y + 18, z - 337))
 	wheel_steam1.SetLocalAngles(QAngle(angx - 60, angy + 180, angz + 180))
-
+	
 	local wheel_steam2 = SpawnEntityFromTable("info_particle_system" {
     	    targetname = "green_steam_cap"
 			effect_name = "green_steam_plume"
 		}
 	)
-
+	
 	wheel_steam2.SetLocalOrigin(Vector(x + 10, y + 18, z - 337))
 	wheel_steam2.SetLocalAngles(QAngle(angx - 60, angy, angz))
-
+	
 	local wheel_plumes = SpawnEntityFromTable("ambient_generic" {
         targetname = "plumes_long"
 		message = "Halloween.plumes_long"
@@ -99,7 +81,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		health = 10
     	}
 	)
-
+	
 	local wheel_spin_sound = SpawnEntityFromTable("ambient_generic" {
         targetname = "wheel_of_doom_sound"
 		message = "Halloween.WheelofFate"
@@ -108,7 +90,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		health = 10
     	}
 	)
-
+	
 	local wheel_merasmus_babble = SpawnEntityFromTable("ambient_generic" {
         targetname = "merasmus_wheel_babble_sound"
 		message = "Halloween.MerasmusWheelSpin"
@@ -117,14 +99,14 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		health = 10
     	}
 	)
-
+	
 	SpawnEntityFromTable("logic_relay" {
 	    targetname = "merasmus_wheel_babble"
 		startdisabled = 1
 		"OnTrigger": "merasmus_wheel_babble_sound,PlaySound,,0,-1"
 		}
 	)
-
+	
 	wheel_plumes.SetLocalOrigin(Vector(x - 2, y + 2, z - 345))
 	wheel_spin_sound.SetLocalOrigin(Vector(x - 2, y + 2, z - 345))
 	wheel_merasmus_babble.SetLocalOrigin(Vector(x - 2, y + 2, z - 345))
@@ -143,7 +125,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		"OnTrigger#10": "green_wof_sparks,Start,,6.75,-1"
 		}
 	)
-
+	
 	SpawnEntityFromTable("logic_case" {
         targetname = "case_wheel_random_card_nofinal"
 		"OnCase01": "wheel_card,Skin,10,0,-1"
@@ -153,7 +135,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		"OnCase05": "wheel_card,Skin,14,0,-1"
 		"OnCase06": "wheel_card,Skin,15,0,-1"
     	}
-	)
+	)	
 
 	SpawnEntityFromTable("logic_case" {
         targetname = "case_wheel_random_card"
@@ -173,13 +155,13 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		"OnCase14": "case_wheel_random_card_nofinal,pickrandomshuffle,,0,-1"
     	}
 	)
-
+	
 	SpawnEntityFromTable("logic_relay" {
 	    targetname = "relay_wheel_random_card"
 		"OnTrigger#1": "case_wheel_random_card,pickrandomshuffle,,0,-1"
 	}
 	)
-
+	
 	SpawnEntityFromTable("logic_relay" {
      	    targetname = "relay_wheel_card_size"
 			"OnTrigger#1": "wheel_card,SetModelScale,0.96,5.75,-1"
@@ -222,7 +204,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			"OnTrigger#38": "wheel_card,SetModelScale,0.5,0.07,-1"
      	}
 	)
-
+	
 	SpawnEntityFromTable("logic_relay" {
 	    targetname = "wheeloffate_spin"
 		"OnTrigger#1": "wheel_card,setmodelscale,0.5,0.07,-1"
@@ -272,7 +254,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 		"OnTrigger#45": "case_wheel_random_card_nofinal,pickrandomshuffle,,5.36,-1"
      	}
 	)
-
+	
 	SpawnEntityFromTable("logic_relay" {
 	        targetname = "relay_wheel_final"
 			"OnTrigger#1": "wheel_card,setmodelscale,1,0,-1"
@@ -281,7 +263,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			"OnTrigger#4": "wheel_effect_trigger,disable,,1.5,-1"
     	}
 	)
-
+	
 	SpawnEntityFromTable("logic_relay" {
 	        targetname = "relay_wheel_refresh"
 			"OnTrigger#1": "wheel_effect_trigger,kill,,0.5,-1"
@@ -296,7 +278,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			"OnTrigger#10": "wheel_attribute_effect,Kill,,0.5,-1"
     	}
 	)
-
+	
 	SpawnEntityFromTable("logic_timer" {
 	        targetname = "relay_wheel_timer"
 			refiretime = 1
@@ -307,7 +289,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			"OnTimer#4": "wheel_attribute_effect,disable,,0.5,-1"
     	}
 	)
-
+	
     local wheel_ngtrigger = SpawnEntityFromTable("trigger_gravity" {
 	        targetname = "wheel_resetgravity"
 	    	spawnflags = "1"
@@ -315,26 +297,26 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			gravity = "1"
         }
     )
-
+	
     wheel_ngtrigger.KeyValueFromInt("solid", 2)
     wheel_ngtrigger.KeyValueFromString("mins", "-9999 -9999 -9999")
     wheel_ngtrigger.KeyValueFromString("maxs", "9999 9999 9999")
-
+	
 	printl("Wheel spawned!")
 }
 
 ::wheel_generic <- function()
-{
+{	
 	EntFire("wheeloffate_spin", "trigger" , "null", 0,-1)
 	EntFire("relay_wheel_card_size", "trigger", "null", 0,-1)
-	EntFire("relay_wheel_final", "trigger", "null", 6.75,-1)
+	EntFire("relay_wheel_final", "trigger", "null", 6.75,-1)   
 }
 
 ::wheel_customeffect <- function(condition, filter, cardskin) // set team filter via popfile
 {
     wheel_generic()
 	EntFire("wheel_card","Skin", cardskin,6.75,-1)
-
+	
     local wheel_effects = SpawnEntityFromTable("trigger_add_tf_player_condition" {
 	        targetname = "wheel_effect_trigger"
 	    	duration = "2"
@@ -344,7 +326,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			//"OnTrigger": format("!activator,RunScriptCode,condthink(%d),,0,-1", condition)
         }
     )
-
+	
     wheel_effects.KeyValueFromInt("solid", 2)
     wheel_effects.KeyValueFromString("mins", "-9999 -9999 -9999")
     wheel_effects.KeyValueFromString("maxs", "9999 9999 9999")
@@ -366,7 +348,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 	wheel_customeffect(32,filter,4)
 	EntFire("wheel_attribute_effect","enable",null,7.75,-1)
 	EntFire("wheel_attribute_effect","disable",null,8.25,-1)
-
+	
     local wheel_attribute = SpawnEntityFromTable("trigger_add_or_remove_tf_player_attributes" {
 	        targetname = "wheel_attribute_effect"
 	    	duration = "2"
@@ -378,11 +360,11 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			add_or_remove = "0"
         }
     )
-
+	
     wheel_attribute.KeyValueFromInt("solid", 2)
     wheel_attribute.KeyValueFromString("mins", "-9999 -9999 -9999")
-    wheel_attribute.KeyValueFromString("maxs", "9999 9999 9999")
-
+    wheel_attribute.KeyValueFromString("maxs", "9999 9999 9999")    
+	
 	local wheel_remove_attr = SpawnEntityFromTable("trigger_add_or_remove_tf_player_attributes" {
 	        targetname = "wheel_attribute_clear"
 			value = "3"
@@ -393,10 +375,10 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			add_or_remove = "1"
         }
     )
-
+	
     wheel_remove_attr.KeyValueFromInt("solid", 2)
     wheel_remove_attr.KeyValueFromString("mins", "-9999 -9999 -9999")
-    wheel_remove_attr.KeyValueFromString("maxs", "9999 9999 9999")
+    wheel_remove_attr.KeyValueFromString("maxs", "9999 9999 9999")    
 }
 
 ::wheel_superspeed_red <- function()
@@ -419,7 +401,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 	wheel_customeffect(84,"filter_redteam",6)
 }
 
-// low gravity is unqiue in the sense that it requires a seperate trigger for it to work, we'll have to make do here.
+// low gravity is unqiue in the sense that it requires a seperate trigger for it to work, we'll have to make do here. 
 // note : not so unqiue now, eh?
 
 ::wheel_lowgravity <- function()
@@ -431,7 +413,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 	EntFire("wheel_card","Skin", 5,6.75,-1)
 	EntFire("wheel_card","setmodelscale", 1,6.75,-1)
 	EntFire("wheel_lowgravity_effect","Enable", "null",7.75,-1)
-
+	
     local wheel_lgtrigger = SpawnEntityFromTable("trigger_gravity" {
 	        targetname = "wheel_lowgravity_effect"
 	    	spawnflags = "1"
@@ -439,7 +421,7 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 			gravity = "0.2"
         }
     )
-
+	
     wheel_lgtrigger.KeyValueFromInt("solid", 2)
     wheel_lgtrigger.KeyValueFromString("mins", "-9999 -9999 -9999")
     wheel_lgtrigger.KeyValueFromString("maxs", "9999 9999 9999")
@@ -490,5 +472,3 @@ if (Entities.FindByName(null, "filter_bluteam") == null)
 {
 	wheel_customeffect(107,"filter_redteam",2)
 }
-
-printl("Wheel script loaded succsesfully.")
