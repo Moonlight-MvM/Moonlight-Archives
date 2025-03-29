@@ -1,5 +1,4 @@
 //mission by randomguy
-//named after a book btw
 #base robot_standard.pop
 #base robot_giant.pop
 #base custom_weapons_randomguy.pop

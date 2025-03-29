@@ -1,26 +1,4 @@
-if ("Molybdenum" in getroottable()) return
-
-::Molybdenum <- {
-	function OnGameEvent_recalculate_holidays(_) {
-		if (GetRoundState() != Constants.ERoundState.GR_STATE_PREROUND) return
-		delete ::Molybdenum
-	}
-}
-__CollectGameEventCallbacks(::Molybdenum)
-
-function Molybdenum::tank_annotation(tank) {
-	SendGlobalGameEvent("show_annotation", {
-		text = "Kill the boss before the tank reaches the hatch!"
-		lifetime = 7.0
-		worldPosX = -1210.0
-		worldPosY = 1150.0
-		worldPosZ = -12.0
-		follow_entindex = tank.entindex()
-		play_sound = "misc/null.wav"
-	})
-}
-
-function Molybdenum::shop_manlets()
+function shop_manlets()
 {
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet1"
@@ -34,7 +12,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet1_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -45,7 +23,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet1"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet1_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -56,7 +34,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet1"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet2"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -69,7 +47,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet2_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -80,7 +58,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet2"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet2_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -91,7 +69,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet2"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet3"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -105,7 +83,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet3_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -117,7 +95,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet3"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet3_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -129,7 +107,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet3"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet4"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -143,7 +121,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet4_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -155,7 +133,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet4"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet4_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -167,7 +145,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet4"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet5"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -178,7 +156,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet5_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -187,7 +165,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet5"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet5_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -196,7 +174,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet5"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet6"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -207,7 +185,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet6_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -216,7 +194,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet6"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet6_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -225,7 +203,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet6"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet7"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -238,7 +216,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet7_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -249,7 +227,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet7"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet7_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -260,7 +238,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet7"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet8"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -274,7 +252,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet8_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -286,7 +264,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet8"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet8_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -298,7 +276,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet8"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet9"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -311,7 +289,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet9_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -322,7 +300,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet9"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet9_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -333,7 +311,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet9"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic" , {
             targetname = "shopkeeper_manlet10"
 			model = "models/bots/heavy/bot_heavy.mdl"
@@ -346,7 +324,7 @@ function Molybdenum::shop_manlets()
 			disablebonefollowers = 1
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet10_fists"
 			model = "models/workshop/weapons/c_models/c_fists_of_steel/c_fists_of_steel.mdl"
@@ -357,7 +335,7 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet10"
 		}
     )
-
+	
     SpawnEntityFromTable("prop_dynamic_ornament" , {
             targetname = "shopkeeper_manlet10_hat"
 			model = "models/player/items/mvm_loot/heavy/robo_ushanka.mdl"
@@ -368,9 +346,10 @@ function Molybdenum::shop_manlets()
 			initialowner = "shopkeeper_manlet10"
 		}
     )
-
-	if (!IsDedicatedServer())
-		printl("Shopkeeper Manlets have been spawned!")
 }
 
-::Molybdenum.shop_manlets()
+if(Entities.FindByName(null, "shopkeeper_manlet1") == null) 
+{
+  printl("Shopkeeper Manlets have been spawned!")
+  shop_manlets()
+}
