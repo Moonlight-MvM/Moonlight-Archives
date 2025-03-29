@@ -21,6 +21,7 @@ WaveSchedule
 	AddSentryBusterWhenDamageDealtExceeds 3000
 	AddSentryBusterWhenKillCountExceeds 15
 	// EventPopFile Halloween
+	PrecacheModel "models/props_aircrap/tank_chute.mdl" [$SIGSEGV] //Tell potato.tf servers to fastdl the custom model.
 
 	Templates
 	{
