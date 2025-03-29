@@ -263,16 +263,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initB`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
+            Target initB
+			Action Trigger
         }
 		WaveSpawn
 		{
@@ -523,16 +515,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initA`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
+            Target initA
+			Action Trigger
         }
 		WaveSpawn
 		{
@@ -1047,16 +1031,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initA`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
+            Target initA
+			Action Trigger
         }
 		WaveSpawn
 		{
@@ -1558,16 +1534,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
+            Target initMain
+			Action Trigger
         }
 		WaveSpawn
 		{
@@ -2117,16 +2085,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
+            Target initMain
+			Action Trigger
         }
 		WaveSpawn
 		{
@@ -2860,16 +2820,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
+            Target initMain
+			Action Trigger
         }
 		
 		WaveSpawn
@@ -3691,16 +3643,8 @@ WaveSchedule
 		}
 		InitWaveOutput
         {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `RECEIVE RECEIVE RECEIVE RECEIVE`)
-                }
-            "
+            Target initMain
+            Action Trigger
         }
 		WaveSpawn
 		{
@@ -3710,7 +3654,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3721,7 +3665,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3732,7 +3676,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3743,7 +3687,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3754,7 +3698,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3765,7 +3709,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3776,7 +3720,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3787,7 +3731,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3798,7 +3742,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3809,7 +3753,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3820,7 +3764,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3853,18 +3797,6 @@ WaveSchedule
 				Target gamerules
 				Action RunScriptCode
 				Param "ClientPrint(null,3,`\x08FFFF00FF[FULFILL THE WILL OF THE PRESCRIPT] `);"
-			}
-			DoneOutput
-			{
-				Target gamerules
-				Action RunScriptCode
-				Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
 			}
 			Squad
 			{

@@ -1,8 +1,6 @@
 // mission by randomguy
 #base	robot_standard.pop
 #base	robot_giant.pop
-#base	custom_weapons_randomguy.pop
-#base   overclock_cactus_general.pop
 // using this map is a frustrating and stupid and terrible experience. do not.
 // Credits:
 // randomguy for making the waves.
@@ -622,6 +620,12 @@ WaveSchedule
 			Target	wave_start_relay
 			Action	RunScriptCode
 			Param	"
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Dizzying Drill (Intermediate)`)
+                } //^ sets mission name
+			
 			EntFire(`InitB`,`Trigger`)
 			"
 		}
@@ -803,6 +807,12 @@ WaveSchedule
 			Target	wave_start_relay
 			Action	RunScriptCode
 			Param	"
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Dizzying Drill (Intermediate)`)
+                } //^ sets mission name
+			
 			EntFire(`initB`,`Trigger`)
 			IncludeScript(`mvm_hoovydam_b10_int_dizzying_drill_tankwave_shutterfix`)
 			"
@@ -1076,6 +1086,11 @@ WaveSchedule
 			Target	wave_start_relay
 			Action	RunScriptCode
 			Param	"
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Dizzying Drill (Intermediate)`)
+                } //^ sets mission name
 			
 			EntFire(`InitA_SetFront`,`Trigger`)
 			ClientPrint(null,3,`\x07FFEA00The robots have fallen back! Move to gate A!`)
@@ -1284,6 +1299,11 @@ WaveSchedule
 			Target	wave_start_relay
 			Action	RunScriptCode
 			Param	"
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Dizzying Drill (Intermediate)`)
+                } //^ sets mission name
 			
 			EntFire(`initA`,`Enable`) //< this thing here is what wasted two hours.
 			EntFire(`initA_setBack`,`Trigger`)
@@ -1765,6 +1785,11 @@ WaveSchedule
 			Target	wave_start_relay
 			Action	RunScriptCode
 			Param	"
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Dizzying Drill (Intermediate)`)
+                } //^ sets mission name
 			
 			EntFire(`initMain_pit`,`Trigger`)
 			ClientPrint(null,3,`\x07FFEA00The robots have fallen back! Move to the front!`)
@@ -2161,6 +2186,12 @@ WaveSchedule
 			Target	wave_start_relay
 			Action	RunScriptCode
 			Param	"
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Dizzying Drill (Intermediate)`)
+                } //^ sets mission name
+			
 			EntFire(`initMain_roadside`,`Trigger`)
 			::FixNavBSB <- //w3 and w6
 			{

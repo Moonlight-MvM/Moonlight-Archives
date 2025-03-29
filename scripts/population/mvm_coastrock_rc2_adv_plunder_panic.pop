@@ -1,7 +1,5 @@
 #base robot_standard.pop
 #base robot_giant.pop
-#base custom_weapons_randomguy.pop
-#base overclock_cactus_general.pop
 
 // Waves by randomguy
 // Credits:
@@ -9,8 +7,8 @@
 // DaMno for Coastrock RC2.
 // Various creators for icons. (Lite, Swordstone, Daan, Eyes being the ones i could track down)
 // Eyes made the armored/standard popping med icon btw, the rest signed their icons.
-// PDA Expert for the giant grapeshot demoman template.
-// Lite for the parachute tank vscript.
+// PDA Expert for the giant demoman template.
+// Lite for the tank gimmicks.
 
 WaveSchedule
 {
@@ -287,6 +285,12 @@ WaveSchedule
 			EntFire(`bombpath_right_arrows`, `TurnOff`)
 			EntFire(`bombpath_left_arrows`, `TurnOn`)
 			EntFire(`bombpath_left`, `Trigger`) //Forces left path. Stolen from Mo. :P
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			"
 		}
 
@@ -526,6 +530,12 @@ WaveSchedule
 			EntFire(`bombpath_right_arrows`, `TurnOff`)
 			EntFire(`bombpath_left_arrows`, `TurnOn`)
 			EntFire(`bombpath_left`, `Trigger`) //Forces left path. Stolen from Mo. :P
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			"
 		}
 
@@ -826,6 +836,12 @@ WaveSchedule
 			EntFire(`bombpath_right_arrows`, `TurnOn`)
 			EntFire(`bombpath_left_arrows`, `TurnOff`)
 			EntFire(`bombpath_right`, `Trigger`) //Forces right path. Stolen from Mo. :P
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			"
 		}
 
@@ -1082,6 +1098,12 @@ WaveSchedule
 			EntFire(`bombpath_right_arrows`, `TurnOn`)
 			EntFire(`bombpath_left_arrows`, `TurnOff`)
 			EntFire(`bombpath_right`, `Trigger`) //Forces right path. Stolen from Mo. :P
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			"
 		}
 
@@ -1299,6 +1321,12 @@ WaveSchedule
 						display_text = `A tank has parachuted in!`
                     })
 			}
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			" 
 		} //_global on the paratank because (1) nobody should be fucking touching it anyway, (2) cause it works anywhere and (3) i'm not changing it later when i'm on hiatus for 7-8 months.
 
@@ -1551,6 +1579,12 @@ WaveSchedule
 			EntFire(`bombpath_right_arrows`, `TurnOn`)
 			EntFire(`bombpath_left_arrows`, `TurnOff`)
 			EntFire(`bombpath_right`, `Trigger`)
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			" //Forces right path. Stolen from Mo. :P
 		}
 
@@ -1625,7 +1659,7 @@ WaveSchedule
 				TFBot
 				{
 					Class Pyro
-					Name "Super Airblast Buff Pyro"
+					Name "Giant Buff Pyro"
 					ClassIcon soldier_banner_trio
 					Skill Expert
 					Health 3000
@@ -1650,7 +1684,7 @@ WaveSchedule
 				TFBot
 				{
 					Class Pyro
-					Name "Super Airblast Conch Pyro"
+					Name "Giant Conch Pyro"
 					ClassIcon soldier_banner_trio
 					Skill Expert
 					Health 3000
@@ -1674,7 +1708,7 @@ WaveSchedule
 				TFBot
 				{
 					Class Pyro
-					Name "trolling soldier in particular :3"
+					Name "trolling soldier in particular"
 					ClassIcon soldier_banner_trio
 					Skill Expert
 					Health 3000
@@ -1956,6 +1990,12 @@ WaveSchedule
 						display_text = `A tank has parachuted in!`
                     })
 			}
+			
+			local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
 			"
 		}
 
@@ -2189,6 +2229,32 @@ WaveSchedule
 					ClassIcon medic_pop_armored
 					Name "Armored Popping Bigheal Medic"
 				}
+			}
+
+			StartWaveOutput
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Final Stretch!`)
+                } //^ sets mission name
+				"
+			}
+
+			DoneOutput
+			{
+				Target wave_start_relay
+				Action RunScriptCode
+				Param "
+				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Plunder Panic (Advanced)`)
+                } //^ sets mission name
+				"
 			}
 		}
 
