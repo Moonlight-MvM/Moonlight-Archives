@@ -867,7 +867,7 @@ WaveSchedule
 	Mission
 	{
 		Objective DestroySentries
-		Where spawnbot_mission_sentrybuster
+		Where spawnbot_alt
 
 		BeginAtWave 5
 		RunForThisManyWaves 1
@@ -2300,7 +2300,9 @@ WaveSchedule
         {
             Target wave_start_relay
             Action RunScriptCode
-            Param "PrecacheModel(`models/items/tf_gift.mdl`)"
+            Param "
+                PrecacheModel(`models/items/tf_gift.mdl`)
+                "
         }
 		DoneOutput
 		{
@@ -2570,7 +2572,7 @@ WaveSchedule
             MaxActive 3
             SpawnCount 1
 
-            Where spawnbot
+            Where spawnbot_alt
 
             WaitForAllSpawned "wave01"
             WaitBeforeStarting 6
