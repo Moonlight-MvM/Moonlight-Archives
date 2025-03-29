@@ -137,12 +137,13 @@ WaveSchedule
 			Target bombpath_arrows_clear_relay
 			Action Trigger
 		}
-		
+
 		DoneOutput
 		{
 			Target bombpath_wavefinished
 			Action Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "w1-a1"
@@ -253,6 +254,7 @@ WaveSchedule
 			Target bombpath_wavefinished
 			Action Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "w2-a1"
@@ -365,7 +367,7 @@ WaveSchedule
 			Name "w2-s"
 			Where spawnbot
 			TotalCurrency 100
-			TotalCount 1
+			TotalCount 50
 			MaxActive 4
 			SpawnCount 2
 			WaitForAllSpawned "w2-a3"
@@ -375,7 +377,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Pyro_Flaregun
-				Skill Normal
+				Skill Expert
 				Item "The Detonator"
 				ClassIcon pyro_detonator_lite
 			}
@@ -395,6 +397,7 @@ WaveSchedule
 			Target bombpath_wavefinished
 			Action Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "w3-a1"
@@ -415,7 +418,7 @@ WaveSchedule
 			Name "w3-a2"
 			Where spawnbot
 			TotalCurrency 50
-			TotalCount 27
+			TotalCount 21
 			MaxActive 4
 			SpawnCount 2
 			WaitBeforeStarting 4
@@ -443,7 +446,7 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Giant_Demoman
-					ClassIcon demo_rapid_giant
+					ClassIcon demo_spammer
 				}
 				TFBot
 				{
@@ -510,8 +513,8 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 1
 			WaitForAllSpawned "w3-a3"
-			WaitBetweenSpawns 18
-			WaitBeforeStarting 10
+			WaitBetweenSpawns 21
+			WaitBeforeStarting 12
 			
 			TFBot
 			{
@@ -543,8 +546,8 @@ WaveSchedule
 			Where spawnbot
 			TotalCurrency 25
 			TotalCount 12
-			MaxActive 3
-			SpawnCount 3
+			MaxActive 2
+			SpawnCount 2
 			WaitForAllSpawned "w3-b1"
 			WaitBeforeStarting 15
 			WaitBetweenSpawns 0
@@ -587,6 +590,7 @@ WaveSchedule
 			Target bombpath_wavefinished
 			Action Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "w4-a1"
@@ -684,10 +688,10 @@ WaveSchedule
 			Name "w4-a3"
 			Where spawnbot
 			TotalCurrency 50
-			TotalCount 15
+			TotalCount 12
 			MaxActive 4
 			SpawnCount 2
-			WaitBeforeStarting 35
+			WaitBeforeStarting 30
 			WaitBetweenSpawns 6
 			
 			TFBot
@@ -793,6 +797,7 @@ WaveSchedule
 			Target bombpath_wavefinished
 			Action Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "w5-t1"
@@ -857,7 +862,7 @@ WaveSchedule
 			Name "w5-a3"
 			Where spawnbot
 			TotalCurrency 25
-			TotalCount 18
+			TotalCount 15
 			MaxActive 6
 			SpawnCount 2
 			WaitForAllSpawned "w5-a1"
@@ -996,3 +1001,4 @@ WaveSchedule
 		}	
 	}	
 }
+

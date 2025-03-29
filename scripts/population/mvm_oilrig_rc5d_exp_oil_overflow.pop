@@ -6,7 +6,7 @@
 WaveSchedule
 {
 
-	StartingCurrency		800
+	StartingCurrency		600
 	RespawnWaveTime 		5
 	CanBotsAttackWhileInSpawnRoom no
 
@@ -53,7 +53,6 @@ WaveSchedule
 		Where spawnbot_mission_spy
 		BeginAtWave 2
 		RunForThisManyWaves 1
-		InitialCooldown 10
 		CooldownTime 30
 		DesiredCount 4
 		
@@ -61,6 +60,21 @@ WaveSchedule
 		{
 			Class Spy
 			Skill Hard
+		}
+	}
+	Mission
+	{
+		Objective Sniper
+		InitialCooldown 30
+		Where spawnbot_mission_sniper
+		BeginAtWave 3
+		RunForThisManyWaves 1
+		CooldownTime 30
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
 		}
 	}
 	Mission
@@ -147,6 +161,7 @@ WaveSchedule
 
 	Wave
 	{
+
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -168,12 +183,13 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 1
 			WaitBetweenSpawns 15
-			TotalCurrency 175
+			TotalCurrency 100
 			StartWaveWarningSound "vo/mvm/mght/scout_mvm_m_stunballpickup04.mp3"
 			
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Baseball_Armored
+				Attributes AlwaysCrit
 			}
 		}
 		WaveSpawn 
@@ -185,7 +201,7 @@ WaveSchedule
 			MaxActive 9
 			SpawnCount 3
 			WaitBetweenSpawns 4
-			TotalCurrency 125
+			TotalCurrency 100
 			
 			TFBot
 			{
@@ -200,7 +216,7 @@ WaveSchedule
 			Name "W1_C"
 			WaitBeforeStarting 5
 			TotalCount 12
-			MaxActive 9
+			MaxActive 8
 			SpawnCount 4
 			WaitBetweenSpawns 15
 			TotalCurrency 100
@@ -261,6 +277,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Gangster_Scout
 				Skill Normal
+				ClassIcon scout_pistol_nys
 			}
 		}
 		WaveSpawn
@@ -269,7 +286,7 @@ WaveSchedule
 			WaitForAllSpawned "W1_D"
 			Name "W1_Sup"
 			TotalCount 27
-			MaxActive 6
+			MaxActive 9
 			SpawnCount 3
 			WaitBetweenSpawns 4
 			Support 1
@@ -277,8 +294,8 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Soldier
-				Skill Normal
+				Template T_TFBot_Soldier_RocketPush
+				Skill Easy
 			}
 		}
 		WaveSpawn
@@ -287,7 +304,7 @@ WaveSchedule
 			WaitForAllSpawned "W1_D"
 			Name "W1_Sup2"
 			TotalCount 15
-			MaxActive 6
+			MaxActive 9
 			SpawnCount 3
 			WaitBetweenSpawns 4
 			Support 1
@@ -296,11 +313,13 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Sniper_Huntsman
+				Skill Expert
 			}
 		}
 	}
 	Wave
 	{
+
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -347,19 +366,23 @@ WaveSchedule
 			{
 				Name "W2_B"
 				Where spawnbot_right
-				TotalCount 24
+				TotalCount 32
 				MaxActive 8
 				SpawnCount 2
 				WaitBeforeStarting 3
 				WaitBetweenSpawns 4
-				TotalCurrency 150
+				TotalCurrency 100
 				
 				Squad
 				{
 					TFBot
 					{
-						Template T_TFBot_Dragon_Fury_Pyro
+						Class Pyro
 						Skill Normal
+						CharacterAttributes
+						{
+							"Airblast Disabled" 1
+						}
 					}
 					TFBot
 					{
@@ -371,28 +394,18 @@ WaveSchedule
 			{
 				Name "W2_C"
 				Where spawnbot_left
-				WaitForAllDead "W2_A"
-				TotalCount 9
-				MaxActive 6
-				SpawnCount 3
+				WaitForAllSpawned "W2_B"
+				TotalCount 3
+				MaxActive 2
+				SpawnCount 1
 				WaitBetweenSpawns 15
-				TotalCurrency 150
+				TotalCurrency 100
 				StartWaveWarningSound "vo/mvm/mght/demoman_mvm_m_dominationdemoman01.mp3"
 				
-				Squad
+				TFBot
 				{
-					TFBot
-					{
-						Template T_TFBot_Giant_Demo_Burst
-					}
-					TFBot
-					{
-						Template T_TFBot_Medic_QuickUber
-					}
-					TFBot
-					{
-						Template T_TFBot_Medic_QuickUber
-					}
+					Template T_TFBot_Demo_Nuker
+					ClassIcon demo_atomic
 				}
 			}
 			WaveSpawn
@@ -400,40 +413,51 @@ WaveSchedule
 				Name "W2_D"
 				Where spawnbot_left
 				WaitForAllSpawned "W2_C"
-				TotalCount 2
-				SpawnCount 2
-				MaxActive 2
+				WaitBetweenSpawns 15
+				TotalCount 14
+				SpawnCount 7
+				MaxActive 14
 				TotalCurrency 100
 				StartWaveWarningSound "vo/mvm/mght/soldier_mvm_m_autocappedcontrolpoint02.mp3"
 				Squad
 				{
 					TFBot
 					{
-						Template T_TFBot_Giant_Soldier_Extended_Battalion
+						Template T_TFBot_Giant_Soldier_Extended_Concheror
 					}
 					TFBot
 					{
-						Class Medic
-						ClassIcon medic_kritz_armored
-						Name "Armored Kritzkrieg Medic"
-						Health 600
-						Skill Normal
-						Attributes SpawnWithFullCharge
-						Scale 1.35
-						Item "The KritzKrieg"
-						Item "The Virus Doctor"
-						Item "Medic Mask"
-						ItemAttributes
-						{
-							ItemName "The KritzKrieg"
-							"uber duration bonus" 900
-							"ubercharge rate bonus" 900
-						}
-						CharacterAttributes
-						{
-							"bot medic uber health threshold" 625
-						}
+						Template T_TFBot_Tomislav_Heavy
+						Skill Easy
 					}
+					TFBot
+					{
+						Template T_TFBot_Tomislav_Heavy
+						Skill Easy
+					}
+					TFBot
+					{
+						Template T_TFBot_Tomislav_Heavy
+						Skill Easy
+					}
+					TFBot
+					{
+						Template T_TFBot_Tomislav_Heavy
+						Skill Easy
+					}
+					TFBot
+					{
+						Template T_TFBot_Tomislav_Heavy
+						Skill Easy
+					}
+					TFBot
+					{
+						Template T_TFBot_Tomislav_Heavy
+						Skill Easy
+					}
+					
+					
+					
 				}
 				
 			}
@@ -452,7 +476,7 @@ WaveSchedule
 				TFBot
 				{
 					Class Soldier
-					Skill Normal
+					Skill Easy
 				}
 			}
 				
@@ -460,6 +484,7 @@ WaveSchedule
 		}
 	Wave
 	{
+
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -476,31 +501,24 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "W3_A"
-			Where spawnbot_right
-			MaxActive 8
-			TotalCount 8
-			SpawnCount 4
-			WaitBetweenSpawns 20
-			TotalCurrency 150
-			StartWaveWarningSound "vo/mvm/mght/heavy_mvm_m_domination17.mp3"
+			Where spawnbot_left
+			MaxActive 3
+			TotalCount 3
+			SpawnCount 3
+			TotalCurrency 100
 			Squad
 			{
-			
 				TFBot
 				{
-					Template T_TFBot_Heavyweapons_Heater
+					Template T_TFBot_Giant_Soldier_Wall_Spammer
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_Armored_BigHeal
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_Armored_BigHeal
 				}
 			}
 				
@@ -513,29 +531,30 @@ WaveSchedule
 			MaxActive 2
 			TotalCount 2
 			SpawnCount 1
-			WaitBeforeStarting 35
+			WaitBeforeStarting 25
 			TotalCurrency 100
-			FirstSpawnWarningSound "vo/mvm/mght/soldier_mvm_m_activatecharge02.mp3"
+			StartWaveWarningSound "vo/mvm/mght/soldier_mvm_m_activatecharge02.mp3"
 			
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier_Spammer
+					Template T_TFBot_Giant_Soldier_RSpec_Spammer
 				}
 				TFBot
 				{
-					Template T_TFBot_Giant_Medic_Regen
+					Template T_TFBot_Giant_Medic
+					Item "The Razorback"
+					ClassIcon medic_pop
 				}	
 			}	
 			
 		}
-
 		WaveSpawn
 		{
 			Name "W3_B"
 			Where spawnbot_right
-			TotalCount 28
+			TotalCount 24
 			MaxActive 10
 			SpawnCount 2
 			WaitBeforeStarting 1
@@ -557,7 +576,7 @@ WaveSchedule
 			SpawnCount 2
 			WaitBetweenSpawns 5
 			Support 1
-			TotalCurrency 50
+			TotalCurrency 25
 			
 			TFBot
 			{
@@ -566,21 +585,50 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
+			Name "W3_Sups"
+			Where spawnbot_left
+			TotalCount 30
+			MaxActive 4
+			SpawnCount 2
+			WaitBetweenSpawns 6
+			Support Limited
+			TotalCurrency 25
+			
+			TFBot
+			{
+				Class Heavy
+				Skill Normal
+			}
+		}
+		WaveSpawn
+		{
 			Name "W3_C"
 			WaitForAllDead "W3_A"
 			Where spawnbot_left
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 1
+			TotalCount 8
+			MaxActive 8
+			SpawnCount 4
 			WaitBetweenSpawns 30
-			TotalCurrency 100
-			TFBot
+			TotalCurrency 150
+			StartWaveWarningSound "vo/mvm/mght/heavy_mvm_m_domination17.mp3"
+			Squad
 			{
-				Template T_TFBot_Giant_Soldier_Wall_Spammer
-				ItemAttributes
+			
+				TFBot
 				{
-					ItemName "TF_WEAPON_ROCKETLAUNCHER"
-					"damage bonus" 0.8
+					Template T_TFBot_Giant_Heavyweapons_Shotgun
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickUber
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickUber
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_QuickUber
 				}
 			}
 		}
@@ -588,12 +636,11 @@ WaveSchedule
 		{
 			Name "W3_D"
 			Where spawnbot_left
-			WaitForAllSpawned "W3_A"
-			TotalCount 44
-			MaxActive 10
-			SpawnCount 2
+			WaitForAllSpawned "W3_B"
+			TotalCount 36
+			MaxActive 6
+			SpawnCount 3
 			WaitBetweenSpawns 2
-			WaitBeforeStarting 25
 			TotalCurrency 100
 			
 			RandomChoice
@@ -618,6 +665,7 @@ WaveSchedule
 	}
 	Wave
 	{
+
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -702,15 +750,23 @@ WaveSchedule
 			Name "W4_D"
 			Where spawnbot_right
 			WaitForAllSpawned "W4_A"
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 1
+			TotalCount 6
+			MaxActive 4
+			SpawnCount 2
 			WaitBetweenSpawns 20
 			TotalCurrency 150
+			StartWaveWarningSound "vo/mvm/mght/demoman_mvm_m_activatecharge02.mp3"
 			
-			TFBot
+			Squad
 			{
-				Template T_TFBot_Demo_Giant_3burst
+				TFBot
+				{
+					Template T_TFBot_Demo_Giant_3burst
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Armored_BigHeal
+				}
 			}
 		}
 		WaveSpawn
@@ -726,7 +782,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Heavy
+				Template T_TFBot_Heavyweapons_Deflector
 				Skill Easy
 			}
 		}
@@ -745,12 +801,13 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Pyro_Flaregun
-				Skill Normal
+				Skill Easy
 			}
 		}
 	}
 	Wave
 	{
+
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -778,12 +835,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Template T_TFBot_Giant_Soldier_Wall_Spammer
-				ItemAttributes
-				{
-					ItemName "TF_WEAPON_ROCKETLAUNCHER"
-					"damage bonus" 0.8
-				}
+				Template T_TFBot_Giant_Nuke_Soldier
 			}
 		}
 		WaveSpawn
@@ -798,28 +850,23 @@ WaveSchedule
 			
 			TFBot
 			{
-				Template T_TFBot_Giant_Soldier_Wall_Spammer
-				ItemAttributes
-				{
-					ItemName "TF_WEAPON_ROCKETLAUNCHER"
-					"damage bonus" 0.8
-				}
+				Template T_TFBot_Giant_Nuke_Soldier
 			}
 		}
 		WaveSpawn
 		{
 			Name "W5_B"
 			Where spawnbot_left
-			TotalCount 24
-			MaxActive 9
+			TotalCount 18
+			MaxActive 6
 			SpawnCount 3
 			WaitBeforeStarting 1
-			WaitBetweenSpawns 3
+			WaitBetweenSpawns 4
 			TotalCurrency 50
 			
 			TFBot
 			{
-				Class Scout
+				Template T_TFBot_Shinobi_Scout
 				Skill Normal
 			}
 		}
@@ -839,11 +886,12 @@ WaveSchedule
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Heavyweapons_Deflector
+					Template T_TFBot_SMG_Sniper_Giant
 				}
 				TFBot
 				{
 					Template T_TFBot_Giant_Medic_Regen
+					Item "The Razorback"
 				}
 			}
 		}
@@ -854,14 +902,14 @@ WaveSchedule
 			Where spawnbot_right
 			TotalCount 3
 			SpawnCount 1
-			MaxActive 3
-			WaitBeforeStarting 25
-			WaitBetweenSpawns 5
+			MaxActive 2
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 20
 			TotalCurrency 100
 			StartWaveWarningSound "vo/mvm/mght/soldier_mvm_m_dominationdemonmanupdate05.mp3"
 			TFBot
 			{
-				Template T_TFBot_Giant_Rapid_Fire_Concheror_Soldier
+				Template T_TFBot_Giant_Rapid_Fire_Backup_Soldier
 			}
 		}
 		WaveSpawn
@@ -889,13 +937,12 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "W5_Suplim"
-			WaitForAllSpawned "W5_C"
+			WaitForAllSpawned "W5_E"
 			Where spawnbot_right
 			TotalCount 24
 			SpawnCount 2
 			MaxActive 8
 			WaitBetweenSpawns 4
-			WaitBeforeStarting 30
 			TotalCurrency 50
 			Support Limited
 			
@@ -916,15 +963,23 @@ WaveSchedule
 			WaitBetweenSpawns 3
 			Support 1
 			TotalCurrency 50
-			
-			TFBot
+			RandomChoice
 			{
-				Template T_TFBot_Dragon_Fury_Pyro
+				TFBot
+				{
+					Template T_TFBot_Dragon_Fury_Pyro
+				}
+				TFBot
+				{
+					Template T_TFBot_ScorchShot_FastShot
+					ClassIcon pyro_scorch
+				}
 			}
 		}
 	}
 	Wave
 	{
+
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -983,7 +1038,7 @@ WaveSchedule
 		{
 			Name "W6_C"
 			Where spawnbot_right
-			WaitForAllDead "W6_A"
+			WaitForAllSpawned "W6_A"
 			TotalCount 12
 			SpawnCount 3
 			MaxActive 9
@@ -1093,9 +1148,9 @@ WaveSchedule
 		{
 			Name "W7_A"
 			Where spawnbot_left
-			TotalCount 15
-			MaxActive 4
-			SpawnCount 2
+			TotalCount 20
+			MaxActive 8
+			SpawnCount 4
 			WaitBetweenSpawns 15
 			TotalCurrency 150
 			StartWaveWarningSound "vo/mvm/mght/soldier_mvm_m_robot08.mp3.mp3"
@@ -1114,6 +1169,10 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic_Vaccinator_Blast_Custom
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_Vaccinator_Fire_Custom
 				}
 			}
 		}	
@@ -1152,7 +1211,8 @@ WaveSchedule
 
 			TFBot
 			{
-				Template T_TFBot_HawkEye_Bowman
+				Template T_TFBot_Shinobi_Scout
+				Attributes AlwaysCrit
 			}
 		}
 		WaveSpawn
@@ -1224,6 +1284,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Chief_Babyface_Scout
+				ClassIcon scout_blaster_nys_bright
 			}
 		}
 		WaveSpawn
@@ -1324,9 +1385,3 @@ WaveSchedule
 		
 	}
 }
-			
-			
-		
-				
-			
-			

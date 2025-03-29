@@ -7,7 +7,7 @@ WaveSchedule
 			Class Pyro
 			Name "Dragon's Fury Pyro"
 			Skill Easy
-			ClassIcon pyro_dragon_fury
+			ClassIcon pyro_dragon_fury_swordstone
 			Item "The Dragon's Fury"
 			Item "The Last Breath"
 			Item "The Smoking Skid Lid"
@@ -238,7 +238,7 @@ WaveSchedule
 		{
 		
 			Class Scout
-			ClassIcon scout_pistol
+			ClassIcon scout_pistol_nys
 			Skill Normal
 			Item "Weight Room Warmer"
 			Item "the bruiser's bandanna"
@@ -247,7 +247,7 @@ WaveSchedule
 		}
 		T_TFBot_Giant_Gangster_Scout
 		{
-			ClassIcon scout_pistol_giant
+			ClassIcon scout_pistol_nys_giant
 			Skill Expert
 			Class Scout
 			Health 1000
@@ -556,7 +556,7 @@ WaveSchedule
 			Class Soldier
 			Skill Expert
 			Health 3800
-			ClassIcon soldier_nuker_giant
+			ClassIcon soldier_nuke2_giant
 			Name "Giant ICBM Soldier"
 			Attributes AlwaysCrit
 			Attributes MiniBoss
@@ -935,7 +935,7 @@ WaveSchedule
 		{
 			Name "Bullet Vaccinator Medic"
 			Class Medic
-			ClassIcon vex_medic_vacbullet
+			ClassIcon medic_bullet
 			Skill Expert
 			Attributes SpawnWithFullCharge
 			Attributes VaccinatorBullets
@@ -960,7 +960,7 @@ WaveSchedule
 		{
 			Name "Blast Vaccinator Medic"
 			Class Medic
-			ClassIcon vex_medic_vacblast
+			ClassIcon medic_blast
 			Skill Expert
 			Attributes SpawnWithFullCharge
 			Attributes VaccinatorBlast
@@ -985,7 +985,7 @@ WaveSchedule
 		{
 			Name "Fire Vaccinator Medic"
 			Class Medic
-			ClassIcon vex_medic_vacfire
+			ClassIcon medic_fire
 			Skill Expert
 			Attributes SpawnWithFullCharge
 			Attributes VaccinatorFire
@@ -1009,7 +1009,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Giant Bullet Vaccinator Medic"
-			ClassIcon vex_medic_vacbullet
+			ClassIcon medic_bullet
 			Item "The Vaccinator"
 			Item "The Razorback"
 			Skill Expert
@@ -1034,7 +1034,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Giant Blast Vaccinator Medic"
-			ClassIcon vex_medic_vacblast
+			ClassIcon medic_blast
 			Item "The Vaccinator"
 			Item "The Razorback"
 			Skill Expert
@@ -1058,8 +1058,8 @@ WaveSchedule
 		T_TFBot_Giant_Medic_Vaccinator_Fire_Custom
 		{
 			Class Medic
-			Name "Giant Blast Vaccinator Medic"
-			ClassIcon vex_medic_vacfire
+			Name "Giant Fire Vaccinator Medic"
+			ClassIcon medic_fire
 			Item "The Vaccinator"
 			Item "The Razorback"
 			Skill Expert
@@ -1496,6 +1496,7 @@ WaveSchedule
 			CharacterAttributes
 			{
 				"heal rate bonus" 10
+				"apply look velocity on damage" 500
 			}
 		}
 		T_TFBot_Reverse_Blast_Soldier
@@ -1728,6 +1729,32 @@ WaveSchedule
 				"Projectile speed increased" 0.65
 			}
 		}
+		T_TFBot_Giant_Soldier_RSpec
+		{
+			Class Soldier
+			Name "Giant Specialist Soldier"
+			ClassIcon soldier_stun_giant
+			Skill Expert
+			Health 3800
+			WeaponRestrictions PrimaryOnly
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Item "Rocket Jumper"
+			ItemAttributes
+			{
+				ItemName "Rocket Jumper"
+				"rocket specialist" 4
+
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+			}
+		}
+		
 		T_TFBot_Giant_Soldier_Laser_Wall
 		{
 			ClassIcon    soldier_bison

@@ -100,7 +100,7 @@ WaveSchedule
 		{
 			Name	"Dragon Pyro"
 			Class	Pyro
-			ClassIcon	pyro_dragon_fury
+			ClassIcon	pyro_dragon_fury_swordstone
 			Skill	Normal
 			Item	"The Dragon's Fury"
 			MaxVisionRange	750
@@ -892,7 +892,7 @@ WaveSchedule
 				Class	Soldier
 				Skill	Hard
 				Item	"The Direct Hit"
-				ClassIcon	soldier_directhit
+				ClassIcon	soldier_directhit_lite
 			}
 		}
 		WaveSpawn

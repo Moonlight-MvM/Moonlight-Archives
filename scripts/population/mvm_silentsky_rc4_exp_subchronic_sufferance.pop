@@ -356,7 +356,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		}
 		T_TFBot_Giant_DragonFury
 		{
-			ClassIcon	pyro_dragonfury
+			ClassIcon	pyro_dragon_fury_swordstone
 			Health	3300
 			Name	"Giant Dragon's Fury Pyro"
 			Class	Pyro
@@ -406,6 +406,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Attributes MiniBoss
 			Attributes SpawnWithFullCharge
 			Item	"the warsworn helmet"
+			Item	"the razorback"
 			Item	"the ubersaw"
 			Item gentlemanne_medigun_dressedtokill
 //			ItemAttributes
@@ -569,6 +570,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"override footstep sound set" 6
 						"ragdolls become ash"	1
 						"health regen"	100
+						"dmg taken increased" 0.05 
+						"dmg from melee increased" 20
+						"dmg from ranged reduced" 20
 						"increased jump height" 1.6
 						"cancel falling damage" 1
 					}
@@ -610,6 +614,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"override footstep sound set" 6
 						"ragdolls become ash"	1
 						"health regen"	100
+						"dmg taken increased" 0.05 
+						"dmg from melee increased" 20
+						"dmg from ranged reduced" 20
 						"increased jump height" 1.6
 						"cancel falling damage" 1
 					}
@@ -707,7 +714,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		BeginAtWave	2
 		RunForThisManyWaves	1
 		InitialCooldown	30
-		CooldownTime	35
+		CooldownTime	20
 		DesiredCount	2
 		TFBot
 		{
@@ -792,8 +799,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
-				ClientPrint(null,3,`\x0787DDFFEvery few waves there will consist of robots dropping from the sky.`)
-				ClientPrint(null,3,`\x0787DDFFMake sure to listen for a siren noise that announces their arrival.`)
+				ClientPrint(null,3,`\x08FF54F1FFEvery few waves there will consist of robots dropping from the sky.`)
+				ClientPrint(null,3,`\x08FF54F1FFMake sure to have your eardrums cleaned for a siren noise that announces their arrival.`)
             "
 		}
 		WaveSpawn
@@ -853,7 +860,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			{
 				Target wave_start_relay
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x0899CCFFFF(1)obnoxious\x07fbeccb : \x07fbeccb damn :(`)"
+				Param "ClientPrint(null,3,`\x0899CCFFFFobnoxious (1)\x07fbeccb : \x07fbeccb damn :(`)"
 			}
         }
 		WaveSpawn
@@ -864,7 +871,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			{
 				Target wave_start_relay
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x0899CCFFFFobnoxious\x07fbeccb : \x07fbeccb damn :(`)"
+				Param "ClientPrint(null,3,`\x0899CCFFFFobnoxious (2)\x07fbeccb : \x07fbeccb damn :(`)"
 			}
 		}
 		WaveSpawn
@@ -878,7 +885,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot_airdrop2
 			TFBot
 			{
-				Name	"obnoxious"
+				Name	"obnoxious (1)"
 				Class	Scout
 				WeaponRestrictions	MeleeOnly
 				Item	"batsaber"
@@ -919,7 +926,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot_airdrop2
 			TFBot
 			{
-				Name	"(1)obnoxious"
+				Name	"obnoxious (2)"
 				Class	Scout
 				WeaponRestrictions	MeleeOnly
 				Item	"batsaber"
@@ -1204,7 +1211,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot
 			TFBot
 			{
-				ClassIcon	pyro_dragonfury
+				ClassIcon	pyro_dragon_fury_swordstone
 				Name	"Dragon's Fury Pyro"
 				Class	Pyro
 				Skill	Easy
@@ -1459,7 +1466,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			"
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
-				ClientPrint(null,3,`\x07FF54F1A blimp \x0787DDFFwill spawn in this wave.`)
+				ClientPrint(null,3,`\x0899CCFFFFA blimp \x08FF54F1FFwill spawn in this wave.`)
 				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
                     SpawnEntityFromTable(`training_annotation` , {
                         targetname = `tank_notice`
@@ -1535,8 +1542,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Giant_Scout
-				WeaponRestrictions MeleeOnly
-				ClassIcon scout_bat_nys_giant
 				Tag	Giant
 				Skill	Expert
 				Item "The Backwards Ballcap"
@@ -1551,6 +1556,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				CharacterAttributes
 				{
 					"airblast vertical vulnerability multiplier"	0.1
+					"dmg taken increased" 0.05 
+					"dmg from melee increased" 20
+					"dmg from ranged reduced" 20
 				}
 			}
 		}
@@ -1638,7 +1646,30 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot
 			TFBot
 			{
-				Template T_TFBot_Demoman_Knight
+				Class	Demoman
+				Skill	Expert
+				ClassIcon	demoknight_persian_nys
+				Health	200
+				Name	"Persian Demoknight"
+				WeaponRestrictions	MeleeOnly
+				Item	"the persian persuader"
+				Item 	"ali baba's wee booties"
+				Item	"sultan's ceremonial"
+				Item "The Splendid Screen"	
+				ItemAttributes
+				{
+					ItemName "ali baba's wee booties"
+					"max health additive penalty" -25
+				}
+				ItemAttributes
+				{
+					ItemName "The Splendid Screen"
+					"Attack not cancel charge" 1
+				}
+				CharacterAttributes
+				{
+					"critboost on kill" 3
+				}
 			}
 		}
 		WaveSpawn
@@ -1713,7 +1744,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TFBot
 			{
 				Class	Scout
-				Skill	Easy
+				Skill	Normal
 			}
 		}
 		WaveSpawn
@@ -1749,7 +1780,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TFBot
 			{
 				Class	Scout
-				Skill	Easy
+				Skill	Normal
 			}
 		}
 		WaveSpawn
@@ -1826,12 +1857,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				Template	T_TFBot_Giant_Boxing_Heavy
 				Tag	Giant
 				Name	"Giant Punchie"
-				CharacterAttributes
-				{
-					"dmg taken increased" 0.05 
-					"dmg from melee increased" 20
-					"dmg from ranged reduced" 20
-				}
 			}
 		}
 		WaveSpawn
@@ -1856,7 +1881,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				}
 				TFBot
 				{
-					Template	T_TFBot_Medic_BigHeal
+					Template	T_TFBot_Kritzkrieg_Medic
 				}
 			}
 		}
@@ -1877,7 +1902,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					Name	"Tomislav Heavy"
 					ClassIcon	heavy_accurate_lite
 					Class	Heavy
-					Skill	Easy
+					Skill	Normal
 					item	"tomislav"
 				}
 				TFBot
@@ -1943,8 +1968,15 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Giant_Soldier_RocketShotgun
+				Attributes	AlwaysCrit
 				Tag	giant
 				item	"the war pig"
+				ItemAttributes
+				{
+					ItemName	"the black box"
+					"damage bonus"	0.88
+					"faster reload rate" 1.4
+				}
 			}
 		}
 		WaveSpawn
@@ -1990,7 +2022,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Support	1
 			TFBot
 			{
-				Health	150
+				Health	300
 				Template	T_TFBot_Heavyweapons_Gnome
 				Name	"Mitten Heavy"
 				Item	"point and shoot"
@@ -2341,9 +2373,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Name	W4-A1-1
 			WaitForAllDead	W4-A1
 			TotalCurrency	200
-			TotalCount	5
-			MaxActive	3
-			SpawnCount	1
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	2
 			WaitBeforeStarting	10
 			WaitBetweenSpawns	7
 			Where	spawnbot_side
@@ -2353,6 +2385,14 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				{
 					Template	T_TFBot_Soldier_Extended_Battalion //lol
 					Item	"spine-chilling skull"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+					Name	"Big Heal Medic"
+					Item	"the surgeon's stahlhelm"
+					Attributes	"SpawnWithFullCharge"
+					ClassIcon	"medic_pop"
 				}
 			}
 		}
@@ -2463,6 +2503,27 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		{
 			Name	W4-A2-1
 			WaitForAllSpawned	W4-A1-1
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	12
+			WaitBetweenSpawns	2
+			Support	Limited
+			Where	spawnbot
+			TFBot
+			{
+				Template	T_TFBot_Pyro
+				ClassIcon	pyro_reflect_daan
+				Item	"traffic cone"
+				Name	"Airblast Pyro"
+				Skill		Expert
+			}
+		}
+		WaveSpawn
+		{
+			Name	W4-A2-1
+			WaitForAllSpawned	W4-A1-1
 			TotalCurrency	50
 			TotalCount	27
 			MaxActive	5
@@ -2473,8 +2534,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot
 			TFBot
 			{
-				Class Heavy
-				Skill Easy
+				Template	T_TFBot_Heavyweapons_Deflector
+				Skill	Normal
 			}
 		}
 	}
@@ -2510,7 +2571,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 69)
 				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
 				ClientPrint(null,3,`\x0897D1F9FFBullet, \x084BF756FFBlast, \x08FFA15EFFFire.`)
-				ClientPrint(null,3,`\x0787DDFFThree Vaccinator tanks will come out this wave, remember your type matchups!`)
+				ClientPrint(null,3,`\x08D73337FFThree Vaccinator tanks will come out this wave, hope you know your type matchups!`)
             "
 		}
 		WaveSpawn
@@ -2773,6 +2834,9 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"faster reload rate" 0.2
 						"damage bonus" 2.0
 						"clip size upgrade atomic" -1
+						"dmg taken increased" 0.05 
+						"dmg from melee increased" 20
+						"dmg from ranged reduced" 20
 					}
 					CharacterAttributes
 					{
@@ -3068,11 +3132,11 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Name	W5-A3
 			WaitForAllSpawned	W5-A2
 			TotalCurrency	135
-			TotalCount	5
-			MaxActive	5
+			TotalCount	6
+			MaxActive	6
 			SpawnCount	2
 			WaitBeforeStarting	18
-			WaitBetweenSpawns	19
+			WaitBetweenSpawns	15
 			Where	spawnbot
 			RandomChoice
 			{
@@ -3107,8 +3171,11 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot
 			TFBot
 			{
-				Class Pyro
-				Skill Easy
+				Template	T_TFBot_Pyro
+				ClassIcon	pyro_reflect_daan
+				Item	"traffic cone"
+				Name	"Airblast Pyro"
+				Skill	Expert
 			}
 		}
 		WaveSpawn
@@ -3147,8 +3214,11 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot
 			TFBot
 			{
-				Class Pyro
-				Skill Easy
+				Template	T_TFBot_Pyro
+				ClassIcon	pyro_reflect_daan
+				Item	"traffic cone"
+				Name	"Airblast Pyro"
+				Skill	Expert
 			}
 		}
 		WaveSpawn
@@ -3165,8 +3235,13 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Where	spawnbot
 			TFBot
 			{
-				Class Pyro
-				Skill Easy
+				Template	T_TFBot_Pyro
+				ClassIcon	pyro_reflect_daan
+				Item	"traffic cone"
+				Name	"Airblast Pyro"
+				Skill	Expert
+				BehaviorModifiers Push
+				Tag nav_prefer_flank_middle
 			}
 		}
 		WaveSpawn
@@ -3191,19 +3266,25 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				}
 				TFBot
 				{
-					Template	T_TFBot_Giant_Medic_Regen
+					Template	T_TFBot_Giant_Medic
 					Tag	giant
 					Item	"the warsworn helmet"
-					Name	"Giant Medic"
+					ClassIcon	medic_pop
+					Name	"Giant Popper Medic"
 					CharacterAttributes
 					{
 						"cancel falling damage"	1
+						"bot medic uber health threshold"	85 //If other people can do it and get away with it, so can I.
 						"airblast vulnerability multiplier"	0
 						"airblast vertical vulnerability multiplier"	0
 						"damage force reduction"	0
+						"dmg taken increased" 0.05 
+						"dmg from melee increased" 20
+						"dmg from ranged reduced" 20
 					}
 				}
 			}
 		}
 	}
 }
+

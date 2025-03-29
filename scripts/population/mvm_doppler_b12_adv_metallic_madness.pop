@@ -1229,7 +1229,7 @@ WaveSpawn
             }
 			TFBot
 				{
-ClassIcon	tank_ring
+ClassIcon	tank_fire_lite
 				Health	10000
 				Name	"Banana Bob"
 				Class	HeavyWeapons
@@ -1839,7 +1839,7 @@ ClassIcon	tank_ring
 				{
 						Class Pyro
 				Name "Phlog Pyro"
-				ClassIcon pyro_phlog
+				ClassIcon pyro_phlog_v2
 
 				EventChangeAttributes
 				{
@@ -2425,7 +2425,7 @@ ClassIcon	tank_ring
             }
 				TFBot
 				{
-					ClassIcon	demo_bomber
+				ClassIcon demo_bomber
 				Health	25000
 				Name	"Titanium Titan"
 				Class	Demoman
@@ -3233,7 +3233,7 @@ WaveSpawn
 				{
 					Name	"Attendant Pyro"
 				Class	Pyro
-				ClassIcon	pyro_gascann
+				ClassIcon	pyro_gaspasser_tind
 				Skill	Normal
 				Item	"The Gas Passer"
 				Item 	"The Attendant"

@@ -198,38 +198,53 @@ WaveSchedule
 			Name "intro"
 			FirstSpawnWarningSound "misc/cp_harbor_blue_whistle.wav"
 			Where spawnbot_left
-			TotalCount 1
-			SpawnCount 1
-			MaxActive 1
+			TotalCount 4
+			SpawnCount 4
+			MaxActive 4
 			WaitBetweenSpawns 0
 			WaitBeforeStarting 0
 			
-			TFBot
+			Squad
 			{
-				Class Heavyweapons
-				Name "Big Brother is watching"
-				ClassIcon heavy_deflector_healonkill
-				Skill Expert
-				Health 5500
-				Item "Tough Guy's Toque"
-				Item "Deflector"
-				WeaponRestrictions PrimaryOnly
-				Attributes UseBossHealthBar
-				MaxVisionRange 1200
-				Attributes MiniBoss
-				ItemAttributes
+				TFBot
 				{
-					ItemName "Deflector"
-					"damage bonus"	1.2
-					"attack projectiles" 2
-					"heal on kill" 5000
+					Class Heavyweapons
+					Name "Big Brother is watching"
+					ClassIcon heavy_deflector_healonkill
+					Skill Expert
+					Health 5500
+					Item "Tough Guy's Toque"
+					Item "Deflector"
+					WeaponRestrictions PrimaryOnly
+					Attributes UseBossHealthBar
+					MaxVisionRange 1200
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.2
+						"attack projectiles" 2
+						"heal on kill" 5000
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
 				}
-				CharacterAttributes
+				TFBot
 				{
-					"move speed bonus"	0.5
-					"damage force reduction" 0.3
-					"airblast vulnerability multiplier" 0.3
-					"override footstep sound set" 2
+					Template T_TFBot_Medic_BigHeal
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_BigHeal
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_BigHeal
 				}
 			}
 		}
@@ -238,7 +253,7 @@ WaveSchedule
 		{
 			TotalCurrency 20
 			
-			Name "intro"
+			Name "intro_support"
 			Where spawnbot
 			TotalCount 12
 			SpawnCount 4
@@ -263,7 +278,7 @@ WaveSchedule
 			TotalCurrency 20
 			
 			Name "mes"
-			WaitForAllSpawned "intro"
+			WaitForAllDead "intro"
 			Where spawnbot_right
 			TotalCount 18
 			SpawnCount 6
@@ -274,7 +289,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
-				Skill Easy
+				Skill Normal
 				WeaponRestrictions PrimaryOnly
 			}
 		}
@@ -284,7 +299,7 @@ WaveSchedule
 			TotalCurrency 20
 			
 			Name "mes"
-			WaitForAllSpawned "intro"
+			WaitForAllDead "intro"
 			Where spawnbot_left
 			TotalCount 18
 			SpawnCount 6
@@ -295,7 +310,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
-				Skill Easy
+				Skill Normal
 				WeaponRestrictions PrimaryOnly
 			}
 		}
@@ -306,16 +321,23 @@ WaveSchedule
 			
 			Where spawnbot
 			Name "gsoldiers1"
-			WaitForAllSpawned "intro"
-			TotalCount 2
-			SpawnCount 1
-			MaxActive 2
+			WaitForAllDead "intro"
+			TotalCount 4
+			SpawnCount 2
+			MaxActive 4
 			WaitBetweenSpawns 0
 			WaitBeforeStarting 0
 			
-			TFBot
+			Squad
 			{
-				Template T_TFBot_Giant_Soldier
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_BigHeal
+				}
 			}
 		}
 
@@ -326,15 +348,22 @@ WaveSchedule
 			Where spawnbot
 			Name "gsoldiers2"
 			WaitForAllDead "gsoldiers1"
-			TotalCount 2
-			SpawnCount 1
-			MaxActive 2
+			TotalCount 4
+			SpawnCount 2
+			MaxActive 4
 			WaitBetweenSpawns 0
 			WaitBeforeStarting 12
 			
-			TFBot
+			Squad
 			{
-				Template T_TFBot_Giant_Soldier
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier
+				}
+				TFBot
+				{
+					Template T_TFBot_Medic_BigHeal
+				}
 			}
 		}
 		
@@ -433,12 +462,12 @@ WaveSchedule
 		WaveSpawn
 		{					
 			Name "mannhunt_pyros"
-			WaitForAllDead "gsoldiers3"
+			WaitForAllSpawned "gsoldiers3"
 			Where spawnbot_right
 			TotalCount 6
 			MaxActive 6
 			SpawnCount 2
-			WaitBeforeStarting 0
+			WaitBeforeStarting 30
 			WaitBetweenSpawns 1
 			TotalCurrency 20
 			
@@ -483,15 +512,16 @@ WaveSchedule
 			TotalCurrency 0
 			
 			Name "lilbro"
-			WaitForAllSpawned "finalw1"
+			WaitForAllSpawned "gsoldiers3"
 			FirstSpawnWarningSound "misc/cp_harbor_blue_whistle.wav"
 			Where spawnbot_right
 			TotalCount 1
 			SpawnCount 1
 			MaxActive 1
 			WaitBetweenSpawns 0
-			WaitBeforeStarting 2
+			WaitBeforeStarting 22
 			
+
 			TFBot
 			{
 				Class Heavyweapons
@@ -510,7 +540,7 @@ WaveSchedule
 					ItemName "TF_WEAPON_SHOTGUN_HWG"
 					"fire rate bonus" 2.5
 					"bullets per shot bonus" 10
-					"damage penalty" 0.30
+					"damage penalty" 0.5
 					"faster reload rate" 0.1
 					"heal on kill" 5000
 				}
@@ -658,9 +688,9 @@ WaveSchedule
 		{
 			TotalCurrency 25
 			
-			Name "snipers"
+			Name "w2conch"
 			Where spawnbot_left
-			TotalCount 24
+			TotalCount 20
 			MaxActive 4
 			SpawnCount 1
 			WaitBetweenSpawns 1
@@ -1165,7 +1195,7 @@ WaveSchedule
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic
 				}
 			}
 		}
@@ -1191,7 +1221,7 @@ WaveSchedule
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic
 				}
 			}
 		}
@@ -1217,7 +1247,7 @@ WaveSchedule
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic
 				}
 			}
 		}
@@ -1448,7 +1478,7 @@ WaveSchedule
 			{
 				Health 12000
 				Speed 75
-				Name "tankboss1"
+				Name "tankboss_left"
 				StartingPathTrackNode "boss_path_1"
 				
 				OnBombDroppedOutput
@@ -1469,7 +1499,7 @@ WaveSchedule
 			{
 				Health 12000
 				Speed 75
-				Name "tankboss2"
+				Name "tankboss_right"
 				StartingPathTrackNode "boss_path2_1"
 				
 				OnBombDroppedOutput
@@ -1631,7 +1661,7 @@ WaveSchedule
 			{
 				Health 12000
 				Speed 75
-				Name "tankboss3"
+				Name "tankboss_left"
 				StartingPathTrackNode "boss_path_1"
 				
 				OnBombDroppedOutput
@@ -1653,7 +1683,7 @@ WaveSchedule
 			{
 				Health 12000
 				Speed 75
-				Name "tankboss4"
+				Name "tankboss_right"
 				StartingPathTrackNode "boss_path2_1"
 				
 				OnBombDroppedOutput
@@ -1916,6 +1946,7 @@ WaveSchedule
 						"dmg from melee increased" 20
 						"dmg from ranged reduced" 20
 						"increased air control" 10
+						"health regen"	40
 					}
 				}
 				TFBot
@@ -2572,8 +2603,8 @@ WaveSchedule
 			TotalCount 30
 			MaxActive 12
 			SpawnCount 3
-			WaitBetweenSpawns 5
-			WaitBeforeStarting 5
+			WaitBetweenSpawns 2.5
+			WaitBeforeStarting 0
 			TotalCurrency 0	
 			
 			Support 1
@@ -2718,7 +2749,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 20000
+				Health 22500
 				Speed 75
 				Name "tankboss_left"
 				StartingPathTrackNode "boss_path_1"
@@ -2738,7 +2769,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 20000
+				Health 22500
 				Speed 75
 				Name "tankboss_right"
 				StartingPathTrackNode "boss_path2_1"
@@ -2759,7 +2790,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 13300
+				Health 18000
 				Speed 75
 				Name "tankboss_left"
 				StartingPathTrackNode "boss_path_1"
@@ -2780,7 +2811,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 15000
+				Health 18000
 				Speed 75
 				Name "tankboss_left"
 				StartingPathTrackNode "boss_path_1"
@@ -2801,7 +2832,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 17500
+				Health 20000
 				Speed 75
 				Name "tankboss_right"
 				StartingPathTrackNode "boss_path2_1"
@@ -2822,7 +2853,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 25000
+				Health 27500
 				Speed 75
 				Skin 1
 				Name "tankboss_left"
@@ -2844,7 +2875,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 25000
+				Health 27500
 				Speed 75
 				Skin 1
 				Name "tankboss_right"
@@ -2906,7 +2937,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Heavy
-				Name "Natascha Heavy"
+				Name "Someone else's problem"
 				Skill Hard
 				BehaviorModifiers push
 				ClassIcon heavy_natascha_nys

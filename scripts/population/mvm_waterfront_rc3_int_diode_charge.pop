@@ -398,6 +398,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 EntFire(`bombpath_left`, `Trigger`)
 				ClientPrint(null,3,`\x08FF54F1FFEndurance waves are significantly longer than invasion waves, but also offer much greater credit payouts.`)
 				ClientPrint(null,3,`\x08FF54F1FFDon't forget to visit the upgrade station at any point in time, even during the waves!`)
+
             "
 		}
 		WaveSpawn
@@ -553,7 +554,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				TFBot
 				{
 					Template	T_TFBot_Scout_Sandman_FastCharge
-					Skill	Normal
+					Skill	Expert
 				}
 			}
 		}
@@ -704,7 +705,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			WaitBeforeStarting	16
 			Tank
 			{
-				Health	11420
+				Health	10420
 				Name	Tank
 				Speed	75
 				StartingPathTrackNode	tankpath_alt
@@ -973,11 +974,14 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
-				EntFire(`bombpath_right_arrows`, `TurnOn`)
-				EntFire(`bombpath_left_arrows`, `TurnOn`)
+				EntFire(`bombpath_choose_relay`, `Kill`)
+				EntFire(`bombpath_clearall_relay`, `Trigger`)
+				EntFire(`bombpath_right_arrows`, `TurnOff`)
+                EntFire(`bombpath_left`, `Trigger`)
 				ClientPrint(null,3,`\x08FF54F1FFThe bomb path will alternate while the wave is active.`)
 				ClientPrint(null,3,`\x08FF54F1FFA warning sound will be cued for everyone to hear, don't miss it!`)
 				ClientPrint(null,3,`\x08FF54F1FFThe bomb will not be able to reset this wave, but will at least silently reset upon a path alteration.`)
+
             "
 		}
         WaveSpawn
@@ -1338,6 +1342,12 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					ClassIcon	scout_shortstop
 					Item	"the shortstop"
 				}
+				TFBot
+				{
+					Class	Scout
+					ClassIcon	scout_shortstop
+					Item	"the shortstop"
+				}
 			}
 		}
 		WaveSpawn
@@ -1348,8 +1358,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TotalCount	5
 			MaxActive	2
 			SpawnCount	1
-			WaitBeforeStarting	5
-			WaitBetweenSpawns	16
+			WaitBeforeStarting	8
+			WaitBetweenSpawns	14
 			Where	spawnbot_flank2
 			TFBot
 			{
@@ -1395,7 +1405,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				Target bombpath_left
 				Action Trigger
 			}
-
 		}
 		WaveSpawn
 		{
@@ -1656,6 +1665,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				ClientPrint(null,3,`\x0899CCFFFFThe blimp \x08FF54F1FFwill be accompanied by two robot types, whom of which will go after you, the defenders.`)
 				ClientPrint(null,3,`\x08FF54F1FFMake sure to not get overwhelmed!`)
 				//ClientPrint(null,3,`\x0899CCFFFFChief Blast Demo\x07fbeccb : \x07fbeccb gg ez`)
+
                 SpawnEntityFromTable(`logic_timer`, {
                     targetname = `tank_effect`
 					refiretime = `0.2`
@@ -2080,6 +2090,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_ScorchShot_FastShot
+				Skill	Normal
 				Name	"Scorch Shot Pyro"
 				ClassIcon	pyro_scorch
 				ItemAttributes

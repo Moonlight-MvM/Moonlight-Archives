@@ -63,7 +63,6 @@ WaveSchedule
 		TFBot
 		{
 			Class Spy
-			Name "I love boy!"
 			Skill Hard
 		}
 	}
@@ -82,7 +81,6 @@ WaveSchedule
 		TFBot
 		{
 			Class Spy
-			Name "r34 id=9211653"
 			Skill Hard
 		}
 	}

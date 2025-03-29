@@ -11,6 +11,37 @@ population
 	
 	Templates
 	{
+	engineer_teleport_swag
+			{
+			Class Engineer
+			//Classicon Engineer
+			Name "Shift Gear"
+			Skill Expert
+			TeleportWhere spawnbot_main
+			TeleportWhere flankers
+			TeleportWhere spawnbot_mission_sniper
+			Health 250
+			Scale 1.03
+			
+			Attributes TeleportToHint
+			
+			Attributes Alwaysfireweapon
+			Attributes IgnoreFlag
+			item "harvest_wrench_boneyard"
+            item "Sleuth Suit"	
+			ItemAttributes
+			{
+			    Itemname "harvest_wrench_boneyard"
+				"hand scale" 1.2
+				"engineer sentry build rate multiplier" 1.25
+				"engineer teleporter build rate multiplier" 1.25
+			}
+			CharacterAttributes
+			{
+			    "health regen"	1
+			}
+		
+			}
 	melter_smol
 	{
 	Class Pyro
@@ -40,7 +71,7 @@ population
 				 ItemAttributes
 				 {
 				 Itemname "The Manmelter"
-				  "damage penalty" 0.5
+				  "damage penalty" 0.69
 				   "faster reload rate" 0.1
 				 "fire rate bonus" 0.05
 				  "dmg bonus vs buildings" 1.33 //mad?
@@ -114,7 +145,7 @@ population
 						ItemName	"The Iron Bomber"
 						"fire rate bonus"	0.001
 				        "clip size penalty" 0.75
-						"faster reload rate"	0.185
+						"faster reload rate"	0.175
 						"projectile spread angle penalty" 1
 					}
 					
@@ -173,18 +204,28 @@ population
 	{
 		Objective	Engineer
 		Where	spawnbot
-		BeginAtWave	3
+		BeginAtWave	1
 		RunForThisManyWaves	1
+		InitialCooldown	45
+		CooldownTime	40
+		DesiredCount	1
+		TFBot
+		{
+			Template	engineer_teleport_swag
+		}
+	}
+	Mission
+	{
+		Objective	Engineer
+		Where	spawnbot
+		BeginAtWave	3
+		RunForThisManyWaves	2
 		InitialCooldown	45
 		CooldownTime	30
 		DesiredCount	1
 		TFBot
 		{
-			Template	T_TFBot_Engineer_Sentry_Teleporter
-			//classicon teleporter
-			Teleportwhere spawnbot
-			Teleportwhere flankers
-			//Teleportwhere spawnbot_mission_sniper
+			Template	engineer_teleport_swag
 		}
 	}
 	Mission
@@ -199,6 +240,20 @@ population
 		TFBot
 		{
 			Template	T_TFBot_Spy
+		}
+	}
+	Mission
+	{
+		DesiredCount	1
+		CooldownTime	35
+		InitialCooldown	15
+		BeginAtWave	3
+		RunForThisManyWaves	1
+		Where	spawnbot_mission_sniper
+		Objective	Sniper
+		TFBot
+		{
+			Template T_TFBot_Sniper
 		}
 	}
 	Mission
@@ -222,7 +277,7 @@ population
 		BeginAtWave	6
 		RunForThisManyWaves	1
 		InitialCooldown	30
-		CooldownTime	30
+		CooldownTime	25
 		DesiredCount	2
 		TFBot
 		{
@@ -240,11 +295,7 @@ population
 		DesiredCount	1
 		TFBot
 		{
-			Template	T_TFBot_Engineer_Sentry_Teleporter
-			//classicon teleporter
-			Teleportwhere spawnbot
-			Teleportwhere flankers
-			Teleportwhere spawnbot_mission_sniper
+			Template	engineer_teleport_swag
 		}
 	}
 	Mission
@@ -284,8 +335,6 @@ population
 			Target wave_start_relay
 			action runscriptcode 
                 param "
-                     IncludeScript(`molybdenum_decor`)
-				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
                  targetname = `newnobuild`
@@ -296,7 +345,7 @@ population
                 nobuild.SetSolid(2)
 				 
                 }
-
+				    IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -562,8 +611,9 @@ Squad //fucking why is it shaped like this
 		{
 			Target wave_start_relay
 			action runscriptcode 
-                param "
-                     IncludeScript(`molybdenum_decor`)
+               param "
+                     
+
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -575,6 +625,7 @@ Squad //fucking why is it shaped like this
                 nobuild.SetSolid(2)
 				 
                 }
+				    IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -590,7 +641,7 @@ Squad //fucking why is it shaped like this
 		WaveSpawn
 		{
 		    Name letank
-			TotalCurrency	150
+			TotalCurrency	100
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
@@ -624,7 +675,7 @@ Squad //fucking why is it shaped like this
 			SpawnCount	4
 			WaitBeforeStarting	1
 			WaitBetweenSpawns	6.5
-			Where	spawnbot
+			Where	flankers
 			FirstSpawnOutput
             {
             Target B_door_open
@@ -708,7 +759,7 @@ Squad //fucking why is it shaped like this
 			TFBot
 			{
 			    Class Pyro
-				Skill normal
+				Skill hard
 				classicon pyro_reflect_daan
 			}
 			
@@ -716,7 +767,7 @@ Squad //fucking why is it shaped like this
 		WaveSpawn
 		{
 			Name 22
-			TotalCurrency	150
+			TotalCurrency	100
 			TotalCount	4
 			MaxActive	2
 			SpawnCount	1
@@ -734,7 +785,7 @@ Squad //fucking why is it shaped like this
 		{
 			TotalCurrency	40
 			TotalCount	5
-			MaxActive	1
+			MaxActive	2
 			SpawnCount	1
 			WaitBeforeStarting	1
 			WaitBetweenSpawns	2
@@ -761,7 +812,7 @@ Squad //fucking why is it shaped like this
 		{
 			TotalCurrency	0
 			TotalCount	1
-			MaxActive	1
+			MaxActive	3
 			SpawnCount	1
 			WaitBeforeStarting	1
 			WaitBetweenSpawns	2
@@ -790,7 +841,8 @@ Squad //fucking why is it shaped like this
 			Target wave_start_relay
 			action runscriptcode 
                 param "
-                     IncludeScript(`molybdenum_decor`)
+                     
+
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -802,6 +854,7 @@ Squad //fucking why is it shaped like this
                 nobuild.SetSolid(2)
 				 
                 }
+				    IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -1071,8 +1124,9 @@ Squad //fucking why is it shaped like this
 		{
 			Target wave_start_relay
 			action runscriptcode 
-                param "
-                     IncludeScript(`molybdenum_decor`)
+               param "
+                     
+
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1084,6 +1138,7 @@ Squad //fucking why is it shaped like this
                 nobuild.SetSolid(2)
 				 
                 }
+				    IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -1146,7 +1201,7 @@ Squad //fucking why is it shaped like this
 		WaveSpawn
 		{
 		    Name 41
-			TotalCurrency	125
+			TotalCurrency	75
 			TotalCount	24
 			MaxActive	12
 			SpawnCount	3
@@ -1241,7 +1296,7 @@ Squad //fucking why is it shaped like this
 		WaveSpawn
 		{
 		    WaitforallSpawned 41-a
-			TotalCurrency	175
+			TotalCurrency	75
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
@@ -1316,8 +1371,9 @@ Squad //fucking why is it shaped like this
 		{
 			Target wave_start_relay
 			action runscriptcode 
-                param "
-                     IncludeScript(`molybdenum_decor`)
+               param "
+                     
+
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1329,6 +1385,7 @@ Squad //fucking why is it shaped like this
                 nobuild.SetSolid(2)
 				 
                 }
+				    IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -1470,6 +1527,7 @@ Squad //fucking why is it shaped like this
 					classicon pyro_dragon_fury_swordstone
 					item "The Dragon's Fury"
 					MaxVisionRange 600
+					Attributes AlwaysCrit
 			}
 			
 			}
@@ -1486,22 +1544,9 @@ Squad //fucking why is it shaped like this
 			Where	flankers
 			TFBot
 			{
-			    Class Heavyweapons
-			Name "Heavy Mittens"
-			Skill Expert
-			ClassIcon heavy_mittens
-
-			WeaponRestrictions MeleeOnly
-			Health 300
-			Attributes AlwaysCrit
-	
-	
-			Item "The Holiday Punch"
-			
-			CharacterAttributes
-			{
-				"move speed bonus"	1.3
-			}
+			  Class Pyro
+			   Skill normal
+			   Attributes AlwaysFireWeapon
 			}
 		}
 		WaveSpawn
@@ -1522,6 +1567,7 @@ Squad //fucking why is it shaped like this
 					skill hard
 					classicon pyro_dragon_fury_swordstone
 					item "The Dragon's Fury"
+					Attributes AlwaysCrit
 					MaxVisionRange 600
 			}
 		
@@ -1549,7 +1595,7 @@ Squad //fucking why is it shaped like this
 			TFBot
 			{
 			   Class Scout
-			   skill easy
+			   skill normal
 			}
 			}
 		}
@@ -1590,7 +1636,8 @@ Squad //fucking why is it shaped like this
 			Target wave_start_relay
 			action runscriptcode 
                 param "
-                     IncludeScript(`molybdenum_decor`)
+                     
+
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1602,6 +1649,7 @@ Squad //fucking why is it shaped like this
                 nobuild.SetSolid(2)
 				 
                 }
+				    IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -1698,6 +1746,7 @@ Squad //fucking why is it shaped like this
 			    Template T_TFBot_Giant_Pyro
 				classicon pyro_reflect_daan
 				Attributes AlwaysCrit
+				MaxVisionRange 600
 			}
 			TFBot
 			{
@@ -1716,7 +1765,7 @@ Squad //fucking why is it shaped like this
 		WaveSpawn
 		{
 		    Name 61
-			TotalCurrency	100
+			TotalCurrency	75
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
@@ -1743,7 +1792,7 @@ Squad //fucking why is it shaped like this
 		WaveSpawn
 		{
 		    Name 61-tank
-			TotalCurrency	100
+			TotalCurrency	175
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
@@ -1782,22 +1831,22 @@ Squad //fucking why is it shaped like this
 			
 			TFBot
 			{
-			  Class Scout
-			Skill normal
-			ClassIcon scout_fan
-			Name "Force-A-Nature Scout"
-			Item "The Bolt Boy"
-			Item "The Force-a-Nature"
-			MaxVisionRange 690
+			   Class Soldier
+			   name "noob crusher"
+			   Skill Expert
+			   Item "The Righteous Bison"
+			   ClassIcon soldier_bison
+			  // Name "Bison Soldier"
+			   WeaponRestrictions SecondaryOnly
 			}
 			
 		}
 		WaveSpawn
 		{
 		    Name 62
-			TotalCurrency	100
+			TotalCurrency	150
 			TotalCount	9
-			MaxActive	9
+			MaxActive	6
 			SpawnCount	3
 			WaitBetweenSpawns 12.5
 			WaitforallDead 61-pt
@@ -1857,8 +1906,13 @@ Squad //fucking why is it shaped like this
 			Target wave_start_relay
 			action runscriptcode 
                 param "
-                     IncludeScript(`molybdenum_decor`)
+				//the following path forcing bs was written by randomguy
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase01`,`bombpath_left_relay`,`Trigger`, null)//removes paths to force mid
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase02`,`bombpath_right_relay`,`Trigger`, null)//removes paths to force mid
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase03`,`bombpath_left_relay`,`Trigger`, null)//removes paths to force mid
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase04`,`bombpath_right_relay`,`Trigger`, null)//removes paths to force mid
 					 IncludeScript(`mvm_production_paramagnetism_instantshield`)
+
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1870,6 +1924,7 @@ Squad //fucking why is it shaped like this
                 nobuild.SetSolid(2)
 				 
                 }
+				      IncludeScript(`molybdenum_decor`)
                 "
 		}
 		StartWaveOutput
@@ -1890,7 +1945,7 @@ Squad //fucking why is it shaped like this
 			MaxActive	4
 			SpawnCount	2
 			WaitBeforeStarting	0
-			WaitBetweenSpawns	12.5
+			WaitBetweenSpawns	13
 			Where	flankers
 			FirstSpawnOutput
             {
@@ -1913,11 +1968,11 @@ Squad //fucking why is it shaped like this
 		{
 
 			TotalCurrency	50
-			TotalCount	32
+			TotalCount	38
 			MaxActive	12
 			SpawnCount	6
 			WaitBeforeStarting	1
-			WaitBetweenSpawns	10
+			WaitBetweenSpawns	8.5
 			Where	spawnbot
 			FirstSpawnOutput
             {
@@ -1958,7 +2013,7 @@ Name 71-s
 			TFBot
 			{
 			    Class Pyro
-				skill normal
+				skill hard
 				Attributes AlwaysFireWeapon
 				
 			}
@@ -1977,7 +2032,7 @@ Name 71-s
 			MaxActive	4
 			SpawnCount	2
 			WaitBeforeStarting	1
-			WaitBetweenSpawns	13
+			WaitBetweenSpawns	12.5
 			Where	spawnbot_mission_sniper
 			Waitforalldead 71
 			Squad
@@ -2082,13 +2137,13 @@ Name 71-s
 			
 			{
 			 Class Pyro
-				skill normal
+				skill hard
 				Attributes AlwaysFireWeapon
 			}
 			TFBot
 			{
-			 Template T_TFBot_Medic_Bigheal
-				 Name "Bigheal Medic"
+			    Template T_TFBot_Medic_Bigheal
+				name "Bigheal Medic"
 			}
 			}
 		}
@@ -2099,7 +2154,7 @@ Name 71-s
 			TotalCount	2
 			MaxActive	2
 			SpawnCount	2
-			WaitBeforeStarting	4
+			WaitBeforeStarting	3
 			WaitForAllSpawned 72
 			Where	flankers
 		
@@ -2111,7 +2166,7 @@ Name 71-s
 			}
 			TFBot
 			{
-			Template shield
+			 Template shield
 			}
 			}
 		}
@@ -2125,9 +2180,14 @@ Name 71-s
             Target wave_start_relay
             Action RunScriptCode
             Param "
-			    IncludeScript(`mvm_production_paramagnetism_instantshield`)
-			    IncludeScript(`molybdenum_decor`)
-                ClientPrint(null,3,`\x08FF54F1FFKill the Demoman boss and risk having to fight a bomb-carrying Scout boss, Kill the Scout boss and risk being overwhelmed by giants... The choice is yours...`)
+			    //the following path forcing bs was written by randomguy
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase01`,`bombpath_left_relay`,`Trigger`, null)//removes paths to force mid
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase02`,`bombpath_right_relay`,`Trigger`, null)//removes paths to force mid
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase03`,`bombpath_left_relay`,`Trigger`, null)//removes paths to force mid
+                    EntityOutputs.RemoveOutput(Entities.FindByName(null, `bombpath_choose_1_case`), `OnCase04`,`bombpath_right_relay`,`Trigger`, null)//removes paths to force mid
+				IncludeScript(`mvm_production_paramagnetism_instantshield`)
+				
+				ClientPrint(null,3,`\x08FF54F1FFKill the Demoman boss and risk having to fight a bomb-carrying Scout boss, Kill the Scout boss and risk being overwhelmed by giants... The choice is yours...`)
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -2139,6 +2199,9 @@ Name 71-s
                 nobuild.SetSolid(2)
 				 
                 }
+				
+			    IncludeScript(`molybdenum_decor`)
+                
             "
         }
 		        
@@ -2188,6 +2251,7 @@ Name 71-s
 					CharacterAttributes
 					{
 						"move speed bonus"	1
+						"dmg bonus vs buildings" 1.25
 						"airblast vulnerability multiplier"	0.1
 						"airblast vertical vulnerability multiplier"	0.2
 						"damage force reduction"	0.2
@@ -2232,7 +2296,7 @@ Name 71-s
 			        Class Pyro
 					Classicon pyro_reflect_daan
 					Attributes AlwaysCrit
-					Skill normal
+					Skill hard
 			}
 		}
 		WaveSpawn
@@ -2427,5 +2491,7 @@ Name 71-s
 		}
 	}
 	
+	
+}
 	
 }

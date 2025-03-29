@@ -59,6 +59,11 @@
 // General Change:
 // Decoration.
 // w5: Made black box soldiers spawn faster.
+//
+// RC1A
+// Fixed the softlock issues on w5.
+// Added proper Icons for some Valve's templates (demo_spammer and pyro_detonator_lite).
+// Slightly adjusted the flow of some waves.
 
 #base robot_standard.pop
 #base robot_giant.pop
@@ -76,10 +81,12 @@
 
 // ClassIcon Used:
 // demo_clusterbomb_blast
-// medic_kritz2
-// medic_uberfix
+// medic_kritz
 // pyro_fireaxe_lite
 // pyro_airblast_daan
+// pyro_detonator_lite
+// demo_spammer
+// soldier_rocketrain
 
 WaveSchedule
 {
@@ -168,21 +175,21 @@ WaveSchedule
 				"fuse bonus" 2.5
 			}
 
-            CharacterAttributes
-            {
-                "dmg taken from self reduced" 0.01
-            }
+            //CharacterAttributes - ported from gunboats, initial usage was to prevent robots from suiciding.
+            //{
+            //    "dmg taken from self reduced" 0.01
+            //}
         }
 
         // (4000) *(buffed from 2750)
         // Giant burstfire soldier, shoot 10 rockets at once.
         T_TFBot_Giant_Soldier_Burst
         {
-            Name "Giant Barrage Soldier"
+            Name "Giant Rocketrain Soldier"
             Class Soldier
             Skill Hard
             Health 4000
-            ClassIcon soldier_barrage
+            ClassIcon soldier_rocketrain_giant
             MaxVisionRange 2500
 
             WeaponRestrictions PrimaryOnly
@@ -229,16 +236,9 @@ WaveSchedule
             Class Medic
             Skill Expert
             Health 150
-            ClassIcon medic_uberfix
+            ClassIcon medic
 
             Item "The Quick-Fix"
-            Item "Coldfront Commander"
-
-            ItemAttributes
-            {
-                ItemName "Coldfront Commander"
-                "set item tint RGB" "1315860"
-            }
 
             ItemAttributes
             {
@@ -272,16 +272,9 @@ WaveSchedule
             ClassIcon medic_kritz
 
             Item "The Kritzkrieg"
-            Item "Coldfront Commander"
             
             Attributes SpawnWithFullCharge
             Attributes AlwaysCrit
-
-            ItemAttributes
-            {
-                ItemName "Coldfront Commander"
-                "set item tint RGB" "1315860"
-            }
 
             ItemAttributes
             {
@@ -400,6 +393,13 @@ WaveSchedule
         TFBot
         {
             Template T_TFBot_SentryBuster
+            Name "It's High Noon"
+            Item "The Hat With No Name"
+            CharacterAttributes
+			{
+			    "head scale" 3
+                "torso scale" 0
+			}
         }
     }
 
@@ -480,6 +480,7 @@ WaveSchedule
             Action Trigger
         }
 
+
         WaveSpawn
         {
             Name "wave_1_1_1"
@@ -527,6 +528,7 @@ WaveSchedule
             TFBot
             {
                 Template T_TFBot_Giant_Demoman
+                ClassIcon demo_spammer
                 Skill Normal
             }
         }
@@ -582,11 +584,13 @@ WaveSchedule
                 TFBot
                 {
                     Template T_TFBot_Heavyweapons_Shotgun
+                    Name "Shotgun Heavy"
                     Skill Easy
                 }
                 TFBot
                 {
                     Template T_TFBot_Heavyweapons_Shotgun
+                    Name "Shotgun Heavy"
                     Skill Easy
                 }    
             }
@@ -614,6 +618,7 @@ WaveSchedule
             Target wave_finished_relay
             Action Trigger
         }
+
 
         WaveSpawn
         {
@@ -723,7 +728,7 @@ WaveSchedule
             SpawnCount 5
             WaitForAllSpawned "wave_2a"
             WaitBeforeStarting 15
-            WaitBetweenSpawns 10
+            WaitBetweenSpawns 8
             TotalCurrency 300
 
             Squad
@@ -774,6 +779,7 @@ WaveSchedule
             Action Trigger
         }
 
+
         WaveSpawn
         {
             Name "wave_3a"
@@ -782,14 +788,15 @@ WaveSchedule
             MaxActive 2
             
             SpawnCount 1
-            WaitBetweenSpawns 20
+            WaitBetweenSpawns 15
             TotalCurrency 200
 
             TFBot
             {
                 Template T_TFBot_Giant_Pyro_Flare_Spammer
+                ClassIcon pyro_detonator_lite
                 Attributes AlwaysCrit
-                Skill Normal
+                Skill Hard
             }
         }
 
@@ -801,7 +808,7 @@ WaveSchedule
             MaxActive 16
             
             SpawnCount 4
-            WaitBeforeStarting 15
+            WaitBeforeStarting 8
             WaitBetweenSpawns 4
             TotalCurrency 200
 
@@ -933,6 +940,7 @@ WaveSchedule
             Target wave_finished_relay
             Action Trigger
         }
+
 
         WaveSpawn
         {
@@ -1132,6 +1140,7 @@ WaveSchedule
             Action Trigger
         }
 
+
         WaveSpawn
         {
             Name "wave_5a"
@@ -1153,13 +1162,32 @@ WaveSchedule
         WaveSpawn
         {
             Name "wave_5b"
-            Where spawnbot_invasion
-            TotalCount 4
-            MaxActive 4
+            Where spawnbot_giant
+            TotalCount 2
+            MaxActive 2
             
-            SpawnCount 2
+            SpawnCount 1
             WaitBetweenSpawns 15
             WaitForAllDead "wave_5a"
+            TotalCurrency 300
+
+            TFBot
+            {
+                Template T_TFBot_Giant_Scout_Fast
+            }
+        }
+
+        WaveSpawn
+        {
+            Name "wave_5b"
+            Where spawnbot_giant
+            TotalCount 2
+            MaxActive 2
+            
+            SpawnCount 1
+            WaitBetweenSpawns 15
+            WaitForAllDead "wave_5a"
+            WaitBeforeStarting 3
             TotalCurrency 300
 
             TFBot
@@ -1185,7 +1213,8 @@ WaveSchedule
             {
                 TFBot
                 {
-                    Template T_TFBot_Giant_Demo_RapidFire
+                    Template T_TFBot_Giant_Demoman
+                    ClassIcon demo_spammer
                     Attributes AlwaysCrit
                 }
                 TFBot
@@ -1532,7 +1561,7 @@ WaveSchedule
                 }
                 TFBot
                 {
-                    Template T_TFBot_Demoman_stock
+                    Template T_TFBot_Demoman_Mine
                 }
                 TFBot
                 {

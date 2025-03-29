@@ -867,7 +867,7 @@ WaveSchedule
 	Mission
 	{
 		Objective DestroySentries
-		Where spawnbot_mission_sentrybuster
+		Where spawnbot_alt
 
 		BeginAtWave 5
 		RunForThisManyWaves 1
@@ -909,6 +909,8 @@ WaveSchedule
                 Name "Robin Busters"
             
                 Item "Robin Walkers"
+                
+                Tag giant
                 WeaponRestrictions PrimaryOnly
 
                 Attributes SuppressFire
@@ -929,6 +931,8 @@ WaveSchedule
                 Name "Robin Busters"
             
                 Item "Robin Walkers"
+                
+                Tag giant
                 WeaponRestrictions PrimaryOnly
 
                 Attributes SuppressFire
@@ -949,6 +953,8 @@ WaveSchedule
                 Name "Robin Busters"
             
                 Item "Robin Walkers"
+                
+                Tag giant
                 WeaponRestrictions PrimaryOnly
 
                 Attributes SuppressFire
@@ -1196,6 +1202,7 @@ WaveSchedule
 			Target	wave_start_relay 
 			Action	Trigger
 		}
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -1213,7 +1220,7 @@ WaveSchedule
 
             TFBot
             {
-                Name "Engineering Amatuer"
+                Name "Engineering Amateur"
                 Class engineer
                 Health 150
                 Scale 1.25
@@ -1482,7 +1489,6 @@ WaveSchedule
                 Tag giant
 
                 Item "Summer Shades"
-                Item "The Gift Bringer"
             }
         }
 
@@ -1562,6 +1568,7 @@ WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
+
 				ClientPrint(null,3,`\x0833FF00FFRobots are coming in through planes now.`)
 				ClientPrint(null,3,`\x0833FF00FFIf you hear a light alarm sound, there will be only a couple squads coming in.`)
 				ClientPrint(null,3,`\x0833FF00FFHowever, a heavier more droney alarm means that they'll be pouring in constantly from said planes, watch out!`)
@@ -1885,6 +1892,7 @@ WaveSchedule
 			Target	wave_start_relay 
 			Action	Trigger
 		}
+
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -2374,7 +2382,7 @@ WaveSchedule
             {
                 Class Soldier
                 Name "Big Scoop"
-                Health 20000
+                Health 45000
                 ClassIcon soldier_shovel
                 Scale 5
                 EventChangeAttributes
@@ -2570,7 +2578,7 @@ WaveSchedule
             MaxActive 3
             SpawnCount 1
 
-            Where spawnbot
+            Where spawnbot_alt
 
             WaitForAllSpawned "wave01"
             WaitBeforeStarting 6
@@ -2583,7 +2591,9 @@ WaveSchedule
                 Scale 1.3
                 Name "Flare Rainer"
                 ClassIcon pyro_flare_rain_nys
-                Skill Hard 				
+                Skill Hard 			
+
+                tag giant	
 
                 WeaponRestrictions SecondaryOnly
                 
@@ -2826,6 +2836,7 @@ WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
+
 				ClientPrint(null,3,`\x0833FF00FFIt seems like the tanks got an objective adjustment for this wave.`)
 				ClientPrint(null,3,`\x0833FF00FFThey will stop at the marked spot, deploying CRITS to every robot currently on the field!`)
 				ClientPrint(null,3,`\x0833FF00FFThe CRITS will deactivate if the tank is destroyed.`)
@@ -3442,6 +3453,7 @@ WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
+
                 EntFire(`crittank*`, `Kill`)
             "
         }
