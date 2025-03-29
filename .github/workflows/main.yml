@@ -24,15 +24,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+      - uses: zerotier/github-action@v1
+        with:
+          auth_token: ${{ secrets.ZEROTIER_KEY }}
+          network_id: e4da7455b253a261
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
         with:
           path: tf/download
-
-      # - uses: zerotier/github-action@v1
-      #   with:
-      #     auth_token: ${{ secrets.ZEROTIER_KEY }}
-      #     network_id: e4da7455b253a261
 
       # Install wakeonlan
       - name: Make scripts executable
@@ -97,9 +98,24 @@ jobs:
           done
           wait
 
-          # for i in "2244 pterodactyl@eu9.potato.tf a0:d3:c1:5d:16:a5"; do a=( $i ); 
-          # {
-          #   ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} wakeonlan ${a[2]}
-          # } &
-          # done
-          # wait
+      - name: Sync with raf server
+        env:
+            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh -o StrictHostKeyChecking=no pterodactyl@10.243.40.231 "touch /var/tf2server/tf/occupiedservers/wake; exit 0"
+
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" --exclude="logs" --exclude="gamedata" --exclude="data" --delete ./tf/addons pterodactyl@10.243.40.231:/var/tf2server/tf
+
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/gamedata pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/data pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
+
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/custom pterodactyl@10.243.40.231:/var/tf2server/tf &
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/cfg pterodactyl@10.243.40.231:/var/tf2server/tf &
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.sh pterodactyl@10.243.40.231:/var/tf2server &
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.txt pterodactyl@10.243.40.231:/var/tf2server &
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.py pterodactyl@10.243.40.231:/var/tf2server &
+          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/scripts/vscripts pterodactyl@10.243.40.231:/var/tf2server/tf/scripts &
+          rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parse_demo pterodactyl@10.243.40.231:/var/tf2server/tf/parse_demo &
+          rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parsedemos.sh pterodactyl@10.243.40.231:/var/tf2server/tf/parsedemos.sh &
+
+          wait
