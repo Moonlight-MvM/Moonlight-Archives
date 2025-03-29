@@ -262,10 +262,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initB
+		{
+			Target initB
 			Action Trigger
-        }
+		}
 		WaveSpawn
 		{
 			Name	dummy
@@ -514,10 +514,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initA
+		{
+			Target initA
 			Action Trigger
-        }
+		}
 		WaveSpawn
 		{
 			Name	2startertogetthefuckingshittowork
@@ -1030,10 +1030,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initA
+		{
+			Target initA
 			Action Trigger
-        }
+		}
 		WaveSpawn
 		{
 			Name	3aa
@@ -1533,10 +1533,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initMain
+		{
+			Target initMain
 			Action Trigger
-        }
+		}
 		WaveSpawn
 		{
 			Name	4boss
@@ -2084,10 +2084,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initMain
+		{
+			Target initMain
 			Action Trigger
-        }
+		}
 		WaveSpawn
 		{
 			Name	5bombthing
@@ -2819,10 +2819,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initMain
+		{
+			Target initMain
 			Action Trigger
-        }
+		}
 		
 		WaveSpawn
 		{
@@ -3642,10 +3642,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target initMain
-            Action Trigger
-        }
+		{
+			Target initMain
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	dummy
@@ -3654,7 +3654,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3665,7 +3665,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3676,7 +3676,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3687,7 +3687,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3698,7 +3698,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3709,7 +3709,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3720,7 +3720,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3731,7 +3731,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3742,7 +3742,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3753,7 +3753,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3764,7 +3764,7 @@ WaveSchedule
 			{
 				Target gamerules
 				Action RunScriptCode
-				Param "ClientPrint(null,3,`\x08FFFF00FF[RECIEVE A PRESCRIPT AND CARRY IT OUT] `);"
+				Param "ClientPrint(null,3,`\x08FFFF00FF[RECEIVE A PRESCRIPT AND CARRY IT OUT] `);"
 			}
 		}
 		WaveSpawn
@@ -3797,6 +3797,18 @@ WaveSchedule
 				Target gamerules
 				Action RunScriptCode
 				Param "ClientPrint(null,3,`\x08FFFF00FF[FULFILL THE WILL OF THE PRESCRIPT] `);"
+			}
+			DoneOutput
+			{
+				Target gamerules
+				Action RunScriptCode
+				Param "
+                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
+                if (ent)
+                {
+                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
+                }
+            "
 			}
 			Squad
 			{
