@@ -262,18 +262,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initB`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-        }
+		{
+			Target initB
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	dummy
@@ -522,18 +514,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initA`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-        }
+		{
+			Target initA
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	2startertogetthefuckingshittowork
@@ -1046,18 +1030,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initA`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-        }
+		{
+			Target initA
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	3aa
@@ -1557,18 +1533,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-        }
+		{
+			Target initMain
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	4boss
@@ -2116,18 +2084,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-        }
+		{
+			Target initMain
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	5bombthing
@@ -2859,18 +2819,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-        }
+		{
+			Target initMain
+			Action Trigger
+		}
 		
 		WaveSpawn
 		{
@@ -3690,18 +3642,10 @@ WaveSchedule
 			Action Trigger
 		}
 		InitWaveOutput
-        {
-            Target gamerules
-            Action RunScriptCode
-            Param "
-                EntFire(`initMain`, `Trigger`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `RECEIVE RECEIVE RECEIVE RECEIVE`)
-                }
-            "
-        }
+		{
+			Target initMain
+			Action Trigger
+		}
 		WaveSpawn
 		{
 			Name	dummy

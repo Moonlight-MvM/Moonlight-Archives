@@ -23,10 +23,10 @@ foreach (k, v in NetProps.getclass())
 	SetPropBool(weapon, "m_AttributeManager.m_Item.m_bInitialized", true);
 	SetPropBool(weapon, "m_bValidatedAttachedEntity", true);
 	weapon.SetTeam(player.GetTeam());
-	Entities.DispatchSpawn(weapon);    
-	
-	player.Weapon_Equip(weapon);    
-	
+	Entities.DispatchSpawn(weapon);
+
+	player.Weapon_Equip(weapon);
+
 	for (local i = 0; i < 7; i++)
 	{
 		local heldWeapon = GetPropEntityArray(player, "m_hMyWeapons", i);
@@ -38,7 +38,7 @@ foreach (k, v in NetProps.getclass())
 		SetPropEntityArray(player, "m_hMyWeapons", weapon, i);
 		break;
 	}
-	
+
 	player.Weapon_Switch(weapon);
 
 	return weapon;
@@ -53,20 +53,40 @@ for(local i = 1; i<=maxplayers; i++) {
 	player.TerminateScriptScope()
 	AddThinkToEnt(player,null)
 }
-ClearGameEventCallbacks()
-function OnGameEvent_player_spawn(args) {
-	local player = GetPlayerFromUserID(args.userid)
-	if(GetPropBool(player,"m_bIsABot"))
+
+local objective_resource = Entities.FindByClassname(null, "tf_objective_resource")
+local popname = NetProps.GetPropString(objective_resource, "m_iszMvMPopfileName")
+::__ML_rangescript <- {
+	function OnGameEvent_player_spawn(args) {
+		local player = GetPlayerFromUserID(args.userid)
+		if(GetPropBool(player,"m_bIsABot"))
 		EntFireByHandle(player,"runscriptcode","if(self.HasBotTag(`bot_rangescript`))AddThinkToEnt(self,`Range_Think`)",-1,null,null)
 		// bot tags get applied a frame too late for player_spawn to identify them
+	}
+	function OnGameEvent_player_death(args) {
+		local player = GetPlayerFromUserID(args.userid)
+		//player.SetCustomModelWithClassAnimations(null)
+		AddThinkToEnt(player,null)
+		player.TerminateScriptScope()
+	}
+	function OnGameEvent_recalculate_holidays(_) {
+		
+		if (GetRoundState() != 3) return
+
+		if (popname !=  GetPropString(objective_resource, "m_iszMvMPopfileName"))
+		{
+			delete ::__ML_rangescript
+			delete ::Range_Think
+			delete ::phase2health
+			delete ::phase3health
+			delete ::bossrange
+			delete ::multitrace
+			delete ::ChangeAttributes
+			delete ::GiveWeapon
+		}
+	}
 }
-function OnGameEvent_player_death(args) {
-	local player = GetPlayerFromUserID(args.userid)
-	//player.SetCustomModelWithClassAnimations(null)
-	AddThinkToEnt(player,null)
-	player.TerminateScriptScope()
-}
-__CollectGameEventCallbacks(this)
+__CollectGameEventCallbacks(__ML_rangescript)
 //
 ////////////////////////////////////////////////////////////////
 

@@ -10,11 +10,12 @@
 //  Mission Name Display  //
 ////////////////////////////
 
-local ent = Entities.FindByClassname(null, "tf_objective_resource")
-if (ent)
-{
-    NetProps.SetPropString(ent, "m_iszMvMPopfileName", "Exp Sporulation")
-}
+// archives already do this
+// local ent = Entities.FindByClassname(null, "tf_objective_resource")
+// if (ent)
+// {
+//     NetProps.SetPropString(ent, "m_iszMvMPopfileName", "Exp Sporulation")
+// }
 
 //////////////////
 //  Decoration  //
@@ -208,7 +209,7 @@ function spawnscout()
         angles = "90 180 260"
         DisableBoneFollowers = 1
         Skin = 4 //red zombie model
-    })  
+    })
     SpawnEntityFromTable("prop_dynamic_ornament", {
         InitialOwner = "scout"
         model = "models/workshop/player/items/all_class/hwn2016_toadstool_topper/hwn2016_toadstool_topper_scout.mdl"
@@ -245,7 +246,7 @@ function spawnsniper()
         spawnflags = 256
         DisableBoneFollowers = 1
         disableshadows = 1
-    })  
+    })
     SpawnEntityFromTable("prop_dynamic_ornament", {
         InitialOwner = "sniper"
         model = "models/player/items/sniper/xms_sniper_commandobackpack.mdl"
@@ -253,7 +254,7 @@ function spawnsniper()
         spawnflags = 256
         DisableBoneFollowers = 1
         disableshadows = 1
-    })  
+    })
     SpawnEntityFromTable("prop_dynamic_ornament", {
         InitialOwner = "sniper"
         model = "models/workshop/player/items/all_class/hwn2016_toadstool_topper/hwn2016_toadstool_topper_sniper.mdl"
@@ -290,7 +291,7 @@ function spawnpyro()
         spawnflags = 256
         DisableBoneFollowers = 1
         disableshadows = 1
-    })   
+    })
     SpawnEntityFromTable("prop_dynamic_ornament", {
         InitialOwner = "pyro"
         model = "models/workshop/player/items/all_class/hwn2016_toadstool_topper/hwn2016_toadstool_topper_pyro.mdl"
@@ -418,7 +419,7 @@ function spawnradiostation1()
 
     radiostation1.ValidateScriptScope()
 
-    radiostation1.GetScriptScope().playtrack <- function() 
+    radiostation1.GetScriptScope().playtrack <- function()
     {
         EntFire("radiostation1", "playsound")
         return 245 //time before music plays again
@@ -441,7 +442,7 @@ function spawnradiostation2()
 
     radiostation2.ValidateScriptScope()
 
-    radiostation2.GetScriptScope().playtrack <- function() 
+    radiostation2.GetScriptScope().playtrack <- function()
     {
         EntFire("radiostation2", "playsound")
         return 245
@@ -464,7 +465,7 @@ function spawnradiostation3()
 
     radiostation3.ValidateScriptScope()
 
-    radiostation3.GetScriptScope().playtrack <- function() 
+    radiostation3.GetScriptScope().playtrack <- function()
     {
         EntFire("radiostation3", "playsound")
         return 245
@@ -480,7 +481,7 @@ function spawnradiostation3()
 
 //Checks to see if "engineer" exists. If yes, do nothing. If no, spawn in everything.
 //(This assumes that if "engineer" doesn't exist, nothing else does either)
-if(Entities.FindByName(null, "engineer") == null) 
+if(Entities.FindByName(null, "engineer") == null)
 {
     spawnengineer()
     spawnheavy()

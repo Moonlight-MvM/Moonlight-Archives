@@ -10,7 +10,7 @@ function coastrock_back_spawnbot()
         targetname = "spawnbot_back"
         }
     )
-    
+
     local teleport_trigger = SpawnEntityFromTable("trigger_teleport" {
         origin = "-815 2147 833"
         target = "spawnbot_back"
@@ -18,13 +18,13 @@ function coastrock_back_spawnbot()
         SpawnFlags = "1"
         }
     )
-    
+
     teleport_trigger.KeyValueFromInt("solid", 2)
     teleport_trigger.KeyValueFromString("mins", "-200 -200 -200")
     teleport_trigger.KeyValueFromString("maxs", "200 200 200")
 }
 
-if(Entities.FindByName(null, "spawnbot_back") == null) 
+if(Entities.FindByName(null, "spawnbot_back") == null)
 {
 	printl("Spawnbot Teleporter has been created!")
 	coastrock_back_spawnbot()
@@ -37,7 +37,7 @@ function coastrock_backfront_spawnbot()
         targetname = "spawnbot_backfront"
         }
     )
-    
+
     local teleport_trigger = SpawnEntityFromTable("trigger_teleport" {
         origin = "-930 2467 129"
         target = "spawnbot_backfront"
@@ -45,13 +45,13 @@ function coastrock_backfront_spawnbot()
         SpawnFlags = "1"
         }
     )
-    
+
     teleport_trigger.KeyValueFromInt("solid", 2)
     teleport_trigger.KeyValueFromString("mins", "-200 -200 -200")
     teleport_trigger.KeyValueFromString("maxs", "200 200 200")
 }
 
-if(Entities.FindByName(null, "spawnbot_backfront") == null) 
+if(Entities.FindByName(null, "spawnbot_backfront") == null)
 {
 	printl("Spawnbot Teleporter has been created!")
 	coastrock_backfront_spawnbot()
@@ -1113,14 +1113,15 @@ SpawnEntityFromTable("info_particle_system",
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////IS COMING////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AT YOUR DOORSTEP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 SpawnEntityFromTable("env_fog_controller" , {
-        targetname = "the_fog_is_coming"
-		fogenable		=	1
-		fogstart		=	200
-		fogend			=	600
+		targetname = "the_fog_is_coming"
+		fogenable		=	true
+		fogstart		=	200.0
+		fogend			=	600.0
 		fogmaxdensity	=	1.2
 		fogcolor		=	"83 86 94"
-		foglerptime		=	"5"
-    }
+		foglerptime		=	5.0
+		fogRadial 		=	true
+	}
 )
 
 SpawnEntityFromTable("env_fade" , {
