@@ -1,11 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////EXPECT THIS TO CHANGE AT ONE POINT///////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////CAUSE I'M NOT DONE WITH IT AAAAAAA///////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-local ent = Entities.FindByClassname(null, "tf_objective_resource")
-if (ent)
-{
-    NetProps.SetPropString(ent, "m_iszMvMPopfileName", "(Expert) Subchronic Sufferance")
-}
 function nightsky_spawnbot_front()
 {
     SpawnEntityFromTable("info_teleport_destination" {
@@ -14,7 +9,7 @@ function nightsky_spawnbot_front()
         targetname = "spawnbot_main_short"
         }
     )
-    
+
     local teleport_trigger = SpawnEntityFromTable("trigger_teleport" {
         origin = "-5679 -307 100"
         target = "spawnbot_main_short"
@@ -23,18 +18,18 @@ function nightsky_spawnbot_front()
         filtername = "filter_blueteam"
         }
     )
-    
+
     teleport_trigger.KeyValueFromInt("solid", 2)
     teleport_trigger.KeyValueFromString("mins", "-300 -200 -200")
     teleport_trigger.KeyValueFromString("maxs", "300 200 200")
 }
 
-if(Entities.FindByName(null, "spawnbot_main_short") == null) 
+if(Entities.FindByName(null, "spawnbot_main_short") == null)
 {
     printl("Spawnbot Teleporter has been created!")
    nightsky_spawnbot_front()
 }
-::lol <- SpawnEntityFromTable("logic_timer", 
+::lol <- SpawnEntityFromTable("logic_timer",
 {
 	targetname = "blu_passage"
 	refiretime = "0.2"

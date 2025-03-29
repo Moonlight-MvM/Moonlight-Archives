@@ -3798,18 +3798,6 @@ WaveSchedule
 				Action RunScriptCode
 				Param "ClientPrint(null,3,`\x08FFFF00FF[FULFILL THE WILL OF THE PRESCRIPT] `);"
 			}
-			DoneOutput
-			{
-				Target gamerules
-				Action RunScriptCode
-				Param "
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Adv Vendetta`)
-                }
-            "
-			}
 			Squad
 			{
 				TFBot

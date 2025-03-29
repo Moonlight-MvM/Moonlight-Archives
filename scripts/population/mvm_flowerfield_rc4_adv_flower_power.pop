@@ -531,16 +531,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_main`, `trigger`)
-            "
+            Target bombpath_main
+            Action Trigger
         }
         DoneOutput
         {
@@ -707,16 +699,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_main`, `trigger`)
-            "
+            Target bombpath_main
+            Action Trigger
         }
         DoneOutput
         {
@@ -897,16 +881,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_main`, `trigger`)
-            "
+            Target bombpath_main
+            Action Trigger
         }
         DoneOutput
         {
@@ -1207,16 +1183,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_flank`, `trigger`)
-            "
+            Target bombpath_flank
+            Action Trigger
         }
         DoneOutput
         {
@@ -1423,16 +1391,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_flank`, `trigger`)
-            "
+            Target bombpath_flank
+            Action Trigger
         }
         DoneOutput
         {
@@ -1580,16 +1540,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_flank`, `trigger`)
-            "
+            Target bombpath_flank
+            Action Trigger
         }
         DoneOutput
         {
@@ -1899,16 +1851,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_main`, `trigger`)
-            "
+            Target bombpath_main
+            Action Trigger
         }
         DoneOutput
         {
@@ -2136,16 +2080,8 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Flower Power (Advanced)`)
-				}
-                EntFire(`bombpath_main`, `trigger`)
-            "
+            Target bombpath_main
+            Action Trigger
         }
         DoneOutput
         {

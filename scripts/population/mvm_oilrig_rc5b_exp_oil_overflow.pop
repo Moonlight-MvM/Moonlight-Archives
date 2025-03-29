@@ -147,19 +147,6 @@ WaveSchedule
 
 	Wave
 	{
-		InitWaveOutput
-				{
-					Target wave_start_relay
-					Action RunScriptCode
-					Param "
-						local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-						if (ent)
-						{
-							NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-						}
-						
-					"
-				}
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -314,19 +301,6 @@ WaveSchedule
 	}
 	Wave
 	{
-		InitWaveOutput
-				{
-					Target wave_start_relay
-					Action RunScriptCode
-					Param "
-						local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-						if (ent)
-						{
-							NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-						}
-						
-					"
-				}
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -486,19 +460,6 @@ WaveSchedule
 		}
 	Wave
 	{
-		InitWaveOutput
-					{
-						Target wave_start_relay
-						Action RunScriptCode
-						Param "
-							local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-							if (ent)
-							{
-								NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-							}
-							
-						"
-					}
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -657,19 +618,6 @@ WaveSchedule
 	}
 	Wave
 	{
-		InitWaveOutput
-					{
-						Target wave_start_relay
-						Action RunScriptCode
-						Param "
-							local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-							if (ent)
-							{
-								NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-							}
-							
-						"
-					}
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -803,19 +751,6 @@ WaveSchedule
 	}
 	Wave
 	{
-		InitWaveOutput
-					{
-						Target wave_start_relay
-						Action RunScriptCode
-						Param "
-							local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-							if (ent)
-							{
-								NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-							}
-							
-						"
-					}
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -990,19 +925,6 @@ WaveSchedule
 	}
 	Wave
 	{
-		InitWaveOutput
-					{
-						Target wave_start_relay
-						Action RunScriptCode
-						Param "
-							local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-							if (ent)
-							{
-								NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-							}
-							
-						"
-					}
 		StartWaveOutput
 			{
 				Target wave_start_relay
@@ -1153,19 +1075,6 @@ WaveSchedule
 	}
 	Wave
 	{
-		InitWaveOutput
-			{
-				Target wave_start_relay
-				Action RunScriptCode
-				Param "
-					local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-					if (ent)
-					{
-						NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Oil Overflow (Expert)`)
-					}
-					
-				"
-			}
 		StartWaveOutput
 			{
 				Target wave_start_relay

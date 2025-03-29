@@ -398,11 +398,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 EntFire(`bombpath_left`, `Trigger`)
 				ClientPrint(null,3,`\x08FF54F1FFEndurance waves are significantly longer than invasion waves, but also offer much greater credit payouts.`)
 				ClientPrint(null,3,`\x08FF54F1FFDon't forget to visit the upgrade station at any point in time, even during the waves!`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Diode Charge (Intermediate)`)
-                }
             "
 		}
 		WaveSpawn
@@ -983,11 +978,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				ClientPrint(null,3,`\x08FF54F1FFThe bomb path will alternate while the wave is active.`)
 				ClientPrint(null,3,`\x08FF54F1FFA warning sound will be cued for everyone to hear, don't miss it!`)
 				ClientPrint(null,3,`\x08FF54F1FFThe bomb will not be able to reset this wave, but will at least silently reset upon a path alteration.`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Diode Charge (Intermediate)`)
-                }
             "
 		}
         WaveSpawn
@@ -1666,11 +1656,6 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				ClientPrint(null,3,`\x0899CCFFFFThe blimp \x08FF54F1FFwill be accompanied by two robot types, whom of which will go after you, the defenders.`)
 				ClientPrint(null,3,`\x08FF54F1FFMake sure to not get overwhelmed!`)
 				//ClientPrint(null,3,`\x0899CCFFFFChief Blast Demo\x07fbeccb : \x07fbeccb gg ez`)
-                local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (ent)
-                {
-                    NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Diode Charge (Intermediate)`)
-                }
                 SpawnEntityFromTable(`logic_timer`, {
                     targetname = `tank_effect`
 					refiretime = `0.2`

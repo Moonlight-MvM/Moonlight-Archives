@@ -285,11 +285,6 @@ population
 			action runscriptcode 
                 param "
                      IncludeScript(`molybdenum_decor`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                     if (missionname)
-				     {
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -569,11 +564,6 @@ Squad //fucking why is it shaped like this
 			action runscriptcode 
                 param "
                      IncludeScript(`molybdenum_decor`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                     if (missionname)
-				     {
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -801,11 +791,6 @@ Squad //fucking why is it shaped like this
 			action runscriptcode 
                 param "
                      IncludeScript(`molybdenum_decor`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                     if (missionname)
-				     {
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1088,11 +1073,6 @@ Squad //fucking why is it shaped like this
 			action runscriptcode 
                 param "
                      IncludeScript(`molybdenum_decor`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                     if (missionname)
-				     {
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1338,11 +1318,6 @@ Squad //fucking why is it shaped like this
 			action runscriptcode 
                 param "
                      IncludeScript(`molybdenum_decor`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                     if (missionname)
-				     {
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1616,11 +1591,6 @@ Squad //fucking why is it shaped like this
 			action runscriptcode 
                 param "
                      IncludeScript(`molybdenum_decor`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                     if (missionname)
-				     {
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -1889,11 +1859,6 @@ Squad //fucking why is it shaped like this
                 param "
                      IncludeScript(`molybdenum_decor`)
 					 IncludeScript(`mvm_production_paramagnetism_instantshield`)
-					 local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (missionname)
-				{
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {
@@ -2163,11 +2128,6 @@ Name 71-s
 			    IncludeScript(`mvm_production_paramagnetism_instantshield`)
 			    IncludeScript(`molybdenum_decor`)
                 ClientPrint(null,3,`\x08FF54F1FFKill the Demoman boss and risk having to fight a bomb-carrying Scout boss, Kill the Scout boss and risk being overwhelmed by giants... The choice is yours...`)
-                local missionname = Entities.FindByClassname(null, `tf_objective_resource`)
-                if (missionname)
-				{
-                    NetProps.SetPropString(missionname, `m_iszMvMPopfileName`, `Paramagnetism (Expert)`)
-                }
 				
 				if(!Entities.FindByName(null, `newnobuild`)) {
                  local nobuild = SpawnEntityFromTable(`func_nobuild`, {

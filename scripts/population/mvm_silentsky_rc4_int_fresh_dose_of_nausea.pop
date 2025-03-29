@@ -1196,17 +1196,6 @@ WaveSchedule
 			Target	wave_start_relay 
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Fresh Dose of Nausea (INT)`)
-				}"
-        }
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -1573,11 +1562,6 @@ WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Fresh Dose of Nausea (INT)`)
-				}
 				ClientPrint(null,3,`\x0833FF00FFRobots are coming in through planes now.`)
 				ClientPrint(null,3,`\x0833FF00FFIf you hear a light alarm sound, there will be only a couple squads coming in.`)
 				ClientPrint(null,3,`\x0833FF00FFHowever, a heavier more droney alarm means that they'll be pouring in constantly from said planes, watch out!`)
@@ -1901,17 +1885,6 @@ WaveSchedule
 			Target	wave_start_relay 
 			Action	Trigger
 		}
-        InitWaveOutput
-        {
-            Target wave_start_relay
-            Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Fresh Dose of Nausea (INT)`)
-				}"
-        }
 		DoneOutput
 		{
 			Target	wave_finished_relay
@@ -2327,14 +2300,7 @@ WaveSchedule
         {
             Target wave_start_relay
             Action RunScriptCode
-            Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Fresh Dose of Nausea (INT)`)
-				}
-                PrecacheModel(`models/items/tf_gift.mdl`)
-                "
+            Param "PrecacheModel(`models/items/tf_gift.mdl`)"
         }
 		DoneOutput
 		{
@@ -2860,11 +2826,6 @@ WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Fresh Dose of Nausea (INT)`)
-				}
 				ClientPrint(null,3,`\x0833FF00FFIt seems like the tanks got an objective adjustment for this wave.`)
 				ClientPrint(null,3,`\x0833FF00FFThey will stop at the marked spot, deploying CRITS to every robot currently on the field!`)
 				ClientPrint(null,3,`\x0833FF00FFThe CRITS will deactivate if the tank is destroyed.`)
@@ -3481,11 +3442,6 @@ WaveSchedule
             Target wave_start_relay
             Action RunScriptCode
             Param "
-				local ent = Entities.FindByClassname(null, `tf_objective_resource`)
-				if (ent)
-				{
-			    	NetProps.SetPropString(ent, `m_iszMvMPopfileName`, `Fresh Dose of Nausea (INT)`)
-				}
                 EntFire(`crittank*`, `Kill`)
             "
         }

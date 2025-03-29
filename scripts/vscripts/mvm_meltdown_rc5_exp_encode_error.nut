@@ -1,11 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////Vscript setup written by Mo/////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////For Oddschool's Meltdown Expert///////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-local ent = Entities.FindByClassname(null, "tf_objective_resource")
-if (ent)
-{
-    NetProps.SetPropString(ent, "m_iszMvMPopfileName", "Encode Error (Expert)")
-}
 function anti_oob() //Out of Bounds trigger teleport, to avoid exploiters
 {
     SpawnEntityFromTable("info_teleport_destination" {
@@ -14,7 +9,7 @@ function anti_oob() //Out of Bounds trigger teleport, to avoid exploiters
         targetname = "go_kys" //Charming, right?
         }
     )
-    
+
     local teleport_trigger = SpawnEntityFromTable("trigger_teleport" {
         origin = "-3170 5424 481"
         target = "go_kys"
@@ -23,13 +18,13 @@ function anti_oob() //Out of Bounds trigger teleport, to avoid exploiters
         filtername = "filter_bluteam"
         }
     )
-    
+
     teleport_trigger.KeyValueFromInt("solid", 2)
     teleport_trigger.KeyValueFromString("mins", "-300 -200 -100")
     teleport_trigger.KeyValueFromString("maxs", "300 200 100")
 }
 
-if(Entities.FindByName(null, "go_kys") == null) 
+if(Entities.FindByName(null, "go_kys") == null)
 {
     printl("Spawnbot Teleporter has been created!")
 	anti_oob()
