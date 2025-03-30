@@ -1521,7 +1521,8 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Giant_Soldier_RapidFire
-					ClassIcon soldier_Spammer
+					//ClassIcon soldier_Spammer //Don't you love it when conventional "don't use cases to separate icons because it doesn't work on Linux" is ignored? :D
+					ClassIcon soldier_spammer_giant
 				}
 				TFBot
 				{
