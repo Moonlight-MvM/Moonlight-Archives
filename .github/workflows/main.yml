@@ -83,7 +83,7 @@ jobs:
         run: |
 
           cd tf/download
-          for i in "22 pterodactyl@ustx.potato.tf" "22 pterodactyl@us.potato.tf" "22 pterodactyl@br.potato.tf" "22 pterodactyl@usw2.potato.tf" "22 pterodactyl@sgp.potato.tf" "22 pterodactyl@eu2.potato.tf" "27035 pterodactyl@eu.potato.tf"; do a=( $i );
+          for i in "22 pterodactyl@10.243.40.231" "22 pterodactyl@ustx.potato.tf" "22 pterodactyl@us.potato.tf" "22 pterodactyl@br.potato.tf" "22 pterodactyl@usw2.potato.tf" "22 pterodactyl@sgp.potato.tf" "22 pterodactyl@eu2.potato.tf" "27035 pterodactyl@eu.potato.tf"; do a=( $i );
           {
             ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "touch /var/tf2server/tf/occupiedservers/wake; exit 0"
 
@@ -98,24 +98,24 @@ jobs:
           done
           wait
 
-      - name: Sync with raf server
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh -o StrictHostKeyChecking=no pterodactyl@10.243.40.231 "touch /var/tf2server/tf/occupiedservers/wake; exit 0"
+      # - name: Sync with raf server
+      #   env:
+      #       SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      #   run: |
+      #     ssh -o StrictHostKeyChecking=no pterodactyl@10.243.40.231 "touch /var/tf2server/tf/occupiedservers/wake; exit 0"
 
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" --exclude="logs" --exclude="gamedata" --exclude="data" --delete ./tf/addons pterodactyl@10.243.40.231:/var/tf2server/tf
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" --exclude="logs" --exclude="gamedata" --exclude="data" --delete ./tf/addons pterodactyl@10.243.40.231:/var/tf2server/tf
 
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/gamedata pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/data pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/gamedata pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/data pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
 
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/custom pterodactyl@10.243.40.231:/var/tf2server/tf &
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/cfg pterodactyl@10.243.40.231:/var/tf2server/tf &
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.sh pterodactyl@10.243.40.231:/var/tf2server &
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.txt pterodactyl@10.243.40.231:/var/tf2server &
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.py pterodactyl@10.243.40.231:/var/tf2server &
-          rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/scripts/vscripts pterodactyl@10.243.40.231:/var/tf2server/tf/scripts &
-          rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parse_demo pterodactyl@10.243.40.231:/var/tf2server/tf/parse_demo &
-          rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parsedemos.sh pterodactyl@10.243.40.231:/var/tf2server/tf/parsedemos.sh &
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/custom pterodactyl@10.243.40.231:/var/tf2server/tf &
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/cfg pterodactyl@10.243.40.231:/var/tf2server/tf &
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.sh pterodactyl@10.243.40.231:/var/tf2server &
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.txt pterodactyl@10.243.40.231:/var/tf2server &
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.py pterodactyl@10.243.40.231:/var/tf2server &
+      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/scripts/vscripts pterodactyl@10.243.40.231:/var/tf2server/tf/scripts &
+      #     rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parse_demo pterodactyl@10.243.40.231:/var/tf2server/tf/parse_demo &
+      #     rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parsedemos.sh pterodactyl@10.243.40.231:/var/tf2server/tf/parsedemos.sh &
 
-          wait
+      #     wait
