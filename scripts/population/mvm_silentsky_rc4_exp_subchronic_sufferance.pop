@@ -2555,7 +2555,13 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 		DoneOutput
 		{
 			Target	wave_finished_relay
-			Action	Trigger
+			Action	RunScriptCode
+			Param "
+				self.AcceptInput(`Trigger`, ``, null, null)
+                local resource = Entities.FindByClassname(null, `tf_objective_resource`)
+                NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 5)
+                NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 5)
+			"
 		}
 		InitWaveOutput
 		{
