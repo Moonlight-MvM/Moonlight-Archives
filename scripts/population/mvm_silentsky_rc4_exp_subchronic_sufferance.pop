@@ -2541,27 +2541,25 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 	}
 	Wave
 	{
+		CustomWaveNumber 420 [$SIGSEGV]
+		CustomMaxWaveNumber 69 [$SIGSEGV]
         StartWaveOutput
         {
             Target    wave_start_relay
             Action    RunScriptCode
             Param "
-                EntFire(`wave_start_relay`, `Trigger`)
-                local resource = Entities.FindByClassname(null, `tf_objective_resource`)
-                NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 420)
-                NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 69)
+				self.AcceptInput(`Trigger`, ``, null, null)
+				if (Convars.GetInt(`sig_etc_misc`) == null) {
+					local resource = Entities.FindByClassname(null, `tf_objective_resource`)
+					NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 420)
+					NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 69)
+				}
             "
 		}
 		DoneOutput
 		{
 			Target	wave_finished_relay
-			Action	RunScriptCode
-			Param "
-				self.AcceptInput(`Trigger`, ``, null, null)
-                local resource = Entities.FindByClassname(null, `tf_objective_resource`)
-                NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 5)
-                NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 5)
-			"
+			Action	Trigger
 		}
 		InitWaveOutput
 		{
@@ -2572,9 +2570,11 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
                 SpawnEntityFromTable(`logic_script`,{vscripts=`mvm_silentsky_rc4_exp_subchronic_sufferance`,targetname=`vscripts`})
-                local resource = Entities.FindByClassname(null, `tf_objective_resource`)
-                NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 420)
-                NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 69)
+				if (Convars.GetInt(`sig_etc_misc`) == null) {
+					local resource = Entities.FindByClassname(null, `tf_objective_resource`)
+					NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 420)
+					NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 69)
+				}
 				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
 				ClientPrint(null,3,`\x0897D1F9FFBullet, \x084BF756FFBlast, \x08FFA15EFFFire.`)
 				ClientPrint(null,3,`\x08D73337FFThree Vaccinator tanks will come out this wave, hope you know your type matchups!`)
