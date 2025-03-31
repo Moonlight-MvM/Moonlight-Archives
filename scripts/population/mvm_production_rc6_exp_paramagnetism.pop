@@ -943,29 +943,26 @@ Squad //fucking why is it shaped like this
             Target A_door_open
             Action trigger
             }
-			Squad
+			TFBot
 			{
-				TFBot
+				Class Demoman
+				ClassIcon demoknight
+				name "Persian Demoknight"
+				Skill Expert
+				health 200
+				Item "Sultan's Ceremonial"	
+				Item "Ali Baba's Wee Booties"
+				Item "The Persian Persuader"
+				Item "The Splendid Screen"	
+				ItemAttributes
 				{
-					Class Demoman
-					ClassIcon demoknight
-					name "Persian Demoknight"
-					Skill Expert
-					health 200
-					Item "Sultan's Ceremonial"	
-					Item "Ali Baba's Wee Booties"
-					Item "The Persian Persuader"
-					Item "The Splendid Screen"	
-					ItemAttributes
-					{
-						ItemName "The Splendid Screen"
-						"Attack not cancel charge" 1
-					}		
-					WeaponRestrictions MeleeOnly
-					CharacterAttributes
-					{
-						"critboost on kill" 3
-					}
+					ItemName "The Splendid Screen"
+					"Attack not cancel charge" 1
+				}		
+				WeaponRestrictions MeleeOnly
+				CharacterAttributes
+				{
+					"critboost on kill" 3
 				}
 			}
 		}
@@ -1518,8 +1515,6 @@ Squad //fucking why is it shaped like this
 			SpawnCount	1
 			WaitBeforeStarting	10
 			Where	spawnbot
-			Squad
-			{
 			TFBot
 			{
 			 skill hard
@@ -1528,8 +1523,6 @@ Squad //fucking why is it shaped like this
 					item "The Dragon's Fury"
 					MaxVisionRange 600
 					Attributes AlwaysCrit
-			}
-			
 			}
 		}
 		WaveSpawn
@@ -1559,8 +1552,6 @@ Squad //fucking why is it shaped like this
 			SpawnCount	1
 			WaitBeforeStarting 10
 			Where	flankers
-			Squad
-			{
 			TFBot
 			{
 			        Template	T_TFBot_Giant_Pyro
@@ -1569,8 +1560,6 @@ Squad //fucking why is it shaped like this
 					item "The Dragon's Fury"
 					Attributes AlwaysCrit
 					MaxVisionRange 600
-			}
-		
 			}
 		}
 		WaveSpawn
@@ -2491,7 +2480,5 @@ Name 71-s
 		}
 	}
 	
-	
-}
 	
 }
