@@ -1,0 +1,8 @@
+UnlitGeneric
+{
+	$baseTexture "hud/leaderboard_class_soldier_charged_spammer"
+	$ignorez 1
+	$no_fullbright 1
+	$translucent 1
+	%keywords "tf"
+}
