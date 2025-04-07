@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$baseTexture" "hud\leaderboard_class_heavy_deflector_heater_yoovy"
+	"$baseTexture" "hud/leaderboard_class_heavy_deflector_heater_yoovy"
 	"$vertexcolor" 1
 	"$no_fullbright" 1
 	"$ignorez" 1
