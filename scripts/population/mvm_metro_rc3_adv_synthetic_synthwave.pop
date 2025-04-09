@@ -2045,7 +2045,7 @@ Wave
 		
 		WaveSpawn
 		{
-			Name	wave6boss
+			Name wave6boss
 			WaitForAllDead easteregg
 			WaitBeforeStarting 3
 			Where spawnbot_boss
@@ -2055,6 +2055,41 @@ Wave
 			MaxActive 2
 			SpawnCount 2
 			TotalCurrency 375
+
+			// fellen: rafmod patches the bug where spawn uber removal also removes Medic's
+			//         self uber, so we fix it with this VScript.
+			LastSpawnOutput
+			{
+				Target BigNet
+				Action RunScriptCode
+				Param "
+					local bot = null
+					local found = false
+					while (bot = Entities.FindByClassname(bot, `player`)) {
+						if (!bot.IsBotOfType(Constants.EBotType.TF_BOT_TYPE)) continue
+						if (!bot.HasBotTag(`no_self_uber`)) continue
+						found = true
+						break
+					}
+					// Should never happen.
+					if (!found) throw `Could not find no_self_uber tagged bot.`
+
+					bot.ValidateScriptScope()
+					bot.GetScriptScope().NoSelfUber <- function() {
+						if (!self.IsAlive()) {
+							// SPEC bots will retain tags, so we remove it on death here.
+							bot.RemoveBotTag(`no_self_uber`)
+							self.TerminateScriptScope()
+							NetProps.SetPropString(self, `m_iszScriptThinkFunction`, ``)
+							return
+						}
+						self.RemoveCond(Constants.ETFCond.TF_COND_INVULNERABLE)
+						return -1.0
+					}
+					AddThinkToEnt(bot, `NoSelfUber`)
+				"
+			}
+
 			Squad
 			{
 				TFBot
@@ -2065,64 +2100,68 @@ Wave
 					Health 25000
 					Skill Expert
 					Attributes MiniBoss
-					Attributes	UseBossHealthBar
-					//Attributes AlwaysCrit
+					Attributes UseBossHealthBar
 					Item "War Head"
-					Item	"the tyurtlenek"
-					Item	"The Mann of the House"
+					Item "The Tyurtlenek"
+					Item "The Mann of the House"
+
                     Item "Tomislav"
-					ItemAttributes {
+					ItemAttributes
+					{
 						ItemName "Tomislav"
 						"attack projectiles" 1
 						"damage bonus"	1.5
-						"heal on kill"			500
+						"heal on kill"	500
 						"critboost on kill"	3
 					}
 					
-                                        CharacterAttributes
+					CharacterAttributes
 					{
 						"move speed bonus"	0.4
-				"damage force reduction"	0.1
-			"airblast vulnerability multiplier"	0.1
-			"airblast vertical vulnerability multiplier"	0.2
-					"rage giving scale"	0.1
-					"health regen"	35
-			"override footstep sound set"	2
-                      //"damage bonus" 1.5   
-                     "dmg bonus vs buildings" 2					  
+						"damage force reduction"	0.1
+						"airblast vulnerability multiplier"	0.1
+						"airblast vertical vulnerability multiplier"	0.2
+						"rage giving scale"	0.1
+						"health regen"	35
+						"override footstep sound set"	2
+						"dmg bonus vs buildings" 2
 					}
 				}
+
 				TFBot
 				{
 					Name "Overclocked Overdrive Medic"
-			Class Medic
-			Health 10000
-			Scale 1.8
-			Skill Expert
-			Item "Teufort Knight"
-			Item "Coldfront Carapace" 
-			Item "Batter's Bracers"
-			ClassIcon medic_uber_armored
-			Attributes SpawnWithFullCharge
-			Attributes MiniBoss
-			Attributes UseBossHealthBar
-			Attributes IgnoreEnemies
-			ItemAttributes
-			{
-				ItemName "tf_weapon_medigun"
-				"uber duration bonus" -999
-				"overheal bonus" 0.01
-				"bot medic uber health threshold" 99999
-				//Spawn uber cancels out self-uber, not patient's
-				//If (Duration < 0) -> 0, then charge% fill rate -> infinity.
-			}
-			CharacterAttributes
-			{
-				"move speed bonus" 0.5
-				"damage force reduction" 0.5
-				"airblast vulnerability multiplier" 0.5
-				"health regen"	100
-			}
+					Class Medic
+					Health 10000
+					Scale 1.8
+					Skill Expert
+					Item "Teufort Knight"
+					Item "Coldfront Carapace"
+					Item "Batter's Bracers"
+					ClassIcon medic_uber_armored
+					Attributes SpawnWithFullCharge
+					Attributes MiniBoss
+					Attributes UseBossHealthBar
+					Attributes IgnoreEnemies
+
+					Tag "no_self_uber"
+
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						// If (Duration < 0) -> 0, then charge% fill rate -> infinity.
+						"uber duration bonus" -999
+						"overheal bonus" 0.01
+						"bot medic uber health threshold" 99999
+					}
+
+					CharacterAttributes
+					{
+						"move speed bonus" 0.5
+						"damage force reduction" 0.5
+						"airblast vulnerability multiplier" 0.5
+						"health regen"	100
+					}
 				}
 			}
 		}
