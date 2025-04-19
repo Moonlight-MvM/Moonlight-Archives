@@ -617,13 +617,10 @@ WaveSchedule
 
 	Wave
 	{
-		InitWaveOutPut
+		InitWaveOutput
 		{
-			Target	wave_start_relay
-			Action	RunScriptCode
-			Param	"
-			EntFire(`InitB`,`Trigger`)
-			"
+			Target	InitB
+			Action	Trigger
 		}
 
 		StartWaveOutput
@@ -1079,31 +1076,46 @@ WaveSchedule
 			
 			EntFire(`InitA_SetFront`,`Trigger`)
 			ClientPrint(null,3,`\x07FFEA00The robots have fallen back! Move to gate A!`)
+
+			// fellen: This needs some explanation: after merging ML archives, this mission
+			//          threw VScript errors from W3 onwards. This is because the nav file
+			//          in-use on Potato is not the same as the one that was used on ML, so
+			//          the following scripts that modify the nav break, as they complain
+			//          about nonexistent nav areas since they are found by ID.
+			//         To 'fix' this, I've simply commented the problem lines out, since 
+			//          there's no way to know which precise areas were intended to be
+			//          modified, and nor do I understand the precise issue targeted here.
+			//         I'll also note that cleanup in recalculate_holidays is probably
+			//          unnecessary, as I believe the game recalculates the nav at round
+			//          start anyway, but I'm not touching it so long as the mission works.
+			//         The cleanup in mvm_wave_complete might be unnecessary too, as the
+			//          fixes seem to be duplicated across some waves anyway, so I can only
+			//          assume they are not interferent with later waves anyway.
 			::FixNavBSB <- //w3 and w6
 			{
 				Cleanup = function() 
 				{ 
 					delete ::FixNavBSB
-					NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(525), 0) // RESTORE NAV CLOSED DOOR INITA_SETFRONT TOP
+					//NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(525), 0) // RESTORE NAV CLOSED DOOR INITA_SETFRONT TOP
 					NavMesh.GetNavAreaByID(525).ConnectTo(NavMesh.GetNavAreaByID(20), 2)
-					NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(144), 0)
+					//NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(144), 0)
 					NavMesh.GetNavAreaByID(144).ConnectTo(NavMesh.GetNavAreaByID(20), 2)
 
 					NavMesh.GetNavAreaByID(11335).ConnectTo(NavMesh.GetNavAreaByID(347), 2) // RESTORE NAV CLOSED DOOR INITA_SETFRONT BOTTOM
-					NavMesh.GetNavAreaByID(347).ConnectTo(NavMesh.GetNavAreaByID(11335), 0)
+					//NavMesh.GetNavAreaByID(347).ConnectTo(NavMesh.GetNavAreaByID(11335), 0)
 				}
 				OnGameEvent_recalculate_holidays = function(_) { if (GetRoundState() == 3) Cleanup() }
 				OnGameEvent_mvm_wave_complete = function(_) { Cleanup() }
 				//^cleans up nav deletion after the wave.
 			} __CollectGameEventCallbacks(FixNavBSB)
 
-			NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(525)) // DELETE NAV CLOSED DOOR INITA_SETFRONT TOP
+			// NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(525)) // DELETE NAV CLOSED DOOR INITA_SETFRONT TOP
 			NavMesh.GetNavAreaByID(525).Disconnect(NavMesh.GetNavAreaByID(20))
-			NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(144))
+			//NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(144))
 			NavMesh.GetNavAreaByID(144).Disconnect(NavMesh.GetNavAreaByID(20))
 
 			NavMesh.GetNavAreaByID(11335).Disconnect(NavMesh.GetNavAreaByID(347)) // DELETE NAV CLOSED DOOR INITA_SETFRONT BOTTOM
-			NavMesh.GetNavAreaByID(347).Disconnect(NavMesh.GetNavAreaByID(11335))
+			//NavMesh.GetNavAreaByID(347).Disconnect(NavMesh.GetNavAreaByID(11335))
 			"
 		}
 
@@ -1289,17 +1301,18 @@ WaveSchedule
 			EntFire(`initA_setBack`,`Trigger`)
 			IncludeScript(`mvm_hoovydam_b10_int_dizzying_drill_tankwave_shutterfix`)
 			ClientPrint(null,3,`\x07FFEA00The robots this wave will be heavily taking advantage of jump pads to skip past your frontline.`)
+			// fellen: See comment in W3 InitWaveOutput.
 			::FixNavBSA <- //w4 and w5
 			{
 				Cleanup = function() 
 				{ 
 					delete ::FixNavBSA
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8187), 3) // RESTORE NAV CLOSED DOOR INITA_SETBACK TOP
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8187), 3) // RESTORE NAV CLOSED DOOR INITA_SETBACK TOP
 					NavMesh.GetNavAreaByID(8187).ConnectTo(NavMesh.GetNavAreaByID(11333), 1)
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8188), 3)
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8188), 3)
 					NavMesh.GetNavAreaByID(8188).ConnectTo(NavMesh.GetNavAreaByID(11333), 1)
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(174), 2) //ONEWAY
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(11098), 2) //ONEWAY
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(174), 2) //ONEWAY
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(11098), 2) //ONEWAY
 
 					NavMesh.GetNavAreaByID(11336).ConnectTo(NavMesh.GetNavAreaByID(8640), 3) // RESTORE NAV CLOSED DOOR INITA_SETBACK BOTTOM
 					NavMesh.GetNavAreaByID(8640).ConnectTo(NavMesh.GetNavAreaByID(11336), 1)
@@ -1311,12 +1324,12 @@ WaveSchedule
 				//^cleans up nav deletion after the wave.
 			} __CollectGameEventCallbacks(FixNavBSA)
 
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8187)) // DELETE NAV CLOSED DOOR INITA_SETBACK TOP
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8187)) // DELETE NAV CLOSED DOOR INITA_SETBACK TOP
 			NavMesh.GetNavAreaByID(8187).Disconnect(NavMesh.GetNavAreaByID(11333))
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8188))
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8188))
 			NavMesh.GetNavAreaByID(8188).Disconnect(NavMesh.GetNavAreaByID(11333))
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(174)) //ONEWAY
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(11098)) //ONEWAY
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(174)) //ONEWAY
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(11098)) //ONEWAY
 
 			NavMesh.GetNavAreaByID(11336).Disconnect(NavMesh.GetNavAreaByID(8640)) // DELETE NAV CLOSED DOOR INITA_SETBACK BOTTOM
 			NavMesh.GetNavAreaByID(8640).Disconnect(NavMesh.GetNavAreaByID(11336))
@@ -1769,17 +1782,18 @@ WaveSchedule
 			EntFire(`initMain_pit`,`Trigger`)
 			ClientPrint(null,3,`\x07FFEA00The robots have fallen back! Move to the front!`)
 			ClientPrint(null,3,`\x0790EE90The only gatebots present will be the support Super Scouts, use their lacking firepower to your advantage! They will NOT deploy the bomb if both gates are lost.`)
+			// fellen: See comment in W3 InitWaveOutput.
 			::FixNavBSA <- //w4 and w5
 			{
 				Cleanup = function() 
 				{ 
 					delete ::FixNavBSA
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8187), 3) // RESTORE NAV CLOSED DOOR INITA_SETBACK TOP
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8187), 3) // RESTORE NAV CLOSED DOOR INITA_SETBACK TOP
 					NavMesh.GetNavAreaByID(8187).ConnectTo(NavMesh.GetNavAreaByID(11333), 1)
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8188), 3)
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(8188), 3)
 					NavMesh.GetNavAreaByID(8188).ConnectTo(NavMesh.GetNavAreaByID(11333), 1)
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(174), 2) //ONEWAY
-					NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(11098), 2) //ONEWAY
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(174), 2) //ONEWAY
+					//NavMesh.GetNavAreaByID(11333).ConnectTo(NavMesh.GetNavAreaByID(11098), 2) //ONEWAY
 
 					NavMesh.GetNavAreaByID(11336).ConnectTo(NavMesh.GetNavAreaByID(8640), 3) // RESTORE NAV CLOSED DOOR INITA_SETBACK BOTTOM
 					NavMesh.GetNavAreaByID(8640).ConnectTo(NavMesh.GetNavAreaByID(11336), 1)
@@ -1791,12 +1805,12 @@ WaveSchedule
 				//^cleans up nav deletion after the wave.
 			} __CollectGameEventCallbacks(FixNavBSA)
 
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8187)) // DELETE NAV CLOSED DOOR INITA_SETBACK TOP
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8187)) // DELETE NAV CLOSED DOOR INITA_SETBACK TOP
 			NavMesh.GetNavAreaByID(8187).Disconnect(NavMesh.GetNavAreaByID(11333))
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8188))
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(8188))
 			NavMesh.GetNavAreaByID(8188).Disconnect(NavMesh.GetNavAreaByID(11333))
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(174)) //ONEWAY
-			NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(11098)) //ONEWAY
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(174)) //ONEWAY
+			//NavMesh.GetNavAreaByID(11333).Disconnect(NavMesh.GetNavAreaByID(11098)) //ONEWAY
 
 			NavMesh.GetNavAreaByID(11336).Disconnect(NavMesh.GetNavAreaByID(8640)) // DELETE NAV CLOSED DOOR INITA_SETBACK BOTTOM
 			NavMesh.GetNavAreaByID(8640).Disconnect(NavMesh.GetNavAreaByID(11336))
@@ -2167,26 +2181,26 @@ WaveSchedule
 				Cleanup = function() 
 				{ 
 					delete ::FixNavBSB
-					NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(525), 0) // RESTORE NAV CLOSED DOOR INITA_SETFRONT TOP
+					//NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(525), 0) // RESTORE NAV CLOSED DOOR INITA_SETFRONT TOP
 					NavMesh.GetNavAreaByID(525).ConnectTo(NavMesh.GetNavAreaByID(20), 2)
-					NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(144), 0)
+					//NavMesh.GetNavAreaByID(20).ConnectTo(NavMesh.GetNavAreaByID(144), 0)
 					NavMesh.GetNavAreaByID(144).ConnectTo(NavMesh.GetNavAreaByID(20), 2)
 
 					NavMesh.GetNavAreaByID(11335).ConnectTo(NavMesh.GetNavAreaByID(347), 2) // RESTORE NAV CLOSED DOOR INITA_SETFRONT BOTTOM
-					NavMesh.GetNavAreaByID(347).ConnectTo(NavMesh.GetNavAreaByID(11335), 0)
+					//NavMesh.GetNavAreaByID(347).ConnectTo(NavMesh.GetNavAreaByID(11335), 0)
 				}
 				OnGameEvent_recalculate_holidays = function(_) { if (GetRoundState() == 3) Cleanup() }
 				OnGameEvent_mvm_wave_complete = function(_) { Cleanup() }
 				//^cleans up nav deletion after the wave.
 			} __CollectGameEventCallbacks(FixNavBSB)
 
-			NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(525)) // DELETE NAV CLOSED DOOR INITA_SETFRONT TOP
+			//NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(525)) // DELETE NAV CLOSED DOOR INITA_SETFRONT TOP
 			NavMesh.GetNavAreaByID(525).Disconnect(NavMesh.GetNavAreaByID(20))
-			NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(144))
+			//NavMesh.GetNavAreaByID(20).Disconnect(NavMesh.GetNavAreaByID(144))
 			NavMesh.GetNavAreaByID(144).Disconnect(NavMesh.GetNavAreaByID(20))
 
 			NavMesh.GetNavAreaByID(11335).Disconnect(NavMesh.GetNavAreaByID(347)) // DELETE NAV CLOSED DOOR INITA_SETFRONT BOTTOM
-			NavMesh.GetNavAreaByID(347).Disconnect(NavMesh.GetNavAreaByID(11335))
+			//NavMesh.GetNavAreaByID(347).Disconnect(NavMesh.GetNavAreaByID(11335))
 			"
 		}
 
