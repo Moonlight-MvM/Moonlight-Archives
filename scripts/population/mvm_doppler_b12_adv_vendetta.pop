@@ -256,14 +256,40 @@ WaveSchedule
 	}
 	Wave //$800 + $100 bonus, $1000
 	{
-		StartWaveOutput
-		{
-			Target wave_start_relayB
-			Action Trigger
-		}
 		InitWaveOutput
 		{
 			Target initB
+			Action RunScriptCode
+			Param "
+				self.AcceptInput(`Trigger`, ``, null, null)
+
+				// Why the doors do this by default escapes me.
+				EntityOutputs.RemoveOutput(Entities.FindByName(null, `gate2_spawn_door`),
+					`OnFullyOpen`, `gate2_spawn_door2`, `Open`, ``)
+
+				// Figure out which path was selected by initB relay.
+				EntFireByHandle(Entities.FindByName(null, `spawnbot_g2s0a`), `RunScriptCode`,
+					@`// White path selected, close off opposite path.
+					if (NetProps.GetPropBool(self, ``m_bDisabled``)) {
+						Entities.FindByName(null, ``gate2_spawn_door2``).AcceptInput(``Close``, ````, null, null)
+						Entities.FindByName(null, ``path_g2_alt``).AcceptInput(``Disable``, ````, null, null)
+					}
+					// Grey path selected, close off opposite path.
+					else {
+						Entities.FindByName(null, ``gate2_spawn_door``).AcceptInput(``Close``, ````, null, null)
+						for (local e; e = Entities.FindByName(e, ``path_g2_main*``);)
+							e.AcceptInput(``Disable``, ````, null, null)
+					}`,
+				2.62, null, null)
+				// Delay is InitB's 1.5s initB_timer delay
+				//  + initB_timer's 1.0s UpperRandomBound
+				//  + initB_spawns 0.02s delay
+				//  + MAXIMUM_TICK_INTERVAL (0.1s, should cover the 0s delays).
+			"
+		}
+		StartWaveOutput
+		{
+			Target wave_start_relayB
 			Action Trigger
 		}
 		WaveSpawn
