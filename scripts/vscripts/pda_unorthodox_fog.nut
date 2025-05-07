@@ -18,6 +18,7 @@ SpawnEntityFromTable("env_shake" , {
 		duration = 5
 		radius = 99999
 		spawnflags = 5
+		fogRadial = true
     }
 )
 
