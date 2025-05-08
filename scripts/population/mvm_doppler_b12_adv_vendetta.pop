@@ -20,10 +20,38 @@ WaveSchedule
 	RespawnWaveTime	4
 	CanBotsAttackWhileInSpawnRoom	no
 	FixedRespawnWaveTime	No
-	AddSentryBusterWhenDamageDealtExceeds	3000
-	AddSentryBusterWhenKillCountExceeds	20
+	AddSentryBusterWhenDamageDealtExceeds 3000
+	AddSentryBusterWhenKillCountExceeds 20
 	Advanced	1
 	
+	Mission
+	{
+		Objective DestroySentries
+		Where spawnbot_g2s0b
+		Where spawnbot_g2s1b
+		BeginAtWave 1
+		RunForThisManyWaves 1
+		InitialCooldown 1
+		CooldownTime 1
+
+		TFBot
+		{
+			Template T_TFBot_SentryBuster
+			Item "EOTL_demopants"
+			Item "Head Banger"
+			ItemAttributes
+			{
+				ItemName "Head Banger"
+				"set item tint rgb" "3686984"
+			}
+			Tag bot_sentrybuster
+			CharacterAttributes
+			{
+				"head scale" 3
+				"torso scale" 0.2
+			}
+		}
+	}
 	Mission
 	{
 		Objective DestroySentries
@@ -33,7 +61,8 @@ WaveSchedule
 		Where spawnbot_g1s1_alt
 		Where spawnbot_g2s0_alt
 		Where spawnbot_g2s1_alt
-		InitialCooldown    10
+		BeginAtWave 2
+		InitialCooldown 10
 		CooldownTime 30
 
 		TFBot
@@ -50,7 +79,7 @@ WaveSchedule
 			CharacterAttributes
 			{
 				"head scale" 3
-                "torso scale" 0.2
+				"torso scale" 0.2
 			}
 		}
 	}
@@ -297,11 +326,11 @@ WaveSchedule
 			Name	dummy
 			WaitBeforeStarting	0
 			FirstSpawnOutput
-            {
-                Target intel3 ///(bomb targetname)
-                Action SetReturnTime
-                Param 69420 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel3 ///(bomb targetname)
+				Action SetReturnTime
+				Param 69420 ///(number of seconds for bomb timer)
+			}
 		}
 		
 		WaveSpawn
@@ -556,11 +585,11 @@ WaveSchedule
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	0
 			FirstSpawnOutput
-            {
-                Target intel2 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel2 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Class Heavyweapons
@@ -786,11 +815,11 @@ WaveSchedule
 			WaitBeforeStarting	1
 			WaitBetweenSpawns	26
 			FirstSpawnOutput
-            {
-                Target intel3 ///(bomb targetname)
-                Action SetReturnTime
-                Param 69420 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel3 ///(bomb targetname)
+				Action SetReturnTime
+				Param 69420 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_Spammer_Reload
@@ -1072,11 +1101,11 @@ WaveSchedule
 			WaitBeforeStarting	0
 			WaitBetweenSpawns 10
 			FirstSpawnOutput
-            {
-                Target intel2 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel2 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Blaster
@@ -1095,11 +1124,11 @@ WaveSchedule
 			WaitBeforeStarting	0.1
 			WaitBetweenSpawns 10
 			FirstSpawnOutput
-            {
-                Target intel3 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel3 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			RandomChoice
 			{
 				TFBot
@@ -1582,11 +1611,11 @@ WaveSchedule
 			Where spawnbot_g0s1b
 			WaitBeforeStarting	0
 			FirstSpawnOutput
-            {
-                Target intel2 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel2 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Class Demoman
@@ -1696,11 +1725,11 @@ WaveSchedule
 			WaitBeforeStarting	8
 			WaitBetweenSpawns 8
 			FirstSpawnOutput
-            {
-                Target intel3 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel3 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Blaster
@@ -1946,11 +1975,11 @@ WaveSchedule
 			WaitBeforeStarting	120
 			WaitBetweenSpawnsAfterDeath 60
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Scout_Cola_Bat
@@ -2090,11 +2119,11 @@ WaveSchedule
 			WaitBeforeStarting	0
 			WaitBetweenSpawns 8
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Blaster
@@ -2119,11 +2148,11 @@ WaveSchedule
 			Name	5bombthing
 			WaitBeforeStarting	 0
 			FirstSpawnOutput
-            {
-                Target intel3 ///(bomb targetname)
-                Action SetReturnTime
-                Param 69420 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel3 ///(bomb targetname)
+				Action SetReturnTime
+				Param 69420 ///(number of seconds for bomb timer)
+			}
 		}
 		WaveSpawn
 		{
@@ -2141,11 +2170,11 @@ WaveSchedule
 			WaitBeforeStarting	4
 			WaitBetweenSpawns 6.1
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 45 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 45 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Class Pyro
@@ -2211,11 +2240,11 @@ WaveSchedule
 			WaitBeforeStarting	0
 			WaitBetweenSpawns 18
 			FirstSpawnOutput
-            {
-                Target intel2 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel2 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			Squad
 			{
 				TFBot
@@ -2362,11 +2391,11 @@ WaveSchedule
 			WaitBeforeStarting	0
 			WaitBetweenSpawnsAfterDeath 120
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Sniper_Huntsman
@@ -2782,11 +2811,11 @@ WaveSchedule
 			WaitBeforeStarting 0
 			WaitBetweenSpawns 8
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			Squad
 			{
 				TFBot
@@ -2864,11 +2893,11 @@ WaveSchedule
 			Where spawnbot_g0s0_alt
 			WaitBeforeStarting 0
 			FirstSpawnOutput
-            {
-                Target intel2 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel2 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			WaitBetweenSpawns 0
 			Squad
 			{
@@ -2898,11 +2927,11 @@ WaveSchedule
 			Where spawnbot_g0s1_alt
 			WaitBeforeStarting 8
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 45 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 45 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Blaster
@@ -2924,11 +2953,11 @@ WaveSchedule
 			WaitBeforeStarting 7
 			WaitBetweenSpawns 1.25
 			FirstSpawnOutput
-            {
-                Target intel3 ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel3 ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Template T_TFGateBot_Soldier_Extended_Concheror_Crit_Dopp
@@ -3477,11 +3506,11 @@ WaveSchedule
 			WaitBeforeStarting 0
 			WaitBetweenSpawns 24
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			Squad
 			{
 				TFBot
@@ -3513,11 +3542,11 @@ WaveSchedule
 			Where spawnbot_g1s1_alt
 			WaitBeforeStarting	120
 			FirstSpawnOutput
-            {
-                Target intel ///(bomb targetname)
-                Action SetReturnTime
-                Param 42069 ///(number of seconds for bomb timer)
-            }
+			{
+				Target intel ///(bomb targetname)
+				Action SetReturnTime
+				Param 42069 ///(number of seconds for bomb timer)
+			}
 			TFBot
 			{
 				Class Demoman
