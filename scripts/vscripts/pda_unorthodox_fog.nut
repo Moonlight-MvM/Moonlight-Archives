@@ -8,6 +8,7 @@ SpawnEntityFromTable("env_fog_controller" , {
 		fogmaxdensity = 0.99
 		fogcolor = "50 57 75"
 		foglerptime = "4"
+		fogRadial = true
     }
 )
 
@@ -18,7 +19,6 @@ SpawnEntityFromTable("env_shake" , {
 		duration = 5
 		radius = 99999
 		spawnflags = 5
-		fogRadial = true
     }
 )
 
