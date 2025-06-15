@@ -2877,7 +2877,7 @@ WaveSchedule
 			{
 				Class Scout
 				Skill Normal
-				ClassIcon Scout
+				ClassIcon scout_giant
 				Attributes AlwaysCrit
 			}
 		  }
@@ -2964,7 +2964,7 @@ WaveSchedule
 							"clip size upgrade atomic" 8
 							"faster reload rate" 0.2
 							"Blast radius decreased" 1.2
-							"killstreak tier" 2            
+							"killstreak tier" 2
 							"killstreak idleeffect" 2
 						}
 						CharacterAttributes
@@ -3006,7 +3006,7 @@ WaveSchedule
 							"clip size upgrade atomic" 8
 							"faster reload rate" 0.15
 							"Blast radius decreased" 1.2
-							"killstreak tier" 2            
+							"killstreak tier" 2
 							"killstreak idleeffect" 2
 						}
 						CharacterAttributes
