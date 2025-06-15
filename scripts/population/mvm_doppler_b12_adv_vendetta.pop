@@ -20,8 +20,8 @@ WaveSchedule
 	RespawnWaveTime	4
 	CanBotsAttackWhileInSpawnRoom	no
 	FixedRespawnWaveTime	No
-	AddSentryBusterWhenDamageDealtExceeds 3000
-	AddSentryBusterWhenKillCountExceeds 20
+	AddSentryBusterWhenDamageDealtExceeds	3000
+	AddSentryBusterWhenKillCountExceeds	30
 	Advanced	1
 	
 	Mission
@@ -318,19 +318,13 @@ WaveSchedule
 		}
 		StartWaveOutput
 		{
-			Target wave_start_relayB
-			Action Trigger
-		}
-		WaveSpawn
-		{
-			Name	dummy
-			WaitBeforeStarting	0
-			FirstSpawnOutput
-			{
-				Target intel3 ///(bomb targetname)
-				Action SetReturnTime
-				Param 69420 ///(number of seconds for bomb timer)
-			}
+			Target wave_start_relayB_twobomb
+			Action RunScriptCode
+			Param "
+				self.AcceptInput(`Trigger`, ``, null, null)
+				Entities.FindByName(null, `intel`).AcceptInput(`SetReturnTime`, `69420`, null, null)
+				Entities.FindByName(null, `intel3`).AcceptInput(`SetReturnTime`, `69420`, null, null)
+			"
 		}
 		
 		WaveSpawn
