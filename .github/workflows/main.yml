@@ -90,9 +90,8 @@ jobs:
 
             ssh -p ${a[0]} -o StrictHostKeyChecking=no ${a[1]} "cd ${a[2]}/tf2server/tf/archive; find . -type l" > ../links-${a[0]}-${a[1]}
             ssh -p ${a[0]} -o StrictHostKeyChecking=no ${a[1]} mkdir -p /tmp/archivesync
-            ssh -p ${a[0]} -o StrictHostKeyChecking=no ${a[1]} mkdir -p ${a[2]}/www/html/gameassets/archive
             rsync -a -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --temp-dir=/tmp/archivesync --exclude=".*" --exclude="*.bz2" --exclude-from=../links-${a[0]}-${a[1]} --exclude="tf_mvm_missioncycle.res" --exclude="mapcycle.txt" . ${a[1]}:${a[2]}/tf2server/tf/archive/
-            rsync -a -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --temp-dir=/tmp/archivesync --include="*/" --include="*.bz2" --exclude="*" . ${a[1]}:${a[2]}/www/html/gameassets/archive/
+            rsync -a --mkpath -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --temp-dir=/tmp/archivesync --include="*/" --include="*.bz2" --exclude="*" . ${a[1]}:${a[2]}/www/html/gameassets/archive/
           } &
           done
           wait
