@@ -491,7 +491,7 @@ ElectaMulierInfraOmnibusSimulLunaEtCalixEtAvisSimulMaterEtFiliaEtSpiritusImmundu
             Param
             "
 				EntFire(`boss_pit_close_door`, `Trigger`)
-                IncludeScript(`mvm_meltdown_rc5_exp_encode_error`)
+                IncludeScript(`exp_encode_error`)
             "
         }
 		WaveSpawn
@@ -833,7 +833,7 @@ ElectaMulierInfraOmnibusSimulLunaEtCalixEtAvisSimulMaterEtFiliaEtSpiritusImmundu
             Param
             "
 				EntFire(`boss_pit_close_door`, `Trigger`)
-                IncludeScript(`mvm_meltdown_rc5_exp_encode_error`)
+                IncludeScript(`exp_encode_error`)
             "
         }
 		WaveSpawn
@@ -1072,7 +1072,7 @@ ElectaMulierInfraOmnibusSimulLunaEtCalixEtAvisSimulMaterEtFiliaEtSpiritusImmundu
             Param
             "
 				EntFire(`boss_pit_close_door`, `Trigger`)
-                IncludeScript(`mvm_meltdown_rc5_exp_encode_error`)
+                IncludeScript(`exp_encode_error`)
             "
         }
 		WaveSpawn
@@ -1458,7 +1458,7 @@ ElectaMulierInfraOmnibusSimulLunaEtCalixEtAvisSimulMaterEtFiliaEtSpiritusImmundu
             Param
             "
 				EntFire(`boss_pit_close_door`, `Trigger`)
-                IncludeScript(`mvm_meltdown_rc5_exp_encode_error`)
+                IncludeScript(`exp_encode_error`)
             "
         }
 		WaveSpawn
@@ -1648,7 +1648,7 @@ ElectaMulierInfraOmnibusSimulLunaEtCalixEtAvisSimulMaterEtFiliaEtSpiritusImmundu
             Param
             "
 				EntFire(`boss_pit_close_door`, `Trigger`)
-                IncludeScript(`mvm_meltdown_rc5_exp_encode_error`)
+                IncludeScript(`exp_encode_error`)
             "
         }
 		WaveSpawn

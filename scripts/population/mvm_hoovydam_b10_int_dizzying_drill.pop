@@ -6,7 +6,7 @@
 // using this map is a frustrating and stupid and terrible experience. do not.
 // Credits:
 // randomguy for making the waves.
-// Needles for making mvm_hoovydam_b10_int_dizzying_drill_tankwave_shutterfix.nut and allowing me to steal it >:)
+// Needles for making int_dizzying_drill_tankwave_shutterfix.nut and allowing me to steal it >:)
 // Blade for making this amazing map, which was a joy to work with.
 // NYS for the soldier head icon.
 // ??? for the demoman's boss icon.
@@ -801,7 +801,7 @@ WaveSchedule
 			Action	RunScriptCode
 			Param	"
 			EntFire(`initB`,`Trigger`)
-			IncludeScript(`mvm_hoovydam_b10_int_dizzying_drill_tankwave_shutterfix`)
+			IncludeScript(`int_dizzying_drill_tankwave_shutterfix`)
 			"
 		}
 		// shutterfix made by Needles (https://steamcommunity.com/profiles/76561198026257137/).
@@ -1299,7 +1299,7 @@ WaveSchedule
 			
 			EntFire(`initA`,`Enable`) //< this thing here is what wasted two hours.
 			EntFire(`initA_setBack`,`Trigger`)
-			IncludeScript(`mvm_hoovydam_b10_int_dizzying_drill_tankwave_shutterfix`)
+			IncludeScript(`int_dizzying_drill_tankwave_shutterfix`)
 			ClientPrint(null,3,`\x07FFEA00The robots this wave will be heavily taking advantage of jump pads to skip past your frontline.`)
 			// fellen: See comment in W3 InitWaveOutput.
 			::FixNavBSA <- //w4 and w5

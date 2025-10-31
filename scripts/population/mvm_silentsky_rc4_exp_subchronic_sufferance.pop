@@ -796,7 +796,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Action RunScriptCode
 			Param
 			"
-				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
+				IncludeScript(`exp_subchronic_sufferance`)
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
 				ClientPrint(null,3,`\x08FF54F1FFEvery few waves there will consist of robots dropping from the sky.`)
@@ -1467,7 +1467,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
 				ClientPrint(null,3,`\x0899CCFFFFA blimp \x08FF54F1FFwill spawn in this wave.`)
-				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
+				IncludeScript(`exp_subchronic_sufferance`)
                     SpawnEntityFromTable(`training_annotation` , {
                         targetname = `tank_notice`
                         display_text = `Up here, the Blimp spawns over here!`
@@ -1820,7 +1820,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Action RunScriptCode
 			Param
 			"
-				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
+				IncludeScript(`exp_subchronic_sufferance`)
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
             "
@@ -2242,7 +2242,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Action RunScriptCode
 			Param
 			"
-				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
+				IncludeScript(`exp_subchronic_sufferance`)
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
             "
@@ -2569,13 +2569,13 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			"
 				EntFire(`routes`, `Kill`)
 				EntFire(`route1_holos`, `TurnOn`)
-                SpawnEntityFromTable(`logic_script`,{vscripts=`mvm_silentsky_rc4_exp_subchronic_sufferance`,targetname=`vscripts`})
+                SpawnEntityFromTable(`logic_script`,{vscripts=`exp_subchronic_sufferance`,targetname=`vscripts`})
 				if (Convars.GetInt(`sig_etc_misc`) == null) {
 					local resource = Entities.FindByClassname(null, `tf_objective_resource`)
 					NetProps.SetPropInt(resource, `m_nMannVsMachineWaveCount`, 420)
 					NetProps.SetPropInt(resource, `m_nMannVsMachineMaxWaveCount`, 69)
 				}
-				IncludeScript(`mvm_silentsky_rc4_exp_subchronic_sufferance`)
+				IncludeScript(`exp_subchronic_sufferance`)
 				ClientPrint(null,3,`\x0897D1F9FFBullet, \x084BF756FFBlast, \x08FFA15EFFFire.`)
 				ClientPrint(null,3,`\x08D73337FFThree Vaccinator tanks will come out this wave, hope you know your type matchups!`)
             "
