@@ -631,7 +631,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
             Target gamerules
             Action RunScriptCode
             Param "
-				SetSkyboxTexture (`sky_coastal_01`) //Only here due to finale, skybox doesn't refresh naturally, so you know.
+				SetSkyboxTexture(`sky_coastrock_01`) //Only here due to finale, skybox doesn't refresh naturally, so you know.
 				EntFire(`bombpath_choose_relay`, `Kill`)
 				EntFire(`bombpath_clearall_relay`, `Trigger`)
 				EntFire(`bombpath_right_arrows`, `TurnOff`)
@@ -3107,7 +3107,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				Target the_fog_is_coming
 				Action RunScriptCode
 				Param "
-					SetSkyboxTexture(`sky_coastal_01`)
+					SetSkyboxTexture(`sky_coastrock_01`)
 					Entities.FindByName(null, `the_fog_trigger`).Kill()
 					self.AcceptInput(`SetStartDistLerpTo`, `2200.0`, null, null)
 					self.AcceptInput(`SetEndDistLerpTo`, `18000.0`, null, null)
