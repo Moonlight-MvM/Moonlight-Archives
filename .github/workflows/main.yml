@@ -18,7 +18,7 @@ concurrency:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  asset-pack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -92,6 +92,7 @@ jobs:
             rsync -a --mkpath -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --delete --exclude=".*" --exclude="*.bz2" . ${a[1]}:${a[2]}/tf2server/tf/archive_moonlight/
             ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "rsync -a --ignore-existing --mkpath ${a[2]}/tf2server/tf/archive_moonlight/* ${a[2]}/tf2server/tf/archive/"
             rsync -a --mkpath -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --delete --include="*/" --include="*.bz2" --include="*.raw" --exclude="*" . ${a[1]}:${a[2]}/www/html/gameassets/archive_moonlight/
+            ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "rsync -a --ignore-existing --mkpath ${a[2]}/www/html/gameassets/archive_moonlight/* ${a[2]}/www/html/gameassets/archive/"
 
           } &
           done
