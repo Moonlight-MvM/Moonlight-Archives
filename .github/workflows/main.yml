@@ -36,15 +36,8 @@ jobs:
           path: tf/download
 
       # Install wakeonlan
-      - name: Make scripts executable
-        run: sudo apt-get install -y wakeonlan
-        
-      - name: Setup SSH Keys and known_hosts
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add - <<< "${{ secrets.DEPLOY_KEY_NEW }}"
+      # - name: Make scripts executable
+      #   run: sudo apt-get install -y wakeonlan
         
       - name: Create asset pack
         run: |
@@ -72,51 +65,74 @@ jobs:
           AWS_REGION: 'auto'   # optional: defaults to us-east-1
           AWS_S3_ENDPOINT: https://d7d00000029f3cf361b520329f5e69df.r2.cloudflarestorage.com
 
+  fastdl:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          path: tf/download
+
+      - name: Setup SSH Keys and known_hosts
+        env:
+            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+            ssh-add - <<< "${{ secrets.DEPLOY_KEY_NEW }}"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y bzip2 parallel rsync
+
       - name: Create bz2 archives
         run: |
           cd tf/download
           find . -type f -not \( -name "*.pop" -or -name "*.nav" -or -name "*.res" -or -name "*.bz2" -or -name "*.lua" -or -name "*.nut" -or -name "*.raw" \) \( ! -regex '.*/\..*' \) | parallel bzip2 -f -k
-          
-      - name: Sync with game servers
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      
+      - name: Sync with FastDL endpoints
         run: |
-
           cd tf/download
           mapfile -t servers < <(curl -s https://raw.githubusercontent.com/potato-tf/deploy/refs/heads/main/serverlist.json | jq -r '.servers[]')
           for i in "${servers[@]}"; do a=( $i );
           {
+            ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "touch ${a[2]}/tf2server/tf/occupiedservers/wake; exit 0"
 
+            rsync -a -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --mkpath --update --delete --include="*/" --include="*.bz2" --include="*.raw" --exclude="*" . ${a[1]}:${a[2]}/www/html/gameassets/archive_moonlight/
+            ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "rsync -a --ignore-existing --mkpath ${a[2]}/www/html/gameassets/archive_moonlight/* ${a[2]}/www/html/gameassets/archive/"
+          } &
+          done
+          wait
+      
+  game-servers:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          path: tf/download
+
+
+      - name: Setup SSH Keys and known_hosts
+        env:
+            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+            ssh-add - <<< "${{ secrets.DEPLOY_KEY_NEW }}"
+
+      - name: Sync with game servers
+        run: |
+          cd tf/download
+          mapfile -t servers < <(curl -s https://raw.githubusercontent.com/potato-tf/deploy/refs/heads/main/serverlist.json | jq -r '.servers[]')
+          for i in "${servers[@]}"; do a=( $i );
+          {
             ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "touch ${a[2]}/tf2server/tf/occupiedservers/wake; exit 0"
 
             rsync -a --mkpath -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --delete --exclude=".*" --exclude="*.bz2" . ${a[1]}:${a[2]}/tf2server/tf/archive_moonlight/
             ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "rsync -a --ignore-existing --mkpath ${a[2]}/tf2server/tf/archive_moonlight/* ${a[2]}/tf2server/tf/archive/"
-
-            rsync -a --mkpath -e "ssh -p ${a[0]} -o StrictHostKeyChecking=no" --update --delete --include="*/" --include="*.bz2" --include="*.raw" --exclude="*" . ${a[1]}:${a[2]}/www/html/gameassets/archive_moonlight/
-            ssh -o StrictHostKeyChecking=no -p ${a[0]} ${a[1]} "rsync -a --ignore-existing --mkpath ${a[2]}/www/html/gameassets/archive_moonlight/* ${a[2]}/www/html/gameassets/archive/"
-
           } &
           done
           wait
-
-      # - name: Sync with raf server
-      #   env:
-      #       SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      #   run: |
-      #     ssh -o StrictHostKeyChecking=no pterodactyl@10.243.40.231 "touch /var/tf2server/tf/occupiedservers/wake; exit 0"
-
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" --exclude="logs" --exclude="gamedata" --exclude="data" --delete ./tf/addons pterodactyl@10.243.40.231:/var/tf2server/tf
-
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/gamedata pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/addons/sourcemod/data pterodactyl@10.243.40.231:/var/tf2server/tf/addons/sourcemod
-
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/custom pterodactyl@10.243.40.231:/var/tf2server/tf &
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/cfg pterodactyl@10.243.40.231:/var/tf2server/tf &
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.sh pterodactyl@10.243.40.231:/var/tf2server &
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.txt pterodactyl@10.243.40.231:/var/tf2server &
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./*.py pterodactyl@10.243.40.231:/var/tf2server &
-      #     rsync -a -e "ssh -o StrictHostKeyChecking=no" ./tf/scripts/vscripts pterodactyl@10.243.40.231:/var/tf2server/tf/scripts &
-      #     rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parse_demo pterodactyl@10.243.40.231:/var/tf2server/tf/parse_demo &
-      #     rsync -a --chmod=744 -e "ssh -o StrictHostKeyChecking=no" ./tf/parsedemos.sh pterodactyl@10.243.40.231:/var/tf2server/tf/parsedemos.sh &
-
-      #     wait
