@@ -80,7 +80,7 @@ jobs:
             SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
             ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add - <<< "${{ secrets.DEPLOY_KEY_NEW }}"
+            ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
 
       - name: Install dependencies
         run: |
@@ -121,7 +121,7 @@ jobs:
             SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
             ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add - <<< "${{ secrets.DEPLOY_KEY_NEW }}"
+            ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
 
       - name: Sync with game servers
         run: |
