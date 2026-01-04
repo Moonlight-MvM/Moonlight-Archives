@@ -531,7 +531,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main_from_flank
+            Target wave_init_relay_right
             Action Trigger
         }
         DoneOutput
@@ -699,7 +699,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main_from_flank
+            Target wave_init_relay_right
             Action Trigger
         }
         DoneOutput
@@ -881,7 +881,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main_from_flank
+            Target wave_init_relay_right
             Action Trigger
         }
         DoneOutput
@@ -1183,7 +1183,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_flank_from_main
+            Target wave_init_relay_left
             Action Trigger
         }
         DoneOutput
@@ -1391,7 +1391,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_flank_from_main
+            Target wave_init_relay_left
             Action Trigger
         }
         DoneOutput
@@ -1540,7 +1540,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_flank_from_main
+            Target wave_init_relay_left
             Action Trigger
         }
         DoneOutput
@@ -1851,7 +1851,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main_from_flank
+            Target wave_init_relay_right
             Action Trigger
         }
         DoneOutput
@@ -2080,7 +2080,7 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main_from_flank
+            Target wave_init_relay_right
             Action Trigger
         }
         DoneOutput
