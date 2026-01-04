@@ -531,12 +531,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main
+            Target bombpath_main_from_flank
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -699,12 +699,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main
+            Target bombpath_main_from_flank
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -881,12 +881,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main
+            Target bombpath_main_from_flank
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -1183,12 +1183,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_flank
+            Target bombpath_flank_from_main
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -1391,12 +1391,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_flank
+            Target bombpath_flank_from_main
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -1540,12 +1540,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_flank
+            Target bombpath_flank_from_main
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -1851,12 +1851,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main
+            Target bombpath_main_from_flank
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
@@ -2080,12 +2080,12 @@ PlantingSchedule
         }
         InitWaveOutput
         {
-            Target bombpath_main
+            Target bombpath_main_from_flank
             Action Trigger
         }
         DoneOutput
         {
-            Target wave_finish_relay
+            Target wave_finished_relay
             Action Trigger
         }
 
