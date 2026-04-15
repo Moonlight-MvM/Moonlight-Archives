@@ -939,6 +939,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Heavyweapons_Fist
+				Tag bot_giant
 			}	
 		}
 		
