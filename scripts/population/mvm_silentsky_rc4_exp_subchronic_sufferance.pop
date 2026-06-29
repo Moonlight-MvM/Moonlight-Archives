@@ -210,19 +210,19 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Name "Kritzkrieg Medic"
 			Class Medic
 			ClassIcon medic_kritz
-			Skill Normal				
+			Skill Normal
 			Attributes SpawnWithFullCharge
 			Item "The Kritzkrieg"
 			Item "The Virus Doctor"
 			Item "The Overdose"
-			
+
 			ItemAttributes
 			{
 				ItemName "The Kritzkrieg"
 				"ubercharge rate bonus" 100
 				"uber duration bonus" 92
 			}
-		
+
 			CharacterAttributes
 			{
 				"bot medic uber health threshold" 225
@@ -308,7 +308,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Attributes	IgnoreEnemies
 			Item "The Kritzkrieg"
 			Item "The Virus Doctor"
-			Item "The Overdose"	
+			Item "The Overdose"
 			ItemAttributes
 			{
 				ItemName "The Kritzkrieg"
@@ -337,7 +337,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			Attributes	HoldFireUntilFullReload
 			Attributes	MiniBoss
 			WeaponRestrictions	PrimaryOnly
-			
+
 			ItemAttributes
 			{
 				ItemName	"tf_weapon_rocketlauncher"
@@ -457,7 +457,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				"auto fires when full" 1
 				"auto fires full clip" 1
 			}
-			
+
 			CharacterAttributes
 			{
 				"move speed bonus"	0.7
@@ -512,7 +512,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						ItemName "The Scorch Shot"
 						"fire rate bonus" 0.4
 						"damage causes airblast" 1
-						
+
 					}
 					CharacterAttributes
 					{
@@ -550,7 +550,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					Tag giant
 					Tag attrbot
 					ItemAttributes
-					{					
+					{
 						ItemName "TF_WEAPON_FLAMETHROWER"
 						"damage bonus"	1.50
 						"flame life bonus" 2.75
@@ -570,7 +570,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"override footstep sound set" 6
 						"ragdolls become ash"	1
 						"health regen"	100
-						"dmg taken increased" 0.05 
+						"dmg taken increased" 0.05
 						"dmg from melee increased" 20
 						"dmg from ranged reduced" 20
 						"increased jump height" 1.6
@@ -614,7 +614,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"override footstep sound set" 6
 						"ragdolls become ash"	1
 						"health regen"	100
-						"dmg taken increased" 0.05 
+						"dmg taken increased" 0.05
 						"dmg from melee increased" 20
 						"dmg from ranged reduced" 20
 						"increased jump height" 1.6
@@ -630,8 +630,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
                 Target gamerules
                 Action RunScriptCode
                 Param "
-				if(Entities.FindByName(null, `engi_nest01`) == null) 
-				{    
+				if(Entities.FindByName(null, `engi_nest01`) == null)
+				{
                     SpawnEntityFromTable(`bot_hint_engineer_nest`, {
                         targetname = `engi_nest01`
                         origin = `4 265 64`
@@ -737,7 +737,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
     }
 	Mission
 	{
-		Objective Engineer	
+		Objective Engineer
 		BeginAtWave 4
 		RunForThisManyWaves 1
 		Where spawnbot
@@ -960,7 +960,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					"dmg penalty vs buildings" 0
 				}
 			}
-        }	
+        }
 		WaveSpawn
 		{
 			Name	W1-A1
@@ -980,15 +980,15 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay 					
-					Action Trigger                         		
+					Target boss_deploy_relay
+					Action Trigger
 				}
 			}
 		}
         WaveSpawn
         {
             WaitBeforeStarting 5.7
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -999,7 +999,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 5.7
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1010,7 +1010,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 5.8
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1021,7 +1021,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 5.8
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1032,7 +1032,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 5.9
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1043,7 +1043,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 5.9
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1054,7 +1054,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1065,7 +1065,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1076,7 +1076,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.06
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1087,7 +1087,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.06
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1098,7 +1098,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.14
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1109,7 +1109,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.14
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1120,7 +1120,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.18
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1131,7 +1131,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.18
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1142,7 +1142,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.2
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1153,7 +1153,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
         WaveSpawn
         {
             WaitBeforeStarting 6.2
-            
+
             FirstSpawnOutput
             {
                 Target droptank1
@@ -1180,7 +1180,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				{
 					"move speed bonus" 1.242069
 				}
-			}	
+			}
 		}
 		WaveSpawn
 		{
@@ -1236,7 +1236,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			FirstSpawnWarningSound "vo\mvm\norm\sniper_mvm_revenge07.mp3"
 			WaitBeforeStarting	15
 			WaitForAllDead	W1-A1
-		}	
+		}
 		WaveSpawn
 		{
 			WaitForAllDead	W1-A1
@@ -1486,7 +1486,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 			{
 				Target wave_start_relay
 				Action runscriptcode
-				Param "if(!(`CreateBlimpPath` in this)) IncludeScript(`mvm_waterfront_rc3_int_diode_charge_blimp`)
+				Param "if(!(`CreateBlimpPath` in this)) IncludeScript(`int_diode_charge_blimp`)
 
 				if(!(Entities.FindByName(null,`blimp_1`))) {
 				CreateBlimpPath([
@@ -1556,7 +1556,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				CharacterAttributes
 				{
 					"airblast vertical vulnerability multiplier"	0.1
-					"dmg taken increased" 0.05 
+					"dmg taken increased" 0.05
 					"dmg from melee increased" 20
 					"dmg from ranged reduced" 20
 				}
@@ -1655,7 +1655,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				Item	"the persian persuader"
 				Item 	"ali baba's wee booties"
 				Item	"sultan's ceremonial"
-				Item "The Splendid Screen"	
+				Item "The Splendid Screen"
 				ItemAttributes
 				{
 					ItemName "ali baba's wee booties"
@@ -2080,19 +2080,19 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				Attributes	MiniBoss
 				Attributes	AlwaysCrit
 				Tag	giant
-				ItemAttributes 
+				ItemAttributes
 				{
 					ItemName "The Gas Passer"
 					"mult_item_meter_charge_rate" 0.05
 					"weapon burn dmg increased" 4
 					"killstreak tier" 1
 				}
-				ItemAttributes 
+				ItemAttributes
 				{
 					ItemName "Fear Monger"
 					"set item tint rgb" 16711680
 				}
-				ItemAttributes 
+				ItemAttributes
 				{
 					ItemName "The Degreaser"
 					"weapon burn dmg increased" 3
@@ -2100,7 +2100,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 					"killstreak tier" 1
 					"damage bonus HIDDEN" 1.55
 				}
-				CharacterAttributes 
+				CharacterAttributes
 				{
 					"move speed penalty"	0.5
 					"damage force reduction" 0.6
@@ -2840,7 +2840,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"faster reload rate" 0.2
 						"damage bonus" 2.0
 						"clip size upgrade atomic" -1
-						"dmg taken increased" 0.05 
+						"dmg taken increased" 0.05
 						"dmg from melee increased" 20
 						"dmg from ranged reduced" 20
 					}
@@ -3003,8 +3003,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				StartingPathTrackNode "tank_path_blast_start_b"
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay 					
-					Action Trigger                         		
+					Target boss_deploy_relay
+					Action Trigger
 				}
 			}
 		}
@@ -3023,8 +3023,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				StartingPathTrackNode "tank_path_bullet_start_b"
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay 					
-					Action Trigger                         		
+					Target boss_deploy_relay
+					Action Trigger
 				}
 			}
 		}
@@ -3202,8 +3202,8 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 				StartingPathTrackNode "tank_path_fire_start_b"
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay 					
-					Action Trigger                         		
+					Target boss_deploy_relay
+					Action Trigger
 				}
 			}
 		}
@@ -3284,7 +3284,7 @@ You_Can_Put_Anything_Here_Lol // WaveSchedule
 						"airblast vulnerability multiplier"	0
 						"airblast vertical vulnerability multiplier"	0
 						"damage force reduction"	0
-						"dmg taken increased" 0.05 
+						"dmg taken increased" 0.05
 						"dmg from melee increased" 20
 						"dmg from ranged reduced" 20
 					}
